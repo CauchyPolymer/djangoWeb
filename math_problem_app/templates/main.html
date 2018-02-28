@@ -71,6 +71,11 @@
 </body>
 
 <script>
+    history.pushState(null, null, "#main");
+    $(window).bind("hashchange", function(){
+        history.pushState(null, null, "#main");
+    });
+
     var myIndex = 0;
     carousel();
 
@@ -95,15 +100,15 @@
     
     $('.main-bottom').click(function () {
         $.ajax({
-                url: "signIn/",
-                type: 'GET',
-                data:{userEmail: $('#email').val(), password: $('#password').val()},
-                success: function (result) {
-                    $('.main-container').empty()
-                    $('.main-container').append(result)
+            url: "signIn/",
+            type: 'GET',
+            data:{userEmail: $('#email').val(), password: $('#password').val()},
+            success: function (result) {
+                $('.main-container').empty()
+                $('.main-container').append(result)
 
-                },
-            });
+            },
+        });
     })
 
 </script>

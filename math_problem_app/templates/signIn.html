@@ -1,1 +1,8 @@
 <div class="x-large-font">TBD</div>
+
+<script>
+    history.pushState(null, null, "#signIn");
+    $(window).bind("hashchange", function(){
+        window.location = '/'
+    });
+</script>
