@@ -50,6 +50,11 @@
     cursor: pointer;
 }
 
+.login-menu {
+    width: 6%;
+    margin-top: 34px;
+}
+
 .header-menu-line {
     margin-top: -15px;
     color: black;
@@ -68,9 +73,14 @@ body {
     }
 }
 
-.login-menu {
-    width: 6%;
-    margin-top: 34px;
+@media screen and (min-width: 1280px) {
+    .header-menu {
+        margin-top: 2.2%;
+    }
+
+    .login-menu {
+        margin-top: 2.7%;
+    }
 }
 
 .main-text {
