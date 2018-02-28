@@ -1,0 +1,184 @@
+{% load static %}
+
+<!-- BEGIN SIDEBAR -->
+<div class="page-sidebar-wrapper">
+    <!-- BEGIN SIDEBAR -->
+    <!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
+    <!-- DOC: Change data-auto-speed="200" to adjust the sub menu slide up/down speed -->
+    <div class="page-sidebar">
+        <!-- BEGIN SIDEBAR MENU -->
+        <!-- DOC: Apply "page-sidebar-menu-light" class right after "page-sidebar-menu" to enable light sidebar menu style(without borders) -->
+        <!-- DOC: Apply "page-sidebar-menu-hover-submenu" class right after "page-sidebar-menu" to enable hoverable(hover vs accordion) sub menu mode -->
+        <!-- DOC: Apply "page-sidebar-menu-closed" class right after "page-sidebar-menu" to collapse("page-sidebar-closed" class must be applied to the body element) the sidebar sub menu mode -->
+        <!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
+        <!-- DOC: Set data-keep-expand="true" to keep the submenues expanded -->
+        <!-- DOC: Set data-auto-speed="200" to adjust the sub menu slide up/down speed -->
+        <ul class="page-sidebar-menu page-sidebar-menu-light" data-keep-expanded="true" data-auto-scroll="false" data-slide-speed="200">
+            <li class="nav-item start {% if main == "consult_req" %} active {% endif %}">
+                <a>
+                    <i class="icon-question"></i>
+                    <span class="title uppercase" style="font-size: 15px;">Consult Requests</span>
+                    <span class="arrow open"></span>
+                </a>
+                <ul class="sub-menu always-open">
+                    <li class="nav-item {% if sub == "new_requests" %} active {% endif %}">
+                        <a id="new_requests" class="nav-link ">
+                            <span class="title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;New Requests</span>
+                        </a>
+                    </li>
+                    <li class="nav-item {% if sub == "replied_requests" %} active {% endif %}">
+                        <a id="replied_requests" class="nav-link ">
+                            <span class="title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Replied Requests</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item {% if main == "appointment_req" %} active {% endif %}">
+                <a id="appointment_req" class="nav-link nav-toggle">
+                    <i class="icon-calendar"></i>
+                    <span class="title uppercase" style="font-size: 15px;">Appointments</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="javascript:;" class="nav-link nav-toggle">
+                    <i class="icon-eye"></i>
+                    <span class="title uppercase" style="font-size: 15px;">Before & After</span>
+                    <span class="arrow open"></span>
+                </a>
+                <ul class="sub-menu always-open">
+                    <li class="nav-item  ">
+                        <a id="create_gallery" class="nav-link ">
+                            <span class="title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Create My Gallery</span>
+                        </a>
+                    </li>
+                    <li class="nav-item  ">
+                        <a id="gallery_list" class="nav-link">
+                            <span class="title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;My Gallery List</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="javascript:;" class="nav-link nav-toggle">
+                    <i class="icon-settings"></i>
+                    <span class="title uppercase" style="font-size: 15px;">Basic Info</span>
+                    <span class="arrow open"></span>
+                </a>
+                <ul class="sub-menu always-open">
+                    <li class="nav-item  ">
+                        <a id="profile" class="nav-link ">
+                            <span class="title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;My Profile</span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="sub-menu always-open" style="display: none">
+                    <li class="nav-item  ">
+                        <a class="nav-link ">
+                            <span class="title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Billing Information</span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="sub-menu always-open" style="display: none">
+                    <li class="nav-item  ">
+                        <a id="tester" class="nav-link">
+                            <span class="title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TEST Event </span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <!-- END SIDEBAR MENU -->
+    </div>
+    <!-- END SIDEBAR -->
+</div>
+<!-- END SIDEBAR -->
+<script>
+    setSideBarEvent();
+
+    function setSideBarEvent() {
+
+        $('#tester').click(function () {
+            $.ajax({
+                url: "appointment/",
+                method: "GET",
+                contentType: "application/json; charset=utf-8",
+                success: function (result) {
+                    $('.page-content').empty();
+                    $('.page-content').append($(result));
+                }
+            });
+        })
+
+        $('#create_gallery').click(function () {
+            $.ajax({
+                url: "create_gallery/",
+                method: "GET",
+                contentType: "application/json; charset=utf-8",
+                success: function (result) {
+                    $('.page-content').empty();
+                    $('.page-content').append($(result));
+                }
+            });
+        })
+
+        $('#profile').click(function () {
+            $.ajax({
+                url: "profile/",
+                method: "GET",
+                contentType: "application/json; charset=utf-8",
+                success: function (result) {
+                    $('.page-content').empty();
+                    $('.page-content').append($(result));
+                }
+            });
+        })
+
+        $('#gallery_list').click(function () {
+            $.ajax({
+                url: "gallery_list/",
+                method: "GET",
+                contentType: "application/json; charset=utf-8",
+                success: function (result) {
+                    $('.page-content').empty();
+                    $('.page-content').append($(result));
+                }
+            });
+        })
+
+        $('#new_requests').click(function () {
+            $.ajax({
+                url: "new_requests/",
+                method: "GET",
+                contentType: "application/json; charset=utf-8",
+                success: function (result) {
+                    $('.page-content').empty();
+                    $('.page-content').append($(result));
+                }
+            });
+        })
+
+        $('#replied_requests').click(function () {
+            $.ajax({
+                url: "replied_requests/",
+                method: "GET",
+                contentType: "application/json; charset=utf-8",
+                success: function (result) {
+                    $('.page-content').empty();
+                    $('.page-content').append($(result));
+                }
+            });
+        })
+
+        $('#appointment_req').click(function () {
+            $.ajax({
+                url: "appointment_requests/",
+                method: "GET",
+                contentType: "application/json; charset=utf-8",
+                success: function (result) {
+                    $('.page-content').empty();
+                    $('.page-content').append($(result));
+                }
+            });
+        })
+    }
+</script>

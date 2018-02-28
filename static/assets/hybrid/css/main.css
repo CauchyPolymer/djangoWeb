@@ -1,0 +1,21 @@
+.first {
+    margin-top: 5.5em;
+}
+
+.last {
+    margin-bottom: 15em;
+}
+
+.header {
+    position: fixed !important;
+    top: 0;
+    z-index:11;
+}
+
+.semi-header {
+    margin-top: 5.2em;
+}
+
+.header-title {
+    font-size: 2.2em !important;
+}

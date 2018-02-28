@@ -1,0 +1,265 @@
+<style>
+    .checkbox_text {
+        color: #659BE0;
+    }
+
+    .one_checkbox {
+        margin-right: 20px;
+    }
+
+    .procedure_checkbox {
+        margin-bottom: 20px;
+    }
+
+    .filter {
+        margin-bottom: 30px;
+    }
+
+    .types {
+        margin-left: 20px;
+    }
+
+    .type_title {
+        margin-bottom: 10px;
+        margin-top: 40px;
+    }
+
+</style>
+
+<div class="page-head">
+    <!-- BEGIN PAGE TITLE -->
+    <div class="page-title">
+        <h1>Create My Gallery
+            <small>Before & After Gallery</small>
+        </h1>
+    </div>
+    <!-- END PAGE TITLE -->
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div class="portlet light bordered">
+            <div class="portlet-body form">
+                <h4>
+                    <span class="bold">[Before Photo]</span>
+                </h4>
+                <div id="before_image_list">
+                    {% include "gb_web_doctor/gallery/before_image_list.html" %}
+                </div>
+                <div style="margin-top: 30px">
+                    <form role="form" id="before_image_form" method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <input id="before_image" type="file" name="photo">
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-circle blue uppercase">Upload</button>
+                        </div>
+                    </form>
+                </div>
+                <h4>
+                    <span class="bold">[After Photo]</span>
+                </h4>
+                <div id="after_image_list">
+                    {% include "gb_web_doctor/gallery/after_image_list.html" %}
+                </div>
+                <div style="margin-top: 30px">
+                    <form role="form" id="after_image_form" method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <input id="after_image" type="file" name="photo">
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-circle blue uppercase">Upload</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="portlet light bordered">
+            <div class="caption font-red-sunglo">
+                <i class="bold icon-like font-red-sunglo"></i>
+                <span class="caption-subject bold uppercase">  Procedures </span>
+            </div>
+            <div class="types row" id="procedure_type">
+            </div>
+            <div class="portlet-body form">
+                <form id="gallery_form" role="form" method="POST">
+                    {% include "gb_web_doctor/gallery/gallery_form.html" %}
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    init()
+
+    document.getElementById("before_image").onchange = function () {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            // get loaded data and render thumbnail.
+            document.getElementById("before_images").src = e.target.result;
+        };
+
+        // read the image file as a data URL.
+        reader.readAsDataURL(this.files[0]);
+    };
+
+    document.getElementById("after_image").onchange = function () {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            // get loaded data and render thumbnail.
+            document.getElementById("after_images").src = e.target.result;
+        };
+
+        // read the image file as a data URL.
+        reader.readAsDataURL(this.files[0]);
+    };
+
+    $("#before_image_form").submit(function(e) {
+        $(".se-pre-con").css('display', "block");
+
+        var formData = new FormData($(this)[0]);
+
+        $.ajax({
+            url: "before_photo/",
+            type: "POST",
+            data: formData,
+            success: function (result) {
+                $('#before_image_list').empty();
+                $('#before_image_list').append($(result));
+                $(".se-pre-con").fadeOut("slow");
+            },
+            cache: false,
+            contentType: false,
+            processData: false
+        });
+
+        e.preventDefault();
+    });
+
+
+    $("#after_image_form").submit(function(e) {
+        $(".se-pre-con").css('display', "block");
+
+        var formData = new FormData($(this)[0]);
+
+        $.ajax({
+            url: "after_photo/",
+            type: "POST",
+            data: formData,
+            success: function (result) {
+                $('#after_image_list').empty();
+                $('#after_image_list').append($(result));
+                $(".se-pre-con").fadeOut("slow");
+            },
+            cache: false,
+            contentType: false,
+            processData: false
+        });
+
+        e.preventDefault();
+    });
+
+    $('#gallery_form').submit(function (e) {
+        var minCost = String($('#min-cost').val()).replace(",", "")
+        var maxCost = String($('#max-cost').val()).replace(",", "")
+        if(minCost && (!$.isNumeric(minCost) || minCost.includes('.'))){
+            alert('Please enter a numeric number only for the cost range.');
+            return false;
+        }
+
+        if(maxCost && (!$.isNumeric(maxCost) || maxCost.includes('.'))){
+            alert('Please enter a numeric number only for the cost range.');
+            return false;
+        }
+
+        if((minCost && !maxCost) || (!minCost && maxCost)){
+            alert('Please enter both for the cost range.');
+            return false;
+        }
+
+        $(".se-pre-con").css('display', "block");
+
+        $.ajax({
+            url: "admin_gallery/",
+            type: "POST",
+            data: {firstName: $('#patient_firstName').val(), lastName: $('#patient_lastName').val(),
+                    procedure: $('#procedure').val(), procedureType: get_checked_elems().toString(),
+                    procedure_detail: $('#procedure_detail').val(),minCost: minCost,
+                    maxCost: maxCost},
+            success: function (result) {
+                $('#gallery_form').empty();
+                $('#gallery_form').append($(result));
+                $(".se-pre-con").fadeOut("slow");
+                init()
+                alert('Successfully Updated.')
+
+            },
+        });
+        e.preventDefault();
+    })
+
+    function init() {
+        $('#procedure_type').empty()
+
+        var lengthOfCheckbox = 8
+
+        for (var p in procedures) {
+            if (p % lengthOfCheckbox == 0) {
+                $('#procedure_type').append('<div class="procedure_checkbox">')
+            }
+
+            var toAppend = '<span class="one_checkbox"><label class="mt-checkbox mt-checkbox-single mt-checkbox-outline" >' + '<input type="checkbox" class="checkboxes" value="' + procedures[p] + '" '
+
+            $('#procedure_type').append('')
+
+            var types = String(procedureTypes).split(",")
+            for(pt in types){
+                if(types[pt] == procedures[p])
+                    toAppend += 'checked'
+            }
+            toAppend += '><span></span>' +  '</label><span class="checkbox_text">' + procedures[p] + '</span></span>'
+
+            $('#procedure_type').append(toAppend)
+            if (p != 0 || p % lengthOfCheckbox == 0) {
+                $('#procedure_type').append('</div>')
+            }
+        }
+    }
+
+    function get_checked_elems() {
+        var checked_elems = []
+
+        $('input:checkbox.checkboxes').each(function () {
+            if (this.checked)
+                checked_elems.push($(this).val())
+        });
+        console.log(checked_elems)
+        return checked_elems;
+    }
+
+
+    function rotate(img_elem){
+        img_elem.data('rotate', (parseInt(img_elem.data('rotate'))+90) % 360)
+        img_elem.css('transform', 'rotate('+img_elem.data('rotate')+'deg)')
+        if(img_elem.data('rotate') == 90 || img_elem.data('rotate') == 270) {
+            img_elem.css('width', '200px')
+            img_elem.css('height', '160px')
+            img_elem.css('margin-top', '25px')
+            img_elem.css('margin-left', '-20px')
+            img_elem.css('margin-right', '-15px')
+            img_elem.css('margin-bottom', '0px')
+        } else {
+            img_elem.css('width', '160px')
+            img_elem.css('height', '200px')
+            img_elem.css('margin-top', '5px')
+            img_elem.css('margin-left', '0px')
+            img_elem.css('margin-right', '5px')
+            img_elem.css('margin-bottom', '0px')
+        }
+    }
+</script>

@@ -1,0 +1,14 @@
+{% load static %}
+{% for photo in doctorProfile.photo.all %}
+    <div>
+        <a onclick="open_picture_modal({{ photo.photoSrl }}, '{{ photo.get_url }}', '{{ photo.created_at }}'{% if photo.photo.width > photo.photo.height and photo.is_jpeg %},true{% endif %});">
+           <img data-rotate="0" class="picture" style=" transform: rotate(0deg); width: 160px; height: 200px; float: left; margin-right: 5px; margin-top: 5px; " src="{{ photo.get_url }}">
+        </a>
+        <a>
+            <img onclick="rotate($(this).parent().parent().find('.picture'))" style="display: inline; float:left; margin-left: -29px; margin-top: 5px; width: 25px; opacity: 0.6; left: 62px; z-index: 50;" src="{% static 'assets/global/img/circular.png'%}"/>
+        </a>
+    </div>
+{% endfor %}
+<div>
+<img id="images" src="{% static 'assets/global/img/photo.png' %}" style="width: 160px; height: 200px; margin-right: 5px; margin-top: 5px; "/>
+</div>

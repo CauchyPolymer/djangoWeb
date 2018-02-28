@@ -1,0 +1,177 @@
+<style>
+    .checkbox_text {
+        color: #659BE0;
+    }
+
+    .one_checkbox {
+        margin-right: 20px;
+    }
+
+    .procedure_checkbox {
+        margin-bottom: 20px;
+    }
+
+    .filter {
+        margin-bottom: 30px;
+    }
+
+    .types {
+        margin-left: 20px;
+    }
+
+    .type_title {
+        margin-bottom: 10px;
+        margin-top: 40px;
+    }
+
+</style>
+
+<div class="row">
+    <div class="col-md-12">
+        <!-- BEGIN EXAMPLE TABLE PORTLET-->
+        <div class="portlet light bordered">
+            <div class="portlet-title">
+                <div class="caption font-dark">
+                    <i class="icon-settings font-dark"></i>
+                    <span class="caption-subject bold uppercase"> New Requests</span>
+                </div>
+            </div>
+            <div class="portlet-body">
+                <div id="sample_1_wrapper" class="dataTables_wrapper no-footer">
+                    <div class="row filter">
+                        <div class="col-md-12 col-sm-12">
+                            <div class="caption font-red-sunglo">
+                                <i class="bold icon-like font-red-sunglo"></i>
+                                <span class="caption-subject bold uppercase">  Procedures </span>
+                            </div>
+                            <div class="types row" id="procedure_type">
+                            </div>
+{#                            <div class="row">#}
+{#                            <div class="col-md-6 col-sm-6">#}
+{#                                <div class="caption font-red-sunglo type_title">#}
+{#                                    <i class="bold icon-user font-red-sunglo"></i>#}
+{#                                    <span class="caption-subject bold uppercase">  Age </span>#}
+{#                                </div>#}
+{#                                <div class="types" id="age_ranges">#}
+{#                                    <span class="one_checkbox"><label#}
+{#                                            class="mt-checkbox mt-checkbox-single mt-checkbox-outline">#}
+{#                                        <input type="checkbox" class="checkboxes" value="age_18_30" checked="checked">#}
+{#                                        <span></span>#}
+{#                                        </label><span class="checkbox_text">18 - 30</span>#}
+{#                                    </span>#}
+{#                                    <span class="one_checkbox"><label#}
+{#                                            class="mt-checkbox mt-checkbox-single mt-checkbox-outline">#}
+{#                                        <input type="checkbox" class="checkboxes" value="age_31_40" checked="checked">#}
+{#                                        <span></span>#}
+{#                                        </label><span class="checkbox_text">31 - 40</span>#}
+{#                                    </span>#}
+{#                                    <span class="one_checkbox"><label#}
+{#                                            class="mt-checkbox mt-checkbox-single mt-checkbox-outline">#}
+{#                                        <input type="checkbox" class="checkboxes" value="age_41_50" checked="checked">#}
+{#                                        <span></span>#}
+{#                                        </label><span class="checkbox_text">41 - 50</span>#}
+{#                                    </span>#}
+{#                                    <span class="one_checkbox"><label#}
+{#                                            class="mt-checkbox mt-checkbox-single mt-checkbox-outline">#}
+{#                                        <input type="checkbox" class="checkboxes" value="age_51" checked="checked">#}
+{#                                        <span></span>#}
+{#                                        </label><span class="checkbox_text">51 or above</span>#}
+{#                                    </span>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                            </div>#}
+                        </div>
+                    </div>
+                    <div class="portlet-title">
+                    </div>
+                    <div class="">
+                        <table style="margin-top: 30px;"
+                               class="table table-bordered no-footer">
+                            <thead>
+                            <tr role="row">
+                                <th class="" tabindex="0" aria-controls="sample_1" rowspan="1" colspan="1"
+                                    style="width: 204px; text-align:center; "> Name
+                                </th>
+{#                                <th class="" tabindex="0" aria-controls="sample_1" rowspan="1" colspan="1"#}
+{#                                    style="width: 104px; text-align:center; "> Age#}
+{#                                </th>#}
+                                <th class="" tabindex="0" aria-controls="sample_1" rowspan="1" colspan="1"
+                                    style="width: 198px; text-align:center; ">
+                                    Desired Procedures
+                                </th>
+                                <th class="" tabindex="0" aria-controls="sample_1" rowspan="1" colspan="1"
+                                    style="width: 198px; text-align:center; ">
+                                    Submitted
+                                </th>
+                                <th class="" tabindex="0" aria-controls="sample_1" rowspan="1" colspan="1"
+                                    style="width: 71px; text-align:center; ">
+                                </th>
+                                <th class="" tabindex="0" aria-controls="sample_1" rowspan="1" colspan="1"
+                                    style="width: 71px; text-align:center; ">
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody id="requests">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- END EXAMPLE TABLE PORTLET-->
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    init()
+    get_requests()
+
+    function init() {
+        var lengthOfCheckbox = 8
+
+        for (var p in procedures) {
+            if (p % lengthOfCheckbox == 0) {
+                $('#procedure_type').append('<div class="procedure_checkbox">')
+            }
+
+            $('#procedure_type').append('<span class="one_checkbox"><label class="mt-checkbox mt-checkbox-single mt-checkbox-outline" >' +
+                    '<input type="checkbox" class="checkboxes" value="' + procedures[p] + '" checked>' +
+                    '<span></span>' +
+                    '</label><span class="checkbox_text">' + procedures[p] + '</span></span>')
+            if (p != 0 || p % lengthOfCheckbox == 0) {
+                $('#procedure_type').append('</div>')
+            }
+        }
+
+        $('.checkboxes').change(function () {
+            get_requests();
+        })
+
+    }
+
+
+    function get_unchecked_elems() {
+        var unchecked_elems = []
+
+        $('input:checkbox.checkboxes').each(function () {
+            if (!this.checked)
+                unchecked_elems.push($(this).val())
+        });
+
+        return unchecked_elems;
+    }
+
+    function get_requests() {
+        $.ajax({
+            url: "requests/?new=True&unchecked_elems="+String(get_unchecked_elems()),
+            method: "GET",
+            contentType: "application/json; charset=utf-8",
+            success: function (result) {
+                $('#requests').empty();
+                $('#requests').append($(result));
+            },
+        });
+
+    }
+
+</script>

@@ -1,0 +1,30 @@
+.account-title {
+    color: #F08094;
+    font-size: 1.6em;
+    padding-left: 1em;
+}
+
+.click-box {
+    background-color: white;
+    border-bottom: groove;
+    border-width: 1px;
+    border-color: #F2F2F2;
+    width: 99%;
+}
+
+.click-box p {
+    font-size: 1.5em;
+    padding-left: 0.3em
+}
+
+.click-box img {
+    width: 3em;
+    position: absolute;
+    right: 1em;
+    top: 0.95em;
+    opacity: 0.4;
+}
+
+.account-first {
+    margin-top: 8em;
+}

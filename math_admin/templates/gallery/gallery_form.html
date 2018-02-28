@@ -1,0 +1,53 @@
+{% csrf_token %}
+<div class="form-body">
+    <div class="row" style="margin: 0 0 20px 0; display: none">
+        <div class="form-group">
+            <div class="input-icon input-icon-sm" style="width: 30%; float: left;">
+                <i class="fa fa-pencil"></i>
+                <input id="patient_firstName" type="text" class="form-control input-sm"
+                       {% if gallery.patient.first_name|length != 0 %}value="{{ gallery.patient.first_name|title }}"{% endif %}
+                       placeholder="Patient First Name">
+            </div>
+            <div class="input-icon input-icon-sm" style="width: 30%; float: left; margin-left: 5%">
+                <i class="fa fa-pencil"></i>
+                <input id="patient_lastName" type="text" class="form-control input-sm"
+                       {% if gallery.patient.last_name|length != 0 %}value="{{ gallery.patient.last_name|title }}"{% endif %}
+                       placeholder="Patient Last Name">
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="input-icon input-icon-sm">
+            <h5>Which procedure(s) was performed?</h5>
+            <i class="fa fa-pencil"></i>
+            <input id="procedure" type="text" class="form-control input-sm" value="{% if gallery.procedure %}{{ gallery.procedure }}{% endif %}">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="input-icon input-icon-sm">
+            <h5>Describe the procedure(s)</h5>
+            <i class="fa fa-pencil"></i>
+            <textarea id="procedure_detail" class="form-control input-sm">{% if gallery.procedure %}{{ gallery.procedure_detail }}{% endif %}</textarea>
+        </div>
+    </div>
+
+    <div class="input-icon input-icon-sm" style="margin-bottom: 55px;">
+        <h5>What was the cost range for the procedure? ex) 1,500~2,000</h5>
+        <div class="input-icon input-icon-sm" style="width: 30%; float: left;">
+            <i class="fa fa-dollar"></i>
+            <input id="min-cost" type="text" class="form-control input-sm" value="{% if gallery.minCost %}{{ gallery.get_min_cost }}{% else %}{% endif %}">
+        </div>
+        <div style="width: 2%; float:left; font-size: 20px; margin-left: 2%">~</div>
+        <div class="input-icon input-icon-sm" style="width: 30%; float: left; margin-left: 2%">
+            <i class="fa fa-dollar"></i>
+            <input id="max-cost" type="text" class="form-control input-sm" value="{% if gallery.maxCost %}{{ gallery.get_max_cost }}{% else %}{% endif %}">
+        </div>
+    </div>
+    <div class="form-actions">
+        <button type="submit" class="btn btn-circle blue uppercase">{% if isNew %}CREATE{% else %}UPDATE{% endif %}</button>
+    </div>
+</div>
+<script>
+    var procedureTypes = "{{ gallery.procedureType }}"
+</script>

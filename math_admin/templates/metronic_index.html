@@ -1,0 +1,32 @@
+{% load static %}
+{% if isLogged %}
+{% include "default/html_begin.html" %}
+
+{% include "default/head.html" %}
+{% include "default/header.html" %}
+
+{% include "default/footer.html" %}
+
+
+<!-- BEGIN CONTAINER -->
+<div class="page-container">
+    {% include "default/sidebar.html" %}
+
+    <div class="page-content-wrapper">
+    <!-- BEGIN CONTENT BODY -->
+        <div class="page-content">
+            {% include "basic_info/profile.html" %}
+        </div>
+    </div>
+</div>
+
+{% include "default/html_end.html" %}
+
+{% else %}
+    {% include "login/page_user_login_5.html" %}
+{% endif %}
+
+
+
+
+

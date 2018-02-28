@@ -1,0 +1,94 @@
+.doctor-list-img {
+    width: 100%;
+    height: 30em;
+}
+
+.doctor-profession {
+    margin-top: 1em;
+    font-size: 1.6em;
+    color: #F07D90;
+}
+
+.list-group-item {
+    background-color: white;
+    margin-top: 1em;
+}
+
+.doctor-name {
+    margin-top: 0.6em;
+}
+
+
+.doctor-banner {
+    width: 100%;
+    height: 30em;
+}
+
+.mySlides {
+    display:none;
+}
+
+.w3-content {
+    margin: 0 0 0 0 !important;
+}
+
+.slides-div {
+    margin-top: -16px;
+}
+
+.doctor-name-div {
+    color: white;
+    position: absolute;
+    top: 0.9em;
+    width: 100%;
+    font-size: 2.2em;
+}
+
+.detail-back-button {
+    margin: 1em 0 0 1em !important;
+}
+
+.doctor-detail-address {
+    position: absolute;
+    bottom: 1.4em;
+    left: 2em;
+    color: white;
+    font-size: 1.4em;
+}
+
+.location-icon {
+    width: 1.4em;
+    margin-top: -0.2em;
+}
+
+.doctor-detail-button {
+    font-size: 2em;
+    padding: 0.8em 0 1em 0;
+    border-bottom: inset;
+    border-width: 1px;
+    cursor: pointer;
+}
+
+#doctor-about-btn {
+    color: #5AB9CD;
+    border-color: #5AB9CD;
+}
+
+.btn-row {
+    background-color: white;
+}
+
+.about-title {
+    font-size: 1.6em;
+    font-weight: 600;
+}
+
+.doctor-about-div {
+    padding: 1em;
+    background-color: white;
+    width: 98%;
+}
+
+.doctor-about-div p {
+    font-size: 1.4em
+}

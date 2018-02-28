@@ -1,0 +1,265 @@
+ {% load static %}
+<!-- BEGIN SAMPLE FORM PORTLET-->
+<div class="portlet light bordered">
+    <div class="portlet-title">
+        <div class="caption font-red-sunglo">
+            <i class="bold icon-user font-red-sunglo"></i>
+            <span class="caption-subject bold uppercase"> {{ request.user.get_full_name }} ({{ request.user.get_age }} years old)</span>
+            <div>
+                <span class="small lowercase">
+                    {% if request.get_day_diff != 0 %}
+                        {{ request.get_day_diff }} days ago
+                    {% elif request.get_hour_diff != 0 %}
+                        {{ request.get_hour_diff }} hours ago
+                    {% else %}
+                        {{ request.get_min_diff }} minutes ago
+                    {% endif %}</span>
+            </div>
+        </div>
+    </div>
+    <div class="portlet-body form">
+        <form role="form">
+            <div class="form-body" style="padding-top: 0">
+                <h4 class="form-section">
+                    <span class="bold">Desired Procedures</span> &nbsp;{{ request.get_procedures }}
+                </h4>
+                <div id="height" style="overflow: hidden;">
+                    {% for photo in images %}
+                    <div>
+                        <a onclick="open_patient_modal('{{ photo.get_http_url }}', '{{ photo.created_at }}' {% if photo.photo.width > photo.photo.height and photo.is_jpeg %},true{% endif %});">
+                           <img data-rotate="0" class="picture" {% if photo.photo.width > photo.photo.height and photo.is_jpeg %}onload="rotate($(this))"{% endif %} style=" transform: rotate(0deg); width: 160px; height: 200px; float: left; margin-right: 5px; margin-top: 5px;" src="{{ photo.get_http_url }}">
+                        </a>
+                        <a>
+                            <img onclick="rotate($(this).parent().parent().find('.picture'))" style="display: block; float:left; margin-left: -29px; margin-top: 5px; width: 25px; opacity: 0.6; left: 62px; z-index: 50;" src="{% static 'assets/global/img/circular.png'%}"/>
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div style="margin-top: 45px; width: 100%">
+                    <h4 class="form-section">
+                        <div class="bold" style="margin-bottom: 15px;">Concern or Question</div>
+                        <div>
+                            {{ request.question }}
+                        </div>
+                    </h4>
+{#                    {% if request.is_want_visiting %}<h4 style="margin-top: -20px; font-family: italic">(This patient is interested in a formal consultation)</h4>{% endif %}#}
+                </div>
+{#                <div>#}
+{#                    <h4 class="form-section">#}
+{#                        <div class="bold" style="margin-bottom: 15px;">Budget</div>#}
+{#                        <div>#}
+{#                            {% if request.get_budget != "" %}{{ request.get_budget }}{% else %}Not Sure{% endif %}#}
+{#                        </div>#}
+{#                    </h4>#}
+{#                </div>#}
+                {% if request.time_frame %}
+                <div>
+                    <h4 class="form-section">
+                        <div class="bold" style="margin-bottom: 15px;">Time Frame</div>
+                        <div>
+                            {{ request.get_time_frame_display }}
+                        </div>
+                    </h4>
+                </div>
+                {% endif %}
+                <div>
+                    <h4 class="form-section">
+                        <div class="bold" style="margin-bottom: 15px;">Previous Procedures</div>
+                        <div>
+                            {% if request.previous_procedures %}{{ request.previous_procedures }}{% else %}None{% endif %}
+                        </div>
+                    </h4>
+                </div>
+                {% if not requestMatch %}
+                <br>
+                <div class="form-group">
+                    <div class="input-icon input-icon-sm">
+                        <h4 class="form-section">
+                            <span class="bold">Write Your Opinion </span> <span style="font-size: 14px; color: red"> (Please write your response in detail with the procedure(s) you recommend, what to expect before & after the procedure, the downtime and so forth)</span>
+                        </h4>
+                        <i class="fa fa-pencil"></i>
+                        <textarea id="opinion" style="height: 150px !important;" class="form-control input-sm" placeholder=""></textarea>
+                    </div>
+                </div>
+
+                <div class="form-group" >
+                    <div class="input-icon input-icon-sm">
+                        <h4 class="form-section">
+                            <span class="bold">Enter The Estimated Cost Or Cost Range </span> <span style="font-size: 14px; color: red"> (Please enter either one of them) </span>
+                        </h4>
+
+                        <i class="fa fa-dollar"></i>
+                        <input type="text" id="estimated-cost" placeholder="Enter the estimated cost for the procedure(s) you recommend above" class="form-control input-sm">
+{#                        <div style="display: none">#}
+                        <div style="color: gray; margin-top: 5px; margin-bottom: 5px;">OR</div>
+                        <div class="input-icon input-icon-sm" style="width: 30%; float: left;">
+                            <i class="fa fa-dollar"></i>
+                            <input id="min-cost" type="text" class="form-control input-sm" value="{% if requestMatch.minCost %}{{ requestMatch.minCost }}{% else %}{% endif %}">
+                        </div>
+                        <div style="width: 2%; float:left; font-size: 20px; margin-left: 2%">~</div>
+                        <div class="input-icon input-icon-sm" style="width: 30%; float: left; margin-left: 2%">
+                            <i class="fa fa-dollar"></i>
+                            <input id="max-cost" type="text" class="form-control input-sm" value="{% if requestMatch.maxCost %}{{ requestMatch.maxCost }}{% else %}{% endif %}">
+                        </div>
+{#                        </div>#}
+                    </div>
+                </div>
+
+                <div class="form-group" style="padding-top: 20px;">
+                    <div class="input-icon input-icon-sm">
+                        <h4 class="form-section">
+                            <span class="bold">Enter Your Discount</span> <span style="font-size: 14px; color: red"> &nbsp;(We advise that you provide a discount to increase the chance of getting matched with the patient) </span>
+                        </h4>
+                        <select id="discount" class="form-control input-sm">
+                            <option value="0" disabled selected>Please select your discount rate.</option>
+                            <option value="5">5%</option>
+                            <option value="10">10%</option>
+                            <option value="15">15%</option>
+                            <option value="20">20%</option>
+                            <option value="25">25%</option>
+                            <option value="30">30%</option>
+                            <option value="35">35%</option>
+                            <option value="40">40%</option>
+                            <option value="45">45%</option>
+                            <option value="50">50%</option>
+                            <option value="55">55%</option>
+                            <option value="60">60%</option>
+                            <option value="65">65%</option>
+                            <option value="70">70%</option>
+                            <option value="75">75%</option>
+                            <option value="80">80%</option>
+                            <option value="85">85%</option>
+                            <option value="90">90%</option>
+                            <option value="95">95%</option>
+                        </select>
+                    </div>
+                </div>
+                {% else %}
+                <div>
+                    <h4 class="form-section">
+                        <div class="bold" style="margin-bottom: 15px;">My Opinion</div>
+                        <div>
+                            {{ requestMatch.opinion }}
+                        </div>
+                    </h4>
+                </div>
+                <div>
+                    <h4 class="form-section">
+                        <div class="bold" style="margin-bottom: 15px;">Estimated Cost</div>
+                        <div>
+                            {{ requestMatch.get_estimated_cost }}
+                        </div>
+                    </h4>
+                </div>
+                <div>
+                    <h4 class="form-section">
+                        <div class="bold" style="margin-bottom: 15px;">Discount</div>
+                        <div>
+                            {{ requestMatch.discount }} %
+                        </div>
+                    </h4>
+                </div>
+                {% endif %}
+                <div class="form-actions">
+                    {% if not requestMatch %}
+                    <button id="reply" type="button" class="btn btn-circle blue uppercase ">SEND</button>
+                    {% endif %}
+                    <button id="back" type="button" class="btn btn-circle blue uppercase pull-right">Back to List</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- END SAMPLE FORM PORTLET-->
+<script>
+    var requestId = '{{ request.id }}'
+
+    $('#back').click(function () {
+        $.ajax({
+            url: "back_from_consult/",
+            method: "GET",
+            contentType: "application/json; charset=utf-8",
+            success: function (result) {
+                $('.page-content').empty();
+                $('.page-content').append($(result));
+            }
+        });
+    })
+
+    $('#reply').click(function () {
+        if (!$('#opinion').val()){
+            alert('Please fill in the opinion.')
+            return false;
+        }
+
+        if($('#estimated-cost').val() && (!$.isNumeric($('#estimated-cost').val()) || String($('#estimated-cost').val()).includes('.'))){
+            alert('Please enter a numeric number only for the estimated cost.')
+            return false;
+        }
+
+        if($('#min-cost').val() && (!$.isNumeric($('#min-cost').val()) || String($('#min-cost').val()).includes('.') || String($('#min-cost').val()).includes(','))){
+            alert('Please enter a numeric number only for the cost.')
+            return false;
+        }
+
+        if($('#max-cost').val() && (!$.isNumeric($('#max-cost').val()) || String($('#max-cost').val()).includes('.') || String($('#max-cost').val()).includes(','))){
+            alert('Please enter a numeric number only for the cost.')
+            return false;
+        }
+
+        if($('#estimated-cost').val() && ($('#min-cost').val() || $('#max-cost').val())){
+            alert('Please enter only either of estimated cost or range costs');
+            return false;
+        }
+
+        if(!$('#estimated-cost').val() && (!$('#min-cost').val() || !$('#max-cost').val())){
+            alert('Please enter both range costs');
+            return false;
+        }
+
+        if(!$('#estimated-cost').val() && !$('#min-cost').val() && !$('#max-cost').val()){
+            alert('Please enter either of estimated cost or range costs');
+            return false;
+        }
+
+        if(!$('#discount').val()){
+            alert('Please select your discount');
+            return false;
+        }
+
+
+        $.ajax({
+            url: "consult_req_content/",
+            type: "POST",
+            data: {id: requestId, opinion: $('#opinion').val(), estimatedCost: $('#estimated-cost').val(),
+                minCost: $('#min-cost').val(), maxCost: $('#max-cost').val(), discount: $('#discount').val(), CSRF: csrftoken},
+            success: function (result) {
+                $('.page-content').empty();
+                $('.page-content').append($(result));
+            }
+        });
+    })
+
+    function rotate(img_elem){
+        img_elem.data('rotate', (parseInt(img_elem.data('rotate'))+90) % 360)
+        img_elem.css('transform', 'rotate('+img_elem.data('rotate')+'deg)')
+        if(img_elem.data('rotate') == 90 || img_elem.data('rotate') == 270) {
+            img_elem.css('width', '200px')
+            img_elem.css('height', '160px')
+            img_elem.css('margin-top', '25px')
+            img_elem.css('margin-left', '-20px')
+            img_elem.css('margin-right', '-15px')
+            img_elem.css('margin-bottom', '0px')
+        } else {
+            img_elem.css('width', '160px')
+            img_elem.css('height', '200px')
+            img_elem.css('margin-top', '5px')
+            img_elem.css('margin-left', '0px')
+            img_elem.css('margin-right', '5px')
+            img_elem.css('margin-bottom', '0px')
+        }
+    }
+
+
+
+</script>

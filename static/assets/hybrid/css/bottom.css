@@ -1,0 +1,47 @@
+.bottom-menu {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 11;
+    padding: 1em 0 1em 0;
+    background-color: #eeeeee;
+}
+
+.bottom-icon, .bottom-icon-active {
+    width: 4em;
+    margin-bottom: 0.5em;
+
+}
+
+.bottom-title {
+    font-size: 1.8em;
+    color: #959595;
+}
+
+.bottom-icon-active {
+    display: none;
+}
+
+#consultation .bottom-title {
+    color: #5BBCD0;
+}
+
+#consultation .bottom-icon, #consultation .bottom-icon-active {
+    margin-top: 0.9em;
+    margin-bottom: 0.6em !important;
+}
+
+#before-after .bottom-icon, #before-after .bottom-icon-active {
+    margin-top: 0.5em;
+}
+
+#doctors .bottom-icon, #doctors .bottom-icon-active {
+    width: 3.5em;
+    margin-top: 0.2em;
+}
+
+#account .bottom-icon, #account .bottom-icon-active {
+    width: 4.2em;
+    margin-top: 1.3em;
+}

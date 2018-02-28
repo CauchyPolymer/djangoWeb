@@ -1,0 +1,63 @@
+{% load static %}
+{% for request in requests %}
+<tr class="gradeX odd" role="row">
+    <td class="" style="text-align:center;"> {{ request.user.get_full_name }} </td>
+{#    <td class="" style="text-align:center;"> {{ request.user.get_age }} </td>#}
+    <td class="center" style="text-align:center;"> {{ request.get_procedures }} </td>
+    {% if not new %}
+        <td class="center" style="text-align:center;"> {{ request.user.phone_number }} </td>
+        <td class="center" style="text-align:center;"> {{ request.user.email }} </td>
+    {% endif %}
+    <td class="center" style="text-align:center;"> {{ request.created_at }} </td>
+    <td style="text-align:center;">
+        <button type="button" class="btn btn-circle blue uppercase detail" data-id="{{ request.id }}">{% if action %}Reply{% else %}View{% endif %}</button>
+    </td>
+    {% if new %}
+    <td style="text-align:center;">
+        <button type="button" class="btn btn-circle red uppercase hideDoctor" data-id="{{ request.id }}">Hide</button>
+    </td>
+    {% endif %}
+</tr>
+{% endfor %}
+
+<script>
+    $('.reply').click(function () {
+        $.ajax({
+            url: "requests/",
+            type: "POST",
+            data: {requestId : String($(event.target).data('requestid'))},
+            success: function (result) {
+                if(result.msg)
+                    alert(result.msg)
+            },
+        });
+    })
+
+    $('.detail').click(function () {
+        var id = $(this).data('id')
+        $.ajax({
+            url: "consult_req_content/?id="+id,
+            method: "GET",
+            contentType: "application/json; charset=utf-8",
+            success: function (result) {
+                $('.page-content').empty();
+                $('.page-content').append($(result));
+            }
+        });
+    })
+
+    $('.hideDoctor').click(function () {
+        if(confirm("Are you sure you want to hide?")) {
+            var id = $(this).data('id')
+            $.ajax({
+                url: "hideDoctors/",
+                type: "POST",
+                data: {id: id, CSRF: csrftoken},
+                success: function (result) {
+                    get_requests()
+                }
+            });
+        }
+    })
+
+</script>

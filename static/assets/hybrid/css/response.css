@@ -1,0 +1,31 @@
+.bottom-consultant-icon {
+    width: 7em;
+    height: 7em;
+    border: groove;
+    border-color: #EB3B5F;
+    border-radius: 100% !important;
+    background-color: #EF7995;
+    position: fixed;
+    right: 3em;
+    bottom: 13em;
+    padding-top: 1em;
+}
+
+.bottom-consultant-icon div {
+    color: white;
+}
+
+
+.big-text {
+    font-size: 1.8em;
+}
+
+.small-text {
+    font-size: 1em;
+}
+
+.no-reply {
+    margin-top: 1.8em;
+    padding-bottom: 2.2em;
+}
+

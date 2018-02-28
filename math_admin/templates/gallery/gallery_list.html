@@ -1,0 +1,97 @@
+{% load static %}
+<div class="page-head">
+    <!-- BEGIN PAGE TITLE -->
+    <div class="page-title">
+        <h1>My Gallery List
+            <small>Before & After Gallery</small>
+        </h1>
+    </div>
+    <!-- END PAGE TITLE -->
+</div>
+
+<div class="portlet-title">
+    <div class="caption">
+        <i class="icon-microphone font-dark hide"></i>
+        <span class="caption-subject bold font-dark uppercase"> Recent Updates </span>
+    </div>
+</div>
+
+
+<div class="portlet-body">
+    <div class="row" style="display: block; position: relative;">
+        {% for gallery in galleries %}
+        <div class="col-md-6 " style="display: block; position: relative; margin-top: 20px; cursor: pointer;">
+            <div class="mt-widget-2 galleries">
+                <div class="mt-head" data-gallerysrl="{{ gallery.gallerySrl }}"
+                     style="display: block; opacity: 0.8; position: relative;">
+                    <button data-srl="{{ gallery.gallerySrl }}" type="button"
+                                style="position: absolute; right: 5px; top:5px; opacity: 0.6; background-color: #0d638f" class="btn btn-circle blue uppercase delete-gallery">X</button>
+                    <img class="img" src="{% if gallery.beforePhoto.all|length != 0 %}{{ gallery.get_first_before_photo_url }}{% else %}{% static 'assets/global/img/photo.png' %}{% endif %}" style="z-index: -1; width: 50%; height: 237px; float:left; display: block">
+                    <img class="img" src="{% if gallery.afterPhoto.all|length != 0 %}{{ gallery.get_first_after_photo_url }}{% else %}{% static 'assets/global/img/photo.png' %}{% endif %}" style="z-index: -1; width: 50%; height: 237px; float:right; display: block">
+                    <input class="gallerySrl" type="hidden" value="{{ gallery.gallerySrl }}">
+{#                    <div class="mt-head-user" style="top: -20px; display: block">#}
+{#                        <div class="mt-head-user-img">#}
+{#                            <img style="width: 80px; opacity: 2; height: 80px;" src="{% if gallery.afterPhoto.all|length != 0  %}{{ gallery.get_first_after_photo_url }}{% else %}/static/assets/pages/img/avatars/team7.jpg{% endif %}">#}
+{#                        </div>#}
+{#                        <div class="mt-head-user-info">#}
+{#                            <span class="mt-user-name" style="opacity: 0.9; background-color: #0d638f"><strong style="font-size: 18px ">&nbsp;#}
+{#                                {% if gallery.patient.get_full_name|length != 0 %} {{ gallery.patient.get_full_name }}{% else %}Not Yet Entered{% endif %}&nbsp;&nbsp;&nbsp;</strong>#}
+{#                            </span>#}
+{##}
+{#                            <span class="mt-user-time" style="background: black">#}
+{#                                <i class="icon-user"></i>#}
+{#                                {% if gallery.get_day_diff != 0 %}#}
+{#                                    {{ gallery.get_day_diff }} days ago#}
+{#                                {% elif gallery.get_hour_diff != 0 %}#}
+{#                                    {{ gallery.get_hour_diff }} hours ago#}
+{#                                {% else %}#}
+{#                                    {{ gallery.get_min_diff }} minutes ago#}
+{#                                {% endif %}#}
+{#                                <input class="gallerySrl" type="hidden" value="{{ gallery.gallerySrl }}">#}
+{#                            </span>#}
+{#                        </div>#}
+{#                        #}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<script>
+    $('.img').click(function () {
+        var gallerySrl = $(event.target).parent().parent().find('.gallerySrl').val()
+        $.ajax({
+            url: "admin_gallery/?gallerySrl="+gallerySrl,
+            method: "GET",
+            contentType: "application/json; charset=utf-8",
+            success: function (result) {
+                $('.page-content').empty();
+                $('.page-content').append($(result));
+            }
+        });
+    })
+
+    $('.delete-gallery').click(function () {
+        if (confirm("Are you sure you want to delete this gallery?")) {
+            var gallerySrl = $(event.target).data('srl')
+            $.ajax({
+                url: "admin_gallery/?gallerySrl="+gallerySrl,
+                type: "DELETE",
+                contentType: "application/json; charset=utf-8",
+                success: function (result) {
+                    $('.page-content').empty();
+                    $('.page-content').append($(result));
+                }
+            });
+        } else {
+            return false;
+        }
+
+
+    })
+
+
+
+
+</script>
