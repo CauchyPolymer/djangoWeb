@@ -1,13 +1,13 @@
 .x-large-font {
-    font-size: 45px;
+    font-size: 40px;
 }
 
 .large-font {
-    font-size: 32px;
+    font-size: 28px;
 }
 
 .medium-font {
-    font-size: 23px;
+    font-size: 21px;
 }
 
 .small-font {
@@ -86,7 +86,7 @@ body {
 .main-text {
     position: absolute;
     left: 10%;
-    top: 150px;
+    top: 120px;
     letter-spacing: -4px;
 }
 
