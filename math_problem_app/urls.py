@@ -5,6 +5,6 @@ from math_problem_app.views import *
 
 urlpatterns = [
     url(r'^$', main, name='main'),
-    # url(r'^login/', login, name='login'),
+    url(r'^signIn/', signIn, name='signIn'),
 
 ]

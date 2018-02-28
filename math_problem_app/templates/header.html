@@ -1,0 +1,48 @@
+{% load static %}
+<div class="header">
+    <div class="row">
+        <div class="col-xs-1">
+            <img class="logo-img" src="{% static 'assets/img/logo.png' %}">
+        </div>
+        <div class="col-xs-1 medium-font main-color border-right header-menu">
+            마이페이지
+        </div>
+        <div class="col-xs-1 medium-font main-color border-right header-menu" style="width: 13%">
+            문제집만들기
+        </div>
+        <div class="col-xs-1 medium-font main-color border-right header-menu">
+            인터넷강의
+        </div>
+        <div class="col-xs-1 medium-font main-color border-right header-menu">
+            개인화추천
+        </div>
+        <div class="col-xs-1 medium-font main-color border-right header-menu" style="width: 8%">
+            순위표
+        </div>
+        <div class="col-xs-1 medium-font main-color header-menu">
+            입시컨텐츠
+        </div>
+        <div class="col-xs-1 small-font main-color border-right header-menu login-menu" style="margin-left: 2%">
+            로그인
+        </div>
+        <div class="col-xs-1 small-font main-color border-right header-menu login-menu" style="width: 8%">
+            회원가입
+        </div>
+        <div class="col-xs-1 small-font main-color header-menu login-menu" style="width: 10%">
+            ID/PW 찾기
+        </div>
+    </div>
+</div>
+
+<script>
+    $(".header-menu").mouseover(function(){
+        $(this).css("color", "red");
+    });
+    $(".header-menu").mouseleave(function(){
+        $(this).css("color", "#50519C");
+    });
+
+    $('.logo-img').click(function () {
+        window.location = '/'
+    })
+</script>

@@ -1,0 +1,92 @@
+.x-large-font {
+    font-size: 50px;
+}
+
+.large-font {
+    font-size: 36px;
+}
+
+.medium-font {
+    font-size: 26px;
+}
+
+.small-font {
+    font-size: 18px;
+}
+
+.x-small-font {
+    font-size: 10px;
+}
+
+.main-color {
+    color: #50519C;
+}
+
+.main-background-color {
+    background-color: #50519C;
+}
+
+.white-color {
+    color: white;
+}
+
+
+.border-right {
+    border-right: solid 0.5px #979797;
+}
+
+.logo-img {
+    width: 100%;
+    margin-left: 20%;
+    align-self: center;
+    cursor: pointer;
+}
+
+.header-menu {
+    font-weight: 300;
+    margin-top: 25px;
+    width: 11%;
+    text-align: center;
+    cursor: pointer;
+}
+
+.header-menu-line {
+    margin-top: -15px;
+    color: black;
+}
+
+body {
+    width: 100%;
+    background-color: white;
+}
+
+@media screen and (max-width: 1280px) {
+    body {
+        width: 1280px;
+        overflow-x: scroll;
+        overflow-y: scroll;
+    }
+}
+
+.login-menu {
+    width: 6%;
+    margin-top: 34px;
+}
+
+.main-text {
+    position: absolute;
+    left: 10%;
+    top: 190px;
+}
+
+.main-bottom {
+    width: 105%;
+    height: 120px;
+}
+
+.main-bottom-msg {
+    margin-top: 20px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
