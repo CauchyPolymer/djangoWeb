@@ -14,6 +14,13 @@ def main(request):
     return render(request, 'metronic_index.html', {'isLogged': True if request.session.get('userSrl') else False})
 
 
+def returnHttpResponse(data):
+    return HttpResponse(
+        json.dumps(data),
+        content_type="application/json; charset=utf8"
+    )
+
+
 def login(request):
     if request.POST.get('userEmail'):
         email = str(request.POST.get('userEmail'))
@@ -32,8 +39,6 @@ def login(request):
         return returnHttpResponse({'success': True, 'msg': 'Welcome Math Admin!'})
 
 
-def returnHttpResponse(data):
-    return HttpResponse(
-        json.dumps(data),
-        content_type="application/json; charset=utf8"
-    )
+def logout(request):
+    request.session.delete()
+    return returnHttpResponse({'msg': "logout successfully"})
