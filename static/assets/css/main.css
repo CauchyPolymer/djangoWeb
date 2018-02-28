@@ -1,17 +1,17 @@
 .x-large-font {
-    font-size: 50px;
+    font-size: 45px;
 }
 
 .large-font {
-    font-size: 36px;
+    font-size: 32px;
 }
 
 .medium-font {
-    font-size: 26px;
+    font-size: 23px;
 }
 
 .small-font {
-    font-size: 18px;
+    font-size: 14px;
 }
 
 .x-small-font {
@@ -86,7 +86,8 @@ body {
 .main-text {
     position: absolute;
     left: 10%;
-    top: 190px;
+    top: 150px;
+    letter-spacing: -4px;
 }
 
 .main-bottom {
@@ -98,5 +99,9 @@ body {
     margin-top: 20px;
     font-weight: 600;
     cursor: pointer;
+}
+
+.header {
+    box-shadow: 0 5px #BBBBBB;
 }
 
