@@ -8,6 +8,7 @@
     <meta content="width=device-width, initial-scale=1" name="viewport" />
     <meta content="" name="description" />
     <meta content="" name="author" />
+    <meta name="google-site-verification" content="googled92c898637781d67.html" />
 
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
@@ -33,6 +34,7 @@
         <script src="{% static "assets/global/plugins/jquery.blockui.min.js" %}" type="text/javascript"></script>
         <script src="{% static "assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" %}" type="text/javascript"></script>
         <!-- END CORE PLUGINS -->
+        <script src="{% static "assets/js/models.js" %}" type="text/javascript"></script>
 </head>
 <!-- END HEAD -->
 
@@ -43,7 +45,7 @@
 <div class="main-container">
     <div class="row">
         <div class="col-xs-12" align="right">
-            <iframe height="35%" width="60%" style="opacity: 0.5" src="https://www.youtube.com/embed/WUgvvPRH7Oc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <iframe height="35%" width="55%" style="opacity: 0.5" src="https://www.youtube.com/embed/WUgvvPRH7Oc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         </div>
         <div class="main-color large-font main-text">
             <span class="x-large-font">능동적인</span> 학습환경<br>
@@ -102,11 +104,10 @@
         $.ajax({
             url: "signIn/",
             type: 'GET',
-            data:{userEmail: $('#email').val(), password: $('#password').val()},
+            contentType: "application/json; charset=utf-8",
             success: function (result) {
                 $('.main-container').empty()
                 $('.main-container').append(result)
-
             },
         });
     })

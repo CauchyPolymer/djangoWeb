@@ -1,0 +1,33 @@
+{% load static %}
+
+<div class="row">
+    <div class="cox-xs-12" align="center">
+        <img class="line-bar-img" src="{% static 'assets/img/line-bar03.png' %}">
+    </div>
+</div>
+
+<div class="row" align="center" style="margin-top: 8%">
+    <div class="col-xs-offset-3 col-xs-2">
+        <img class="complete-img" src="{% static 'assets/img/sign-in-complete.png' %}">
+    </div>
+    <div class="col-xs-3 complete-msg-div" align="left">
+        <p class="medium-font main-color complete-msg">{{ user.school }} {{ user.grade }}<br>
+        {{ user.name }}님의<br>
+        가입을 환영합니다!</p>
+        <input id="to-mypage" class="w3-btn white-color medium-font main-background-color to-mypage-btn medium-font" type="button" value="마이페이지로 가기">
+    </div>
+</div>
+
+<script>
+    $('#to-mypage').click(function () {
+        $.ajax({
+            url: "mypage/",
+            type: 'GET',
+            contentType: "application/json; charset=utf-8",
+            success: function (result) {
+                $('.main-container').empty()
+                $('.main-container').append(result)
+            },
+        });
+    })
+</script>
