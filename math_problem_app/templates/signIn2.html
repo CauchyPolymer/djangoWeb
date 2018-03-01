@@ -1,0 +1,320 @@
+{% load static %}
+<div class="row">
+    <div class="cox-xs-12" align="center">
+        <img class="line-bar-img" src="{% static 'assets/img/line-bar02.png' %}">
+    </div>
+</div>
+
+<div class="row" align="center" style="margin-top: 3%">
+    <p class="medium-font main-color">수능 대왕에서 사용하실 정보를 알려주세요!</p>
+    <p class="gray-color" style="font-size: 16px; margin-top: 1%">서비스 사용에 필수적인 정보이므로 정확히 입력하여 주세요.</p>
+</div>
+
+<div class="list-group">
+    <div class="row" align="center" style="margin: 1%">
+        <div class="medium-font col-xs-offset-3 col-xs-2 main-color login-input-text" align="left">
+            아이디
+        </div>
+        <div class="col-xs-4 sign-in-input-div">
+            <input id="id" type="text" class="gray-background-color w3-input login-input">
+        </div>
+        <div class="col-xs-2" align="left">
+            <input id="id-duplicate" class="w3-btn white-color small-font main-background-color sign-in-btn" style="" type="button" value="중복검사">
+        </div>
+    </div>
+
+    <div class="row" align="center" style="margin: 1%">
+        <div class="medium-font col-xs-offset-3 col-xs-2 main-color login-input-text" align="left">
+            비밀번호
+        </div>
+        <div class="col-xs-4 sign-in-input-div">
+            <input id="password" type="password" class="gray-background-color w3-input login-input">
+        </div>
+    </div>
+
+    <div class="row" align="center" style="margin: 1%">
+        <div class="medium-font col-xs-offset-3 col-xs-2 main-color login-input-text" align="left">
+            비밀번호 확인
+        </div>
+        <div class="col-xs-4 sign-in-input-div">
+            <input id="password-check" type="password" class="gray-background-color w3-input login-input">
+        </div>
+    </div>
+
+    <div class="row" align="center" style="margin: 1%">
+        <div class="medium-font col-xs-offset-3 col-xs-2 main-color login-input-text" align="left">
+            이름
+        </div>
+        <div class="col-xs-4 sign-in-input-div">
+            <input id="name" type="text" class="gray-background-color w3-input login-input">
+        </div>
+    </div>
+
+    <div class="row" align="center" style="margin: 1%">
+        <div class="medium-font col-xs-offset-3 col-xs-2 main-color login-input-text" align="left">
+            성별
+        </div>
+        <div class="col-xs-4 sign-in-input-div">
+            <select id="sex" class="gray-background-color w3-input login-input">
+                <option disabled selected>선택해 주세요</option>
+                <option value="man">남성</option>
+                <option value="woman">여성</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="row" align="center" style="margin: 1%">
+        <div class="medium-font col-xs-offset-3 col-xs-2 main-color login-input-text" align="left">
+            휴대전화
+        </div>
+        <div class="col-xs-4 sign-in-input-div">
+            <input id="phone" type="text" class="gray-background-color w3-input login-input">
+        </div>
+        <div class="col-xs-2" align="left">
+            <input id="" class="w3-btn white-color small-font main-background-color sign-in-btn" style="" type="button" value="번호인증">
+        </div>
+    </div>
+
+    <div class="row" align="center" style="margin: 1%">
+        <div class="medium-font col-xs-offset-3 col-xs-2 main-color login-input-text" align="left">
+            이메일
+        </div>
+        <div class="col-xs-4 sign-in-input-div">
+            <input id="email" type="email" class="gray-background-color w3-input login-input">
+        </div>
+        <div class="col-xs-2" align="left">
+            <input id="" class="w3-btn white-color small-font main-background-color sign-in-btn" style="" type="button" value="이메일인증">
+        </div>
+    </div>
+
+    <div class="row" align="center" style="margin: 1%">
+        <div class="medium-font col-xs-offset-3 col-xs-2 main-color login-input-text" align="left">
+            학교
+        </div>
+        <div class="col-xs-4 sign-in-input-div">
+            <input id="school" type="text" class="gray-background-color w3-input login-input">
+        </div>
+        <div class="col-xs-2" align="left">
+            <input id="" class="w3-btn white-color small-font main-background-color sign-in-btn" style="" type="button" value="학생증인증">
+        </div>
+    </div>
+
+    <div class="row" align="center" style="margin: 1%">
+        <div class="medium-font col-xs-offset-3 col-xs-2 main-color login-input-text" align="left">
+            학년
+        </div>
+        <div class="col-xs-4 sign-in-input-div">
+            <select id="grade" class="gray-background-color w3-input login-input">
+                <option disabled selected>선택해 주세요</option>
+                <option value="1학년">1학년</option>
+                <option value="2학년">2학년</option>
+                <option value="3학년">3학년</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+
+<div class="row bottom-btn">
+    <div class="col-xs-offset-3 col-xs-2" align="left">
+        <input id="to-prev" class="w3-btn main-color step-button medium-font gray-background-color" style="margin-left: 38%; z-index: 2;" type="button" value="이전 단계로">
+    </div>
+    <div class="col-xs-offset-1 col-xs-2" align="left">
+        <input id="to-next" class="w3-btn white-color step-button medium-font main-background-color" style="margin-left: -10.5%;" type="button" value="가입완료">
+    </div>
+</div>
+
+<script>
+    exportUserInfo()
+
+    $('#to-prev').click(function () {
+        saveUserInfo()
+        $.ajax({
+            url: "signIn/",
+            type: 'GET',
+            contentType: "application/json; charset=utf-8",
+            success: function (result) {
+                $('.main-container').empty()
+                $('.main-container').append(result)
+
+            },
+        });
+    })
+
+    $('#to-next').click(function () {
+        saveUserInfo()
+        if(!checkUserInfo()){
+            return false;
+        }
+
+        signUp()
+
+    })
+
+    $('#id-duplicate').click(function () {
+        checkIdDuplcate()
+    })
+
+    function saveUserInfo() {
+        userInfo.id = $('#id').val()
+        userInfo.password = $('#password').val()
+        userInfo.passwordCheck = $('#password-check').val()
+        userInfo.name = $('#name').val()
+        userInfo.sex = $('#sex').val()
+        userInfo.phone = $('#phone').val()
+        userInfo.email = $('#email').val()
+        userInfo.school = $('#school').val()
+        userInfo.grade = $('#grade').val()
+    }
+
+    function checkUserInfo() {
+        if(!userInfo.id){
+            alert('아이디를 입력해 주세요.')
+            return false;
+        }
+
+        if(!userInfo.password){
+            alert('비밀번호를 입력해 주세요.')
+            return false;
+        }
+
+        if(!userInfo.passwordCheck){
+            alert('비밀번호를 확인해 주세요.')
+            return false;
+        }
+
+        if(userInfo.password != userInfo.passwordCheck){
+            alert('비밀번호가 다릅니다.')
+            return false;
+        }
+
+        if(!chkPwd(userInfo.password)){
+            return false;
+        }
+
+        if(!userInfo.name){
+            alert('이름을 입력해 주세요.')
+            return false;
+        }
+
+        if(!userInfo.sex){
+            alert('성별을 입력해 주세요.')
+            return false;
+        }
+
+        if(!userInfo.phone){
+            alert('핸드폰 번호를 입력해 주세요.')
+            return false;
+        }
+
+        if(!userInfo.email){
+            alert('이메일을 입력해 주세요.')
+            return false;
+        }
+
+        if(!validateEmail(userInfo.email)) {
+            alert('올바른 이메일 형식을 입력해 주세요.')
+            return false;
+        }
+
+        if(!userInfo.school){
+            alert('학꾜를 입력해 주세요.')
+            return false;
+        }
+
+        if(!userInfo.grade){
+            alert('학년을 입력해 주세요.')
+            return false;
+        }
+
+        if(!userInfo.idDuplicate) {
+            alert('아이디 중복 체크를 해주세요.')
+            return false
+        }
+        return true;
+    }
+
+    function exportUserInfo(){
+        $('#id').val(userInfo.id)
+        $('#password').val(userInfo.password)
+        $('#password-check').val(userInfo.passwordCheck)
+        $('#name').val(userInfo.name)
+        $('#sex').val(userInfo.sex)
+        $('#phone').val(userInfo.phone)
+        $('#email').val(userInfo.email)
+        $('#school').val(userInfo.school)
+        $('#grade').val(userInfo.grade)
+    }
+
+    function checkIdDuplcate(){
+        $.ajax({
+            url: "idDuplicate/?id="+ $('#id').val(),
+            type: 'GET',
+            contentType: "application/json; charset=utf-8",
+            success: function (result) {
+                if(result.success){
+                   userInfo.idDuplicate = true;
+                } else {
+                     userInfo.idDuplicate = false;
+                }
+                alert(result.msg)
+            },
+        });
+    }
+
+    function signUp(){
+        $.ajax({
+            url: "signUp/",
+            type: 'POST',
+            data: {id: userInfo.id, password: userInfo.password, name: userInfo.name, sex: userInfo.sex,
+                    phone: userInfo.phone, email: userInfo.email, school: userInfo.school, grade: userInfo.grade},
+            success: function (result) {
+                if(result.success) {
+                    $.ajax({
+                        url: "signIn3/",
+                        type: 'GET',
+                        contentType: "application/json; charset=utf-8",
+                        success: function (result) {
+                            $('.main-container').empty()
+                            $('.main-container').append(result)
+
+                        },
+                    });
+                }
+            },
+        });
+    }
+
+    function validateEmail(sEmail) {
+        var filter = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+        if (filter.test(sEmail)) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    function chkPwd(str){
+         var pw = str;
+         var num = pw.search(/[0-9]/g);
+         var eng = pw.search(/[a-z]/ig);
+         var spe = pw.search(/[`~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi);
+
+         if(pw.length < 6 || pw.length > 20){
+          alert("비밀번호는 6자리 ~ 20자리 이내로 입력해주세요.");
+          return false;
+         }
+         if(pw.search(/₩s/) != -1){
+          alert("비밀번호는 공백업이 입력해주세요.");
+          return false;
+         } if(num < 0 || eng < 0){
+          alert("비밀번호는 영문, 숫자를 혼합하여 입력해주세요.");
+          return false;
+         }
+
+         return true;
+    }
+
+
+</script>
