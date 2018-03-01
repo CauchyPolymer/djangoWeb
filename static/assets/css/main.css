@@ -92,11 +92,11 @@ body {
 
 .main-bottom {
     width: 101%;
-    height: 120px;
+    height: 100px;
 }
 
 .main-bottom-msg {
-    margin-top: 20px;
+    margin-top: 15px;
     font-weight: 600;
     cursor: pointer;
 }
@@ -134,11 +134,11 @@ body {
 }
 
 .text-box {
-    background-color: #E2E2E2;
+    background-color: #F2F2F2;
     overflow-x: scroll;
     width: 80%;
     height: 35%;
-    border-style: groove;
+    border-style: outset;
     padding: 0 15px 15px 15px
 }
 
@@ -234,12 +234,12 @@ body {
 }
 
 .step-button {
-    width: 240px;
+    width: 230px;
     height: 60px;
 }
 
 .gray-background-color {
-    background-color: #E2E2E2;
+    background-color: #F2F2F2;
 }
 
 .gray-color {
