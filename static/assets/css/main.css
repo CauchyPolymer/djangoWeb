@@ -130,15 +130,15 @@ body {
 
 .line-bar-img {
     width: 90%;
-    margin-top: 70px;
+    margin-top: 5%;
 }
 
 .text-box {
-    background-color: #F2F2F2;
+    background-color: #E2E2E2;
     overflow-x: scroll;
     width: 80%;
     height: 35%;
-    border: outset;
+    border-style: groove;
     padding: 0 15px 15px 15px
 }
 
@@ -234,12 +234,12 @@ body {
 }
 
 .step-button {
-    width: 120%;
+    width: 250px;
     height: 60px;
 }
 
 .gray-background-color {
-    background-color: #F2F2F2;
+    background-color: #E2E2E2;
 }
 
 .gray-color {
@@ -261,7 +261,7 @@ body {
     width: 100px;
     position: absolute;
     top: 6px;
-    left: -25px;
+    left: -10%;
 
 }
 
