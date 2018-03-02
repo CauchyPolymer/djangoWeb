@@ -1,0 +1,18 @@
+{% load static %}
+<div class="row">
+    <div class="col-xs-3 left-menu" align="center">
+        <p class="large-font underline">Daily_Ming</p>
+        <div class="profile-circle"><span class="profile-char white-color">{{ user.name.0 }}</span></div>
+        <p class="mypage-name x-large-font">{{ user.name }}</p>
+        <p class="mypage-email small-font">{{ user.email }}</p>
+        <p class="mypage-left-text medium-font">{{ user.school }} {{ user.grade }}학년</p>
+    </div>
+    <div class="col-xs-9">
+        <div class="row main-bottom main-background-color" align="center">
+            <p class="main-bottom-msg white-color"><span class="x-large-font bold">{{ user.name }}</span><span class="large-font">의 진단결과는?</span></p>
+        </div>
+        <div class="large-font" align="center" style="margin-top: 3%">
+            <span class="x-large-font">{{ user.name }}</span>의 {{ user.get_last_answer.get_created_at }} 진단고사!
+        </div>
+    </div>
+</div>

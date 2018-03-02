@@ -28,9 +28,14 @@ def signIn3(request):
 
 
 def mypage(request):
-    request.session['userId'] = 'test'
+    request.session['userId'] = 'test'      #TODO: delete on service
     user = getLoginUser(request)
     return render(request, 'mypage.html', {'user': user})
+
+
+def mypage2(request):
+    user = getLoginUser(request)
+    return render(request, 'mypage2.html', {'user': user})
 
 
 def returnHttpResponse(data):

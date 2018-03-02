@@ -10,6 +10,7 @@ urlpatterns = [
     url(r'^signIn3/', signIn3, name='signIn3'),
     url(r'^signUp/', signUp, name='signUp'),
     url(r'^mypage/', mypage, name='mypage'),
+    url(r'^mypage2/', mypage2, name='mypage2'),
     url(r'^idDuplicate/', idDuplicate, name='id_duplicate'),
     url(r'^getRateData/', getRateData, name='getRateData'),
 ]
