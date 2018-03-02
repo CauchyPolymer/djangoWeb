@@ -23,12 +23,14 @@ def signIn2(request):
 
 
 def signIn3(request):
-    user = User.objects.get(id=request.session['userId'])
+    user = getLoginUser(request)
     return render(request, 'signIn3.html', {'user': user})
 
 
 def mypage(request):
-    return render(request, 'mypage.html')
+    request.session['userId'] = 'test'
+    user = getLoginUser(request)
+    return render(request, 'mypage.html', {'user': user})
 
 
 def returnHttpResponse(data):
@@ -36,6 +38,14 @@ def returnHttpResponse(data):
         json.dumps(data),
         content_type="application/json; charset=utf8"
     )
+
+
+def getLoginUser(request):
+    if request.session.get('userId'):
+        id = str(request.session.get('userId'))
+    else:
+        return False
+    return User.objects.get(id=id)
 
 
 def idDuplicate(request):
@@ -68,3 +78,16 @@ def signUp(request):
     request.session['userId'] = user.id
 
     return returnHttpResponse({'success': True, 'msg': '회원가입이 완료 되었습니다.'})
+
+
+def getRateData(request):
+    user = getLoginUser(request)
+    if not user or not user.rate:
+        return returnHttpResponse([{'label' : '1등급', 'y': 1}, {'label' : '3등급', 'y': 3}, {'label' : '2등급', 'y': 2}, {'label' : '1등급', 'y': 1},
+                {'label' : '2등급', 'y': 2}, {'label' : '1등급', 'y': 1}])
+
+    data = [{'label': str(user.rate.su1) + '등급', 'y': user.rate.su1}, {'label': str(user.rate.su2) + '등급', 'y': user.rate.su2},
+            {'label': str(user.rate.mi1) + '등급', 'y': user.rate.mi1}, {'label': str(user.rate.mi2) + '등급', 'y': user.rate.mi2},
+            {'label': str(user.rate.givec) + '등급', 'y': user.rate.givec}, {'label': str(user.rate.hwaktong) + '등급', 'y': user.rate.hwaktong}]
+
+    return returnHttpResponse(data)

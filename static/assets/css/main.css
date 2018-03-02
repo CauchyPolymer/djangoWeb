@@ -272,7 +272,6 @@ body {
 .bottom-btn {
     margin-top: 4%;
     margin-bottom: 4%;
-
 }
 
 .complete-img {
@@ -292,4 +291,12 @@ body {
 
 .complete-msg {
     line-height: 42px;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.bold {
+    font-weight: 700;
 }

@@ -11,4 +11,5 @@ urlpatterns = [
     url(r'^signUp/', signUp, name='signUp'),
     url(r'^mypage/', mypage, name='mypage'),
     url(r'^idDuplicate/', idDuplicate, name='id_duplicate'),
+    url(r'^getRateData/', getRateData, name='getRateData'),
 ]

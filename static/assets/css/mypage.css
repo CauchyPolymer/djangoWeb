@@ -1,0 +1,36 @@
+.profile-circle {
+    margin-top: 5%;
+    width: 120px;
+    height: 120px;
+    border-radius: 100%;
+    background-color: #f5a623;
+    padding-top: 12px;
+    border: groove;
+    border-width: 1px;
+}
+
+.left-menu {
+    padding-top: 3%;
+    background-color: #e8eaf6;
+    z-index: -1;
+    height: 100%;
+}
+
+.profile-char {
+    font-size: 60px;
+    padding-top: 3%;
+}
+
+.mypage-name {
+    margin-top: 8%;
+}
+
+.mypage-left-text {
+    margin-top: 15%;
+}
+
+.mypage-bottom {
+    position: absolute;
+    opacity: 0.4;
+    top: 50%;
+}

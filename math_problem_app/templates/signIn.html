@@ -68,6 +68,7 @@ Integer lobortis mollis diam vel tincidunt. Pellentesque vehicula neque nec odio
 
 <script>
     history.pushState(null, null, "#signIn");
+    $(window).unbind("hashchange")
     $(window).bind("hashchange", function(){
         window.location = '/'
     });

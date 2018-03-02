@@ -19,6 +19,20 @@
 </div>
 
 <script>
+    history.pushState(null, null, "#signIn3");
+    $(window).unbind("hashchange")
+    $(window).bind("hashchange", function(){
+        $.ajax({
+            url: "signIn2/",
+            type: 'GET',
+            contentType: "application/json; charset=utf-8",
+            success: function (result) {
+                $('.main-container').empty()
+                $('.main-container').append(result)
+            },
+        })
+    });
+
     $('#to-mypage').click(function () {
         $.ajax({
             url: "mypage/",
