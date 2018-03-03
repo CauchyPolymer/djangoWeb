@@ -60,8 +60,8 @@ class Photo(models.Model):
 class Problem(models.Model):
     problemSrl = models.AutoField(primary_key=True)
     value = models.CharField(max_length=2000, blank=True, null=True)
-    photo1 = models.ForeignKey(Photo, related_name='photo1', blank=True, null=True)
-    photo2 = models.ForeignKey(Photo, related_name='photo2', blank=True, null=True)
+    photo1 = models.ForeignKey(Photo, related_name='photo1', blank=True, null=True, on_delete=models.CASCADE)
+    photo2 = models.ForeignKey(Photo, related_name='photo2', blank=True, null=True,  on_delete=models.CASCADE)
     answer = models.IntegerField(blank=True, null=True)
 
     createdAt = models.DateTimeField(auto_now_add=True)
@@ -78,13 +78,13 @@ class Problem(models.Model):
 class Test(models.Model):
     testSrl = models.AutoField(primary_key=True)
 
-    p1 = models.ForeignKey(Problem, related_name="p1", blank=True, null=True)
-    p2 = models.ForeignKey(Problem, related_name="p2", blank=True, null=True)
-    p3 = models.ForeignKey(Problem, related_name="p3", blank=True, null=True)
-    p4 = models.ForeignKey(Problem, related_name="p4", blank=True, null=True)
-    p5 = models.ForeignKey(Problem, related_name="p5", blank=True, null=True)
-    p6 = models.ForeignKey(Problem, related_name="p6", blank=True, null=True)
-    p7 = models.ForeignKey(Problem, related_name="p7", blank=True, null=True)
+    p1 = models.ForeignKey(Problem, related_name="p1", blank=True, null=True, on_delete=models.CASCADE)
+    p2 = models.ForeignKey(Problem, related_name="p2", blank=True, null=True, on_delete=models.CASCADE)
+    p3 = models.ForeignKey(Problem, related_name="p3", blank=True, null=True, on_delete=models.CASCADE)
+    p4 = models.ForeignKey(Problem, related_name="p4", blank=True, null=True, on_delete=models.CASCADE)
+    p5 = models.ForeignKey(Problem, related_name="p5", blank=True, null=True, on_delete=models.CASCADE)
+    p6 = models.ForeignKey(Problem, related_name="p6", blank=True, null=True, on_delete=models.CASCADE)
+    p7 = models.ForeignKey(Problem, related_name="p7", blank=True, null=True, on_delete=models.CASCADE)
 
     createdAt = models.DateTimeField(auto_now_add=True)
     updatedAt = models.DateTimeField(auto_now=True)
