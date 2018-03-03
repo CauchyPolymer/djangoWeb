@@ -13,7 +13,7 @@
     padding-top: 3%;
     background-color: #e8eaf6;
     z-index: -1;
-    height: 100%;
+    height: 120%;
 }
 
 .profile-char {
@@ -33,4 +33,28 @@
     position: absolute;
     opacity: 0.4;
     top: 50%;
+}
+
+.test-result-table {
+    background-color: white;
+    margin-top: 4%;
+}
+
+.test-result-table-div {
+    height: 70%;
+}
+
+.pie-chart-div {
+    margin-top: 6%;
+}
+
+.test-chart-div {
+    height: 84%;
+}
+
+.chart-desc-div {
+    position: absolute;
+    top: 55%;
+    left: 0;
+    width: 100%;
 }

@@ -1,7 +1,7 @@
 {% load static %}
 <div class="row">
     <div class="col-xs-3 left-menu" align="center">
-        <p class="large-font underline">Daily_Ming</p>
+        <p class="large-font underline">{{ user.id }}</p>
         <div class="profile-circle"><span class="profile-char white-color">{{ user.name.0 }}</span></div>
         <p class="mypage-name x-large-font">{{ user.name }}</p>
         <p class="mypage-email small-font">{{ user.email }}</p>
@@ -31,9 +31,15 @@
     </div>
 </div>
 <script>
+    history.pushState(null, null, "#mypage");
+    $(window).unbind("hashchange")
+    $(window).bind("hashchange", function(){
+        goToMain()
+    });
+
     $('#test').click(function () {
         $.ajax({
-            url: "mypage2/",
+            url: "estimationStart/",
             type: 'GET',
             contentType: "application/json; charset=utf-8",
             success: function (result) {

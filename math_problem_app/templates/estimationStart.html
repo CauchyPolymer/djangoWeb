@@ -1,0 +1,64 @@
+{% load static %}
+<div class="row" style="margin-top: 5%">
+    <div class="col-xs-12" align="center">
+        <p class="medium-font main-color">평가 방식을 선택해 주세요.</p>
+        <p class="small-font gray-color">평가를 하면 좋은 점 한줄정도 소개</p>
+    </div>
+</div>
+
+<div class="row">
+    <div id="online-test" class="col-xs-6 right-border estimation-start-div" align="center">
+        <p class="medium-font main-color">온라인으로 평가하는 시스템으로<br>별도의 출력과정이 없는 것이 강점입니다.</p>
+        <img class="estimation-start-img" src="{% static 'assets/img/desktop@3x.png' %}">
+        <p class="large-font main-color" style="margin-top: 3%">온라인으로 평가하기</p>
+        <p class="medium-font sea-color">클릭 시 이동합니다.</p>
+    </div>
+
+    <div id="offline-test" class="col-xs-6 estimation-start-div" align="center">
+        <p class="medium-font main-color">오프라인으로 평가하는 시스템으로<br>직접 문제에 필기할 수 있는 것이 강점입니다.</p>
+        <img class="estimation-start-img" src="{% static 'assets/img/printer@3x.png' %}">
+        <p class="large-font main-color" style="margin-top: 6%">오프라인으로 평가하기</p>
+        <p class="medium-font sea-color">클릭 시 이동합니다.</p>
+    </div>
+</div>
+
+<script>
+    history.pushState(null, null, "#estimationStart");
+    $(window).unbind("hashchange")
+    $(window).bind("hashchange", function(){
+        $.ajax({
+            url: "mypage/",
+            type: 'GET',
+            contentType: "application/json; charset=utf-8",
+            success: function (result) {
+                $('.main-container').empty()
+                $('.main-container').append(result)
+            },
+        });
+    });
+
+    $('#online-test').click(function () {
+        $.ajax({
+            url: "mypage2/",
+            type: 'GET',
+            contentType: "application/json; charset=utf-8",
+            success: function (result) {
+                $('.main-container').empty()
+                $('.main-container').append(result)
+            },
+        });
+    })
+
+    $('#offline-test').click(function () {
+        $.ajax({
+            url: "mypage2/",
+            type: 'GET',
+            contentType: "application/json; charset=utf-8",
+            success: function (result) {
+                $('.main-container').empty()
+                $('.main-container').append(result)
+            },
+        });
+    })
+
+</script>

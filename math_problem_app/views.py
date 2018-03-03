@@ -10,6 +10,11 @@ from django.views.decorators.csrf import csrf_exempt
 from math_problem_app.models import User
 
 
+
+def head(request):
+    return render(request, 'head.html')
+
+
 def main(request):
     return render(request, 'main.html')
 
@@ -96,3 +101,11 @@ def getRateData(request):
             {'label': str(user.rate.givec) + '등급', 'y': user.rate.givec}, {'label': str(user.rate.hwaktong) + '등급', 'y': user.rate.hwaktong}]
 
     return returnHttpResponse(data)
+
+
+def estimationStart(request):
+    return render(request, 'estimationStart.html')
+
+
+def createLecture(request):
+    return render(request, 'createLecture.html')

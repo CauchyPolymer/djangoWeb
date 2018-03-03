@@ -70,11 +70,19 @@ Integer lobortis mollis diam vel tincidunt. Pellentesque vehicula neque nec odio
     history.pushState(null, null, "#signIn");
     $(window).unbind("hashchange")
     $(window).bind("hashchange", function(){
-        window.location = '/'
+        goToMain()
     });
 
     $('#to-home').click(function () {
-        window.location = '/'
+        $.ajax({
+            url: "main/",
+            type: 'GET',
+            contentType: "application/json; charset=utf-8",
+            success: function (result) {
+                $('.main-container').empty()
+                $('.main-container').append(result)
+            },
+        });
     })
 
     $('#to-next').click(function () {

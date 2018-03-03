@@ -10,7 +10,7 @@
         <div class="col-xs-1 medium-font main-color border-right header-menu" style="width: 13%">
             문제집만들기
         </div>
-        <div class="col-xs-1 medium-font main-color border-right header-menu">
+        <div id="lecture" class="col-xs-1 medium-font main-color border-right header-menu">
             인터넷강의
         </div>
         <div class="col-xs-1 medium-font main-color border-right header-menu">
@@ -43,7 +43,7 @@
     });
 
     $('.logo-img').click(function () {
-        window.location = '/'
+        goToMain()
     })
 
     $('#mypage').click(function () {
@@ -61,6 +61,18 @@
     $('#signup').click(function () {
          $.ajax({
             url: "signIn/",
+            type: 'GET',
+            contentType: "application/json; charset=utf-8",
+            success: function (result) {
+                $('.main-container').empty()
+                $('.main-container').append(result)
+            },
+        });
+    })
+
+    $('#lecture').click(function () {
+        $.ajax({
+            url: "createLecture/",
             type: 'GET',
             contentType: "application/json; charset=utf-8",
             success: function (result) {
