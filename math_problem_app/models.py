@@ -135,7 +135,7 @@ class User(models.Model):
     grade = models.CharField(max_length=20, blank=True, null=True)
 
     rate = models.ForeignKey(Rating, blank=True, null=True, on_delete=models.CASCADE)
-    answers = models.ManyToManyField(Answer, blank=True, null=True, on_delete=models.CASCADE)
+    answers = models.ManyToManyField(Answer, blank=True, null=True)
 
     createdAt = models.DateTimeField(auto_now_add=True)
     updatedAt = models.DateTimeField(auto_now=True)
