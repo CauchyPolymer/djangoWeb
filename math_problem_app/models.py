@@ -107,7 +107,7 @@ class Answer(models.Model):
     a6 = models.IntegerField(blank=True, null=True)
     a7 = models.IntegerField(blank=True, null=True)
 
-    test = models.ForeignKey(Test, blank=False, null=False)
+    test = models.ForeignKey(Test, blank=False, null=False, on_delete=models.CASCADE)
 
     createdAt = models.DateTimeField(auto_now_add=True)
     updatedAt = models.DateTimeField(auto_now=True)
@@ -134,8 +134,8 @@ class User(models.Model):
     school = models.CharField(max_length=200, blank=True, null=True)
     grade = models.CharField(max_length=20, blank=True, null=True)
 
-    rate = models.ForeignKey(Rating, blank=True, null=True)
-    answers = models.ManyToManyField(Answer, blank=True, null=True)
+    rate = models.ForeignKey(Rating, blank=True, null=True, on_delete=models.CASCADE)
+    answers = models.ManyToManyField(Answer, blank=True, null=True, on_delete=models.CASCADE)
 
     createdAt = models.DateTimeField(auto_now_add=True)
     updatedAt = models.DateTimeField(auto_now=True)
