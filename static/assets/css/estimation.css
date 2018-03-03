@@ -1,0 +1,19 @@
+.right-border {
+    border-right: groove;
+    border-width: 1px;
+    border-color: #50519C;
+}
+
+.estimation-start-div {
+    cursor: pointer;
+    margin-top: 3%;
+}
+
+.estimation-start-img {
+    width: 60%;
+    margin-top: 3%;
+}
+
+.sea-color {
+    color: #29B8C2;
+}

@@ -125,6 +125,20 @@
 </div>
 
 <script>
+    history.pushState(null, null, "#signIn2");
+    $(window).unbind("hashchange")
+    $(window).bind("hashchange", function(){
+        $.ajax({
+            url: "signIn/",
+            type: 'GET',
+            contentType: "application/json; charset=utf-8",
+            success: function (result) {
+                $('.main-container').empty()
+                $('.main-container').append(result)
+            },
+        });
+    });
+
     exportUserInfo()
 
     $('#to-prev').click(function () {

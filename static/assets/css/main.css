@@ -26,6 +26,26 @@
     background-color: #50519C;
 }
 
+.main-blur-background-color {
+     background-color: #959ED5;
+}
+
+.main-x-blur-background-color {
+     background-color: #BDC3E6;
+}
+
+.main-2x-blur-background-color {
+     background-color: #E5E7F5;
+}
+
+.blue-background-color {
+    background-color: #3748AC;
+}
+
+.blue-blur-background-color {
+    background-color: #5160B8;
+}
+
 .white-color {
     color: white;
 }
@@ -272,7 +292,6 @@ body {
 .bottom-btn {
     margin-top: 4%;
     margin-bottom: 4%;
-
 }
 
 .complete-img {
@@ -293,3 +312,12 @@ body {
 .complete-msg {
     line-height: 42px;
 }
+
+.underline {
+    text-decoration: underline;
+}
+
+.bold {
+    font-weight: 700;
+}
+
