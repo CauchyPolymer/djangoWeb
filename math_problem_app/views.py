@@ -113,3 +113,7 @@ def createLecture(request):
 
 def googled92c898637781d67(request):
     return render(request, 'googled92c898637781d67.html')
+
+
+def lecture(request):
+    return render(request, 'lecture.html')
