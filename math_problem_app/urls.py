@@ -16,4 +16,5 @@ urlpatterns = [
     url(r'^getRateData/', getRateData, name='getRateData'),
     url(r'^estimationStart/', estimationStart, name='estimationStart'),
     url(r'^createLecture/', createLecture, name='createLecture'),
+    url(r'^googled92c898637781d67.html/', googled92c898637781d67, name='googled92c898637781d67.html'),
 ]
