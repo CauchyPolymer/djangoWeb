@@ -56,16 +56,16 @@
 }
 
 .logo-img {
-    width: 100%;
+    width: 80%;
     margin-left: 20%;
+    margin-top: 15px;
     align-self: center;
     cursor: pointer;
 }
 
 .header-menu {
-    font-weight: 300;
+    font-weight: 400;
     margin-top: 25px;
-    width: 11%;
     text-align: center;
     cursor: pointer;
 }
@@ -123,6 +123,7 @@ body {
 
 .header {
     box-shadow: 0 5px #BBBBBB;
+    height: 80px;
 }
 
 .line-bar-circle {

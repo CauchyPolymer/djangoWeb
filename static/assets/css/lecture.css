@@ -16,3 +16,75 @@
     background-color: #09AFB9;
 }
 
+.lecture-left-box {
+    border-bottom: groove;
+    border-width: 1px;
+    width: 100%;
+    height: 130px;
+    padding: 0;
+    padding-top: 30px;
+    background-color: #BDC3E6;
+    cursor: pointer;
+}
+
+.lecture-left-menu {
+    height: 200%;
+    background-color: #E5E7F5;
+}
+
+.lecture-left-sub-box {
+    height: 50px;
+    border-top: groove;
+    border-bottom: groove;
+    border-width: 1px;
+    padding-top: 10px;
+    padding-left: 15%;
+    cursor: pointer;
+    display: none;
+}
+
+.lecture-left-sub-sub-box {
+    padding-left: 15%;
+    cursor: pointer;
+    display: none;
+}
+
+#lecture-search {
+    width: 80%;
+    height: 80px;
+    margin-top: 5%;
+}
+
+#lecture-search-icon {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    right: 25%;
+    top: 35%;
+    cursor: pointer;
+}
+
+.lecture-container:first-child {
+    margin-left: 2%;
+    margin-right: -2%;
+}
+
+.lecture-container:last-child {
+    margin-right: 2%;
+    margin-left: -2%;
+}
+
+.lecture {
+    width: 80%;
+}
+
+.star-img {
+    width: 25px;
+    margin: -3px -5px 0 -5px;
+}
+
+.lecture-desc {
+    width: 80%;
+    height: 50px;
+    padding-top: 8px;
+}
