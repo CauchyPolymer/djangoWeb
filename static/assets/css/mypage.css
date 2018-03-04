@@ -49,12 +49,12 @@
 }
 
 .test-chart-div {
-    height: 84%;
+    height: 85%;
 }
 
 .chart-desc-div {
     position: absolute;
-    top: 55%;
+    top: 65%;
     left: 0;
     width: 100%;
 }
