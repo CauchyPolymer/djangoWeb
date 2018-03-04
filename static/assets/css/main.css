@@ -108,6 +108,7 @@ body {
     left: 10%;
     top: 120px;
     letter-spacing: -4px;
+    /*background-image: linear-gradient(to right, #e491ff, #abd9ff);*/
 }
 
 .main-bottom {
