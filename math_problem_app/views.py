@@ -109,3 +109,7 @@ def estimationStart(request):
 
 def createLecture(request):
     return render(request, 'createLecture.html')
+
+
+def googled92c898637781d67(request):
+    return render(request, 'googled92c898637781d67.html')
