@@ -1,12 +1,18 @@
 import json
 
 import re
+import uuid
+
+import datetime
+import mandrill
+from django.core.mail import send_mail
 from django.http import HttpResponse
 from django.shortcuts import render
 
 # Create your views here.
 from django.views.decorators.csrf import csrf_exempt
 
+from math_problem import settings
 from math_problem_app.models import User
 
 
@@ -16,7 +22,10 @@ def head(request):
 
 
 def main(request):
-    return render(request, 'main.html')
+    user = None
+    if request.session.get('userId'):
+        user = User.objects.get(id=str(request.session.get('userId')))
+    return render(request, 'main.html', {'user': user})
 
 
 def signIn(request):
@@ -33,9 +42,11 @@ def signIn3(request):
 
 
 def mypage(request):
-    request.session['userId'] = 'test'      #TODO: delete on service
     user = getLoginUser(request)
-    return render(request, 'mypage.html', {'user': user})
+    if user:
+        return render(request, 'mypage.html', {'user': user})
+    else:
+        return render(request, 'login.html')
 
 
 def mypage2(request):
@@ -117,3 +128,119 @@ def googled92c898637781d67(request):
 
 def lecture(request):
     return render(request, 'lecture.html')
+
+
+@csrf_exempt
+def login(request):
+    if request.method == "GET":
+        return render(request, 'login.html')
+    elif request.method == "POST":
+        id = str(request.POST.get('id'))
+        password = str(request.POST.get('password'))
+        loginStay = str(request.POST.get('loginStay'))
+
+        print(loginStay)
+
+        if not User.objects.filter(id=id).exists():
+            return returnHttpResponse({'success': False, 'msg': '해당 아이디가 존재 하지 않습니다.'})
+
+        user = User.objects.get(id=id)
+        if not user.check_password(password):
+            return returnHttpResponse({'success': False, 'msg': '비밀번호가 틀렸습니다.'})
+
+        request.session['userId'] = user.id
+        if loginStay == 'true':
+            request.session.set_expiry(3600 * 24 * 7) # 7일
+        return returnHttpResponse({'success': True, 'msg': id +'님 환영합니다.'})
+
+
+def logout(request):
+    request.session.delete()
+    return returnHttpResponse({'msg': '로그아웃 되었습니다.'})
+
+
+def findPassword(request):
+    return render(request, 'findPassword.html')
+
+
+def findPassword2(request):
+    return render(request, 'findPassword2.html')
+
+
+def sendPasswordEmail(request):
+    email = str(request.GET.get('email'))
+    key = str(uuid.uuid4())[:6]
+    msg = '수능 대왕 비밀번호 변경 인증 키는\n' + key + '\n 입니다.'
+    if not send_email('수능 대왕 비밀번호 변경', msg, email, ''):
+        return returnHttpResponse({'success': False, 'msg': '이메일이 전송되지 않았습니다.'})
+    request.session['key'] = key
+    return returnHttpResponse({'success': True, 'msg': '이메일이 정상적으로 보내졌습니다.'})
+
+
+@csrf_exempt
+def changePassword(request):
+    id = str(request.POST.get('id'))
+    password = str(request.POST.get('password'))
+    key = str(request.POST.get('key'))
+    if key != str(request.session.get('key')):
+        return returnHttpResponse({'success': False, 'msg': '인증 키 값이 잘못 입력되었습니다.'})
+
+    if not User.objects.filter(id=id).exists():
+        return returnHttpResponse({'success': False, 'msg': '해당 아이디가 존재 하지 않습니다.'})
+    user = User.objects.get(id=id)
+    user.set_password(password)
+    user.save()
+
+    return returnHttpResponse({'success': True, 'msg': '비밀번호가 올바르게 변경 되었습니다.'})
+
+
+def findPassword3(request):
+    return render(request, 'findPassword3.html')
+
+
+def send_email(title, body, to_email, to_name):
+    try:
+        mandrill_client = mandrill.Mandrill(settings.MANDRILL_API_KEY)
+        message = {'auto_html': None,
+                   'auto_text': None,
+                   'from_email': 'contact@sndw.co.kr',
+                   'from_name': 'BeautySocial',
+                   'headers': {'Reply-To': 'contact@sndw.co.kr'},
+                   # 'html': '<p>Example HTML content</p>',
+                   'text': body,
+                   'important': False,
+                   'inline_css': None,
+                   'merge': True,
+                   'merge_language': 'mailchimp',
+                   'metadata': {'website': 'http://sndw.co.kr'},
+                   'preserve_recipients': None,
+                   'return_path_domain': None,
+                   'signing_domain': None,
+                   'subject': title,
+                   'to': [{'email': to_email,
+                           'name': to_name,
+                           'type': 'to'}],
+                   'track_clicks': None,
+                   'track_opens': None,
+                   'tracking_domain': None,
+                   'url_strip_qs': None,
+                   'view_content_link': None}
+
+        result = mandrill_client.messages.send(message=message, async=False, ip_pool='Main Pool',
+                                               send_at=datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
+        '''
+        [{'_id': 'abc123abc123abc123abc123abc123',
+          'email': 'recipient.email@example.com',
+          'reject_reason': 'hard-bounce',
+          'status': 'sent'}]
+        '''
+        print(result)
+        return True
+    except mandrill.Error as e:
+        # Mandrill errors are thrown as exceptions
+        print('A mandrill error occurred: %s - %s' % (e.__class__, e))
+        return False
+
+
+def board(request):
+    return render(request, 'board.html')
