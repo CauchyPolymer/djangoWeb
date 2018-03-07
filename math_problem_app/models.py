@@ -57,12 +57,46 @@ class Photo(models.Model):
         return True if self.get_extention().upper() in ['JPEG', 'JPG'] else False
 
 
+PROBLEM_TYPE = {
+    (1, '내신형'),
+    (2, '수능형'),
+    (3, '개념확인형'),
+    (4, '개념응용형'),
+}
+
+PROBLEM_DIFFICULTY = {
+    (1, '쉬움'),
+    (2, '중간'),
+    (3, '어려움'),
+}
+
+UNIT = {
+    (1, '수1'),
+    (2, '수2'),
+    (3, '미적1'),
+    (4, '미적2'),
+}
+
+
+class ProblemUnit(models.Model):
+    problemUnitSrl = models.AutoField(primary_key=True)
+    unit = models.IntegerField(choices=UNIT, blank=True, null=True)
+
+    def __str__(self):
+        return str(self.get_unit_display())
+
+
 class Problem(models.Model):
     problemSrl = models.AutoField(primary_key=True)
     value = models.CharField(max_length=2000, blank=True, null=True)
     photo1 = models.ForeignKey(Photo, related_name='photo1', blank=True, null=True, on_delete=models.CASCADE)
     photo2 = models.ForeignKey(Photo, related_name='photo2', blank=True, null=True,  on_delete=models.CASCADE)
     answer = models.IntegerField(blank=True, null=True)
+
+    type = models.IntegerField(choices=PROBLEM_TYPE, blank=True, null=True)
+    difficulty = models.IntegerField(choices=PROBLEM_DIFFICULTY, blank=True, null=True)
+    unit = models.ManyToManyField(ProblemUnit, blank=True, null=True)
+
 
     createdAt = models.DateTimeField(auto_now_add=True)
     updatedAt = models.DateTimeField(auto_now=True)
@@ -78,13 +112,7 @@ class Problem(models.Model):
 class Test(models.Model):
     testSrl = models.AutoField(primary_key=True)
 
-    p1 = models.ForeignKey(Problem, related_name="p1", blank=True, null=True, on_delete=models.CASCADE)
-    p2 = models.ForeignKey(Problem, related_name="p2", blank=True, null=True, on_delete=models.CASCADE)
-    p3 = models.ForeignKey(Problem, related_name="p3", blank=True, null=True, on_delete=models.CASCADE)
-    p4 = models.ForeignKey(Problem, related_name="p4", blank=True, null=True, on_delete=models.CASCADE)
-    p5 = models.ForeignKey(Problem, related_name="p5", blank=True, null=True, on_delete=models.CASCADE)
-    p6 = models.ForeignKey(Problem, related_name="p6", blank=True, null=True, on_delete=models.CASCADE)
-    p7 = models.ForeignKey(Problem, related_name="p7", blank=True, null=True, on_delete=models.CASCADE)
+    problems = models.ManyToManyField(Problem, blank=True, null=True)
 
     createdAt = models.DateTimeField(auto_now_add=True)
     updatedAt = models.DateTimeField(auto_now=True)

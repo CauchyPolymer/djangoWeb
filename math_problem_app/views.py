@@ -244,3 +244,12 @@ def send_email(title, body, to_email, to_name):
 
 def board(request):
     return render(request, 'board.html')
+
+
+def createTest(request):
+    user = getLoginUser(request)
+    return render(request, 'createTest.html', {'user': user})
+
+
+def problemBox(request):
+    return render(request, 'problemBox.html')

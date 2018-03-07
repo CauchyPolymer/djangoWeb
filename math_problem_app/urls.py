@@ -26,5 +26,7 @@ urlpatterns = [
     url(r'^sendPasswordEmail/', sendPasswordEmail, name='sendPasswordEmail'),
     url(r'^changePassword/', changePassword, name='changePassword'),
     url(r'^board/', board, name='board'),
+    url(r'^createTest/', createTest, name='createTest'),
+    url(r'^problemBox/', problemBox, name='problemBox'),
 
 ]
