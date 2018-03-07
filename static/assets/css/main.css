@@ -61,6 +61,7 @@
     margin-top: 15px;
     align-self: center;
     cursor: pointer;
+    max-height: 65px;
 }
 
 .header-menu {
@@ -105,9 +106,8 @@ body {
 
 .main-text {
     position: absolute;
-    left: 10%;
-    top: 120px;
-    letter-spacing: -4px;
+    left: 20%;
+    top: 40px;
     /*background-image: linear-gradient(to right, #e491ff, #abd9ff);*/
 }
 
@@ -321,5 +321,81 @@ body {
 
 .bold {
     font-weight: 700;
+}
+
+.login-input {
+    padding-left: 10%;
+    width: 117%;
+}
+
+.login-page-input {
+    width: 100%;
+    margin-left: 0;
+    height: 80px !important;
+}
+
+.login-box {
+    margin-top: 10%;
+    background-color: white;
+    width: 50%;
+    height: 50%;
+    padding: 5% 8% 5% 8%;
+}
+
+.login-div {
+    background-image: linear-gradient(to right, #e491ff, #abd9ff);
+    height: 130%;
+}
+
+.blue-color {
+    color: #374BA6;
+}
+
+.login-btn {
+    width: 100%;
+    margin-top: 0;
+    height: 80px;
+}
+
+.login-stay-label {
+}
+
+.find-password {
+    padding-top: 5%;
+    cursor: pointer;
+}
+
+.find-password-box {
+    padding: 3% 8% 3% 8%;
+}
+
+.find-password-btn {
+    opacity: 0.5;
+}
+
+.find-password-box-02 {
+    margin-top: 7%;
+    height: 80%;
+}
+
+.change-password-logo {
+    width: 50%;
+}
+
+.find-password-03-box {
+    height: 50%;
+}
+
+.main-left {
+    background-image: linear-gradient(to right, #e491ff, #abd9ff);
+    height: 35%;
+}
+
+.estimate {
+    position: absolute;
+    top: 60%;
+    left: 30%;
+    width: 40%;
+    height: 60px;
 }
 

@@ -19,13 +19,13 @@
         <div class="col-xs-1 medium-font main-color  header-menu" style="width: 8%">
             랭킹
         </div>
-        <div class="col-xs-1 medium-font main-color header-menu">
+        <div id="board" class="col-xs-1 medium-font main-color header-menu">
             입시정보
         </div>
-        <div class="col-xs-1 small-font main-color border-right header-menu login-menu" style="margin-left: 15%">
+        <div id="login" class="col-xs-1 small-font main-color border-right header-menu login-menu" style="margin-left: 15%; width: 7%">
             로그인
         </div>
-        <div id="signup" class="col-xs-1 small-font main-color  header-menu login-menu" style="width: 6%">
+        <div id="signup" class="col-xs-1 small-font main-color  header-menu login-menu" style="width: 7%">
             회원가입
         </div>
 {#        <div class="col-xs-1 small-font main-color header-menu login-menu" style="width: 10%">#}
@@ -73,6 +73,30 @@
     $('#lecture').click(function () {
         $.ajax({
             url: "lecture/",
+            type: 'GET',
+            contentType: "application/json; charset=utf-8",
+            success: function (result) {
+                $('.main-container').empty()
+                $('.main-container').append(result)
+            },
+        });
+    })
+
+    $('#login').click(function () {
+        $.ajax({
+            url: "login/",
+            type: 'GET',
+            contentType: "application/json; charset=utf-8",
+            success: function (result) {
+                $('.main-container').empty()
+                $('.main-container').append(result)
+            },
+        });
+    })
+
+    $('#board').click(function () {
+        $.ajax({
+            url: "board/",
             type: 'GET',
             contentType: "application/json; charset=utf-8",
             success: function (result) {

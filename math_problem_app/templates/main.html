@@ -1,18 +1,18 @@
 {% load static %}
 <div class="row">
-    <div class="col-xs-12" align="right">
-        <iframe height="35%" width="55%" style="opacity: 0.5" src="https://www.youtube.com/embed/WUgvvPRH7Oc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <div class="col-xs-6 main-left">
+        <div class="main-color large-font main-text white-color">
+            시키는 대로만해.<br>
+            필요한 걸 알려줄게.<br>
+            수학의 모든 것 <span class="x-large-font bold">수능대왕</span>
+        </div>
+        <input id="estimate" type="button" class="white-color large-font main-bottom-msg estimate main-background-color" value="실력 측정하기!">
     </div>
-    <div class="main-color large-font main-text">
-        시키는 대로만해.<br>
-        필요한 걸 알려줄게.<br>
-        수학의 모든 것 <span class="x-large-font">수능대왕</span>
+    <div class="col-xs-6" align="right" style="padding-left: 0">
+        <iframe height="35%" width="100%" style="opacity: 0.5" src="https://www.youtube.com/embed/WUgvvPRH7Oc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
     </div>
 </div>
 
-<div class="row main-background-color main-bottom" align="center">
-    <p class="white-color x-large-font main-bottom-msg">나의 실력 측정하기!</p>
-</div>
 
 <div class="row">
     <div class="col-xs-offset-1 col-xs-10">
@@ -52,7 +52,7 @@
         $(this).css("color", "white");
     });
 
-    $('.main-bottom').click(function () {
+    $('#estimate').click(function () {
         $.ajax({
             url: "signIn/",
             type: 'GET',
@@ -64,4 +64,33 @@
         });
     })
 
+    {% if user %}
+    $('#login').text('로그아웃')
+    $('#login').unbind('click')
+    $('#login').click(function () {
+        $.ajax({
+            url: "logout/",
+            type: 'GET',
+            contentType: "application/json; charset=utf-8",
+            success: function (result) {
+                goToMain()
+                alert(result.msg)
+            },
+        });
+    })
+    {% else %}
+    $('#login').text('로그인')
+    $('#login').unbind('click')
+    $('#login').click(function () {
+        $.ajax({
+            url: "login/",
+            type: 'GET',
+            contentType: "application/json; charset=utf-8",
+            success: function (result) {
+                $('.main-container').empty()
+                $('.main-container').append(result)
+            },
+        });
+    })
+    {% endif %}
 </script>

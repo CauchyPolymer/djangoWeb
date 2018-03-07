@@ -1,0 +1,38 @@
+#board-table {
+}
+
+.board-left-btn {
+    width: 70%;
+    height: 40px;
+    padding-left: 5%;
+    cursor: pointer;
+}
+
+.board-color {
+    background-color: #6C6ECD;
+}
+
+#board-search-icon {
+    position: absolute;
+    left: 20px;
+    top: 10px;
+    width: 30px;
+}
+
+#board-search-input {
+    width: 40%;
+    height: 50px;
+    border: none;
+    padding-left: 35px;
+}
+
+#board-search-btn {
+    width: 100px;
+    height: 50px;
+    margin-top: -5px;
+}
+
+.pagination>li>a:focus, .pagination>li>a:hover, pagination>li>span:focus, pagination>li>span:hover{
+    background-color: #6A70C7 !important;
+    color: white;
+}

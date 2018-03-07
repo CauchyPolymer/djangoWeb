@@ -1,0 +1,54 @@
+{% load static %}
+<div class="row login-div">
+    <div class="col-x-12" align="center">
+        <div class="row" align="center">
+            <div class="col-xs-offset-3 col-xs-4 login-box" align="left">
+                <input id="id" type="text" class="w3-input login-input x-large-font w3-border login-page-input" placeholder="아이디">
+                <input id="password" type="password" class="w3-input login-input x-large-font w3-border login-page-input" placeholder="비밀번호">
+                <br>
+                <label class="container small-font" style="top: 5px;">
+                    <input id="login-stay" type="checkbox" >
+                    <span class="checkmark" style="top: 3px;"></span>
+                    <span class="gray-color medium-font login-stay-label">로그인 상태 유지</span>
+                </label>
+                <br>
+                <input id="login-btn" class="login-btn w3-btn white-color step-button x-large-font blue-background-color" type="button" value="로그인">
+                <br><br>
+                <p align="left"><a id="find-password" class="blue-color medium-font bold find-password">비밀번호 찾기</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $('#login-btn').click(function () {
+        var id = $('#id').val()
+        var password = $('#password').val()
+        $.ajax({
+            url: "login/",
+            type: 'POST',
+            data: {id: id, password: password, loginStay: $('#login-stay').is(':checked')},
+            success: function (result) {
+                if(result.success) {
+                    goToMain()
+                    alert(result.msg)
+                } else {
+                    alert(result.msg)
+                }
+            },
+        });
+    })
+
+    $('#find-password').click(function () {
+        $.ajax({
+            url: "findPassword/",
+            type: 'GET',
+            contentType: "application/json; charset=utf-8",
+            success: function (result) {
+                $('.main-container').empty()
+                $('.main-container').append(result)
+            },
+        });
+    })
+
+</script>

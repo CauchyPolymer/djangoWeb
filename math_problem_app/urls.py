@@ -18,4 +18,13 @@ urlpatterns = [
     url(r'^createLecture/', createLecture, name='createLecture'),
     url(r'^googled92c898637781d67.html/', googled92c898637781d67, name='googled92c898637781d67.html'),
     url(r'^lecture/', lecture, name='lecture'),
+    url(r'^login/', login, name='login'),
+    url(r'^logout/', logout, name='logout'),
+    url(r'^findPassword/', findPassword, name='findPassword'),
+    url(r'^findPassword2/', findPassword2, name='findPassword2'),
+    url(r'^findPassword3/', findPassword3, name='findPassword3'),
+    url(r'^sendPasswordEmail/', sendPasswordEmail, name='sendPasswordEmail'),
+    url(r'^changePassword/', changePassword, name='changePassword'),
+    url(r'^board/', board, name='board'),
+
 ]

@@ -129,3 +129,7 @@ STATIC_ROOT = ''
 STATIC_URL = '/static/'
 STATICFILES_DIRS = ( os.path.join('static'), )
 
+
+MANDRILL_API_KEY = 'cvOqYwfjpLwYp2JfiDyTfg'
+
+EMAIL_BACKEND = 'django_smtp_ssl.SSLEmailBackend'
