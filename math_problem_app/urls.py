@@ -28,5 +28,6 @@ urlpatterns = [
     url(r'^board/', board, name='board'),
     url(r'^createTest/', createTest, name='createTest'),
     url(r'^problemBox/', problemBox, name='problemBox'),
+    url(r'^ranking/', ranking, name='ranking'),
 
 ]

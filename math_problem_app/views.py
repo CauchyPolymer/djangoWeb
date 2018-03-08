@@ -253,3 +253,7 @@ def createTest(request):
 
 def problemBox(request):
     return render(request, 'problemBox.html')
+
+
+def ranking(request):
+    return render(request, 'ranking.html')
