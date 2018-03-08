@@ -1,0 +1,32 @@
+.ranking-div {
+    border: outset;
+    width: 29%;
+    height: 65%;
+}
+
+.ranking-icon {
+    width: 50%;
+    margin-top: 6%;
+
+}
+
+.ranking-num-first {
+    color: #d0021b;
+}
+
+.ranking-num-second {
+    color: #ff8a00;
+}
+
+.ranking-num-third {
+    color: #7879d3;
+}
+
+.ranking-box {
+    margin-top: 3%;
+    padding: 0 2% 0 2%;
+}
+
+.ranking-blank {
+    margin-left: 3%;
+}
