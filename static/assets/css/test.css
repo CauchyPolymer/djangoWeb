@@ -1,0 +1,50 @@
+.create-test-left-box {
+    cursor: none;
+}
+
+.test-complete {
+    color: #91CF48;
+}
+
+.test-box {
+    border-bottom: groove;
+    border-width: 1px;
+    padding-top: 45px;
+    background-color: #E5E7F4;
+}
+
+.test-type-check-box {
+    padding: 5% 5% 8% 5%;
+    border-bottom: groove;
+    border-width: 1px;
+}
+
+.unit-box {
+    border: groove;
+    border-width: 1px;
+    height: 52px;
+    padding-top: 11px;
+}
+
+.checked-unit {
+    background-color: #5790DC;
+}
+
+.test-btn {
+    width: 150px !important;
+    padding-left: 16px;
+}
+
+.problem-box-div {
+    border: groove;
+    border-width: 1px;
+    margin-top: 5%;
+}
+
+.problem-box {
+    width: 17.5%;
+    margin: 2% 2% 2% 0;
+    border: groove;
+    border-width: 1px;
+    display: inline-flex;
+}

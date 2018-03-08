@@ -1,17 +1,17 @@
 .x-large-font {
-    font-size: 40px;
+    font-size: 36px;
 }
 
 .large-font {
-    font-size: 28px;
+    font-size: 24px;
 }
 
 .medium-font {
-    font-size: 21px;
+    font-size: 18px;
 }
 
 .small-font {
-    font-size: 14px;
+    font-size: 13px;
 }
 
 .x-small-font {
@@ -55,7 +55,8 @@
     border-right: solid 0.5px #979797;
 }
 
-.logo-img {
+.logo-img
+{
     width: 80%;
     margin-left: 20%;
     margin-top: 15px;
@@ -331,14 +332,14 @@ body {
 .login-page-input {
     width: 100%;
     margin-left: 0;
-    height: 80px !important;
+    height: 65px !important;
 }
 
 .login-box {
     margin-top: 10%;
     background-color: white;
     width: 50%;
-    height: 50%;
+    height: 55%;
     padding: 5% 8% 5% 8%;
 }
 
@@ -354,7 +355,8 @@ body {
 .login-btn {
     width: 100%;
     margin-top: 0;
-    height: 80px;
+    height: 65px;
+    padding-top: 4px;
 }
 
 .login-stay-label {
@@ -375,7 +377,7 @@ body {
 
 .find-password-box-02 {
     margin-top: 7%;
-    height: 80%;
+    height: 90%;
 }
 
 .change-password-logo {
@@ -388,7 +390,7 @@ body {
 
 .main-left {
     background-image: linear-gradient(to right, #e491ff, #abd9ff);
-    height: 35%;
+    height: 42%;
 }
 
 .estimate {

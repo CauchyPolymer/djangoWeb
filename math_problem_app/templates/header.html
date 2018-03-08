@@ -7,7 +7,7 @@
         <div id="mypage" class="col-xs-1 medium-font main-color header-menu" style="width: 10%">
             마이페이지
         </div>
-        <div class="col-xs-1 medium-font main-color  header-menu">
+        <div id="create-test" class="col-xs-1 medium-font main-color  header-menu">
             문제은행
         </div>
         <div id="lecture" class="col-xs-1 medium-font main-color  header-menu">
@@ -105,4 +105,17 @@
             },
         });
     })
+
+    $('#create-test').click(function () {
+        $.ajax({
+            url: "createTest/",
+            type: 'GET',
+            contentType: "application/json; charset=utf-8",
+            success: function (result) {
+                $('.main-container').empty()
+                $('.main-container').append(result)
+            },
+        });
+    })
+
 </script>
