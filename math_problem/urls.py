@@ -14,10 +14,15 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url, include
+from django.conf.urls.static import static
 from django.contrib import admin
+
+from math_problem import settings
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^', include('math_problem_app.urls')),
     url(r'^custom_admin/', include('math_admin.urls')),
 ]
+
+urlpatterns += static('/custom_admin/', document_root=settings.MEDIA_ROOT)

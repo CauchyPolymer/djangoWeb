@@ -2,34 +2,18 @@
 <div class="page-head">
     <!-- BEGIN PAGE TITLE -->
     <div class="page-title">
-        <h1>My Profile
+        <h1>문제 등록
         </h1>
     </div>
     <!-- END PAGE TITLE -->
 </div>
-{#<div class="row">#}
-{#    <div class="col-md-8">#}
-{#        <div class="portlet light bordered">#}
-{#            <span>Currently Selected Doctor: &nbsp;#}
-{#                <select id="doctor">#}
-{#                    <option value="{{ doctorProfile.doctorProfileSrl }}" selected>{{ doctorProfile.get_full_name }}</option>#}
-{#                    {% for userDoctorProfile in userDoctorProfiles %}#}
-{#                        {% if doctorProfile.doctorProfileSrl !=  userDoctorProfile.doctor.doctorProfileSrl %}#}
-{#                        <option value="{{ userDoctorProfile.doctor.doctorProfileSrl }}">{{ userDoctorProfile.doctor.get_full_name }}</option>#}
-{#                        {% endif %}#}
-{#                    {% endfor %}#}
-{#                </select>#}
-{#            </span>#}
-{#        </div>#}
-{#    </div>#}
-{#</div>#}
 <div class="row">
     <div class="col-md-8">
         <div class="portlet light bordered">
             <div class="portlet-title">
                 <div class="caption font-red-sunglo">
                     <i class="bold icon-user font-red-sunglo"></i>
-                    <span class="caption-subject bold uppercase">  Upload photos of your profile, office, team, etc. (min 5 photos)</span>
+                    <span class="caption-subject bold uppercase">  문제 이미지 업로드</span>
                 </div>
             </div>
             <div class="portlet-body form">
@@ -55,8 +39,8 @@
         <div class="portlet light bordered">
             <div class="pomrtlet-title">
                 <div class="caption font-red-sunglo">
-                    <i class="bold icon-user font-red-sunglo"></i>
-                    <span class="caption-subject bold uppercase"> Basic Information </span>
+                    <i class="bold icon-envelope font-red-sunglo"></i>
+                    <span class="caption-subject bold uppercase"> 문제 정보</span>
                     <div>
                         <span class="small lowercase">
                         </span>
@@ -82,7 +66,7 @@
             document.getElementById("images").src = e.target.result;
         };
 
-        // read the image file as a data URL.
+    // read the image file as a data URL.
         reader.readAsDataURL(this.files[0]);
     };
 
@@ -92,7 +76,7 @@
         var formData = new FormData($(this)[0]);
 
         $.ajax({
-            url: "profile_photo/",
+            url: "problem_photo/",
             type: "POST",
             data: formData,
             success: function (result) {
@@ -108,68 +92,24 @@
         e.preventDefault();
     });
 
-    function isValidZipCode(zipcode){
-        if (zipcode.length == 5) {
-            return $.isNumeric(zipcode)
-        } else {
-            return $.isNumeric(String(zipcode).substring(0,5) + String(zipcode).substring(6,10)) && zipcode[5] == '-'
-        }
-    }
-
     $('#basic_form').submit(function (e) {
-        var fee = String($('#fee').val()).replace(",", "")
-        if(!$.isNumeric(fee)){
-            alert('Please, insert only digits for Consultation fee.');
-            return false;
-        }
-
-        var multiAddress = ['']
-        var error = false
-
-        $('.multi-address').each(function (i, e) {
-            var addr = {}
-            addr['addr'] = $(e).find('.address').val()
-            addr['zipcode'] = $(e).find('.zipcode').val()
-            addr['city'] = $(e).find('.city').val()
-            addr['state'] = $(e).find('.state').val()
-            console.log(addr)
-            var isEmpty = true
-
-            for (a in addr)
-                if (addr[a] && addr[a] != '' && addr[a] != 'none')
-                    isEmpty = false
-
-            if(!isEmpty){
-                if(!isValidZipCode(addr['zipcode'])){
-                    alert('Please, insert correct Zip Code.')
-                    error = true
-                    return false
-                }
-                multiAddress.push(addr)
-            }
-        })
-
-
-        if(error)
-            return false
 
         $(".se-pre-con").css('display', "block");
-
         $.ajax({
-            url: "save_basic_info/",
+            url: "save_problem/",
             type: "POST",
-            data: {firstName: $('#firstName').val(), lastName: $('#lastName').val(), title: $('#title').val(),
-                    phone: $('#phone').val(), multiAddress: JSON.stringify(multiAddress),
-                    personalStatement: $('#personalStatement').val(), education: $('#education').val(),
-                    expertiseArea: $('#expertiseArea').val(), boardCertifications: $('#boardCertifications').val(),
-                    memberships: $('#memberships').val(), awardAndRecognition: $('#awardAndRecognition').val(),
-                    language: $('#language').val(), specialOrDeals: $('#specialOrDeals').val(), fee: fee,
-                    profession: $('#profession').val()},
+            data: {problemText: $('#problem-text').val(), answer: $('#answer').val(), type: $('#type').val(),
+                    difficulty: $('#difficulty').val(), unit: $('#unit').val().toString()},
             success: function (result) {
-                $('#basic_form').empty();
-                $('#basic_form').append($(result));
+                $('#problem-text').val('')
+                $('#answer').val('')
+                $('#type').val(1)
+                $('#difficulty').val(1)
+                $('#unit').val('')
                 $(".se-pre-con").fadeOut("slow");
-                alert('Successfully Updated.')
+                alert('문제가 등록 되었습니다.')
+                $('#image_list').empty();
+                $('#image_list').append($(result));
 
             },
         });

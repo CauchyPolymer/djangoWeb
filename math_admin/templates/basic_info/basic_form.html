@@ -1,179 +1,54 @@
 {% csrf_token %}
 <div class="form-body">
-    <div class="row" style="margin: 0 0 20px 0;">
-        <div class="form-group">
-            <div class="input-icon input-icon-sm" style="width: 30%; float: left;">
-                <i class="fa fa-pencil"></i>
-                <input id="firstName" type="text" class="form-control input-sm" value="{{ doctorProfile.first_name|title }}" placeholder="Your First Name">
-            </div>
-            <div class="input-icon input-icon-sm" style="width: 30%; float: left; margin-left: 5%">
-                <i class="fa fa-pencil"></i>
-                <input id="lastName" type="text" class="form-control input-sm" value="{{ doctorProfile.last_name|title }}" placeholder="Your Last Name">
-            </div>
-            <div class="input-icon input-icon-sm" style="width: 30%; float: right;">
-                <select id="title" class="form-control input-sm">
-                    <option value="none">Select Your Title</option>
-                    <option value="MD">MD</option>
-                    <option value="DO">DO</option>
-                    <option value="DDS">DDS</option>
-                    <option value="PA-C">PA-C</option>
-                    <option value="RN">RN</option>
-                    <option value="NP">NP</option>
-                    <option value="FNP-C">FNP-C</option>
-                    <option value="LPN">LPN</option>
-                </select>
-            </div>
-        </div>
-    </div>
-    <div class="form-group" style="margin-bottom: 80px;">
-        <div class="input-icon input-icon-sm" style="width: 30%; float: left;">
-            <i class="fa fa-pencil"></i>
-            <input id="profession" type="text" class="form-control input-sm" value="{% if doctorProfile.profession %}{{ doctorProfile.profession }}{% else %}{% endif %}" placeholder="Your Profession (ex. Plastic Surgeon)">
-        </div>
-    </div>
-    <div id="address-form">
-    {% for a in doctorProfile.get_address %}
-        <div class="address-counter">Address {{ forloop.counter }}</div>
-        {% include 'gb_web_doctor/basic_info/address.html' %}
-    {% endfor %}
-    </div>
-    <div class="form-group">
-        <button id="add-address" type="button" class="btn btn-circle green uppercase">Add address</button>
-        <span style="color: gray; float: right">To delete address, just leave all blank.</span>
-    </div>
-
     <div class="form-group">
         <div class="input-icon input-icon-sm">
             <i class="fa fa-pencil"></i>
-            <input id="phone" type="text" class="form-control input-sm" {% if doctorProfile.get_phone_number %}value="{{ doctorProfile.get_phone_number }}"{% endif %} placeholder="Phone Number">
+            <input id="problem-text" type="text" class="form-control input-sm" {% if problem.text %}value="{{ problem.text }}"{% endif %} placeholder="문제 문자열">
         </div>
     </div>
 
     <div class="form-group">
         <div class="input-icon input-icon-sm">
             <i class="fa fa-pencil"></i>
-            <textarea id="personalStatement" class="form-control input-sm" placeholder="Personal statement">{% if doctorProfile.get_personalStatement %}{{ doctorProfile.get_personalStatement }}{% endif %}</textarea>
+            <input id="answer" type="number" class="form-control input-sm" {% if problem.answer %}{{ problem.answer }}{% endif %} placeholder="문제 정답">
         </div>
     </div>
 
     <div class="form-group">
         <div class="input-icon input-icon-sm">
-            <i class="fa fa-pencil"></i>
-            <textarea id="education" class="form-control input-sm" placeholder="Education">{% if doctorProfile.get_education %}{{ doctorProfile.get_education }}{% endif %}</textarea>
+            <select id="type" class="form-control input-sm">
+                <option value="1" {% if problem.type == 1 %}selected{% endif %}>내신형</option>
+                <option value="2" {% if problem.type == 2 %}selected{% endif %}>수능형</option>
+                <option value="3" {% if problem.type == 3 %}selected{% endif %}>개념확인형</option>
+                <option value="4" {% if problem.type == 4 %}selected{% endif %}>개념응용형</option>
+            </select>
         </div>
     </div>
 
     <div class="form-group">
         <div class="input-icon input-icon-sm">
-            <i class="fa fa-pencil"></i>
-            <textarea id="expertiseArea" class="form-control input-sm" placeholder="Areas of expertise (practiced procedures)">{% if doctorProfile.get_expertiseArea %}{{ doctorProfile.get_expertiseArea }}{% endif %}</textarea>
+            <select id="difficulty" class="form-control input-sm">
+                <option value="1" {% if problem.difficulty == 1 %}selected{% endif %}>쉬움</option>
+                <option value="2" {% if problem.difficulty == 2 %}selected{% endif %}>중간</option>
+                <option value="3" {% if problem.difficulty == 3 %}selected{% endif %}>어려움</option>
+            </select>
         </div>
     </div>
 
     <div class="form-group">
         <div class="input-icon input-icon-sm">
-            <i class="fa fa-pencil"></i>
-            <textarea id="boardCertifications" class="form-control input-sm" placeholder="(Optional) Board certifications">{% if doctorProfile.get_boardCertifications %}{{ doctorProfile.get_boardCertifications }}{% endif %}</textarea>
+            <select id="unit" multiple class="form-control input-sm">
+                <option value="1" {% if problem.type == 1 %}selected{% endif %}>수1</option>
+                <option value="2" {% if problem.type == 2 %}selected{% endif %}>수2</option>
+                <option value="3" {% if problem.type == 3 %}selected{% endif %}>미적1</option>
+                <option value="4" {% if problem.type == 4 %}selected{% endif %}>미적2</option>
+                <option value="5" {% if problem.type == 5 %}selected{% endif %}>확통</option>
+                <option value="6" {% if problem.type == 6 %}selected{% endif %}>기벡</option>
+            </select>
         </div>
     </div>
 
-    <div class="form-group">
-        <div class="input-icon input-icon-sm">
-            <i class="fa fa-pencil"></i>
-            <textarea id="memberships" class="form-control input-sm" placeholder="(Optional) Memberships">{% if doctorProfile.get_memberships %}{{ doctorProfile.get_memberships }}{% endif %}</textarea>
-        </div>
-    </div>
-
-    <div class="form-group">
-        <div class="input-icon input-icon-sm">
-            <i class="fa fa-pencil"></i>
-            <textarea id="awardAndRecognition" class="form-control input-sm" placeholder="(Optional) Awards & recognition">{% if doctorProfile.get_awardAndRecognition %}{{ doctorProfile.get_awardAndRecognition }}{% endif %}</textarea>
-        </div>
-    </div>
-
-    <div class="form-group">
-        <div class="input-icon input-icon-sm">
-            <i class="fa fa-pencil"></i>
-            <textarea id="language" class="form-control input-sm" placeholder="(Optional) Languages spoken">{% if doctorProfile.get_language %}{{ doctorProfile.get_language }}{% endif %}</textarea>
-        </div>
-    </div>
-
-    <div class="form-group">
-        <div class="input-icon input-icon-sm">
-            <i class="fa fa-pencil"></i>
-            <textarea id="specialOrDeals" class="form-control input-sm" placeholder="(Optional) Specials or deals">{% if doctorProfile.get_specialOrDeals %}{{ doctorProfile.get_specialOrDeals }}{% endif %}</textarea>
-        </div>
-    </div>
-
-    <div class="form-group" style="margin-bottom: 70px">
-        <div>Consultation Fee</div>
-        <input id="free" type="button" class="dashboard-stat2 bordered" style="width: 45%; float: left; height: 20px; color: red" value="Free">
-
-        <div class="input-icon input-icon-sm" style="width: 45%; float: right; height: 47px">
-            <i class="fa fa-dollar"></i>
-            <input id="fee" type="text" class="form-control input-sm" {% if doctorProfile.consultationFee >= 0 %}value="{{ doctorProfile.get_fee }}"{% endif %} placeholder="(Optional) Or enter the amount">
-        </div>
-    </div>
     <div class="form-actions">
         <button type="submit" class="btn btn-circle blue uppercase">SAVE</button>
     </div>
 </div>
-
-<script>
-    init_form()
-
-    $('#add-address').click(function () {
-        $.ajax({
-            url: "address_form/",
-            method: "GET",
-            contentType: "application/json; charset=utf-8",
-            success: function (result) {
-                var addrLength = $('.address-counter').length
-                $('#address-form').append('<div class="address-counter">Address '+String(addrLength+1)+'</div>')
-                $('#address-form').append($(result));
-                readyStateSelector($('.multi-address').last())
-            }
-        });
-    })
-
-
-    function init_form() {
-        readyTitleSelector();
-        readyFreeEvent();
-        readyWholeStateSelector();
-    }
-
-    function readyWholeStateSelector() {
-        $('.multi-address').each(function (i, e) {
-            readyStateSelector(e);
-        })
-    }
-
-    function readyStateSelector(e){
-        for( var key in US_states ){
-            var option = '<option value='+ String(key)
-            if(String(key).toUpperCase() == String($(e).find('.state').data('state')).toUpperCase()){
-                option += ' selected=selected'
-            }
-            option +=  ' >' + String(US_states[key]) + '</option>'
-            $(e).find('.state').append(option)
-        }
-    }
-
-
-    function readyTitleSelector(){
-        $('#title').children('option').each(function (i, e) {
-            e = $(e)
-            if(String(e.val()) == '{{ doctorProfile.title }}'){
-                e.attr('selected', 'selected')
-            }
-        })
-    }
-
-    function readyFreeEvent(){
-        $('#free').click(function () {
-            $('#fee').val('0')
-        })
-    }
-
-</script>

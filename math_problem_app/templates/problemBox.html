@@ -1,115 +1,23 @@
 {% load static %}
 <div class="col-xs-12">
+    {% for problem in problems %}
     <div class="problem-box">
-        <label class="container small-font" style="width: 10%; left: 45%; top: 5%">
+        <div class="problem">
+            {{ problem.text }}
+        </div>
+        <label class="container small-font problem-checkbox">
             <input id="private" type="checkbox">
             <span class="checkmark"></span>
         </label>
     </div>
-    <div class="problem-box">
-        <label class="container small-font" style="width: 10%; left: 45%; top: 5%">
-            <input id="private" type="checkbox">
-            <span class="checkmark"></span>
-        </label>
-    </div>
-    <div class="problem-box">
-        <label class="container small-font" style="width: 10%; left: 45%; top: 5%">
-            <input id="private" type="checkbox">
-            <span class="checkmark"></span>
-        </label>
-    </div>
-    <div class="problem-box">
-        <label class="container small-font" style="width: 10%; left: 45%; top: 5%">
-            <input id="private" type="checkbox">
-            <span class="checkmark"></span>
-        </label>
-    </div>
-    <div class="problem-box">
-        <label class="container small-font" style="width: 10%; left: 45%; top: 5%">
-            <input id="private" type="checkbox">
-            <span class="checkmark"></span>
-        </label>
-    </div>
-    <div class="problem-box">
-        <label class="container small-font" style="width: 10%; left: 45%; top: 5%">
-            <input id="private" type="checkbox">
-            <span class="checkmark"></span>
-        </label>
-    </div>
-    <div class="problem-box">
-        <label class="container small-font" style="width: 10%; left: 45%; top: 5%">
-            <input id="private" type="checkbox">
-            <span class="checkmark"></span>
-        </label>
-    </div>
-    <div class="problem-box">
-        <label class="container small-font" style="width: 10%; left: 45%; top: 5%">
-            <input id="private" type="checkbox">
-            <span class="checkmark"></span>
-        </label>
-    </div>
-    <div class="problem-box">
-        <label class="container small-font" style="width: 10%; left: 45%; top: 5%">
-            <input id="private" type="checkbox">
-            <span class="checkmark"></span>
-        </label>
-    </div>
-    <div class="problem-box">
-        <label class="container small-font" style="width: 10%; left: 45%; top: 5%">
-            <input id="private" type="checkbox">
-            <span class="checkmark"></span>
-        </label>
-    </div>
-    <div class="problem-box">
-        <label class="container small-font" style="width: 10%; left: 45%; top: 5%">
-            <input id="private" type="checkbox">
-            <span class="checkmark"></span>
-        </label>
-    </div>
-    <div class="problem-box">
-        <label class="container small-font" style="width: 10%; left: 45%; top: 5%">
-            <input id="private" type="checkbox">
-            <span class="checkmark"></span>
-        </label>
-    </div>
-    <div class="problem-box">
-        <label class="container small-font" style="width: 10%; left: 45%; top: 5%">
-            <input id="private" type="checkbox">
-            <span class="checkmark"></span>
-        </label>
-    </div>
-    <div class="problem-box">
-        <label class="container small-font" style="width: 10%; left: 45%; top: 5%">
-            <input id="private" type="checkbox">
-            <span class="checkmark"></span>
-        </label>
-    </div>
-    <div class="problem-box">
-        <label class="container small-font" style="width: 10%; left: 45%; top: 5%">
-            <input id="private" type="checkbox">
-            <span class="checkmark"></span>
-        </label>
-    </div>
-    <div class="problem-box">
-        <label class="container small-font" style="width: 10%; left: 45%; top: 5%">
-            <input id="private" type="checkbox">
-            <span class="checkmark"></span>
-        </label>
-    </div>
-    <div class="problem-box">
-        <label class="container small-font" style="width: 10%; left: 45%; top: 5%">
-            <input id="private" type="checkbox">
-            <span class="checkmark"></span>
-        </label>
-    </div>
-    <div class="problem-box">
-        <label class="container small-font" style="width: 10%; left: 45%; top: 5%">
-            <input id="private" type="checkbox">
-            <span class="checkmark"></span>
-        </label>
-    </div>
+    {% endfor %}
 </div>
 
 <script>
     $('.problem-box').css('height', $('.problem-box').width())
 </script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>

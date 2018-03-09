@@ -48,3 +48,16 @@
     border-width: 1px;
     display: inline-flex;
 }
+
+.problem {
+    width: 100%;
+    overflow-x: hidden;
+    padding: 10% 10% 10% 10%;
+}
+
+.problem-checkbox {
+    position: relative;
+    width: 10%;
+    left: 10%;
+    top: 5%;
+}
