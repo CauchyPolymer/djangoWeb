@@ -29,5 +29,5 @@ urlpatterns = [
     url(r'^createTest/', createTest, name='createTest'),
     url(r'^problemBox/', problemBox, name='problemBox'),
     url(r'^ranking/', ranking, name='ranking'),
-
+    url(r'^test/', test, name='test'),
 ]

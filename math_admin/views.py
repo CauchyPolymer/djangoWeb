@@ -4,7 +4,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 # Create your views here.
-from math_problem_app.models import User
+from math_problem_app.models import User, Problem, ProblemUnit, Photo
 
 
 def main(request):
@@ -42,3 +42,45 @@ def login(request):
 def logout(request):
     request.session.delete()
     return returnHttpResponse({'msg': "logout successfully"})
+
+
+def save_problem(request):
+    text = str(request.POST.get('problemText'))
+    answer = str(request.POST.get('answer'))
+    type = str(request.POST.get('type'))
+    difficulty = str(request.POST.get('difficulty'))
+    unit = str(request.POST.get('unit'))
+
+    if request.session.get('problemSrl'):
+        problem = Problem.objects.get(problemSrl=int(request.session.get('problemSrl')))
+        problem.text = text
+        problem.answer = int(answer)
+        problem.type = int(type)
+        problem.difficulty = int(difficulty)
+    else:
+        problem = Problem(text=text, answer=int(answer), type=int(type), difficulty=int(difficulty)).store()
+
+    if len(unit) > 0:
+        for u in unit.split(','):
+            problem.unit.add(ProblemUnit(unit=u).store())
+
+    problem.save()
+
+    request.session['problemSrl'] = None
+
+    return render(request, 'basic_info/image_list.html')
+
+
+def problem_photo(request):
+    image = request.FILES.get('photo')
+    photo = Photo(photo=image).store()
+    if request.session.get('problemSrl'):
+        problem = Problem.objects.get(problemSrl=int(request.session.get('problemSrl')))
+    else:
+        problem = Problem().store()
+    problem.photos.add(photo)
+    problem.store()
+
+    request.session['problemSrl'] = problem.problemSrl
+
+    return render(request, 'basic_info/image_list.html', {'problem': problem})

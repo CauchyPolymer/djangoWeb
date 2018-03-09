@@ -20,14 +20,14 @@
                     <div class="col-xs-6">
                         내신형
                         <label class="container small-font" style="left: 50%; margin-top: -26px;">
-                            <input id="private" type="checkbox">
+                            <input id="naesin" type="checkbox" checked>
                             <span class="checkmark"></span>
                         </label>
                     </div>
                     <div class="col-xs-6">
                         수능형
                         <label class="container small-font" style="left: 50%; margin-top: -26px;">
-                            <input id="private" type="checkbox">
+                            <input id="suneung" type="checkbox" checked>
                             <span class="checkmark"></span>
                         </label>
                     </div>
@@ -36,14 +36,14 @@
                     <div class="col-xs-6">
                         개념확인형
                         <label class="container small-font" style="left: 70%; margin-top: -26px;">
-                            <input id="private" type="checkbox">
+                            <input id="gaenyumhwakin" type="checkbox" checked>
                             <span class="checkmark"></span>
                         </label>
                     </div>
                     <div class="col-xs-6">
                         개념응용형
                         <label class="container small-font" style="left: 70%; margin-top: -26px;">
-                            <input id="private" type="checkbox">
+                            <input id="gaenyumeungyong" type="checkbox" checked>
                             <span class="checkmark"></span>
                         </label>
                     </div>
@@ -61,7 +61,7 @@
                 </div>
                 <div class="row">
                     <div class="col-xs-12">
-                        <input type="range" step="1" min="1" max="3">
+                        <input id='difficulty' type="range" step="1" min="1" max="3">
                     </div>
                 </div>
             </div>
@@ -70,7 +70,7 @@
                     <div class="col-xs-2 medium-font unit-box" align="center">
                         수1
                     </div>
-                    <div class="col-xs-2 medium-font unit-box checked-unit" align="center">
+                    <div class="col-xs-2 medium-font unit-box" align="center">
                         수2
                     </div>
                     <div class="col-xs-2 medium-font unit-box" align="center">
@@ -79,7 +79,7 @@
                     <div class="col-xs-2 medium-font unit-box" align="center">
                         미적2
                     </div>
-                    <div class="col-xs-2 medium-font unit-box checked-unit" align="center">
+                    <div class="col-xs-2 medium-font unit-box" align="center">
                         확통
                     </div>
                     <div class="col-xs-2 medium-font unit-box" align="center">
@@ -102,13 +102,74 @@
 </div>
 
 <script>
-    $.ajax({
-        url: "problemBox/",
-        type: 'GET',
-        contentType: "application/json; charset=utf-8",
-        success: function (result) {
-            $('.problem-box-div').empty()
-            $('.problem-box-div').append(result)
-        },
-    });
+    var idx = 0
+    var size = 30
+    var type = [1, 2, 3, 4]
+    var difficulty = 2
+
+    $('#difficulty').change(function(){
+        difficulty = $('#difficulty').val()
+        getProblems()
+    })
+
+    $('#naesin').change(function () {
+        if($(this).is(":checked")){
+            type.push(1)
+        } else {
+            var index = type.indexOf(1)
+            if(index > -1)
+                type.splice(index, 1)
+        }
+        getProblems()
+    })
+
+    $('#suneung').change(function () {
+        if($(this).is(":checked")){
+            type.push(2)
+        } else {
+            var index = type.indexOf(2)
+            if(index > -1)
+                type.splice(index, 1)
+        }
+        getProblems()
+    })
+
+    $('#gaenyumhwakin').change(function () {
+        if($(this).is(":checked")){
+            type.push(3)
+        } else {
+            var index = type.indexOf(3)
+            if(index > -1)
+                type.splice(index, 1)
+        }
+        getProblems()
+    })
+
+    $('#gaenyumeungyong').change(function () {
+        if($(this).is(":checked")){
+            type.push(4)
+        } else {
+            var index = type.indexOf(4)
+            if(index > -1)
+                type.splice(index, 1)
+        }
+        getProblems()
+    })
+
+
+
+    getProblems()
+
+    function getProblems() {
+        $.ajax({
+            url: "problemBox/?idx="+idx+"&size="+size+"&type="+type.toString()+'&difficulty='+difficulty,
+            type: 'GET',
+            contentType: "application/json; charset=utf-8",
+            success: function (result) {
+                $('.problem-box-div').empty()
+                $('.problem-box-div').append(result)
+            },
+        });
+    }
+
 </script>

@@ -32,8 +32,7 @@ class Rating(models.Model):
 
 class Photo(models.Model):
     photoSrl = models.AutoField(primary_key=True)
-    photo = models.ImageField(max_length=200, null=True,
-                              upload_to='resource/photos/'+str(uuid.uuid4()))
+    photo = models.ImageField(max_length=200, null=True, upload_to='photos/')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -75,6 +74,8 @@ UNIT = {
     (2, '수2'),
     (3, '미적1'),
     (4, '미적2'),
+    (5, '확통'),
+    (6, '기벡'),
 }
 
 
@@ -85,24 +86,26 @@ class ProblemUnit(models.Model):
     def __str__(self):
         return str(self.get_unit_display())
 
+    def store(self):
+        self.save()
+        return self
+
 
 class Problem(models.Model):
     problemSrl = models.AutoField(primary_key=True)
-    value = models.CharField(max_length=2000, blank=True, null=True)
-    photo1 = models.ForeignKey(Photo, related_name='photo1', blank=True, null=True, on_delete=models.CASCADE)
-    photo2 = models.ForeignKey(Photo, related_name='photo2', blank=True, null=True,  on_delete=models.CASCADE)
+    text = models.CharField(max_length=2000, blank=True, null=True)
+    photos = models.ManyToManyField(Photo, blank=True, null=True)
     answer = models.IntegerField(blank=True, null=True)
 
     type = models.IntegerField(choices=PROBLEM_TYPE, blank=True, null=True)
     difficulty = models.IntegerField(choices=PROBLEM_DIFFICULTY, blank=True, null=True)
     unit = models.ManyToManyField(ProblemUnit, blank=True, null=True)
 
-
     createdAt = models.DateTimeField(auto_now_add=True)
     updatedAt = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return str(self.value)
+        return str(self.text)
 
     def store(self):
         self.save()

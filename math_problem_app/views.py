@@ -13,8 +13,7 @@ from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 
 from math_problem import settings
-from math_problem_app.models import User
-
+from math_problem_app.models import User, Problem, ProblemUnit, Photo
 
 
 def head(request):
@@ -252,8 +251,21 @@ def createTest(request):
 
 
 def problemBox(request):
-    return render(request, 'problemBox.html')
+    idx = int(request.GET.get('idx'))
+    size = int(request.GET.get('size'))
+    type = str(request.GET.get('type')).split(',') if len(str(request.GET.get('type'))) > 0 else []
+    difficulty = int(request.GET.get('difficulty'))
+
+    problems = Problem.objects.filter(type__in=type, difficulty=difficulty)
+
+    problems = problems[idx:idx+size]
+
+    return render(request, 'problemBox.html', {'problems': problems})
 
 
 def ranking(request):
     return render(request, 'ranking.html')
+
+
+def test(request):
+    return render(request, 'test.html')

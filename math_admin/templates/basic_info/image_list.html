@@ -1,7 +1,7 @@
 {% load static %}
-{% for photo in doctorProfile.photo.all %}
+{% for photo in problem.photos.all %}
     <div>
-        <a onclick="open_picture_modal({{ photo.photoSrl }}, '{{ photo.get_url }}', '{{ photo.created_at }}'{% if photo.photo.width > photo.photo.height and photo.is_jpeg %},true{% endif %});">
+        <a>
            <img data-rotate="0" class="picture" style=" transform: rotate(0deg); width: 160px; height: 200px; float: left; margin-right: 5px; margin-top: 5px; " src="{{ photo.get_url }}">
         </a>
         <a>
