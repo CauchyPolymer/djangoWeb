@@ -12,4 +12,65 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-    ]
+   migrations.CreateModel(
+            name='ProblemUnit',
+            fields=[
+                ('problemUnitSrl', models.AutoField(primary_key=True, serialize=False)),
+                ('unit', models.IntegerField(blank=True, choices=[(3, '미적1'), (1, '수1'), (2, '수2'), (4, '미적2')], null=True)),
+            ],
+        ),
+        migrations.RemoveField(
+            model_name='test',
+            name='p1',
+        ),
+        migrations.RemoveField(
+            model_name='test',
+            name='p2',
+        ),
+        migrations.RemoveField(
+            model_name='test',
+            name='p3',
+        ),
+        migrations.RemoveField(
+            model_name='test',
+            name='p4',
+        ),
+        migrations.RemoveField(
+            model_name='test',
+            name='p5',
+        ),
+        migrations.RemoveField(
+            model_name='test',
+            name='p6',
+        ),
+        migrations.RemoveField(
+            model_name='test',
+            name='p7',
+        ),
+        migrations.AddField(
+            model_name='problem',
+            name='difficulty',
+            field=models.IntegerField(blank=True, choices=[(3, '어려움'), (2, '중간'), (1, '쉬움')], null=True),
+        ),
+        migrations.AddField(
+            model_name='problem',
+            name='type',
+            field=models.IntegerField(blank=True, choices=[(1, '내신형'), (3, '개념확인형'), (4, '개념응용형'), (2, '수능형')], null=True),
+        ),
+        migrations.AddField(
+            model_name='test',
+            name='problems',
+            field=models.ManyToManyField(blank=True, null=True, to='math_problem_app.Problem'),
+        ),
+        migrations.AlterField(
+            model_name='photo',
+            name='photo',
+            field=models.ImageField(max_length=200, null=True, upload_to='resource/photos/a19ada1f-5bc3-4c6a-b45d-67588eeeac1f'),
+        ),
+        migrations.AddField(
+            model_name='problem',
+            name='unit',
+            field=models.ManyToManyField(blank=True, null=True, to='math_problem_app.ProblemUnit'),
+        ),
+	
+ ]
