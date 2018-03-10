@@ -42,18 +42,13 @@
             <li class="nav-item">
                 <a href="javascript:;" class="nav-link nav-toggle">
                     <i class="icon-eye"></i>
-                    <span class="title uppercase" style="font-size: 15px;">Before & After</span>
+                    <span class="title uppercase" style="font-size: 15px;">게시판</span>
                     <span class="arrow open"></span>
                 </a>
                 <ul class="sub-menu always-open">
                     <li class="nav-item  ">
-                        <a id="create_gallery" class="nav-link ">
-                            <span class="title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Create My Gallery</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  ">
-                        <a id="gallery_list" class="nav-link">
-                            <span class="title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;My Gallery List</span>
+                        <a id="create-board" class="nav-link ">
+                            <span class="title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;게시판 글 올리기</span>
                         </a>
                     </li>
                 </ul>
@@ -61,27 +56,13 @@
             <li class="nav-item">
                 <a href="javascript:;" class="nav-link nav-toggle">
                     <i class="icon-settings"></i>
-                    <span class="title uppercase" style="font-size: 15px;">Basic Info</span>
+                    <span class="title uppercase" style="font-size: 15px;">문제</span>
                     <span class="arrow open"></span>
                 </a>
                 <ul class="sub-menu always-open">
                     <li class="nav-item  ">
-                        <a id="profile" class="nav-link ">
-                            <span class="title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;My Profile</span>
-                        </a>
-                    </li>
-                </ul>
-                <ul class="sub-menu always-open" style="display: none">
-                    <li class="nav-item  ">
-                        <a class="nav-link ">
-                            <span class="title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Billing Information</span>
-                        </a>
-                    </li>
-                </ul>
-                <ul class="sub-menu always-open" style="display: none">
-                    <li class="nav-item  ">
-                        <a id="tester" class="nav-link">
-                            <span class="title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TEST Event </span>
+                        <a id="problem" class="nav-link ">
+                            <span class="title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;문제 올리기</span>
                         </a>
                     </li>
                 </ul>
@@ -109,9 +90,9 @@
             });
         })
 
-        $('#create_gallery').click(function () {
+        $('#create-board').click(function () {
             $.ajax({
-                url: "create_gallery/",
+                url: "create_board/",
                 method: "GET",
                 contentType: "application/json; charset=utf-8",
                 success: function (result) {
@@ -121,7 +102,7 @@
             });
         })
 
-        $('#profile').click(function () {
+        $('#problem').click(function () {
             $.ajax({
                 url: "profile/",
                 method: "GET",

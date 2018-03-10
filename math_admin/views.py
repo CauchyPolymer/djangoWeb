@@ -4,7 +4,8 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 # Create your views here.
-from math_problem_app.models import User, Problem, ProblemUnit, Photo
+from math_problem_app.models import User, Problem, ProblemUnit, Photo, Board
+from math_problem_app.views import getLoginUser
 
 
 def main(request):
@@ -84,3 +85,38 @@ def problem_photo(request):
     request.session['problemSrl'] = problem.problemSrl
 
     return render(request, 'basic_info/image_list.html', {'problem': problem})
+
+
+def problem(request):
+    return render(request, 'basic_info/problem.html')
+
+
+def create_board(request):
+    if request.method == 'GET':
+        return render(request, 'board/create_board.html', {'isNew': True})
+
+    if request.method == 'POST':
+        user = getLoginUser(request)
+        type = int(request.POST.get('type'))
+        title = str(request.POST.get('title'))
+        text = str(request.POST.get('text'))
+        if request.POST.get('boardSrl'):
+            board = Board.objects.get(boardSrl=int(request.POST.get('boardSrl')))
+            board.type = type
+            board.title = title
+            board.text = text
+            board.writer = user
+            board.save()
+        else:
+            board = Board(type=type, title=title, text=text, writer=user).store()
+
+        return returnHttpResponse({'msg': '정상적으로 등록되었습니다.'})
+
+
+
+
+
+
+
+
+

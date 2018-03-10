@@ -1,4 +1,5 @@
 import uuid
+from datetime import datetime, timedelta
 
 from django.contrib.auth.hashers import make_password, check_password
 from django.db import models
@@ -198,4 +199,33 @@ class User(models.Model):
     def get_last_answer(self):
         return self.answers.last()
 
+
+BOARD_TYPE = {
+    (1, '소식'),
+    (2, '칼럼'),
+    (3, '진로')
+}
+
+
+class Board(models.Model):
+    boardSrl = models.AutoField(primary_key=True)
+    title = models.CharField(max_length=500, null=True, blank=True)
+    text = models.TextField(max_length=10000, null=True, blank=True)
+    writer = models.ForeignKey(User, null=True, blank=True)
+    viewCnt = models.IntegerField(null=True, blank=True, default=0)
+    recommendCnt = models.IntegerField(null=True, blank=True, default=0)
+    type = models.IntegerField(choices=BOARD_TYPE, null=True, blank=True)
+
+    createdAt = models.DateTimeField(auto_now_add=True)
+    updatedAt = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.title
+
+    def store(self):
+        self.save()
+        return self
+
+    def get_write_day(self):
+        return self.createdAt.time() if self.createdAt.today().date() == datetime.today().date() else str((datetime.today().date() - self.createdAt.today().date()).days) + ' 일전'
 
