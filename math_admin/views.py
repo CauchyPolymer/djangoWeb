@@ -35,6 +35,7 @@ def login(request):
             return returnHttpResponse({'success': False, 'msg': 'Check Your Password Please.'})
 
         request.session['userSrl'] = user.userSrl
+        request.session['userId'] = user.id
         request.session.set_expiry(3600 * 24 * 7)  # 1 week
 
         return returnHttpResponse({'success': True, 'msg': 'Welcome Math Admin!'})
