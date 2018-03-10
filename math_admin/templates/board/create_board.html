@@ -1,0 +1,73 @@
+<style>
+    .checkbox_text {
+        color: #659BE0;
+    }
+
+    .one_checkbox {
+        margin-right: 20px;
+    }
+
+    .procedure_checkbox {
+        margin-bottom: 20px;
+    }
+
+    .filter {
+        margin-bottom: 30px;
+    }
+
+    .types {
+        margin-left: 20px;
+    }
+
+    .type_title {
+        margin-bottom: 10px;
+        margin-top: 40px;
+    }
+
+</style>
+
+<div class="page-head">
+    <!-- BEGIN PAGE TITLE -->
+    <div class="page-title">
+        <h1>Create My Gallery
+            <small>Before & After Gallery</small>
+        </h1>
+    </div>
+    <!-- END PAGE TITLE -->
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="portlet light bordered">
+            <div class="portlet-body form">
+                <form id="gallery_form" role="form" method="POST">
+                    {% include "board/board_form.html" %}
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    $('#gallery_form').submit(function (e) {
+        $(".se-pre-con").css('display', "block");
+
+        $.ajax({
+            url: "create_board/",
+            type: "POST",
+            data: {type: $('#type').val(), title: $('#title').val(),
+                    text: $('#text').val(), {% if not isNew %}boardSrl:{{ board.boardSrl }}{% endif %}},
+            success: function (result) {
+                $('#type').val(1);
+                $('#title').val('');
+                $('#text').val('');
+                $(".se-pre-con").fadeOut("slow");
+                alert('정상적으로 등록 되었습니다.')
+
+            },
+        });
+        e.preventDefault();
+    })
+
+</script>

@@ -1,13 +1,13 @@
 {% load static %}
 <div class="row" style="padding-top: 8%;">
     <div class="col-xs-2" align="right" style="padding-right: 0;">
-        <div class="white-color medium-font board-left-btn board-color" align="left">
+        <div id="type1" class="white-color medium-font board-left-btn board-color" align="left">
             소식
         </div>
-        <div class="medium-font board-left-btn gray-background-color" align="left">
+        <div id="type2" class="medium-font board-left-btn gray-background-color" align="left">
             칼럼
         </div>
-        <div class="medium-font board-left-btn gray-background-color" align="left">
+        <div id="type3" class="medium-font board-left-btn gray-background-color" align="left">
             진로
         </div>
     </div>
@@ -21,59 +21,8 @@
                     <td class="bold" align="center">작성일</td>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td align="center">튜링</td>
-                    <td align="center">이번 수능 입시에서 000이 중요하다고 하드라구요.</td>
-                    <td align="center"><span class="main-color">33</span> / <span class="gray-color">99</span></td>
-                    <td align="center">3일 전</td>
-                </tr>
-                <tr>
-                    <td align="center">튜링</td>
-                    <td align="center">이번 수능 입시에서 000이 중요하다고 하드라구요.</td>
-                    <td align="center"><span class="main-color">33</span> / <span class="gray-color">99</span></td>
-                    <td align="center">3일 전</td>
-                </tr>
-                 <tr>
-                    <td align="center">튜링</td>
-                    <td align="center">이번 수능 입시에서 000이 중요하다고 하드라구요.</td>
-                    <td align="center"><span class="main-color">33</span> / <span class="gray-color">99</span></td>
-                    <td align="center">3일 전</td>
-                 </tr>
-                 <tr>
-                    <td align="center">튜링</td>
-                    <td align="center">이번 수능 입시에서 000이 중요하다고 하드라구요.</td>
-                    <td align="center"><span class="main-color">33</span> / <span class="gray-color">99</span></td>
-                    <td align="center">3일 전</td>
-                </tr>
-                <tr>
-                    <td align="center">튜링</td>
-                    <td align="center">이번 수능 입시에서 000이 중요하다고 하드라구요.</td>
-                    <td align="center"><span class="main-color">33</span> / <span class="gray-color">99</span></td>
-                    <td align="center">3일 전</td>
-                </tr>
-                <tr>
-                    <td align="center">튜링</td>
-                    <td align="center">이번 수능 입시에서 000이 중요하다고 하드라구요.</td>
-                    <td align="center"><span class="main-color">33</span> / <span class="gray-color">99</span></td>
-                    <td align="center">3일 전</td>
-                </tr>
-                <tr>
-                    <td align="center">튜링</td>
-                    <td align="center">이번 수능 입시에서 000이 중요하다고 하드라구요.</td>
-                    <td align="center"><span class="main-color">33</span> / <span class="gray-color">99</span></td>
-                    <td align="center">3일 전</td>
-                </tr>
-                <tr>
-                    <td align="center">튜링</td>
-                    <td align="center">이번 수능 입시에서 000이 중요하다고 하드라구요.</td>
-                    <td align="center"><span class="main-color">33</span> / <span class="gray-color">99</span></td>
-                    <td align="center">3일 전</td>
-                </tr>
-
+            <tbody id="board-div">
             </tbody>
-
-
         </table>
         <div class="row">
             <div class="col-xs-6" align="left" style="margin-top: 2%;">
@@ -83,11 +32,13 @@
             </div>
             <div class="col-xs-6" align="right">
                 <ul class="pagination pagination-lg">
-                  <li><a href="#">1</a></li>
-                  <li><a href="#">2</a></li>
-                  <li><a href="#">3</a></li>
-                  <li><a href="#">4</a></li>
-                  <li><a href="#">5</a></li>
+                    <li><a id="decrease-idx" href="#" class="w3-button">&laquo;</a></li>
+                  <li><a data-idx="0" class="page-idx" href="#">1</a></li>
+                  <li><a data-idx="1" class="page-idx" href="#">2</a></li>
+                  <li><a data-idx="2" class="page-idx" href="#">3</a></li>
+                  <li><a data-idx="3" class="page-idx" href="#">4</a></li>
+                  <li><a data-idx="4" class="page-idx" href="#">5</a></li>
+                    <li><a id="increase-idx" href="#" class="w3-button">&raquo;</a></li>
                 </ul>
             </div>
         </div>
@@ -95,6 +46,77 @@
 </div>
 
 <script>
+    var type = 1;
+    var keyword = '';
+    var idx = 0;
+    var pageSize = 10;
+    var pageIdx = 0;
+    getBoards()
+
+    $('#decrease-idx').click(function () {
+        if(pageIdx == 0)
+            return false;
+        $('.page-idx').each(function () {
+            $(this).text(parseInt($(this).text()) - 5)
+            $(this).data('idx', parseInt($(this).data('idx') - 5))
+            pageIdx -= 1;
+        })
+    })
+
+    $('#increase-idx').click(function () {
+        $('.page-idx').each(function () {
+            $(this).text(parseInt($(this).text()) + 5)
+            $(this).data('idx', parseInt($(this).data('idx') + 5))
+            pageIdx += 1;
+        })
+    })
+
+
+    function getBoards() {
+        $.ajax({
+            url: "boardContents/?type=" + type + '&keyword='+ keyword + '&idx=' + idx + '&size=' + pageSize,
+            type: 'GET',
+            contentType: "application/json; charset=utf-8",
+            success: function (result) {
+                $('#board-div').empty()
+                $('#board-div').append(result)
+            },
+        });
+    }
+
+    $('#type1').click(function () {
+        type = 1;
+        keywordInit()
+        getBoards()
+    })
+
+    $('#type2').click(function () {
+        type = 2;
+        keywordInit()
+        getBoards()
+    })
+
+    $('#type3').click(function () {
+        type = 3;
+        keywordInit()
+        getBoards()
+    })
+
+    $('#board-search-btn').click(function () {
+        keyword = $('#board-search-input').val()
+        getBoards()
+    })
+
+    $('.page-idx').click(function () {
+        idx = pageSize * parseInt($(this).data('idx'))
+        getBoards()
+    })
+
+    function keywordInit() {
+        keyword = '';
+        $('#board-search-input').val('')
+    }
+
     $('.board-left-btn').click(function () {
         $('.board-left-btn').removeClass('board-color')
         $('.board-left-btn').addClass('gray-background-color')

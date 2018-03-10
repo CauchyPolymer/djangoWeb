@@ -11,5 +11,7 @@ urlpatterns = [
     url(r'^logout/', logout, name='logout'),
     url(r'^save_problem/', save_problem, name='save_problem'),
     url(r'^problem_photo/', problem_photo, name='problem_photo'),
+    url(r'^problem/', problem, name='problem'),
+    url(r'^create_board/', create_board, name='create_board'),
 ]
 

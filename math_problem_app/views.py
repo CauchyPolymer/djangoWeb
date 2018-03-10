@@ -6,6 +6,7 @@ import uuid
 import datetime
 import mandrill
 from django.core.mail import send_mail
+from django.db.models import Q
 from django.http import HttpResponse
 from django.shortcuts import render
 
@@ -13,7 +14,7 @@ from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 
 from math_problem import settings
-from math_problem_app.models import User, Problem, ProblemUnit, Photo
+from math_problem_app.models import User, Problem, ProblemUnit, Photo, Board
 
 
 def head(request):
@@ -243,6 +244,21 @@ def send_email(title, body, to_email, to_name):
 
 def board(request):
     return render(request, 'board.html')
+
+
+def boardContents(request):
+    type = int(request.GET.get('type'))
+    keyword = str(request.GET.get('keyword'))
+
+    idx = int(request.GET.get('idx'))
+    size = int(request.GET.get('size'))
+
+    boards = Board.objects.filter(type=type)
+
+    if keyword is not '':
+        boards = boards.filter(Q(title__contains=keyword) | Q(text__contains=keyword))
+
+    return render(request, 'board_content.html', {'boards': boards.order_by('-createdAt')[idx: idx + size]})
 
 
 def createTest(request):

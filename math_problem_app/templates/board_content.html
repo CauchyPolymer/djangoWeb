@@ -1,0 +1,9 @@
+{% load static %}
+{% for board in boards %}
+<tr>
+    <td align="center">{{ board.writer.id }}</td>
+    <td align="center">{{ board.title }}</td>
+    <td align="center"><span class="main-color">{{ board.recommendCnt }}</span> / <span class="gray-color">{{ board.viewCnt }}</span></td>
+    <td align="center">{{ board.get_write_day }}</td>
+</tr>
+{% endfor %}
