@@ -4,7 +4,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 # Create your views here.
-from math_problem_app.models import User, Problem, ProblemUnit, Photo, Board
+from math_problem_app.models import Problem, ProblemUnit, Photo, Board, User
 from math_problem_app.views import getLoginUser
 
 
@@ -12,6 +12,8 @@ def main(request):
     if not User.objects.filter(email='mathadmin@math.co.kr'):
         user = User(email='mathadmin@math.co.kr').store()
         user.set_password('ql135cjs')
+        user.id = 'admin'
+        user.save()
     return render(request, 'metronic_index.html', {'isLogged': True if request.session.get('userSrl') else False})
 
 
