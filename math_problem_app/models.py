@@ -211,7 +211,7 @@ class Board(models.Model):
     boardSrl = models.AutoField(primary_key=True)
     title = models.CharField(max_length=500, null=True, blank=True)
     text = models.TextField(max_length=10000, null=True, blank=True)
-    writer = models.ForeignKey(User, null=True, blank=True)
+    writer = models.ForeignKey(User, null=True, blank=True, on_delete=models.CASCADE)
     viewCnt = models.IntegerField(null=True, blank=True, default=0)
     recommendCnt = models.IntegerField(null=True, blank=True, default=0)
     type = models.IntegerField(choices=BOARD_TYPE, null=True, blank=True)
