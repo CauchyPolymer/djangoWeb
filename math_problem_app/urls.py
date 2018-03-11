@@ -31,4 +31,6 @@ urlpatterns = [
     url(r'^problemBox/', problemBox, name='problemBox'),
     url(r'^ranking/', ranking, name='ranking'),
     url(r'^test/', test, name='test'),
+    url(r'^testBox/', testBox, name='testBox'),
+    url(r'^phoneCert/', phoneCert, name='phoneCert'),
 ]

@@ -37,3 +37,8 @@
     background-color: #6A70C7 !important;
     color: white;
 }
+
+.board-tr {
+    cursor: pointer;
+}
+

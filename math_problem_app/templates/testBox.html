@@ -1,0 +1,13 @@
+{% load static %}
+{% for test in tests %}
+<div class="row lecture-left-box large-font test-box" data-testsrl="{{ test.testSrl }}" data-testname="{{ test.name }}">
+    <div class="col-xs-12">
+        {{ test.name }}
+    </div>
+</div>
+{% endfor %}
+<div id="new-test" class="row lecture-left-box large-font test-box">
+    <div class="col-xs-12">
+        새 문제지
+    </div>
+</div>

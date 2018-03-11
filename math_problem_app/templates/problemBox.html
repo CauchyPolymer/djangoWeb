@@ -6,7 +6,7 @@
             {{ problem.text }}
         </div>
         <label class="container small-font problem-checkbox">
-            <input id="private" type="checkbox">
+            <input class="problem-check" type="checkbox" data-units="{{ problem.get_units }}" data-problemsrl="{{ problem.problemSrl }}" {% if problem.problemSrl in testProblemSrls %}checked{% endif %}>
             <span class="checkmark"></span>
         </label>
     </div>
@@ -15,6 +15,7 @@
 
 <script>
     $('.problem-box').css('height', $('.problem-box').width())
+    problemSrls = String({% if testProblemSrls %}{{ testProblemSrls }}{% else %}''{% endif %}).split(',')
 </script>
 
 <script type="text/x-mathjax-config">

@@ -1,9 +1,12 @@
 import json
+import random
 
 import re
 import uuid
 
 import datetime
+from functools import reduce
+
 import mandrill
 from django.core.mail import send_mail
 from django.db.models import Q
@@ -14,7 +17,8 @@ from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 
 from math_problem import settings
-from math_problem_app.models import User, Problem, ProblemUnit, Photo, Board
+from math_problem_app.sendSms import sendSms
+from math_problem_app.models import User, Problem, ProblemUnit, Photo, Board, Test
 
 
 def head(request):
@@ -261,22 +265,51 @@ def boardContents(request):
     return render(request, 'board_content.html', {'boards': boards.order_by('-createdAt')[idx: idx + size]})
 
 
+@csrf_exempt
 def createTest(request):
     user = getLoginUser(request)
-    return render(request, 'createTest.html', {'user': user})
+    if request.method == 'GET':
+        return render(request, 'createTest.html', {'user': user})
+    elif request.method == 'POST':
+        problemSrls = str(request.POST.get('problemSrls'))
+        type = int(request.POST.get('problemType'))
+        name = str(request.POST.get('name'))
+        if request.POST.get('testSrl'):
+            test = Test.objects.get(testSrl=int(request.POST.get('testSrl')))
+        else:
+            test = Test(type=type).store()
+
+        test.problems.clear()
+        if problemSrls:
+            for problemSrl in problemSrls.split(','):
+                if len(problemSrl) > 0:
+                    test.problems.add(Problem.objects.get(problemSrl=problemSrl))
+
+        test.name = name
+        test.save()
+        user.tests.add(test)
+        user.save()
+
+        return render(request, 'testBox.html', {'tests': user.tests.all()})
 
 
 def problemBox(request):
     idx = int(request.GET.get('idx'))
     size = int(request.GET.get('size'))
-    type = str(request.GET.get('type')).split(',') if len(str(request.GET.get('type'))) > 0 else []
+    type1 = int(request.GET.get('type1'))
+    type2 = int(request.GET.get('type2'))
     difficulty = int(request.GET.get('difficulty'))
+    testSrl = int(request.GET.get('testSrl')) if request.GET.get('testSrl') not in ['', 'undefined'] else None
 
-    problems = Problem.objects.filter(type__in=type, difficulty=difficulty)
+    problems = Problem.objects.filter(type1=type1, type2=type2, difficulty=difficulty)
 
     problems = problems[idx:idx+size]
 
-    return render(request, 'problemBox.html', {'problems': problems})
+    testProblemSrls = None
+    if testSrl and Test.objects.get(testSrl=testSrl).problems.all():
+        testProblemSrls = list(reduce(lambda x, y: x + y, map(lambda x: [x['problemSrl']], Test.objects.get(testSrl=testSrl).problems.all().values('problemSrl'))))
+
+    return render(request, 'problemBox.html', {'problems': problems, 'testProblemSrls': testProblemSrls})
 
 
 def ranking(request):
@@ -285,3 +318,29 @@ def ranking(request):
 
 def test(request):
     return render(request, 'test.html')
+
+
+def testBox(request):
+    user = getLoginUser(request)
+    return render(request, 'testBox.html', {'tests': user.tests.all()})
+
+
+@csrf_exempt
+def phoneCert(request):
+    if request.method == 'GET':
+        phone = str(request.GET.get('phone'))
+        key = random.randint(1000, 9999)
+        request.session['key'] = key
+
+        sendSms(phone, key)
+
+        return returnHttpResponse({'success': True, 'msg': '문자 발송에 성공하였습니다.'})
+
+    elif request.method == 'POST':
+        key = str(request.POST.get('key'))
+        if str(request.session['key']) == key:
+            return returnHttpResponse({'success': True, 'msg': '핸드폰 인증에 성공하였습니다.'})
+
+        return returnHttpResponse({'success': False, 'msg': '인증번호를 확인해 주세요.'})
+
+

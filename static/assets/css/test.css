@@ -31,7 +31,7 @@
 }
 
 .test-btn {
-    width: 150px !important;
+    width: 130px !important;
     padding-left: 16px;
 }
 
@@ -60,4 +60,13 @@
     width: 10%;
     left: 10%;
     top: 5%;
+}
+
+.problem-type-radio {
+    border-radius: 100%;
+}
+
+#test-name {
+    border: outset;
+    border-right:1px;
 }

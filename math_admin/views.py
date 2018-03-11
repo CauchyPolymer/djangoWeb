@@ -51,7 +51,8 @@ def logout(request):
 def save_problem(request):
     text = str(request.POST.get('problemText'))
     answer = str(request.POST.get('answer'))
-    type = str(request.POST.get('type'))
+    type1 = int(request.POST.get('type1'))
+    type2 = int(request.POST.get('type2'))
     difficulty = str(request.POST.get('difficulty'))
     unit = str(request.POST.get('unit'))
 
@@ -59,14 +60,15 @@ def save_problem(request):
         problem = Problem.objects.get(problemSrl=int(request.session.get('problemSrl')))
         problem.text = text
         problem.answer = int(answer)
-        problem.type = int(type)
+        problem.type1 = type1
+        problem.type2 = type2
         problem.difficulty = int(difficulty)
     else:
-        problem = Problem(text=text, answer=int(answer), type=int(type), difficulty=int(difficulty)).store()
+        problem = Problem(text=text, answer=int(answer), type1=type1, type2=type2, difficulty=int(difficulty)).store()
 
     if len(unit) > 0:
         for u in unit.split(','):
-            problem.unit.add(ProblemUnit(unit=u).store())
+            problem.unit.add(ProblemUnit.objects.get(unit=u).store())
 
     problem.save()
 

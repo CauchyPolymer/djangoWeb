@@ -14,6 +14,5 @@ var userInfo = {
     'grade': '',
     'idDuplicate': '',
     'certificationPhone': '',
-    'certificationEmail': '',
     'certificationSchoolCard': '',
 }

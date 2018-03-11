@@ -4,13 +4,8 @@
         <div class="lecture-left-box x-large-font create-test-left-box">
             {{ user.name }}의 문제지
         </div>
-        <div class="row lecture-left-box large-font test-box">
-            <div class="col-xs-9">
-                시험지 이름1
-            </div>
-            <div class="col-xs-3 test-complete">
-                완료
-            </div>
+        <div id="tests">
+
         </div>
     </div>
     <div class="col-xs-9">
@@ -20,15 +15,15 @@
                     <div class="col-xs-6">
                         내신형
                         <label class="container small-font" style="left: 50%; margin-top: -26px;">
-                            <input id="naesin" type="checkbox" checked>
-                            <span class="checkmark"></span>
+                            <input name="type1" id="naesin" type="radio" checked>
+                            <span class="checkmark problem-type-radio"></span>
                         </label>
                     </div>
                     <div class="col-xs-6">
                         수능형
                         <label class="container small-font" style="left: 50%; margin-top: -26px;">
-                            <input id="suneung" type="checkbox" checked>
-                            <span class="checkmark"></span>
+                            <input name="type1" id="suneung" type="radio">
+                            <span class="checkmark problem-type-radio"></span>
                         </label>
                     </div>
                 </div>
@@ -36,15 +31,15 @@
                     <div class="col-xs-6">
                         개념확인형
                         <label class="container small-font" style="left: 70%; margin-top: -26px;">
-                            <input id="gaenyumhwakin" type="checkbox" checked>
-                            <span class="checkmark"></span>
+                            <input name="type2" id="gaenyumhwakin" type="radio" checked>
+                            <span class="checkmark problem-type-radio"></span>
                         </label>
                     </div>
                     <div class="col-xs-6">
                         개념응용형
                         <label class="container small-font" style="left: 70%; margin-top: -26px;">
-                            <input id="gaenyumeungyong" type="checkbox" checked>
-                            <span class="checkmark"></span>
+                            <input name="type2" id="gaenyumeungyong" type="radio">
+                            <span class="checkmark problem-type-radio"></span>
                         </label>
                     </div>
                 </div>
@@ -67,30 +62,33 @@
             </div>
             <div class="col-xs-8" style="padding-left: 5%">
                 <div class="row">
-                    <div class="col-xs-2 medium-font unit-box" align="center">
+                    <div id="unit1" class="col-xs-2 medium-font unit-box" align="center">
                         수1
                     </div>
-                    <div class="col-xs-2 medium-font unit-box" align="center">
+                    <div id="unit2" class="col-xs-2 medium-font unit-box" align="center">
                         수2
                     </div>
-                    <div class="col-xs-2 medium-font unit-box" align="center">
+                    <div id="unit3" class="col-xs-2 medium-font unit-box" align="center">
                         미적1
                     </div>
-                    <div class="col-xs-2 medium-font unit-box" align="center">
+                    <div id="unit4" class="col-xs-2 medium-font unit-box" align="center">
                         미적2
                     </div>
-                    <div class="col-xs-2 medium-font unit-box" align="center">
+                    <div id="unit5" class="col-xs-2 medium-font unit-box" align="center">
                         확통
                     </div>
-                    <div class="col-xs-2 medium-font unit-box" align="center">
+                    <div id="unit6" class="col-xs-2 medium-font unit-box" align="center">
                         기벡
                     </div>
                 </div>
                 <div class="row" style="margin-top: 10%;">
-                    <div class="col-xs-12" align="right">
-                        <img id="board-search-icon" src="{% static 'assets/img/group-3@3x.png' %}">
-                        <input id="board-search-btn" type="button" class="w3-btn medium-font board-left-btn main-background-color white-color test-btn" value="상세 검색">
-                        <input id="board-search-btn" type="button" class="w3-btn medium-font board-left-btn main-background-color white-color test-btn" value="조건 초기화">
+                    <div class="col-xs-6" align="left">
+                        <input id="detail-search" type="button" class="w3-btn medium-font board-left-btn main-background-color white-color test-btn" value="상세 검색">
+                        <input id="init-condition" type="button" class="w3-btn medium-font board-left-btn main-background-color white-color test-btn" value="조건 초기화">
+                    </div>
+                    <div class="col-xs-6" align="right">
+                        <input id="test-name" type="text" class="w3-btn medium-font board-left-btn test-btn" placeholder="시험지 이름1">
+                        <input id="test-save" type="button" class="w3-btn medium-font board-left-btn main-background-color white-color test-btn" value="저장하기">
                     </div>
                 </div>
             </div>
@@ -104,72 +102,130 @@
 <script>
     var idx = 0
     var size = 30
-    var type = [1, 2, 3, 4]
+    var type1 = 1
+    var type2 = 1
     var difficulty = 2
+    var testSrl = ''
+
+    $.ajax({
+        url: "testBox/",
+        type: 'GET',
+        contentType: "application/json; charset=utf-8",
+        success: function (result) {
+            $('#tests').empty()
+            $('#tests').append(result)
+            initTestBoxEvent()
+        },
+    });
 
     $('#difficulty').change(function(){
         difficulty = $('#difficulty').val()
         getProblems()
     })
 
+    function remove(array, elem) {
+        var index = array.indexOf(elem)
+        if(index > -1)
+            array.splice(index, 1)
+    }
+
     $('#naesin').change(function () {
-        if($(this).is(":checked")){
-            type.push(1)
-        } else {
-            var index = type.indexOf(1)
-            if(index > -1)
-                type.splice(index, 1)
-        }
+        type1 = 1;
         getProblems()
     })
 
     $('#suneung').change(function () {
-        if($(this).is(":checked")){
-            type.push(2)
-        } else {
-            var index = type.indexOf(2)
-            if(index > -1)
-                type.splice(index, 1)
-        }
+        type1 = 2;
         getProblems()
     })
 
     $('#gaenyumhwakin').change(function () {
-        if($(this).is(":checked")){
-            type.push(3)
-        } else {
-            var index = type.indexOf(3)
-            if(index > -1)
-                type.splice(index, 1)
-        }
+        type2 = 1;
         getProblems()
     })
 
     $('#gaenyumeungyong').change(function () {
-        if($(this).is(":checked")){
-            type.push(4)
-        } else {
-            var index = type.indexOf(4)
-            if(index > -1)
-                type.splice(index, 1)
-        }
+        type2 = 2;
         getProblems()
     })
-
-
 
     getProblems()
 
     function getProblems() {
         $.ajax({
-            url: "problemBox/?idx="+idx+"&size="+size+"&type="+type.toString()+'&difficulty='+difficulty,
+            url: "problemBox/?idx="+idx+"&size="+size+"&type1="+type1+'&type2='+type2+'&difficulty='+difficulty+'&testSrl='+testSrl,
             type: 'GET',
             contentType: "application/json; charset=utf-8",
             success: function (result) {
                 $('.problem-box-div').empty()
                 $('.problem-box-div').append(result)
+                initProblemBoxEvent()
             },
         });
     }
+
+    var problemSrls = []
+
+    $('#test-save').click(function () {
+        $.ajax({
+            url: "createTest/",
+            type: 'POST',
+            data: {name: $('#test-name').val(), problemSrls: problemSrls.toString(), problemType:1, testSrl: testSrl},
+            success: function (result) {
+                $('#tests').empty()
+                $('#tests').append(result)
+                initTestBoxEvent()
+                $('#test-name').val('')
+                testSrl = ''
+                alert('문제집이 올바르게 저장되었습니다!')
+            },
+        });
+    })
+
+    function initTestBoxEvent() {
+        $('.test-box').click(function () {
+            $('.test-box').each(function () {
+                $(this).css('background-color', '#E2E4F0')
+            })
+            $(this).css('background-color', '#BEC4E3')
+            testSrl = $(this).data('testsrl')
+            $('#test-name').val($(this).data('testname'))
+            getProblems()
+        })
+    }
+
+    $('#new-test').click(function () {
+        testSrl = ''
+    })
+
+    function initProblemBoxEvent() {
+        $('.problem-check').click(function () {
+            $('.unit-box').removeClass('main-background-color')
+            $('.unit-box').removeClass('white-color')
+            var units = String($(this).data('units')).split(',')
+            for(u in units){
+                if(units[u] == 1)
+                    $('#unit1').addClass('main-background-color white-color')
+                if(units[u] == 2)
+                    $('#unit2').addClass('main-background-color white-color')
+                if(units[u] == 3)
+                    $('#unit3').addClass('main-background-color white-color')
+                if(units[u] == 4)
+                    $('#unit4').addClass('main-background-color white-color')
+                if(units[u] == 5)
+                    $('#unit5').addClass('main-background-color white-color')
+                if(units[u] == 6)
+                    $('#unit6').addClass('main-background-color white-color')
+
+            }
+            if($(this).is(":checked")) {
+                problemSrls.push(String($(this).data('problemsrl')))
+            } else {
+                remove(problemSrls, String($(this).data('problemsrl')))
+            }
+            console.log(problemSrls)
+        })
+    }
+
 
 </script>
