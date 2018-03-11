@@ -71,7 +71,19 @@
             <input id="phone" type="text" class="gray-background-color w3-input login-input">
         </div>
         <div class="col-xs-2" align="left">
-            <input id="" class="w3-btn white-color small-font main-background-color sign-in-btn" style="" type="button" value="번호인증">
+            <input id="phone-cert" class="w3-btn white-color small-font main-background-color sign-in-btn" style="" type="button" value="번호인증">
+        </div>
+    </div>
+
+    <div id="phone-cert-input" class="row" align="center" style="margin: 1%; display: none;">
+        <div class="medium-font col-xs-offset-3 col-xs-2 main-color login-input-text" align="left">
+            인증번호
+        </div>
+        <div class="col-xs-4 sign-in-input-div">
+            <input id="key" type="text" class="gray-background-color w3-input login-input">
+        </div>
+        <div class="col-xs-2" align="left">
+            <input id="key-cert" class="w3-btn white-color small-font main-background-color sign-in-btn" style="" type="button" value="인증하기">
         </div>
     </div>
 
@@ -81,9 +93,6 @@
         </div>
         <div class="col-xs-4 sign-in-input-div">
             <input id="email" type="email" class="gray-background-color w3-input login-input">
-        </div>
-        <div class="col-xs-2" align="left">
-            <input id="" class="w3-btn white-color small-font main-background-color sign-in-btn" style="" type="button" value="이메일인증">
         </div>
     </div>
 
@@ -243,7 +252,12 @@
 
         if(!userInfo.idDuplicate) {
             alert('아이디 중복 체크를 해주세요.')
-            return false
+            return false;
+        }
+
+        if(!userInfo.certificationPhone) {
+            alert('핸드폰 인증을 완료해 주세요.')
+            return false;
         }
         return true;
     }
@@ -298,6 +312,33 @@
             },
         });
     }
+
+    $('#phone-cert').click(function () {
+        if (!$('#phone').val()) {
+            alert('핸드폰 번호를 입력해 주세요.')
+            return false;
+        }
+        $('#phone-cert-input').css('display', 'inherit')
+        $.ajax({
+            url: "phoneCert/?phone="+$('#phone').val(),
+            type: 'GET',
+            contentType: "application/json; charset=utf-8",
+            success: function (result) {
+                alert(result.msg)
+                $('#key-cert').click(function () {
+                    $.ajax({
+                        url: "phoneCert/",
+                        type: 'POST',
+                        data: {key: $('#key').val()},
+                        success: function (result) {
+                            userInfo.certificationPhone = true;
+                            alert(result.msg)
+                        }
+                    })
+                })
+            },
+        });
+    })
 
 
 </script>

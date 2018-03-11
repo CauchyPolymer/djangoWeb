@@ -1,6 +1,6 @@
 {% load static %}
 {% for board in boards %}
-<tr>
+<tr class="board-tr">
     <td align="center">{{ board.writer.id }}</td>
     <td align="center">{{ board.title }}</td>
     <td align="center"><span class="main-color">{{ board.recommendCnt }}</span> / <span class="gray-color">{{ board.viewCnt }}</span></td>

@@ -57,11 +57,14 @@ class Photo(models.Model):
         return True if self.get_extention().upper() in ['JPEG', 'JPG'] else False
 
 
-PROBLEM_TYPE = {
+PROBLEM_TYPE1 = {
     (1, '내신형'),
     (2, '수능형'),
-    (3, '개념확인형'),
-    (4, '개념응용형'),
+}
+
+PROBLEM_TYPE2 = {
+    (1, '개념확인형'),
+    (2, '개념응용형'),
 }
 
 PROBLEM_DIFFICULTY = {
@@ -98,7 +101,8 @@ class Problem(models.Model):
     photos = models.ManyToManyField(Photo, blank=True, null=True)
     answer = models.IntegerField(blank=True, null=True)
 
-    type = models.IntegerField(choices=PROBLEM_TYPE, blank=True, null=True)
+    type1 = models.IntegerField(choices=PROBLEM_TYPE1, blank=True, null=True)
+    type2 = models.IntegerField(choices=PROBLEM_TYPE2, blank=True, null=True)
     difficulty = models.IntegerField(choices=PROBLEM_DIFFICULTY, blank=True, null=True)
     unit = models.ManyToManyField(ProblemUnit, blank=True, null=True)
 
@@ -112,10 +116,21 @@ class Problem(models.Model):
         self.save()
         return self
 
+    def get_units(self):
+        return list(map(lambda x: x['unit'], self.unit.all().values('unit')))
+
+
+TEST_TYPE = {
+    (1, '일반'),
+    (2, '진단고사')
+}
+
 
 class Test(models.Model):
     testSrl = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=200, blank=True, null=True)
 
+    type = models.IntegerField(choices=TEST_TYPE, blank=True, null=True)
     problems = models.ManyToManyField(Problem, blank=True, null=True)
 
     createdAt = models.DateTimeField(auto_now_add=True)
@@ -129,16 +144,22 @@ class Test(models.Model):
         return self
 
 
+class AnswerNum(models.Model):
+    answerNumSrl = models.AutoField(primary_key=True)
+    answer = models.IntegerField(blank=True, null=True)
+
+    def __str__(self):
+        return str(self.answer)
+
+    def store(self):
+        self.save()
+        return self
+
+
 class Answer(models.Model):
     answerSrl = models.AutoField(primary_key=True)
-    a1 = models.IntegerField(blank=True, null=True)
-    a2 = models.IntegerField(blank=True, null=True)
-    a3 = models.IntegerField(blank=True, null=True)
-    a4 = models.IntegerField(blank=True, null=True)
-    a5 = models.IntegerField(blank=True, null=True)
-    a6 = models.IntegerField(blank=True, null=True)
-    a7 = models.IntegerField(blank=True, null=True)
 
+    answers = models.ManyToManyField(AnswerNum, blank=True, null=True, related_name='answers')
     test = models.ForeignKey(Test, blank=False, null=False, on_delete=models.CASCADE)
 
     createdAt = models.DateTimeField(auto_now_add=True)
@@ -168,6 +189,7 @@ class User(models.Model):
 
     rate = models.ForeignKey(Rating, blank=True, null=True, on_delete=models.CASCADE)
     answers = models.ManyToManyField(Answer, blank=True, null=True)
+    tests = models.ManyToManyField(Test, blank=True, null=True)
 
     createdAt = models.DateTimeField(auto_now_add=True)
     updatedAt = models.DateTimeField(auto_now=True)
