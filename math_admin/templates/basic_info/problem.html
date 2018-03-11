@@ -92,13 +92,23 @@
         e.preventDefault();
     });
 
-    $('#basic_form').submit(function (e) {
+    $('#problem-submit').click(function (e) {
+        e.preventDefault();
+        if(!$('#answer').val()){
+            alert('정답을 입력해 주세요.')
+            return false;
+        }
+        
+        if(!$('#unit').val()){
+            alert('해당 과목을 선택해 주세요.')
+            return false;
+        }
 
         $(".se-pre-con").css('display', "block");
         $.ajax({
             url: "save_problem/",
             type: "POST",
-            data: {problemText: $('#problem-text').val(), answer: $('#answer').val(), type: $('#type').val(),
+            data: {problemText: $('#problem-text').val(), answer: $('#answer').val(), type1: $('#type1').val(), type2: $('#type2').val(),
                     difficulty: $('#difficulty').val(), unit: $('#unit').val().toString(), explanation: $('#problem-explanation').val()},
             success: function (result) {
                 $('#problem-text').val('')
@@ -110,10 +120,8 @@
                 alert('문제가 등록 되었습니다.')
                 $('#image_list').empty();
                 $('#image_list').append($(result));
-
             },
         });
-        e.preventDefault();
     })
 
     $('#doctor').change(function () {

@@ -16,7 +16,7 @@
 
     <div class="form-group">
         <div class="input-icon input-icon-sm">
-            <select id="type" class="form-control input-sm">
+            <select id="type1" class="form-control input-sm">
                 <option value="1" {% if problem.type1 == 1 %}selected{% endif %}>내신형</option>
                 <option value="2" {% if problem.type1 == 2 %}selected{% endif %}>수능형</option>
             </select>
@@ -25,7 +25,7 @@
 
     <div class="form-group">
         <div class="input-icon input-icon-sm">
-            <select id="type" class="form-control input-sm">
+            <select id="type2" class="form-control input-sm">
                 <option value="1" {% if problem.type2 == 1 %}selected{% endif %}>개념확인형</option>
                 <option value="2" {% if problem.type2 == 2 %}selected{% endif %}>개념응용형</option>
             </select>
@@ -63,6 +63,6 @@
     </div>
 
     <div class="form-actions">
-        <button type="submit" class="btn btn-circle blue uppercase">SAVE</button>
+        <button id="problem-submit" type="" class="btn btn-circle blue uppercase">SAVE</button>
     </div>
 </div>
