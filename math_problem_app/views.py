@@ -22,7 +22,10 @@ from math_problem_app.models import User, Problem, ProblemUnit, Photo, Board, Te
 
 
 def head(request):
-    return render(request, 'head.html')
+    user = None
+    if request.session.get('userId'):
+        user = User.objects.get(id=str(request.session.get('userId')))
+    return render(request, 'head.html', {'user': user})
 
 
 def main(request):
@@ -269,7 +272,10 @@ def boardContents(request):
 def createTest(request):
     user = getLoginUser(request)
     if request.method == 'GET':
-        return render(request, 'createTest.html', {'user': user})
+        if user:
+            return render(request, 'createTest.html', {'user': user})
+        else:
+            return render(request, 'login.html')
     elif request.method == 'POST':
         problemSrls = str(request.POST.get('problemSrls'))
         type = int(request.POST.get('problemType'))
