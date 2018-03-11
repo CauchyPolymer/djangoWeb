@@ -338,7 +338,7 @@ def phoneCert(request):
         key = random.randint(1000, 9999)
         request.session['key'] = key
 
-        sendSms(phone, key)
+        sendSms(phone, '수능대왕 폰 인증 번호 입니다. ['+str(key)+']')
 
         return returnHttpResponse({'success': True, 'msg': '문자 발송에 성공하였습니다.'})
 
