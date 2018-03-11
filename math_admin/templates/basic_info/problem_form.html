@@ -3,7 +3,7 @@
     <div class="form-group">
         <div class="input-icon input-icon-sm">
             <i class="fa fa-pencil"></i>
-            <input id="problem-text" type="text" class="form-control input-sm" {% if problem.text %}value="{{ problem.text }}"{% endif %} placeholder="문제 문자열">
+            <textarea id="problem-text" class="form-control input-sm" placeholder="문제 내용">{% if problem.text %}{{ problem.text }}{% endif %}</textarea>
         </div>
     </div>
 
@@ -52,6 +52,13 @@
                 <option value="5" {% if problem.type == 5 %}selected{% endif %}>확통</option>
                 <option value="6" {% if problem.type == 6 %}selected{% endif %}>기벡</option>
             </select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="input-icon input-icon-sm">
+            <i class="fa fa-pencil"></i>
+            <textarea id="problem-explanation" class="form-control input-sm" placeholder="문제 풀이">{% if problem.explanation %}{{ problem.explanation }}{% endif %}</textarea>
         </div>
     </div>
 

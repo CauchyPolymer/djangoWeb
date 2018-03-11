@@ -55,6 +55,7 @@ def save_problem(request):
     type2 = int(request.POST.get('type2'))
     difficulty = str(request.POST.get('difficulty'))
     unit = str(request.POST.get('unit'))
+    explanation = str(request.POST.get('explanation'))
 
     if request.session.get('problemSrl'):
         problem = Problem.objects.get(problemSrl=int(request.session.get('problemSrl')))
@@ -63,8 +64,9 @@ def save_problem(request):
         problem.type1 = type1
         problem.type2 = type2
         problem.difficulty = int(difficulty)
+        problem.explanation = explanation
     else:
-        problem = Problem(text=text, answer=int(answer), type1=type1, type2=type2, difficulty=int(difficulty)).store()
+        problem = Problem(text=text, answer=int(answer), type1=type1, type2=type2, difficulty=int(difficulty), explanation=explanation).store()
 
     if len(unit) > 0:
         for u in unit.split(','):

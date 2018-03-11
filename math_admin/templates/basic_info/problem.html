@@ -99,7 +99,7 @@
             url: "save_problem/",
             type: "POST",
             data: {problemText: $('#problem-text').val(), answer: $('#answer').val(), type: $('#type').val(),
-                    difficulty: $('#difficulty').val(), unit: $('#unit').val().toString()},
+                    difficulty: $('#difficulty').val(), unit: $('#unit').val().toString(), explanation: $('#problem-explanation').val()},
             success: function (result) {
                 $('#problem-text').val('')
                 $('#answer').val('')

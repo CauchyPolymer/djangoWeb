@@ -106,6 +106,8 @@ class Problem(models.Model):
     difficulty = models.IntegerField(choices=PROBLEM_DIFFICULTY, blank=True, null=True)
     unit = models.ManyToManyField(ProblemUnit, blank=True, null=True)
 
+    explanation = models.TextField(max_length=10000, blank=True, null=True)
+
     createdAt = models.DateTimeField(auto_now_add=True)
     updatedAt = models.DateTimeField(auto_now=True)
 
