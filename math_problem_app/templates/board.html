@@ -8,10 +8,10 @@
             칼럼
         </div>
         <div id="type3" class="medium-font board-left-btn gray-background-color" align="left">
-            진로
+            커뮤니티
         </div>
     </div>
-    <div class="col-xs-9">
+    <div class="col-xs-9" id="board-div">
         <table id="board-table" class="table" align="center">
             <thead>
                 <tr class="gray-background-color" align="center">
@@ -21,10 +21,10 @@
                     <td class="bold" align="center">작성일</td>
                 </tr>
             </thead>
-            <tbody id="board-div">
+            <tbody id="board-content">
             </tbody>
         </table>
-        <div class="row">
+        <div class="row" id="board-bottom">
             <div class="col-xs-6" align="left" style="margin-top: 2%;">
                 <img id="board-search-icon" src="{% static 'assets/img/group-3@3x.png' %}">
                 <input id="board-search-input" type="text" class="gray-background-color">
@@ -43,6 +43,7 @@
             </div>
         </div>
     </div>
+    <div class="col-xs-9" id="board-detail"></div>
 </div>
 
 <script>
@@ -78,8 +79,11 @@
             type: 'GET',
             contentType: "application/json; charset=utf-8",
             success: function (result) {
-                $('#board-div').empty()
-                $('#board-div').append(result)
+                $('#board-content').empty()
+                $('#board-content').append(result)
+                $('#board-div').css('display', 'inherit')
+                $('#board-detail').css('display', 'none')
+                initBoardContent()
             },
         });
     }
@@ -126,4 +130,24 @@
         $(this).addClass('board-color')
         $(this).addClass('white-color')
     })
+
+    function initBoardContent() {
+        $('.board-tr').click(function () {
+            $.ajax({
+                url: "boardDetail/?boardSrl="+$(this).data('boardsrl'),
+                type: 'GET',
+                contentType: "application/json; charset=utf-8",
+                success: function (result) {
+                    $('#board-detail').empty()
+                    $('#board-detail').append(result)
+                    $('#board-detail').css('display', 'inherit')
+                    $('#board-div').css('display', 'none')
+                },
+            });
+        })
+
+    }
+
+
+
 </script>
