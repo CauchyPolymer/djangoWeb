@@ -12,29 +12,4 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.AddField(
-            model_name='problem',
-            name='explanation',
-            field=models.TextField(blank=True, max_length=10000, null=True),
-        ),
-        migrations.AlterField(
-            model_name='board',
-            name='type',
-            field=models.IntegerField(blank=True, choices=[(2, '칼럼'), (3, '진로'), (1, '소식')], null=True),
-        ),
-        migrations.AlterField(
-            model_name='problem',
-            name='difficulty',
-            field=models.IntegerField(blank=True, choices=[(2, '중간'), (1, '쉬움'), (3, '어려움')], null=True),
-        ),
-        migrations.AlterField(
-            model_name='problemunit',
-            name='unit',
-            field=models.IntegerField(blank=True, choices=[(4, '미적2'), (5, '확통'), (2, '수2'), (3, '미적1'), (1, '수1'), (6, '기벡')], null=True),
-        ),
-        migrations.AlterField(
-            model_name='test',
-            name='type',
-            field=models.IntegerField(blank=True, choices=[(1, '일반'), (2, '진단고사')], null=True),
-        ),
     ]
