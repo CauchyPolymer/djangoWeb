@@ -42,3 +42,42 @@
     cursor: pointer;
 }
 
+.board-text {
+    height: 300px;
+    overflow-y: scroll;
+    border: groove;
+    border-width: 1px;
+}
+
+#ad-div {
+    border: groove;
+    border-width: 1px;
+    height: 100px;
+}
+
+.board-row {
+    margin-top: 3%;
+}
+
+.board-title {
+    height: 60px;
+    padding-top: 10px;
+}
+
+.comment-header {
+    height: 30px;
+}
+
+.comments {
+    padding: 2% 5% 2% 5%;
+}
+
+#comment, #write-comment {
+    height: 120px;
+    border-radius: 20px;
+    width: 100%;
+}
+
+#write-comment {
+    background-color: #F2F2F2;
+}

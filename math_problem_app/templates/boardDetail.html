@@ -1,0 +1,79 @@
+{% load static %}
+<div class="list-group" style="padding: 1% 3% 5% 3%; margin-top: -5%">
+    <div class="row gray-background-color large-font w3-border board-row board-title">
+        <div class="col-xs-8" align="left">
+            {{ board.title }}
+        </div>
+        <div class="co-xs-4 medium-font" style="padding-top: 5px;" align="right">
+            {{ board.get_write_time }}
+        </div>
+    </div>
+
+    <div class="row large-font board-row">
+        <div class="col-xs-8 blue-color" align="left">
+            {{ board.writer.id }}
+        </div>
+        <div class="col-xs-4" style="font-weight: 100;" align="right">
+            <span>조회 수 {{ board.viewCnt }}</span>
+            <span style="margin-left: 5%;">댓글 1</span>
+        </div>
+    </div>
+
+    <div class="row board-text board-row">
+        <div class="col-xs-12">
+            {{ board.text }}
+        </div>
+    </div>
+
+    <div class="row" align="left board-row">
+        <div class="col-xs-6" align="left" style="padding: 1% 0 0 0">
+            <input id="show-board-table" type="button" class="w3-btn w3-round w3-border" value="목록">
+        </div>
+    </div>
+
+    <div class="row board-row">
+        <div id="ad-div" class="col-xs-offset-2 col-xs-8" align="center">
+        </div>
+    </div>
+
+    <div class="row w3-border board-row">
+        <div class="col-xs-12 gray-background-color comment-header medium-font" align="left">
+            댓글 '1'개
+        </div>
+    </div>
+    <div class="row w3-border">
+        <div class="col-xs-9 comments" align="left">
+            <div class="row">
+                1. <span class="blue-color">닉네임1</span> <span class="gray-color" style="margin-left: 5%">2018.05.23 13:20</span>
+            </div>
+            <div class="row medium-font">
+                저는 통계학 유학이 별로 끌리지는 않네요.
+            </div>
+        </div>
+        <div class="col-xs-3" align="right" style="padding-top: 2%;">
+            <input id="edit-comment" type="button" class="w3-btn w3-round w3-border" value="수정">
+            <input id="delete-comment" type="button" class="w3-btn w3-round w3-border" value="삭제">
+        </div>
+    </div>
+
+    <div class="row w3-round w3-border gray-background-color board-row">
+        <div class="col-xs-12 large-font gray-color" style="padding: 2% 0 2% 10%; font-weight: 100;" align="left">
+            댓글 쓰기
+        </div>
+        <div class="row" style="padding: 1% 3% 3% 3%">
+            <div class="col-xs-10">
+                <input id="comment" class="w3-border w3-round large-font" type="text">
+            </div>
+            <div class="col-xs-2">
+                <input id="write-comment" class="w3-btn w3-border w3-round large-font gray-color" type="button" value="등록">
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $('#show-board-table').click(function () {
+        $('#board-div').css('display', 'inherit')
+        $('#board-detail').css('display', 'none')
+    })
+</script>

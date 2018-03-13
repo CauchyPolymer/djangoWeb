@@ -33,4 +33,5 @@ urlpatterns = [
     url(r'^test/', test, name='test'),
     url(r'^testBox/', testBox, name='testBox'),
     url(r'^phoneCert/', phoneCert, name='phoneCert'),
+    url(r'^boardDetail/', boardDetail, name='boardDetail'),
 ]

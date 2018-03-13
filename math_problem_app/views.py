@@ -265,7 +265,7 @@ def boardContents(request):
     if keyword is not '':
         boards = boards.filter(Q(title__contains=keyword) | Q(text__contains=keyword))
 
-    return render(request, 'board_content.html', {'boards': boards.order_by('-createdAt')[idx: idx + size]})
+    return render(request, 'boardContent.html', {'boards': boards.order_by('-createdAt')[idx: idx + size]})
 
 
 @csrf_exempt
@@ -350,3 +350,6 @@ def phoneCert(request):
         return returnHttpResponse({'success': False, 'msg': '인증번호를 확인해 주세요.'})
 
 
+def boardDetail(request):
+    boardSrl = int(request.GET.get('boardSrl'))
+    return render(request, 'boardDetail.html', {'board': Board.objects.get(boardSrl=boardSrl)})

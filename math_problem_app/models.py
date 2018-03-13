@@ -253,3 +253,5 @@ class Board(models.Model):
     def get_write_day(self):
         return self.createdAt.time() if self.createdAt.today().date() == datetime.today().date() else str((datetime.today().date() - self.createdAt.today().date()).days) + ' 일전'
 
+    def get_write_time(self):
+        return self.createdAt.strftime('%Y. %m. %d %H:%M')
