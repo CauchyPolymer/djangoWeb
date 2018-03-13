@@ -233,7 +233,7 @@ BOARD_TYPE = {
 
 class Comment(models.Model):
     commentSrl = models.AutoField(primary_key=True)
-    writer = models.ForeignKey(User, null=True, blank=True)
+    writer = models.ForeignKey(User, null=True, blank=True, on_delete=models.CASCADE)
     text = models.TextField(max_length=5000, null=True, blank=True)
 
     createdAt = models.DateTimeField(auto_now_add=True)
