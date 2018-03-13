@@ -18,7 +18,7 @@ from django.views.decorators.csrf import csrf_exempt
 
 from math_problem import settings
 from math_problem_app.sendSms import sendSms
-from math_problem_app.models import User, Problem, ProblemUnit, Photo, Board, Test
+from math_problem_app.models import User, Problem, ProblemUnit, Photo, Board, Test, Comment
 
 
 def head(request):
@@ -250,7 +250,11 @@ def send_email(title, body, to_email, to_name):
 
 
 def board(request):
-    return render(request, 'board.html')
+    user = getLoginUser(request)
+    if user:
+        return render(request, 'board.html')
+    else:
+        return render(request, 'login.html')
 
 
 def boardContents(request):
@@ -351,5 +355,58 @@ def phoneCert(request):
 
 
 def boardDetail(request):
+    user = getLoginUser(request)
     boardSrl = int(request.GET.get('boardSrl'))
-    return render(request, 'boardDetail.html', {'board': Board.objects.get(boardSrl=boardSrl)})
+    board = Board.objects.get(boardSrl=boardSrl)
+    board.viewCnt += 1
+    board.save()
+    return render(request, 'boardDetail.html', {'board': board, 'user': user})
+
+
+@csrf_exempt
+def comment(request):
+    user = getLoginUser(request)
+
+    if request.method == 'GET':
+        pass
+
+    elif request.method == 'POST':
+        text = str(request.POST.get('text'))
+        boardSrl = int(request.POST.get('boardSrl'))
+        commentSrl = int(request.POST.get('commentSrl')) if request.POST.get('commentSrl') else None
+        if commentSrl:
+            comment = Comment.objects.get(commentSrl=commentSrl)
+            comment.writer = user
+            comment.text = text
+        else:
+            comment = Comment(writer=user, text=text).store()
+
+        comment.save()
+
+        board = Board.objects.get(boardSrl=boardSrl)
+        board.comments.add(comment)
+
+        return render(request, 'comments.html', {'board': board, 'user': user})
+
+    elif request.method == 'DELETE':
+        commentSrl = int(request.GET.get('commentSrl'))
+        boardSrl = int(request.GET.get('boardSrl'))
+        board = Board.objects.get(boardSrl=boardSrl)
+        board.comments.remove(Comment.objects.get(commentSrl=commentSrl))
+
+        return render(request, 'comments.html', {'board': board, 'user': user})
+
+
+@csrf_exempt
+def createBoard(request):
+    user = getLoginUser(request)
+    if request.method == 'GET':
+        return render(request, 'createBoard.html', {'user': user})
+    elif request.method == 'POST':
+        title = request.POST.get('title')
+        text = request.POST.get('text')
+        type = request.POST.get('type')
+        board = Board(title=title, text=text, type=type, writer=user).store()
+
+        return returnHttpResponse({'success': True, 'msg':'게시판 글이 작성 되었습니다.'})
+

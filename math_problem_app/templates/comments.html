@@ -1,0 +1,47 @@
+{% load static %}
+{% for comment in board.comments.all %}
+<div class="col-xs-9 comments" align="left">
+    <div class="row">
+        {{ forloop.counter }}. <span class="blue-color">{{ comment.writer.id }}</span> <span class="gray-color" style="margin-left: 5%">{{ comment.get_write_time }}</span>
+    </div>
+    <div class="row medium-font" style="margin-top: 3%">
+        {{ comment.text }}
+    </div>
+{#    <input type="text" class="w3-input ">#}
+</div>
+<div class="col-xs-3" align="right" style="padding-top: 2%;">
+    <input data-commentsrl="{{ comment.commentSrl }}" data-boardsrl="{{ board.boardSrl }}" type="button" class="w3-btn w3-round w3-border edit-comment" value="수정">
+    {% if user == comment.writer %}<input data-commentsrl="{{ comment.commentSrl }}" data-boardsrl="{{ board.boardSrl }}" type="button" class="w3-btn w3-round w3-border delete-comment" value="삭제">{% endif %}
+</div>
+
+{% endfor %}
+
+<script>
+    $('.edit-comment').click(function () {
+        $.ajax({
+            url: "comment/",
+            type: 'POST',
+            data: {text: $('#comment').val(), boardSrl:$(this).data('boardsrl'), commentSrl:$(this).data('commentsrl')},
+            success: function (result) {
+                $('#comments').empty()
+                $('#comments').append(result)
+            },
+        });
+    })
+
+    $('.delete-comment').click(function () {
+        $.ajax({
+            url: "comment/?boardSrl="+$(this).data('boardsrl')+"&commentSrl="+$(this).data('commentsrl'),
+            type: 'DELETE',
+            contentType: "application/json; charset=utf-8",
+            success: function (result) {
+                $('#comments').empty()
+                $('#comments').append(result)
+            },
+        });
+    })
+
+    $('#comment-num').text({{ board.get_comment_len }})
+    $('#board-comment-len').text({{ board.get_comment_len }})
+
+</script>

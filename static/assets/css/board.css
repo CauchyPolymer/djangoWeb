@@ -81,3 +81,29 @@
 #write-comment {
     background-color: #F2F2F2;
 }
+
+#board-write-btn {
+    width: 120px;
+    height: 42px;
+    margin-bottom: 1%;
+}
+
+#board-title {
+    border: none;
+    border-bottom: groove;
+    border-width: 1px;
+}
+
+#board-text {
+    border: none;
+    height: 500px;
+    width: 100%;
+}
+
+.board-write-list .row {
+    margin-top: 3%;
+}
+
+#board-register-btn {
+    width: 120px;
+}

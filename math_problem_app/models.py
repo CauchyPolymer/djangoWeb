@@ -227,8 +227,27 @@ class User(models.Model):
 BOARD_TYPE = {
     (1, '소식'),
     (2, '칼럼'),
-    (3, '진로')
+    (3, '커뮤니티')
 }
+
+
+class Comment(models.Model):
+    commentSrl = models.AutoField(primary_key=True)
+    writer = models.ForeignKey(User, null=True, blank=True)
+    text = models.TextField(max_length=5000, null=True, blank=True)
+
+    createdAt = models.DateTimeField(auto_now_add=True)
+    updatedAt = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.text
+
+    def store(self):
+        self.save()
+        return self
+
+    def get_write_time(self):
+        return self.createdAt.strftime('%Y. %m. %d %H:%M')
 
 
 class Board(models.Model):
@@ -239,6 +258,8 @@ class Board(models.Model):
     viewCnt = models.IntegerField(null=True, blank=True, default=0)
     recommendCnt = models.IntegerField(null=True, blank=True, default=0)
     type = models.IntegerField(choices=BOARD_TYPE, null=True, blank=True)
+
+    comments = models.ManyToManyField(Comment, null=True, blank=True)
 
     createdAt = models.DateTimeField(auto_now_add=True)
     updatedAt = models.DateTimeField(auto_now=True)
@@ -251,7 +272,10 @@ class Board(models.Model):
         return self
 
     def get_write_day(self):
-        return self.createdAt.time() if self.createdAt.today().date() == datetime.today().date() else str((datetime.today().date() - self.createdAt.today().date()).days) + ' 일전'
+        return self.createdAt.time() if self.createdAt.date() == datetime.today().date() else str((datetime.today().date() - self.createdAt.date()).days) + ' 일전'
 
     def get_write_time(self):
         return self.createdAt.strftime('%Y. %m. %d %H:%M')
+
+    def get_comment_len(self):
+        return self.comments.count()
