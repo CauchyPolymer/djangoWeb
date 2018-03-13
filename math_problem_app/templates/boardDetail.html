@@ -15,7 +15,7 @@
         </div>
         <div class="col-xs-4" style="font-weight: 100;" align="right">
             <span>조회 수 {{ board.viewCnt }}</span>
-            <span style="margin-left: 5%;">댓글 1</span>
+            <span style="margin-left: 5%;">댓글 <span id="board-comment-len">{{ board.get_comment_len }}</span></span>
         </div>
     </div>
 
@@ -38,22 +38,11 @@
 
     <div class="row w3-border board-row">
         <div class="col-xs-12 gray-background-color comment-header medium-font" align="left">
-            댓글 '1'개
+            댓글 '<span id="comment-num">{{ board.get_comment_len }}</span>'개
         </div>
     </div>
-    <div class="row w3-border">
-        <div class="col-xs-9 comments" align="left">
-            <div class="row">
-                1. <span class="blue-color">닉네임1</span> <span class="gray-color" style="margin-left: 5%">2018.05.23 13:20</span>
-            </div>
-            <div class="row medium-font">
-                저는 통계학 유학이 별로 끌리지는 않네요.
-            </div>
-        </div>
-        <div class="col-xs-3" align="right" style="padding-top: 2%;">
-            <input id="edit-comment" type="button" class="w3-btn w3-round w3-border" value="수정">
-            <input id="delete-comment" type="button" class="w3-btn w3-round w3-border" value="삭제">
-        </div>
+    <div id="comments" class="row w3-border">
+        {% include 'comments.html' %}
     </div>
 
     <div class="row w3-round w3-border gray-background-color board-row">
@@ -65,7 +54,7 @@
                 <input id="comment" class="w3-border w3-round large-font" type="text">
             </div>
             <div class="col-xs-2">
-                <input id="write-comment" class="w3-btn w3-border w3-round large-font gray-color" type="button" value="등록">
+                <input id="write-comment" data-boardsrl="{{ board.boardSrl }}" class="w3-btn w3-border w3-round large-font gray-color" type="button" value="등록">
             </div>
         </div>
     </div>
@@ -75,5 +64,18 @@
     $('#show-board-table').click(function () {
         $('#board-div').css('display', 'inherit')
         $('#board-detail').css('display', 'none')
+    })
+    
+    $('#write-comment').click(function () {
+        $.ajax({
+            url: "comment/",
+            type: 'POST',
+            data: {text: $('#comment').val(), boardSrl:$(this).data('boardsrl')},
+            success: function (result) {
+                $('#comment').val('')
+                $('#comments').empty()
+                $('#comments').append(result)
+            },
+        });
     })
 </script>
