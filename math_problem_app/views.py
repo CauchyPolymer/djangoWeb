@@ -18,7 +18,7 @@ from django.views.decorators.csrf import csrf_exempt
 
 from math_problem import settings
 from math_problem_app.sendSms import sendSms
-from math_problem_app.models import User, Problem, ProblemUnit, Photo, Board, Test, Comment
+from math_problem_app.models import User, Problem, ProblemUnit, Photo, Board, Test, Comment, Answer, AnswerNum
 
 
 def head(request):
@@ -394,6 +394,7 @@ def comment(request):
         board = Board.objects.get(boardSrl=boardSrl)
         board.comments.remove(Comment.objects.get(commentSrl=commentSrl))
 
+
         return render(request, 'comments.html', {'board': board, 'user': user})
 
 
@@ -410,3 +411,34 @@ def createBoard(request):
 
         return returnHttpResponse({'success': True, 'msg':'게시판 글이 작성 되었습니다.'})
 
+
+def onlineEstimationStart(request):
+    tests = Test.objects.filter(type=2)  # 진단고사
+    randomIdx = random.randint(0, tests.count() - 1)
+    request.session['testSrl'] = tests[randomIdx].testSrl
+    return render(request, 'onlineEstimationStart.html')
+
+
+def estimation(request):
+    problemIdx = int(request.GET.get('problemIdx'))
+    test = Test.objects.get(testSrl=int(request.session.get('testSrl')))
+    return render(request, 'estimation.html', {'test': test, 'problem': test.problems.all()[problemIdx], 'problemIdx': problemIdx + 1})
+
+
+@csrf_exempt
+def answer(request):
+    user = getLoginUser(request)
+    if request.method == 'POST':
+        try:
+            answers = (str(request.POST.get('answers')))
+        except SyntaxError:
+            return returnHttpResponse({'success': False, 'msg': '정답을 모두 적지 않았습니다.'})
+        testSrl = int(request.POST.get('testSrl'))
+        answer = Answer(test=Test.objects.get(testSrl=testSrl)).store()
+        for ans in answers.split(','):
+            answer.answers.add(AnswerNum(answer=ans).store())
+
+        answer.save()
+        user.answers.add(answer)
+        user.save()
+        return render(request, 'estimationResult.html')

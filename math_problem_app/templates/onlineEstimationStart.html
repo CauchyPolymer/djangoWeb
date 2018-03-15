@@ -1,0 +1,54 @@
+{% load static %}
+<div class="list-group estimation-start">
+    <div class="row" style="padding-top: 8%;">
+        <div id="start-estimation" class="col-xs-12 x-large-font white-color main-background-color line" align="center">
+            온라인 진단고사 <span style="font-size: 50px;">시작하기!</span>
+        </div>
+    </div>
+
+    <div class="row" style="margin-top: 6%;">
+        <div class="col-xs-12" align="center">
+            <img src="{% static 'assets/img/desktop@3x.png' %}" style="width: 20%;">
+        </div>
+    </div>
+</div>
+
+<script>
+    history.pushState(null, null, "#onlineEstimationStart");
+    $(window).unbind("hashchange")
+    $(window).bind("hashchange", function(){
+        $.ajax({
+            url: "estimationStart/",
+            type: 'GET',
+            contentType: "application/json; charset=utf-8",
+            success: function (result) {
+                $('.main-container').empty()
+                $('.main-container').append(result)
+                $('.header').css('display', 'inherit')
+            },
+        });
+    });
+
+    problemIdx = 0;
+    answers = [];
+
+    $('.header').css('display', 'none')
+
+    $('#start-estimation').click(function () {
+        $.ajax({
+            url: "estimation/?problemIdx="+problemIdx,
+            type: 'GET',
+            contentType: "application/json; charset=utf-8",
+            success: function (result) {
+                $('.main-container').empty()
+                $('.main-container').append(result)
+                window.MathJax = {
+                    tex2jax: {
+                      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                      processEscapes: true
+                    }
+              };
+            },
+        });
+    })
+</script>
