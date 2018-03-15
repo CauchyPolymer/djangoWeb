@@ -82,6 +82,11 @@ UNIT = {
     (6, '기벡'),
 }
 
+ANSWER_TYPE = {
+    (1, '객관식'),
+    (2, '주관식'),
+}
+
 
 class ProblemUnit(models.Model):
     problemUnitSrl = models.AutoField(primary_key=True)
@@ -105,6 +110,8 @@ class Problem(models.Model):
     type2 = models.IntegerField(choices=PROBLEM_TYPE2, blank=True, null=True)
     difficulty = models.IntegerField(choices=PROBLEM_DIFFICULTY, blank=True, null=True)
     unit = models.ManyToManyField(ProblemUnit, blank=True, null=True)
+
+    answerType = models.IntegerField(choices=ANSWER_TYPE, blank=True, null=True, default=1)
 
     explanation = models.TextField(max_length=10000, blank=True, null=True)
 
@@ -144,6 +151,9 @@ class Test(models.Model):
     def store(self):
         self.save()
         return self
+
+    def get_problem_len(self):
+        return self.problems.count()
 
 
 class AnswerNum(models.Model):

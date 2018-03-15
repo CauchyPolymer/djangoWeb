@@ -36,4 +36,7 @@ urlpatterns = [
     url(r'^boardDetail/', boardDetail, name='boardDetail'),
     url(r'^comment/', comment, name='comment'),
     url(r'^createBoard/', createBoard, name='createBoard'),
+    url(r'^onlineEstimationStart/', onlineEstimationStart, name='onlineEstimationStart'),
+    url(r'^estimation/', estimation, name='estimation'),
+    url(r'^answer/', answer, name='answer'),
 ]

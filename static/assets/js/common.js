@@ -43,3 +43,6 @@ function chkPwd(str){
 
      return true;
 }
+
+var problemIdx = 0;
+var answers = {};
