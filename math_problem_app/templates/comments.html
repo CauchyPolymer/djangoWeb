@@ -30,15 +30,17 @@
     })
 
     $('.delete-comment').click(function () {
-        $.ajax({
-            url: "comment/?boardSrl="+$(this).data('boardsrl')+"&commentSrl="+$(this).data('commentsrl'),
-            type: 'DELETE',
-            contentType: "application/json; charset=utf-8",
-            success: function (result) {
-                $('#comments').empty()
-                $('#comments').append(result)
-            },
-        });
+        if(confirm("댓글을 삭제 하시겠습니까?")) {
+            $.ajax({
+                url: "comment/?boardSrl=" + $(this).data('boardsrl') + "&commentSrl=" + $(this).data('commentsrl'),
+                type: 'DELETE',
+                contentType: "application/json; charset=utf-8",
+                success: function (result) {
+                    $('#comments').empty()
+                    $('#comments').append(result)
+                },
+            });
+        }
     })
 
     $('#comment-num').text({{ board.get_comment_len }})
