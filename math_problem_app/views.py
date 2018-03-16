@@ -122,7 +122,11 @@ def getRateData(request):
 
 
 def estimationStart(request):
-    return render(request, 'estimationStart.html')
+    user = getLoginUser(request)
+    if user:
+        return render(request, 'estimationStart.html')
+    else:
+        return render(request, 'login.html')
 
 
 def createLecture(request):
