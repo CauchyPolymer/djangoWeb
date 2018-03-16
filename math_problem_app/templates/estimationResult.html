@@ -1,9 +1,72 @@
 {% load static %}
 
-<div class="list-group estimation-start">
+<div class="list-group estimation-start" style="background-color: white">
     <div class="row line main-background-color white-color problem-line">
-        <div class="col-xs-6 x-large-font" align="right">
+        <div class="col-xs-6 x-large-font" align="right" style="padding-right: 3%">
             진단고사결과
+        </div>
+        <div class="col-xs-6" align="left" style="padding-left: 3%">
+            <div class="row large-font" style="margin-top: -30px"><span class="x-large-font">84</span>/100</div>
+            <div class="row large-font"><span class="x-large-font">2</span>등급</div>
+        </div>
+    </div>
+
+    <div class="row" align="center" style="margin-top: 2%; padding: 0 5% 0 5%">
+        <div class="col-xs-2 x-large-font main-color bold">수1</div>
+        <div class="col-xs-2 x-large-font main-color bold">수2</div>
+        <div class="col-xs-2 x-large-font main-color bold">미1</div>
+        <div class="col-xs-2 x-large-font main-color bold">미2</div>
+        <div class="col-xs-2 x-large-font main-color bold">기벡</div>
+        <div class="col-xs-2 x-large-font main-color bold">확통</div>
+    </div>
+    <div class="row" style="padding: 0 10% 5% 10%">
+        <div id="chartContainer" style="height: 50%; width: 97%;"></div>
+    </div>
+
+    <div class="row result-bottom">
+        <div class="col-xs-12" align="center">
+            <input class="result-bottom-btn bold" type="button" value="약점 강화 프로젝트">
         </div>
     </div>
 </div>
+
+<script>
+    $.ajax({
+        url: "getRateData/",
+        type: 'GET',
+        contentType: "application/json; charset=utf-8",
+        success: function (result) {
+            drawGraph(result)
+        },
+    });
+
+    function drawGraph(data) {
+		var chart = new CanvasJS.Chart("chartContainer",{
+			title:{
+				text: ""
+			},
+            animationEnabled: true,
+			axisY:{
+				reversed: true,
+                labelFontSize: 30,
+                interval: 1,
+                minimum: 0,
+                maximum: 9,
+			},
+            axisX:{
+			    labelFontSize: 40,
+                labelFontColor: "#50519C",
+            },
+            backgroundColor: "#E5E7F5",
+			data: [{
+				type: "line",
+				dataPoints: data,
+                markerSize: 35,
+                lineThickness: 6,
+                color: "#47DFBA",
+			}]
+		});
+	    chart.render();
+	}
+
+</script>
