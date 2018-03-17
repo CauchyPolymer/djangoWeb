@@ -460,7 +460,7 @@ def answer(request):
         user.save()
 
         if str(request.POST.get('from')) == 'estimation':
-            return render(request, 'estimationResult.html', {'rate': rate})
+            return render(request, 'estimationResult.html', {'rate': rate, 'test': test, 'answers': answer})
         elif str(request.POST.get('from')) == 'test':
             return render(request, 'testResult.html', {'rate': rate, 'test': test, 'answers': answer})
 
