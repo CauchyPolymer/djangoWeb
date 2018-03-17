@@ -30,7 +30,6 @@ urlpatterns = [
     url(r'^createTest/', createTest, name='createTest'),
     url(r'^problemBox/', problemBox, name='problemBox'),
     url(r'^ranking/', ranking, name='ranking'),
-    url(r'^test/', test, name='test'),
     url(r'^testBox/', testBox, name='testBox'),
     url(r'^phoneCert/', phoneCert, name='phoneCert'),
     url(r'^boardDetail/', boardDetail, name='boardDetail'),
@@ -39,4 +38,6 @@ urlpatterns = [
     url(r'^onlineEstimationStart/', onlineEstimationStart, name='onlineEstimationStart'),
     url(r'^estimation/', estimation, name='estimation'),
     url(r'^answer/', answer, name='answer'),
+    url(r'^testProblems/', testProblems, name='testProblems'),
+
 ]

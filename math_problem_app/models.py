@@ -17,6 +17,9 @@ class Rating(models.Model):
     givec = models.IntegerField(blank=True, null=True)
     hwaktong = models.IntegerField(blank=True, null=True)
 
+    score = models.IntegerField(default=0)
+    totalScore = models.IntegerField(default=0)
+
     createdAt = models.DateTimeField(auto_now_add=True)
     updatedAt = models.DateTimeField(auto_now=True)
 
@@ -29,6 +32,9 @@ class Rating(models.Model):
 
     def get_updated_at(self):
         return self.updatedAt.strftime("%Y. %m. %d")
+
+    def get_grade(self):
+        return str(int((self.su1 + self.su2 + self.mi1 + self.mi2 + self.givec + self.hwaktong) / 6))
 
 
 class Photo(models.Model):
@@ -115,6 +121,9 @@ class Problem(models.Model):
 
     explanation = models.TextField(max_length=10000, blank=True, null=True)
 
+    totalAnswered = models.IntegerField(default=0)
+    rightAnswered = models.IntegerField(default=0)
+
     createdAt = models.DateTimeField(auto_now_add=True)
     updatedAt = models.DateTimeField(auto_now=True)
 
@@ -135,12 +144,25 @@ TEST_TYPE = {
 }
 
 
+class Score(models.Model):
+    scoreSrl = models.AutoField(primary_key=True)
+    score = models.IntegerField(default=0)
+
+    def __str__(self):
+        return str(self.score)
+
+    def store(self):
+        self.save()
+        return self
+
+
 class Test(models.Model):
     testSrl = models.AutoField(primary_key=True)
     name = models.CharField(max_length=200, blank=True, null=True)
 
     type = models.IntegerField(choices=TEST_TYPE, blank=True, null=True)
     problems = models.ManyToManyField(Problem, blank=True, null=True)
+    scores = models.ManyToManyField(Score, blank=True, null=True)
 
     createdAt = models.DateTimeField(auto_now_add=True)
     updatedAt = models.DateTimeField(auto_now=True)
@@ -199,7 +221,7 @@ class User(models.Model):
     school = models.CharField(max_length=200, blank=True, null=True)
     grade = models.CharField(max_length=20, blank=True, null=True)
 
-    rate = models.ForeignKey(Rating, blank=True, null=True, on_delete=models.CASCADE)
+    rate = models.ManyToManyField(Rating, blank=True, null=True)
     answers = models.ManyToManyField(Answer, blank=True, null=True)
     tests = models.ManyToManyField(Test, blank=True, null=True)
 

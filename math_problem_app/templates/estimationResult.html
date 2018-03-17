@@ -6,8 +6,8 @@
             진단고사결과
         </div>
         <div class="col-xs-6" align="left" style="padding-left: 3%">
-            <div class="row large-font" style="margin-top: -30px"><span class="x-large-font">84</span>/100</div>
-            <div class="row large-font"><span class="x-large-font">2</span>등급</div>
+            <div class="row large-font" style="margin-top: -30px"><span class="x-large-font">{{ rate.score }}</span>/{{ rate.totalScore }}</div>
+            <div class="row large-font"><span class="x-large-font">{{ rate.get_grade }}</span>등급</div>
         </div>
     </div>
 
@@ -32,7 +32,7 @@
 
 <script>
     $.ajax({
-        url: "getRateData/",
+        url: "getRateData/ratingSrl={{ rate.ratingSrl }}",
         type: 'GET',
         contentType: "application/json; charset=utf-8",
         success: function (result) {

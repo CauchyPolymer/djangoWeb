@@ -8,7 +8,9 @@
 
         </div>
     </div>
-    <div class="col-xs-9">
+    <div id="test-problem-box" class="col-xs-9" style="display: none;">
+    </div>
+    <div id="problems-box" class="col-xs-9">
         <div class="row">
             <div class="col-xs-4">
                 <div class="row medium-font test-type-check-box">
@@ -183,14 +185,30 @@
     })
 
     function initTestBoxEvent() {
-        $('.test-box').click(function () {
+        $('.test-name-div').click(function () {
             $('.test-box').each(function () {
                 $(this).css('background-color', '#E2E4F0')
             })
-            $(this).css('background-color', '#BEC4E3')
+            $(this).parent('.text-box').css('background-color', '#BEC4E3')
             testSrl = $(this).data('testsrl')
             $('#test-name').val($(this).data('testname'))
+            $('#test-problem-box').css('display', 'none')
+            $('#problems-box').css('display', 'inherit')
             getProblems()
+        })
+        $('.test-start-div').click(function () {
+            $.ajax({
+            url: "testProblems/?testSrl="+$(this).data('testsrl'),
+                type: 'GET',
+                contentType: "application/json; charset=utf-8",
+                success: function (result) {
+                    $('#test-problem-box').empty()
+                    $('#test-problem-box').append(result)
+                    $('#test-problem-box').css('display', 'inherit')
+                    $('#problems-box').css('display', 'none')
+                    initProblemBoxEvent()
+                },
+            });
         })
     }
 
