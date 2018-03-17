@@ -6,7 +6,11 @@
 <div class="list-group estimation-start">
     <div class="row line main-background-color white-color problem-line">
         <div class="col-xs-3 x-large-font" align="center">
+            {% if test.type == 1 %}
+            {{ test.name }}
+            {% else %}
             진단고사
+            {% endif %}
         </div>
         <div class="col-xs-3" align="left">
             <span id="current-problem" class="x-large-font">{{ problemIdx }}</span><span class="medium-font">/ {{ test.get_problem_len }} 문제</span>
@@ -85,7 +89,7 @@
             $.ajax({
                 url: "answer/",
                 type: 'POST',
-                data: {testSrl: {{test.testSrl}}, answers: answers.toString()},
+                data: {testSrl: {{test.testSrl}}, answers: answers.toString(), from: 'estimation'},
                 success: function (result) {
                     if(result.msg){
                         alert(result.msg)
@@ -126,7 +130,7 @@
         {% endif %}
         problemIdx -= 1;
         $.ajax({
-            url: "estimation/?problemIdx="+problemIdx,
+            url: "estimation/?testSrl={{ test.testSrl }}&problemIdx="+problemIdx,
             type: 'GET',
             contentType: "application/json; charset=utf-8",
             success: function (result) {
@@ -152,7 +156,7 @@
         {% endif %}
         problemIdx += 1;
         $.ajax({
-            url: "estimation/?problemIdx="+problemIdx,
+            url: "estimation/?testSrl={{ test.testSrl }}&problemIdx="+problemIdx,
             type: 'GET',
             contentType: "application/json; charset=utf-8",
             success: function (result) {

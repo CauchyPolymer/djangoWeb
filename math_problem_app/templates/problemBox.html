@@ -5,16 +5,17 @@
         <div class="problem">
             {{ problem.text }}
         </div>
+        {% if not from == 'testStart' %}
         <label class="container small-font problem-checkbox">
             <input class="problem-check" type="checkbox" data-units="{{ problem.get_units }}" data-problemsrl="{{ problem.problemSrl }}" {% if problem.problemSrl in testProblemSrls %}checked{% endif %}>
             <span class="checkmark"></span>
         </label>
+        {% endif %}
     </div>
     {% endfor %}
 </div>
 
 <script>
-    $('.problem-box').css('height', $('.problem-box').width())
     problemSrls = String({% if testProblemSrls %}{{ testProblemSrls }}{% else %}''{% endif %}).split(',')
     window.MathJax = {
             tex2jax: {

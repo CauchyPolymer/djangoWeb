@@ -18,7 +18,8 @@ from django.views.decorators.csrf import csrf_exempt
 
 from math_problem import settings
 from math_problem_app.sendSms import sendSms
-from math_problem_app.models import User, Problem, ProblemUnit, Photo, Board, Test, Comment, Answer, AnswerNum
+from math_problem_app.models import User, Problem, ProblemUnit, Photo, Board, Test, Comment, Answer, AnswerNum, Rating, \
+    Score
 
 
 def head(request):
@@ -114,9 +115,14 @@ def getRateData(request):
         return returnHttpResponse([{'label' : '1등급', 'y': 1}, {'label' : '3등급', 'y': 3}, {'label' : '2등급', 'y': 2}, {'label' : '1등급', 'y': 1},
                 {'label' : '2등급', 'y': 2}, {'label' : '1등급', 'y': 1}])
 
-    data = [{'label': str(user.rate.su1) + '등급', 'y': user.rate.su1}, {'label': str(user.rate.su2) + '등급', 'y': user.rate.su2},
-            {'label': str(user.rate.mi1) + '등급', 'y': user.rate.mi1}, {'label': str(user.rate.mi2) + '등급', 'y': user.rate.mi2},
-            {'label': str(user.rate.givec) + '등급', 'y': user.rate.givec}, {'label': str(user.rate.hwaktong) + '등급', 'y': user.rate.hwaktong}]
+    if request.GET.get('ratingSrl'):
+        rate = Rating.objects.get(ratingSrl=int(request.GET.get('ratingSrl')))
+    else:
+        rate = user.rate.last()
+
+    data = [{'label': str(rate.su1) + '등급', 'y': rate.su1}, {'label': str(rate.su2) + '등급', 'y': rate.su2},
+            {'label': str(rate.mi1) + '등급', 'y': rate.mi1}, {'label': str(rate.mi2) + '등급', 'y': rate.mi2},
+            {'label': str(rate.givec) + '등급', 'y': rate.givec}, {'label': str(rate.hwaktong) + '등급', 'y': rate.hwaktong}]
 
     return returnHttpResponse(data)
 
@@ -298,6 +304,7 @@ def createTest(request):
             for problemSrl in problemSrls.split(','):
                 if len(problemSrl) > 0:
                     test.problems.add(Problem.objects.get(problemSrl=problemSrl))
+                    test.scores.add(Score(score=5).store())
 
         test.name = name
         test.save()
@@ -328,10 +335,6 @@ def problemBox(request):
 
 def ranking(request):
     return render(request, 'ranking.html')
-
-
-def test(request):
-    return render(request, 'test.html')
 
 
 def testBox(request):
@@ -425,8 +428,11 @@ def onlineEstimationStart(request):
 
 def estimation(request):
     problemIdx = int(request.GET.get('problemIdx'))
-    test = Test.objects.get(testSrl=int(request.session.get('testSrl')))
-    return render(request, 'estimation.html', {'test': test, 'problem': test.problems.all()[problemIdx], 'problemIdx': problemIdx + 1})
+    if request.GET.get('testSrl'):
+        test = Test.objects.get(testSrl=int(request.GET.get('testSrl')))
+    else:
+        test = Test.objects.get(testSrl=int(request.session.get('testSrl')))
+    return render(request, 'estimation.html', {'test': test, 'problem': test.problems.all()[problemIdx], 'problemIdx': problemIdx + 1, 'from': str(request.GET.get('from'))})
 
 
 @csrf_exempt
@@ -434,11 +440,12 @@ def answer(request):
     user = getLoginUser(request)
     if request.method == 'POST':
         try:
-            answers = (str(request.POST.get('answers')))
+            answers = str(request.POST.get('answers'))
         except SyntaxError or ValueError:
             return returnHttpResponse({'success': False, 'msg': '정답을 모두 적지 않았습니다.'})
         testSrl = int(request.POST.get('testSrl'))
-        answer = Answer(test=Test.objects.get(testSrl=testSrl)).store()
+        test = Test.objects.get(testSrl=testSrl)
+        answer = Answer(test=test).store()
         for ans in answers.split(','):
             try:
                 answer.answers.add(AnswerNum(answer=ans).store())
@@ -447,5 +454,72 @@ def answer(request):
 
         answer.save()
         user.answers.add(answer)
+
+        rate = calcRating(test, answer)
+        user.rate.add(rate)
         user.save()
-        return render(request, 'estimationResult.html')
+
+        if str(request.POST.get('from')) == 'estimation':
+            return render(request, 'estimationResult.html', {'rate': rate})
+        elif str(request.POST.get('from')) == 'test':
+            return render(request, 'testResult.html', {'rate': rate, 'test': test, 'answers': answer})
+
+
+def calcRating(test, answer):
+    su1 = 0; su2 = 0; mi1 = 0; mi2 = 0; hwaktong = 0; givec = 0
+    su1tot = 0; su2tot = 0; mi1tot = 0; mi2tot = 0; hwaktongtot = 0; givectot = 0
+    problems = test.problems.all()
+    scores = test.scores.all()
+    totalScore = 0
+    rightScore = 0
+    for i, ans in enumerate(answer.answers.all()):
+        problem = problems[i]
+        problem.totalAnswered += 1
+        score = scores[i].score
+        totalScore += score
+        units = list(map(lambda x: x['unit'], problem.unit.values('unit')))
+        if 1 in units:
+            su1tot += score
+        if 2 in units:
+            su2tot += score
+        if 3 in units:
+            mi1tot += score
+        if 4 in units:
+            mi2tot += score
+        if 5 in units:
+            hwaktongtot += score
+        if 6 in units:
+            givectot += score
+
+        if problem.answer == ans.answer:
+            if 1 in units:
+                su1 += score
+            if 2 in units:
+                su2 += score
+            if 3 in units:
+                mi1 += score
+            if 4 in units:
+                mi2 += score
+            if 5 in units:
+                hwaktong += score
+            if 6 in units:
+                givec += score
+            problem.rightAnswered += 1
+            rightScore += score
+        problem.save()
+
+    su1rate = (int((1 - su1 / su1tot) * 10) if su1 / su1tot != 1 else 1) if su1 != 0 else 9
+    su2rate = (int((1 - su2 / su2tot) * 10) if su2 / su2tot != 1 else 1) if su2 != 0 else 9
+    mi1rate = (int((1 - mi1 / mi1tot) * 10) if mi1 / mi1tot != 1 else 1) if mi1 != 0 else 9
+    mi2rate = (int((1 - mi2 / mi2tot) * 10) if mi2 / mi2tot != 1 else 1) if mi2 != 0 else 9
+    hwaktongrate = (int((1 - hwaktong / hwaktongtot) * 10) if hwaktong / hwaktongtot != 1 else 1) if hwaktong != 0 else 9
+    givecrate = (int((1 - givec / givectot) * 10) if givec / givectot != 1 else 1) if givec != 0 else 9
+
+    return Rating(score=rightScore, totalScore=totalScore, su1=su1rate, su2=su2rate, mi1=mi1rate, mi2=mi2rate, hwaktong=hwaktongrate, givec=givecrate).store()
+
+
+def testProblems(request):
+    testSrl = int(request.GET.get('testSrl'))
+    test = Test.objects.get(testSrl=testSrl)
+
+    return render(request, 'testProblems.html', {'test': test, 'problems': test.problems.all(), 'from':'testStart'})

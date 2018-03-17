@@ -11,6 +11,7 @@
     border-width: 1px;
     padding-top: 45px;
     background-color: #E5E7F4;
+    cursor: pointer;
 }
 
 .test-type-check-box {
@@ -38,11 +39,12 @@
 .problem-box-div {
     border: groove;
     border-width: 1px;
-    margin-top: 5%;
+    margin: 5% 1% 3% 1%;
 }
 
 .problem-box {
     width: 17.5%;
+    height: 160px;
     margin: 2% 2% 2% 0;
     border: groove;
     border-width: 1px;
@@ -70,3 +72,27 @@
     border: outset;
     border-right:1px;
 }
+
+.test-problem-name {
+    border: groove;
+    border-width: 1px;
+    border-radius: 15px;
+    margin: 2% 2% 0 2%;
+    height: 100px;
+    box-shadow: 0 5px #BBBBBB;
+    padding-top: 20px;
+}
+
+.test-start {
+    width: 60px;
+    margin-top: -10px;
+    z-index: 3;
+}
+
+.start-test-btn {
+    border-radius: 25px;
+    background-color: #484697;
+    width: 300px;
+    height: 80px;
+}
+

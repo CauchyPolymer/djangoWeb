@@ -1,0 +1,38 @@
+{% load static %}
+<div class="row">
+    <div class="col-xs-12 x-large-font test-problem-name main-color bold" align="center">
+        {{ test.name }}
+    </div>
+</div>
+
+<div class="row problem-box-div">
+    {% include 'problemBox.html' %}
+</div>
+
+<div class="row">
+    <div class="col-xs-12" align="center">
+        <input id="test-start" class="w3-btn w3-round start-test-btn x-large-font white-color" type="button" value="학습하기">
+    </div>
+</div>
+
+<script>
+    $('#test-start').click(function () {
+        problemIdx = 0;
+        answers = [];
+        $.ajax({
+            url: "estimation/?from=test&testSrl={{ test.testSrl }}&problemIdx="+problemIdx,
+            type: 'GET',
+            contentType: "application/json; charset=utf-8",
+            success: function (result) {
+                $('.main-container').empty()
+                $('.main-container').append(result)
+                window.MathJax = {
+                    tex2jax: {
+                      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                      processEscapes: true
+                    }
+              };
+            },
+        });
+    })
+</script>
