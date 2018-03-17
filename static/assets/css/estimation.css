@@ -77,3 +77,21 @@
     height: 250px;
     background-color: #BDC3E6;
 }
+
+.result-bottom {
+    background-color: #E5E7F5;
+    height: 140px;
+    border: groove;
+    border-width: 1px;
+    padding-top: 10px;
+    margin-bottom: 5%;
+}
+
+.result-bottom-btn {
+    height: 120px;
+    width: 60%;
+    background-color: #BDC3E6;
+    color: #484697;
+    font-size: 50px;
+    border: outset;
+}

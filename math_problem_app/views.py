@@ -435,12 +435,15 @@ def answer(request):
     if request.method == 'POST':
         try:
             answers = (str(request.POST.get('answers')))
-        except SyntaxError:
+        except SyntaxError or ValueError:
             return returnHttpResponse({'success': False, 'msg': '정답을 모두 적지 않았습니다.'})
         testSrl = int(request.POST.get('testSrl'))
         answer = Answer(test=Test.objects.get(testSrl=testSrl)).store()
         for ans in answers.split(','):
-            answer.answers.add(AnswerNum(answer=ans).store())
+            try:
+                answer.answers.add(AnswerNum(answer=ans).store())
+            except ValueError:
+                return returnHttpResponse({'success': False, 'msg': '정답을 모두 적지 않았습니다.'})
 
         answer.save()
         user.answers.add(answer)
