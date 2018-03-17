@@ -3,7 +3,12 @@
 <div class="list-group estimation-start" style="background-color: white">
     <div class="row line main-background-color white-color problem-line">
         <div class="col-xs-6 x-large-font" align="right" style="padding-right: 3%">
-            진단고사결과
+            {% if test.type == 1 %}
+                {{ test.name }}
+            {% else %}
+                진단고사
+            {% endif %}
+            결과
         </div>
         <div class="col-xs-6" align="left" style="padding-left: 3%">
             <div class="row large-font" style="margin-top: -30px"><span class="x-large-font">{{ rate.score }}</span>/{{ rate.totalScore }}</div>
