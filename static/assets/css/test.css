@@ -9,7 +9,7 @@
 .test-box {
     border-bottom: groove;
     border-width: 1px;
-    padding-top: 45px;
+    padding-top: 0;
     background-color: #E5E7F4;
     cursor: pointer;
 }
@@ -85,8 +85,7 @@
 
 .test-start {
     width: 60px;
-    margin-top: -10px;
-    z-index: 3;
+    margin-top: 35px;
 }
 
 .start-test-btn {
@@ -96,3 +95,7 @@
     height: 80px;
 }
 
+.test-name-div {
+    height: 100%;
+    padding-top: 45px;
+}
