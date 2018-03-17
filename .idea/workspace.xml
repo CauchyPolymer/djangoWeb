@@ -36,6 +36,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/main.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/main.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/signIn.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/signIn.html" />
 =======
@@ -299,6 +300,9 @@
 >>>>>>> 9045f316427346d1dd512d81d86fbc336bad4479
 =======
 >>>>>>> 7c57c20c5011c0b534e9ce05fdff16b788109e0e
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/createTest.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/createTest.html" />
+>>>>>>> c55b14292502e5831bb69c4ca150d1c653548690
     </list>
 >>>>>>> d9ad5fe1690b3b8257226eab52cebb30c5deb0dd
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -336,6 +340,7 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
           <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
@@ -510,6 +515,13 @@
                 <state relative-caret-position="320">
                   <caret line="107" column="17" lean-forward="true" selection-start-line="107" selection-start-column="17" selection-end-line="107" selection-end-column="17" />
 >>>>>>> 9045f316427346d1dd512d81d86fbc336bad4479
+=======
+          <file leaf-file-name="createTest.html" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/math_problem_app/templates/createTest.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="451">
+                  <caret line="186" column="33" lean-forward="true" selection-start-line="186" selection-start-column="33" selection-end-line="186" selection-end-column="33" />
+>>>>>>> c55b14292502e5831bb69c4ca150d1c653548690
                   <folding>
                     <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
                   </folding>
@@ -702,12 +714,14 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="estimationResult.html" pinned="false" current-in-tab="true">
+          <file leaf-file-name="estimationResult.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/math_problem_app/templates/estimationResult.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="270">
-                  <caret line="18" column="78" lean-forward="false" selection-start-line="18" selection-start-column="78" selection-end-line="18" selection-end-column="78" />
-                  <folding />
+                <state relative-caret-position="525">
+                  <caret line="35" column="6" lean-forward="true" selection-start-line="35" selection-start-column="6" selection-end-line="35" selection-end-column="6" />
+                  <folding>
+                    <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -1111,12 +1125,12 @@
         <option value="$PROJECT_DIR$/static/assets/css/test.css" />
         <option value="$PROJECT_DIR$/math_problem_app/templates/problemBox.html" />
         <option value="$PROJECT_DIR$/math_problem_app/templates/onlineEstimationStart.html" />
-        <option value="$PROJECT_DIR$/math_problem_app/templates/createTest.html" />
         <option value="$PROJECT_DIR$/math_problem_app/templates/estimation.html" />
         <option value="$PROJECT_DIR$/math_problem_app/templates/testProblems.html" />
         <option value="$PROJECT_DIR$/math_problem_app/urls.py" />
         <option value="$PROJECT_DIR$/math_problem_app/views.py" />
         <option value="$PROJECT_DIR$/math_problem_app/templates/estimationResult.html" />
+        <option value="$PROJECT_DIR$/math_problem_app/templates/createTest.html" />
       </list>
     </option>
   </component>
@@ -2679,16 +2693,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/math_problem_app/templates/createTest.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="107" column="17" lean-forward="true" selection-start-line="107" selection-start-column="17" selection-end-line="107" selection-end-column="17" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/math_problem_app/templates/createLecture.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="645">
@@ -2735,9 +2739,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/math_problem_app/templates/estimationResult.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="78" lean-forward="false" selection-start-line="18" selection-start-column="78" selection-end-line="18" selection-end-column="78" />
-          <folding />
+        <state relative-caret-position="525">
+          <caret line="35" column="6" lean-forward="true" selection-start-line="35" selection-start-column="6" selection-end-line="35" selection-end-column="6" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/math_problem_app/templates/createTest.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="451">
+          <caret line="186" column="33" lean-forward="true" selection-start-line="186" selection-start-column="33" selection-end-line="186" selection-end-column="33" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
