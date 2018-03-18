@@ -125,7 +125,8 @@ body {
 
 .header {
     box-shadow: 0 5px #BBBBBB;
-    height: 80px;
+    height: 65px;
+    z-index: 3;
 }
 
 .line-bar-circle {

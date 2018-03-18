@@ -10,112 +10,64 @@
     <div class="col-xs-4 ranking-div" style="margin-left: 5%" align="center">
         <img class="ranking-icon" src="{% static 'assets/img/ranking-icon.png' %}">
         <p class="medium-font main-color" style="margin-top: 3%;">총점 랭킹</p>
-        <p class="medium-font gray-color">수능대왕 전체 순위 입니다.</p>
-        <div class="row ranking-box" style="margin-top: 5%;">
-            <div class="col-xs-2 medium-font ranking-num-first">1</div>
-            <div class="col-xs-8 medium-font" align="left">Minho010 <span class="small-font">경기고 2학년</span></div>
-            <div class="col-xs-2 medium-font bold">99</div>
-        </div>
+        <p class="medium-font gray-color" style="margin-bottom: 5%;">수능대왕 전체 순위 입니다.</p>
+        {% for type1Top in type1Top5 %}
         <div class="row ranking-box">
-            <div class="col-xs-2 medium-font ranking-num-second">2</div>
-            <div class="col-xs-8 medium-font" align="left">Dqjasosoel <span class="small-font">서울과고 1학년</span></div>
-            <div class="col-xs-2 medium-font">97</div>
+            <div class="col-xs-2 medium-font {% if forloop.counter == 1 %}ranking-num-first{% elif forloop.counter == 2 %}ranking-num-second{% elif forloop.counter == 3 %}ranking-num-third{% endif %}">{{ forloop.counter }}</div>
+            <div class="col-xs-8 medium-font" align="left">{{ type1Top.userId }} <span class="small-font">{{ type1Top.userSchool }} {{ type1Top.userGrade }}학년</span></div>
+            <div class="col-xs-2 medium-font bold">{{ type1Top.maxScore }}</div>
         </div>
-        <div class="row ranking-box">
-            <div class="col-xs-2 medium-font ranking-num-third">3</div>
-            <div class="col-xs-8 medium-font" align="left">Sunjae090 <span class="small-font">세화고 1학년</span></div>
-            <div class="col-xs-2 medium-font">97</div>
-        </div>
-        <div class="row ranking-box">
-            <div class="col-xs-2 medium-font">4</div>
-            <div class="col-xs-8 medium-font" align="left">Jasonlee0 <span class="small-font">압구정고 1학년</span></div>
-            <div class="col-xs-2 medium-font">97</div>
-        </div>
-        <div class="row ranking-box">
-            <div class="col-xs-2 medium-font">5</div>
-            <div class="col-xs-8 medium-font" align="left">peopeldke <span class="small-font">한성과고 1학년</span></div>
-            <div class="col-xs-2 medium-font">96</div>
-        </div>
+        {% endfor %}
+        {% if not isType1Top5 %}
         <div align="left"><img class="ranking-blank" src="{% static 'assets/img/ranking-blank.png' %}"></div>
         <div class="row ranking-box">
-            <div class="col-xs-2 medium-font">77</div>
-            <div class="col-xs-8 medium-font" align="left">Daily_minq <span class="small-font">한성과고 1학년</span></div>
-            <div class="col-xs-2 medium-font">92</div>
+            <div class="col-xs-2 medium-font">{{ userRateType1.0 }}</div>
+            <div class="col-xs-8 medium-font" align="left">{{ userRateType1.1.userId }}<span class="small-font">{{ userRateType1.1.userSchool }} {{ userRateType1.1.userGrade }}학년</span></div>
+            <div class="col-xs-2 medium-font">{{ userRateType1.1.maxScore }}</div>
         </div>
         <div align="left"><img class="ranking-blank" src="{% static 'assets/img/ranking-blank.png' %}"></div>
+        {% endif %}
     </div>
     <div class="col-xs-4 ranking-div" style="margin: 0 1% 0 1%" align="center">
         <img class="ranking-icon" src="{% static 'assets/img/ranking-icon.png' %}">
         <p class="medium-font main-color" style="margin-top: 3%;">학년 랭킹</p>
-        <p class="medium-font gray-color">전국 고등학교 3학년 순위 입니다.</p>
-        <div class="row ranking-box" style="margin-top: 5%;">
-            <div class="col-xs-2 medium-font ranking-num-first">1</div>
-            <div class="col-xs-8 medium-font" align="left">Minho010 <span class="small-font">경기고 3학년</span></div>
-            <div class="col-xs-2 medium-font bold">99</div>
-        </div>
+        <p class="medium-font gray-color" style="margin-bottom: 5%">전국 고등학교 3학년 순위 입니다.</p>
+        {% for type2Top in type2Top5 %}
         <div class="row ranking-box">
-            <div class="col-xs-2 medium-font ranking-num-second">2</div>
-            <div class="col-xs-8 medium-font" align="left">Dqjasosoel <span class="small-font">서울과고 3학년</span></div>
-            <div class="col-xs-2 medium-font">97</div>
+            <div class="col-xs-2 medium-font {% if forloop.counter == 1 %}ranking-num-first{% elif forloop.counter == 2 %}ranking-num-second{% elif forloop.counter == 3 %}ranking-num-third{% endif %}">{{ forloop.counter }}</div>
+            <div class="col-xs-8 medium-font" align="left">{{ type2Top.userId }} <span class="small-font">{{ type2Top.userSchool }} {{ type2Top.userGrade }}학년</span></div>
+            <div class="col-xs-2 medium-font bold">{{ type2Top.maxScore }}</div>
         </div>
-        <div class="row ranking-box">
-            <div class="col-xs-2 medium-font ranking-num-third">3</div>
-            <div class="col-xs-8 medium-font" align="left">Sunjae090 <span class="small-font">세화고 3학년</span></div>
-            <div class="col-xs-2 medium-font">97</div>
-        </div>
-        <div class="row ranking-box">
-            <div class="col-xs-2 medium-font">4</div>
-            <div class="col-xs-8 medium-font" align="left">Jasonlee0 <span class="small-font">압구정고 3학년</span></div>
-            <div class="col-xs-2 medium-font">97</div>
-        </div>
-        <div class="row ranking-box">
-            <div class="col-xs-2 medium-font">5</div>
-            <div class="col-xs-8 medium-font" align="left">peopeldke <span class="small-font">한성과고 3학년</span></div>
-            <div class="col-xs-2 medium-font">96</div>
-        </div>
+        {% endfor %}
+        {% if not isType2Top5 %}
         <div align="left"><img class="ranking-blank" src="{% static 'assets/img/ranking-blank.png' %}"></div>
         <div class="row ranking-box">
-            <div class="col-xs-2 medium-font">10</div>
-            <div class="col-xs-8 medium-font" align="left">Daily_minq <span class="small-font">대구일과고 3학년</span></div>
+            <div class="col-xs-2 medium-font">{{ userRateType2.0 }}</div>
+            <div class="col-xs-8 medium-font" align="left">{{ userRateType2.1.userId }}<span class="small-font">{{ userRateType2.1.userSchool }} {{ userRateType2.1.userGrade }}학년</span></div>
             <div class="col-xs-2 medium-font">92</div>
         </div>
         <div align="left"><img class="ranking-blank" src="{% static 'assets/img/ranking-blank.png' %}"></div>
+        {% endif %}
     </div>
     <div class="col-xs-4 ranking-div" style="margin-right: 5%" align="center">
         <img class="ranking-icon" src="{% static 'assets/img/ranking-icon.png' %}">
         <p class="medium-font main-color" style="margin-top: 3%;">학교 랭킹</p>
-        <p class="medium-font gray-color">전국의 고등학교 순위 입니다.</p>
-        <div class="row ranking-box" style="margin-top: 5%;">
-            <div class="col-xs-2 medium-font ranking-num-first">1</div>
-            <div class="col-xs-8 medium-font" align="left">한성과고</div>
-            <div class="col-xs-2 medium-font bold">99</div>
-        </div>
+        <p class="medium-font gray-color" style="margin-bottom: 5%;">전국의 고등학교 순위 입니다.</p>
+        {% for type3top in type3Top5 %}
         <div class="row ranking-box">
-            <div class="col-xs-2 medium-font ranking-num-second">2</div>
-            <div class="col-xs-8 medium-font" align="left">숙명여고</div>
-            <div class="col-xs-2 medium-font">97</div>
+            <div class="col-xs-2 medium-font {% if forloop.counter == 1 %}ranking-num-first{% elif forloop.counter == 2 %}ranking-num-second{% elif forloop.counter == 3 %}ranking-num-third{% endif %}">{{ forloop.counter }}</div>
+            <div class="col-xs-8 medium-font" align="left">{{ type3top.user__school }}</div>
+            <div class="col-xs-2 medium-font bold">{{ type3top.maxScore }}</div>
         </div>
-        <div class="row ranking-box">
-            <div class="col-xs-2 medium-font ranking-num-third">3</div>
-            <div class="col-xs-8 medium-font" align="left">대덕고</div>
-            <div class="col-xs-2 medium-font">97</div>
-        </div>
-        <div class="row ranking-box">
-            <div class="col-xs-2 medium-font">4</div>
-            <div class="col-xs-8 medium-font" align="left">세화고</div>
-            <div class="col-xs-2 medium-font">97</div>
-        </div>
-        <div class="row ranking-box">
-            <div class="col-xs-2 medium-font">5</div>
-            <div class="col-xs-8 medium-font" align="left">서울예고</div>
-            <div class="col-xs-2 medium-font">96</div>
-        </div>
+        {% endfor %}
+        {% if not isType3Top5 %}
         <div align="left"><img class="ranking-blank" src="{% static 'assets/img/ranking-blank.png' %}"></div>
         <div class="row ranking-box">
-            <div class="col-xs-2 medium-font">10</div>
-            <div class="col-xs-8 medium-font" align="left">대구일과고</div>
-            <div class="col-xs-2 medium-font">92</div>
+            <div class="col-xs-2 medium-font">{{ userRateType3.0 }}</div>
+            <div class="col-xs-8 medium-font" align="left">{{ userRateType3.1.user__school }}</div>
+            <div class="col-xs-2 medium-font">{{ userRateType3.1.maxScore }}</div>
         </div>
+        {% endif %}
         <div align="left"><img class="ranking-blank" src="{% static 'assets/img/ranking-blank.png' %}"></div>
     </div>
 </div>
