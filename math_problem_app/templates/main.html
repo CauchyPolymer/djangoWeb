@@ -1,5 +1,5 @@
 {% load static %}
-<div class="row">
+<div class="row" style="padding-top: 5px;">
     <div class="col-xs-6 main-left">
         <div class="main-color large-font main-text white-color">
             시키는 대로만해.<br>
@@ -75,6 +75,8 @@
             success: function (result) {
                 goToMain()
                 alert(result.msg)
+                $('#login').addClass('border-right')
+                $('#signup').css('display', 'inherit')
             },
         });
     })

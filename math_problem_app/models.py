@@ -7,36 +7,6 @@ from django.db import models
 # Create your models here.
 
 
-class Rating(models.Model):
-    ratingSrl = models.AutoField(primary_key=True)
-
-    su1 = models.IntegerField(blank=True, null=True)
-    su2 = models.IntegerField(blank=True, null=True)
-    mi1 = models.IntegerField(blank=True, null=True)
-    mi2 = models.IntegerField(blank=True, null=True)
-    givec = models.IntegerField(blank=True, null=True)
-    hwaktong = models.IntegerField(blank=True, null=True)
-
-    score = models.IntegerField(default=0)
-    totalScore = models.IntegerField(default=0)
-
-    createdAt = models.DateTimeField(auto_now_add=True)
-    updatedAt = models.DateTimeField(auto_now=True)
-
-    def __str__(self):
-        return str(self.ratingSrl)
-
-    def store(self):
-        self.save()
-        return self
-
-    def get_updated_at(self):
-        return self.updatedAt.strftime("%Y. %m. %d")
-
-    def get_grade(self):
-        return str(int((self.su1 + self.su2 + self.mi1 + self.mi2 + self.givec + self.hwaktong) / 6))
-
-
 class Photo(models.Model):
     photoSrl = models.AutoField(primary_key=True)
     photo = models.ImageField(max_length=200, null=True, upload_to='photos/')
@@ -135,7 +105,10 @@ class Problem(models.Model):
         return self
 
     def get_units(self):
-        return list(map(lambda x: x['unit'], self.unit.all().values('unit')))
+        return list(map(lambda x: x['unit'], self.unit.values('unit')))
+
+    def get_right_answer_percent(self):
+        return int(100 * self.rightAnswered / self.totalAnswered)
 
 
 TEST_TYPE = {
@@ -210,6 +183,13 @@ class Answer(models.Model):
         return self.createdAt.strftime("%Y년 %m월 %d일")
 
 
+GRADE = {
+    (1, '1학년'),
+    (2, '2학년'),
+    (3, '3학년'),
+}
+
+
 class User(models.Model):
     userSrl = models.AutoField(primary_key=True)
     id = models.CharField(max_length=200, blank=True, null=True)
@@ -219,9 +199,8 @@ class User(models.Model):
     phone = models.CharField(max_length=200, blank=True, null=True)
     email = models.CharField(max_length=200, blank=True, null=True)
     school = models.CharField(max_length=200, blank=True, null=True)
-    grade = models.CharField(max_length=20, blank=True, null=True)
+    grade = models.IntegerField(choices=GRADE, blank=True, null=True)
 
-    rate = models.ManyToManyField(Rating, blank=True, null=True)
     answers = models.ManyToManyField(Answer, blank=True, null=True)
     tests = models.ManyToManyField(Test, blank=True, null=True)
 
@@ -311,3 +290,35 @@ class Board(models.Model):
 
     def get_comment_len(self):
         return self.comments.count()
+
+
+class Rating(models.Model):
+    ratingSrl = models.AutoField(primary_key=True)
+
+    su1 = models.IntegerField(blank=True, null=True)
+    su2 = models.IntegerField(blank=True, null=True)
+    mi1 = models.IntegerField(blank=True, null=True)
+    mi2 = models.IntegerField(blank=True, null=True)
+    givec = models.IntegerField(blank=True, null=True)
+    hwaktong = models.IntegerField(blank=True, null=True)
+
+    score = models.IntegerField(default=0)
+    totalScore = models.IntegerField(default=0)
+
+    user = models.ForeignKey(User, blank=True, null=True)
+
+    createdAt = models.DateTimeField(auto_now_add=True)
+    updatedAt = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return str(self.ratingSrl)
+
+    def store(self):
+        self.save()
+        return self
+
+    def get_updated_at(self):
+        return self.updatedAt.strftime("%Y. %m. %d")
+
+    def get_grade(self):
+        return str(int((self.su1 + self.su2 + self.mi1 + self.mi2 + self.givec + self.hwaktong) / 6))

@@ -44,5 +44,9 @@ function chkPwd(str){
      return true;
 }
 
+function goToTop() {
+    window.scrollTo(0, 0)
+}
+
 var problemIdx = 0;
 var answers = {};

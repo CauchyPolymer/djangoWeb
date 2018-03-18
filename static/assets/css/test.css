@@ -99,3 +99,8 @@
     height: 100%;
     padding-top: 45px;
 }
+
+.result-table-div {
+    padding: 0 12% 0 10%;
+    margin-bottom: 5%;
+}

@@ -5,7 +5,7 @@
         <div class="profile-circle"><span class="profile-char white-color">{{ user.name.0 }}</span></div>
         <p class="mypage-name x-large-font">{{ user.name }}</p>
         <p class="mypage-email small-font">{{ user.email }}</p>
-        <p class="mypage-left-text medium-font">{{ user.school }} {{ user.grade }}학년</p>
+        <p class="mypage-left-text medium-font">{{ user.school }} {{ user.get_grade_display }}</p>
     </div>
     <div class="col-xs-9" style="">
         <div class="row main-bottom main-background-color" align="center">
@@ -23,7 +23,7 @@
             <div id="chartContainer" style="height: 50%; width: 97%;"></div>
         </div>
         <div class="row" align="right" style="padding-right: 5%">
-            <div class="col-xs3 bold large-font">updated: {{ user.rate.get_updated_at }}</div>
+            <div class="col-xs3 bold large-font">updated: {{ rate.get_updated_at }}</div>
         </div>
         <div id="test" class="row main-bottom main-background-color mypage-bottom" align="center">
             <p class="main-bottom-msg white-color mypage-bottom-msg"><span class="x-large-font bold">진단고사 보기</span></p>
