@@ -305,7 +305,7 @@ class Rating(models.Model):
     score = models.IntegerField(default=0)
     totalScore = models.IntegerField(default=0)
 
-    user = models.ForeignKey(User, blank=True, null=True)
+    user = models.ForeignKey(User, blank=True, null=True, on_delete=models.CASCADE)
 
     createdAt = models.DateTimeField(auto_now_add=True)
     updatedAt = models.DateTimeField(auto_now=True)
