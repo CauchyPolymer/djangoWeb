@@ -331,6 +331,8 @@ def problemBox(request):
 
 def ranking(request):
     user = getLoginUser(request)
+    if not user:
+        return render(request, 'login.html')
     type1 = Rating.objects.values('user_id').annotate(userId=Max('user__id'), userSchool=Max('user__school'), userGrade=(Max('user__grade')), maxScore=Max('score')).order_by('-maxScore')
     type1Top5 = type1[:5]
     isType1Top5 = False
