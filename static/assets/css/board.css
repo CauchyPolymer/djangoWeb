@@ -66,6 +66,7 @@
 
 .comment-header {
     height: 30px;
+    background-image: linear-gradient(to bottom, #ffffff, #f4f4f4);
 }
 
 .comments {

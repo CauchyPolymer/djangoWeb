@@ -55,11 +55,10 @@
     border-right: solid 0.5px #979797;
 }
 
-.logo-img
-{
+.logo-img {
     width: 80%;
     margin-left: 20%;
-    margin-top: 15px;
+    margin-top: 12px;
     align-self: center;
     cursor: pointer;
     max-height: 65px;
