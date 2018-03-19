@@ -564,3 +564,11 @@ def testProblems(request):
     test = Test.objects.get(testSrl=testSrl)
 
     return render(request, 'testProblems.html', {'test': test, 'problems': test.problems.all(), 'from':'testStart'})
+
+
+def recommend(request):
+    user = getLoginUser(request)
+    if user:
+        return render(request, 'recommend.html', {'user': user})
+    else:
+        return render(request, 'login.html')
