@@ -150,6 +150,10 @@ class Test(models.Model):
     def get_problem_len(self):
         return self.problems.count()
 
+    def get_create_at(self):
+        return self.createdAt.strptime('%Y %m월 %d일')
+
+
 
 class AnswerNum(models.Model):
     answerNumSrl = models.AutoField(primary_key=True)
@@ -202,7 +206,6 @@ class User(models.Model):
     grade = models.IntegerField(choices=GRADE, blank=True, null=True)
 
     answers = models.ManyToManyField(Answer, blank=True, null=True)
-    tests = models.ManyToManyField(Test, blank=True, null=True)
 
     createdAt = models.DateTimeField(auto_now_add=True)
     updatedAt = models.DateTimeField(auto_now=True)
@@ -233,6 +236,9 @@ class User(models.Model):
 
     def get_last_answer(self):
         return self.answers.last()
+
+    def get_answers(self):
+        return self.answers.filter(test__type=2)
 
 
 BOARD_TYPE = {
