@@ -39,5 +39,5 @@ urlpatterns = [
     url(r'^estimation/', estimation, name='estimation'),
     url(r'^answer/', answer, name='answer'),
     url(r'^testProblems/', testProblems, name='testProblems'),
-
+    url(r'^recommend/', recommend, name='recommend'),
 ]

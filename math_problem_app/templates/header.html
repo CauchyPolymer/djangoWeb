@@ -16,7 +16,7 @@
         <div id="ranking" class="col-xs-1 medium-font main-color  header-menu" style="width: 8%">
             랭킹
         </div>
-        <div id="recommend-test" class="col-xs-1 medium-font main-color header-menu">
+        <div id="recommend" class="col-xs-1 medium-font main-color header-menu">
             문제추천
         </div>
         <div id="board" class="col-xs-1 medium-font main-color header-menu">
@@ -121,6 +121,18 @@
     $('#ranking').click(function () {
         $.ajax({
             url: "ranking/",
+            type: 'GET',
+            contentType: "application/json; charset=utf-8",
+            success: function (result) {
+                $('.main-container').empty()
+                $('.main-container').append(result)
+            },
+        });
+    })
+
+    $('#recommend').click(function () {
+        $.ajax({
+            url: "recommend/",
             type: 'GET',
             contentType: "application/json; charset=utf-8",
             success: function (result) {
