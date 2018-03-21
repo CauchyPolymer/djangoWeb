@@ -113,7 +113,8 @@ class Problem(models.Model):
 
 TEST_TYPE = {
     (1, '일반'),
-    (2, '진단고사')
+    (2, '진단고사'),
+    (3, '추천고사'),
 }
 
 

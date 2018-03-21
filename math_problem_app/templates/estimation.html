@@ -89,7 +89,7 @@
             $.ajax({
                 url: "answer/",
                 type: 'POST',
-                data: {testSrl: {{test.testSrl}}, answers: answers.toString(), from: 'estimation'},
+                data: {testSrl: {{test.testSrl}}, answers: answers.toString(), from: '{{ from }}'},
                 success: function (result) {
                     if(result.msg){
                         alert(result.msg)

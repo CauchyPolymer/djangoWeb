@@ -311,6 +311,9 @@ def createTest(request):
 
 
 def problemBox(request):
+    if request.GET.get('unit'):
+        problems = Problem.objects.filter(unit=int(request.GET.get('unit')))
+        return render(request, 'problemBox.html', {'problems': problems})
     idx = int(request.GET.get('idx'))
     size = int(request.GET.get('size'))
     type1 = int(request.GET.get('type1'))
@@ -379,7 +382,7 @@ def ranking(request):
 
 def testBox(request):
     user = getLoginUser(request)
-    return render(request, 'testBox.html', {'tests': user.tests.all()})
+    return render(request, 'testBox.html', {'answers': user.answers.all()})
 
 
 @csrf_exempt
@@ -499,7 +502,7 @@ def answer(request):
         rate.user = user
         rate.save()
 
-        return render(request, 'estimationResult.html', {'rate': rate, 'test': test, 'answers': answer, 'testResult': testResult})
+        return render(request, 'estimationResult.html', {'rate': rate, 'test': test, 'answers': answer, 'testResult': testResult, 'from': str(request.POST.get('from'))})
 
 
 def calcRating(test, answer):
@@ -572,3 +575,20 @@ def recommend(request):
         return render(request, 'recommend.html', {'user': user})
     else:
         return render(request, 'login.html')
+
+
+def recommendPage(request):
+    return render(request, 'recommendPage.html')
+
+
+def recommendTest(request):
+    unit = int(request.GET.get('unit'))
+    problems = Problem.objects.filter(unit__unit__exact=unit)[:20]
+    test = Test(type=3).store()         # 추천고사
+    for problem in problems:
+        test.problems.add(problem)
+        test.scores.add(Score(score=5).store())         # 문제당 5점
+    test.save()
+    request.session['testSrl'] = test.testSrl
+
+    return render(request, 'recommendTest.html', {'problems': problems, 'from': 'testStart'})

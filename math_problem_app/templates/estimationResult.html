@@ -5,8 +5,10 @@
         <div class="col-xs-6 x-large-font" align="right" style="padding-right: 3%">
             {% if test.type == 1 %}
                 {{ test.name }}
-            {% else %}
+            {% elif test.type == 2 %}
                 진단고사
+            {% else %}
+                추천고사
             {% endif %}
             결과
         </div>
@@ -35,7 +37,7 @@
         </div>
     </div>
     {% endif %}
-    {% if test.type == 1 %}
+    {% if test.type == 1 or test.type == 3 %}
     <div class="row result-table-div" align="center">
         <div class="col-xs-12">
             <table class="w3-table w3-bordered">
@@ -87,6 +89,7 @@
 
 <script>
     $('#back').click(function () {
+        {% if from == 'test' %}
         $.ajax({
             url: "createTest/",
             type: 'GET',
@@ -97,6 +100,18 @@
                 goToTop()
             },
         });
+        {% else %}
+        $.ajax({
+            url: "recommend/",
+            type: 'GET',
+            contentType: "application/json; charset=utf-8",
+            success: function (result) {
+                $('.main-container').empty()
+                $('.main-container').append(result)
+                goToTop()
+            },
+        });
+        {% endif %}
     })
 
     $.ajax({

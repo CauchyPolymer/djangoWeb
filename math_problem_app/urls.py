@@ -40,4 +40,8 @@ urlpatterns = [
     url(r'^answer/', answer, name='answer'),
     url(r'^testProblems/', testProblems, name='testProblems'),
     url(r'^recommend/', recommend, name='recommend'),
+    url(r'^recommendTest/', recommendTest, name='recommendTest'),
+    url(r'^recommendPage/', recommendPage, name='recommendPage'),
 ]
+
+
