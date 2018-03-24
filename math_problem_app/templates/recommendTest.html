@@ -36,13 +36,13 @@
                 $('#recommend-right-div').append(result)
                 $('#recommend-test-div').css('display', 'none')
                 $('#recommend-right-div').css('display', 'inherit')
+                $('.header').css('display', 'inherit')
             },
         });
     })
 
     problemIdx = 0;
     answers = [];
-    $('.header').css('display', 'none')
 
     $('#recommend-start').click(function () {
         $.ajax({
