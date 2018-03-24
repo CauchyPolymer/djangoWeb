@@ -592,3 +592,8 @@ def recommendTest(request):
     request.session['testSrl'] = test.testSrl
 
     return render(request, 'recommendTest.html', {'problems': problems, 'from': 'testStart'})
+
+
+def project(request):
+    user = getLoginUser(request)
+    return render(request, 'project.html', {'user': user})

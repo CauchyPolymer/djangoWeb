@@ -87,3 +87,98 @@
     height: 80px;
     border-radius: 25px;
 }
+
+.left-box-icon {
+    width: 10px;
+    margin-right: 5%;
+    margin-left: -10%;
+}
+
+.left-box-icon-2 {
+    width: 30px;
+    margin-left: -8%;
+}
+
+.recommend-left-box {
+    border-left: solid;
+    border-bottom: solid;
+    border-width: 1px;
+    border-color: #cccccc;
+    margin-left: 15%;
+    margin-right: 10%;
+    padding: 5% 5% 5% 0;
+    cursor: pointer;
+}
+
+.star-div {
+    padding-left: 20%;
+    padding-top: 10px;
+}
+
+.star-div img {
+    width: 26px;
+    opacity: 0.5;
+}
+
+.left-icon-div {
+    padding: 0;
+}
+
+.left-text-div {
+    padding: 0;
+}
+
+.project-title {
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-top: 5%;
+}
+
+.project-unit-box {
+    height: 380px;
+    border-radius: 25px;
+    border: outset;
+}
+
+.project-unit-box-div {
+    padding: 0;
+    margin-left: 6%;
+    cursor: pointer;
+}
+
+.project-text-box {
+    height: 200px;
+    width: 98%;
+    position: absolute;
+    top: 150px;
+    left: 1%;
+    z-index: 2;
+    background-color: white;
+    line-height: 18px;
+    padding: 5% 12% 5% 12%;
+}
+
+#vector {
+    background-image: url("/static/assets/img/project-background.jpeg");
+}
+
+#tonggye {
+    background-image: url("/static/assets/img/project-background02.jpeg");
+}
+
+#mijuk {
+    background-image: url("/static/assets/img/project-background03.jpeg");
+}
+
+.project-left-box-div {
+    background-color: white;
+    height: auto;
+    border: solid;
+    border-width: 1px;
+    padding-bottom: 15%;
+    margin-bottom: 0;
+}
+
+.orange-color {
+    color: #FBA838;
+}
