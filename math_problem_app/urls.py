@@ -42,6 +42,7 @@ urlpatterns = [
     url(r'^recommend/', recommend, name='recommend'),
     url(r'^recommendTest/', recommendTest, name='recommendTest'),
     url(r'^recommendPage/', recommendPage, name='recommendPage'),
+    url(r'^project/', project, name='project'),
 ]
 
 

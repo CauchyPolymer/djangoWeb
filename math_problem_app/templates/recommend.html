@@ -1,10 +1,10 @@
 {% load static %}
 <div class="row" style="margin-top: 5px;">
-    <div class="col-xs-3 lecture-left-menu" align="center" style="padding: 0">
+    <div class="col-xs-3 lecture-left-menu" align="center" style="padding: 0;">
         <div class="lecture-left-box x-large-font create-test-left-box">
             {{ user.name }}의 문제집
         </div>
-        <div class="row lecture-left-box test-box">
+        <div class="row lecture-left-box test-box" style="background-color: #E9E9EA;">
             <div class="col-xs-12 test-name-div recommend-name-div">
                 <img class="arrow-back" src="{% static 'assets/img/arrow.png' %}">
                 <div class="row">
@@ -19,6 +19,50 @@
                 </div>
             </div>
         </div>
+        <div class="list-group" style="background-color: #F5F6F6;">
+            <div class="row recommend-left-box bold medium-font" align="left" style="border-left: none; padding-left: 7%;">
+                <img src="{% static 'assets/img/blue-circle.png' %}" class="left-box-icon">
+                진도
+            </div>
+            <div class="row recommend-left-box medium-font" align="left">
+                <div class="col-xs-2 left-icon-div"><img src="{% static 'assets/img/group@3x.png' %}" class="left-box-icon left-box-icon-2"></div>
+                <div class="col-xs-10 left-text-div">벡터</div>
+                <div class="row star-div">
+                    <img src="{% static 'assets/img/star-circle.png' %}" class="star-circle">
+                    <img src="{% static 'assets/img/star-circle.png' %}" class="star-circle">
+                    <img src="{% static 'assets/img/star-circle.png' %}" class="star-circle">
+                    <img src="{% static 'assets/img/star-circle.png' %}" class="star-circle">
+                </div>
+            </div>
+            <div class="row recommend-left-box medium-font" align="left">
+                <div class="col-xs-2 left-icon-div"><img src="{% static 'assets/img/group@3x.png' %}" class="left-box-icon left-box-icon-2"></div>
+                <div class="col-xs-10 left-text-div">선형결합과 생성</div>
+            </div>
+            <div class="row recommend-left-box medium-font" align="left">
+                <div class="col-xs-2 left-icon-div"><img src="{% static 'assets/img/group@3x.png' %}" class="left-box-icon left-box-icon-2"></div>
+                <div class="col-xs-10 left-text-div">선형종속과 독립</div>
+            </div>
+            <div class="row recommend-left-box medium-font" align="left">
+                <div class="col-xs-2 left-icon-div"><img src="{% static 'assets/img/group@3x.png' %}" class="left-box-icon left-box-icon-2"></div>
+                <div class="col-xs-10 left-text-div">부분공간과 부분공간의 기저</div>
+            </div>
+            <div class="row recommend-left-box medium-font" align="left">
+                <div class="col-xs-2 left-icon-div"><img src="{% static 'assets/img/group@3x.png' %}" class="left-box-icon left-box-icon-2"></div>
+                <div class="col-xs-10 left-text-div">벡터의 내적과 외적</div>
+            </div>
+            <div class="row recommend-left-box medium-font" align="left">
+                <div class="col-xs-2 left-icon-div"><img src="{% static 'assets/img/group@3x.png' %}" class="left-box-icon left-box-icon-2"></div>
+                <div class="col-xs-10 left-text-div">가감법으로 연립방정식을 풀기 위한 행렬</div>
+            </div>
+            <div class="row recommend-left-box medium-font" align="left">
+                <div class="col-xs-2 left-icon-div"><img src="{% static 'assets/img/group@3x.png' %}" class="left-box-icon left-box-icon-2"></div>
+                <div class="col-xs-10 left-text-div">영공간과 열공간</div>
+            </div>
+            <div class="row recommend-left-box medium-font" align="left">
+                <div class="col-xs-2 left-icon-div"><img src="{% static 'assets/img/group@3x.png' %}" class="left-box-icon left-box-icon-2"></div>
+                <div class="col-xs-10 left-text-div">단원 테스트</div>
+            </div>
+        </div>
     </div>
 
     <div id="recommend-test-div" class="col-xs-9" style="display: none; padding: 5% 2% 2% 2%"></div>
@@ -29,4 +73,15 @@
 
 <script>
 
+    $('.arrow-back').click(function () {
+        $.ajax({
+            url: "project/",
+            type: 'GET',
+            contentType: "application/json; charset=utf-8",
+            success: function (result) {
+                $('.main-container').empty()
+                $('.main-container').append(result)
+            },
+        });
+    })
 </script>

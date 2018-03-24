@@ -16,7 +16,7 @@
         <div id="ranking" class="col-xs-1 medium-font main-color  header-menu" style="width: 8%">
             랭킹
         </div>
-        <div id="recommend" class="col-xs-1 medium-font main-color header-menu">
+        <div id="project" class="col-xs-1 medium-font main-color header-menu">
             문제추천
         </div>
         <div id="board" class="col-xs-1 medium-font main-color header-menu">
@@ -130,9 +130,9 @@
         });
     })
 
-    $('#recommend').click(function () {
+    $('#project').click(function () {
         $.ajax({
-            url: "recommend/",
+            url: "project/",
             type: 'GET',
             contentType: "application/json; charset=utf-8",
             success: function (result) {
