@@ -90,11 +90,7 @@ var Login = function() {
 
             // init background slide images
             $('.login-bg').backstretch([
-                "/static/assets/global/img/login1.jpg",
-                "/static/assets/global/img/login2.jpg",
-                "/static/assets/global/img/login3.jpg",
-                "/static/assets/global/img/login4.jpg",
-                "/static/assets/global/img/login5.jpg",
+                "/static/assets/global/img/login.png",
                 ], {
                   fade: 1000,
                   duration: 8000

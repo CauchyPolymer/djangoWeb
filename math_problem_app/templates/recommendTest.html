@@ -1,0 +1,64 @@
+{% load static %}
+<div class="row recommend-test-top-div">
+    <span class="back-btn"><img class="arrow-back" src="{% static 'assets/img/arrow.png' %}"></span>
+    <div class="col-xs-6" style="padding-left: 0;">
+        <img class="box-image" src="{% static 'assets/img/box-img.jpeg' %}">
+    </div>
+    <div class="col-xs-3"style="padding-top: 50px; padding-left: 30px;">
+        <div class="row x-large-font bold">
+            기하와 벡터
+        </div>
+        <div class="row medium-font">
+            {{ problems | length }} 문제
+        </div>
+    </div>
+    <div class="col-xs-3" style="padding-top: 30px;">
+        <img class="test-rocket-img" src="{% static 'assets/img/rocket.png' %}">
+    </div>
+    <div class="row problem-box-div" style="margin-top: 300px;">
+        {% include 'problemBox.html' %}
+    </div>
+    <div class="row">
+        <div class="col-xs-12" align="center">
+            <input id="recommend-start" type="button" class="w3-btn recommend-start white-color x-large-font" value="학습하기">
+        </div>
+    </div>
+</div>
+
+<script>
+    $('.back-btn').click(function () {
+        $.ajax({
+            url: "recommendPage/",
+            type: 'GET',
+            contentType: "application/json; charset=utf-8",
+            success: function (result) {
+                $('#recommend-right-div').empty()
+                $('#recommend-right-div').append(result)
+                $('#recommend-test-div').css('display', 'none')
+                $('#recommend-right-div').css('display', 'inherit')
+            },
+        });
+    })
+
+    problemIdx = 0;
+    answers = [];
+    $('.header').css('display', 'none')
+
+    $('#recommend-start').click(function () {
+        $.ajax({
+            url: "estimation/?from=recommend&problemIdx="+problemIdx,
+            type: 'GET',
+            contentType: "application/json; charset=utf-8",
+            success: function (result) {
+                $('.main-container').empty()
+                $('.main-container').append(result)
+                window.MathJax = {
+                    tex2jax: {
+                      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                      processEscapes: true
+                    }
+              };
+            },
+        });
+    })
+</script>
