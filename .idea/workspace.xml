@@ -173,8 +173,8 @@
           <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/math_problem_app/models.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="600">
-                  <caret line="310" column="89" lean-forward="false" selection-start-line="310" selection-start-column="89" selection-end-line="310" selection-end-column="89" />
+                <state relative-caret-position="645">
+                  <caret line="313" column="32" lean-forward="false" selection-start-line="313" selection-start-column="32" selection-end-line="313" selection-end-column="32" />
                   <folding />
                 </state>
               </provider>
@@ -1497,8 +1497,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/math_problem_app/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="310" column="89" lean-forward="false" selection-start-line="310" selection-start-column="89" selection-end-line="310" selection-end-column="89" />
+        <state relative-caret-position="645">
+          <caret line="313" column="32" lean-forward="false" selection-start-line="313" selection-start-column="32" selection-end-line="313" selection-end-column="32" />
           <folding />
         </state>
       </provider>
