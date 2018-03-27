@@ -4,7 +4,10 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 # Create your views here.
-from math_problem_app.models import Problem, ProblemUnit, Photo, Board, User
+from django.views.decorators.csrf import csrf_exempt
+
+from math_problem_app.models import Problem, ProblemUnit, Photo, Board, User, MIDDLE_UNIT, SMALL_UNIT, \
+    ProblemMiddleUnit, ProblemSmallUnit
 from math_problem_app.views import getLoginUser
 
 
@@ -14,7 +17,8 @@ def main(request):
         user.set_password('ql135cjs')
         user.id = 'admin'
         user.save()
-    return render(request, 'metronic_index.html', {'isLogged': True if request.session.get('userSrl') else False})
+    return render(request, 'metronic_index.html', {'isLogged': True if request.session.get('userSrl') else False,
+                                                   'middleUnit': MIDDLE_UNIT, 'smallUnit': SMALL_UNIT})
 
 
 def returnHttpResponse(data):
@@ -48,6 +52,7 @@ def logout(request):
     return returnHttpResponse({'msg': "logout successfully"})
 
 
+@csrf_exempt
 def save_problem(request):
     text = str(request.POST.get('problemText'))
     answer = str(request.POST.get('answer'))
@@ -55,6 +60,8 @@ def save_problem(request):
     type2 = int(request.POST.get('type2'))
     difficulty = str(request.POST.get('difficulty'))
     unit = str(request.POST.get('unit'))
+    middleUnit = str(request.POST.get('middleUnit'))
+    smallUnit = str(request.POST.get('smallUnit'))
     explanation = str(request.POST.get('explanation'))
 
     if request.session.get('problemSrl'):
@@ -71,6 +78,20 @@ def save_problem(request):
     if len(unit) > 0:
         for u in unit.split(','):
             problem.unit.add(ProblemUnit.objects.get(unit=u).store())
+
+    if len(middleUnit) > 0:
+        for u in middleUnit.split(','):
+            if ProblemMiddleUnit.objects.filter(middleUnit=u).exists():
+                problem.middleUnit.add(ProblemMiddleUnit.objects.get(middleUnit=u).store())
+            else:
+                problem.middleUnit.add(ProblemMiddleUnit(middleUnit=int(u)).store())
+
+    if len(smallUnit) > 0:
+        for u in smallUnit.split(','):
+            if ProblemSmallUnit.objects.filter(smallUnit=u).exists():
+                problem.smallUnit.add(ProblemSmallUnit.objects.get(smallUnit=u).store())
+            else:
+                problem.smallUnit.add(ProblemSmallUnit(smallUnit=int(u)).store())
 
     problem.save()
 
@@ -95,7 +116,7 @@ def problem_photo(request):
 
 
 def problem(request):
-    return render(request, 'basic_info/problem.html')
+    return render(request, 'basic_info/problem.html', {'middleUnit': MIDDLE_UNIT, 'smallUnit': SMALL_UNIT})
 
 
 def create_board(request):

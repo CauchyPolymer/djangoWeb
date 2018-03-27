@@ -76,6 +76,114 @@ class ProblemUnit(models.Model):
         return self
 
 
+MIDDLE_UNIT = {
+    (1, '다항식'),
+    (2, '방정식과 부등식'),
+    (3, '도형의 방정식'),
+    (4, '집합과 명제'),
+    (5, '함수'),
+    (6, '수열'),
+    (7, '지수와 로그'),
+    (8, '수열의 극한'),
+    (9, '함수의 극한'),
+    (10, '다항함수의 미분법'),
+    (11, '다항함수의 적분법'),
+    (12, '지수함수와 로그함수'),
+    (13, '삼각함수'),
+    (14, '미분법'),
+    (15, '적분법'),
+    (16, '순열과 조합'),
+    (17, '확률'),
+    (18, '통계'),
+    (19, '이차곡선'),
+    (20, '평면벡터'),
+    (21, '공간도형과 공간좌표'),
+    (22, '공간벡터'),
+}
+
+
+class ProblemMiddleUnit(models.Model):
+    problemMiddleUnitSrl = models.AutoField(primary_key=True)
+    middleUnit = models.IntegerField(choices=MIDDLE_UNIT, blank=True, null=True)
+
+    def __str__(self):
+        return str(self.get_middleUnit_display())
+
+    def store(self):
+        self.save()
+        return self
+
+
+SMALL_UNIT = {
+    (1, '다항식의 연산'),
+    (2, '항등식과 나머지 정리'),
+    (3, '인수분해'),
+    (4, '복소수와 이차방정식'),
+    (5, '이차방정식과 이차함수'),
+    (6, '여러가지 방정식'),
+    (7, '여러가지 부등식'),
+    (8, '평면좌표'),
+    (9, '직선의 방정식'),
+    (10, '원의 방정식'),
+    (11, '도형의 이동'),
+    (12, '부등식의 영역'),
+    (13, '집합'),
+    (14, '명제'),
+    (15, '절대부등식'),
+    (16, '함수'),
+    (17, '유리식과 유리함수'),
+    (18, '무리식과 무리함수'),
+    (19, '등차수열과 등비수열'),
+    (20, '여러가지 수열'),
+    (21, '지수와 로그'),
+    (22, '상용로그'),
+    (23, '수열의 극한'),
+    (24, '급수'),
+    (25, '함수의 극한'),
+    (26, '함수의 연속'),
+    (27, '미분계수와 도함수'),
+    (28, '도함수의 활용'),
+    (29, '부정적분'),
+    (30, '정적분'),
+    (31, '정적분의 활용'),
+    (32, '지수함수와 로그함수의 뜻과 그래프'),
+    (33, '지수함수와 로그함수의 미분'),
+    (34, '삼각함수의 뜻'),
+    (35, '삼각함수의 그래프'),
+    (36, '삼각함수의 미분'),
+    (37, '여러가지 함수의 미분법'),
+    (38, '도함수의 활용'),
+    (39, '여러가지 함수의 적분법'),
+    (40, '정적분의 활용'),
+    (41, '경우의 수'),
+    (42, '순열과 조합'),
+    (43, '이항정리'),
+    (44, '확률의 뜻'),
+    (45, '조건부 확률'),
+    (46, '확률변수와 확률분포'),
+    (47, '통계적 추정'),
+    (48, '이차곡선의 방정식'),
+    (49, '이차곡선과 접선의 방정식'),
+    (50, '평면벡터의 뜻'),
+    (51, '평면운동'),
+    (52, '공간도형'),
+    (53, '공간좌표'),
+    (54, '공간벡터'),
+}
+
+
+class ProblemSmallUnit(models.Model):
+    problemSmallUnitSrl = models.AutoField(primary_key=True)
+    smallUnit = models.IntegerField(choices=SMALL_UNIT, blank=True, null=True)
+
+    def __str__(self):
+        return str(self.get_smallUnit_display())
+
+    def store(self):
+        self.save()
+        return self
+
+
 class Problem(models.Model):
     problemSrl = models.AutoField(primary_key=True)
     text = models.CharField(max_length=2000, blank=True, null=True)
@@ -86,6 +194,8 @@ class Problem(models.Model):
     type2 = models.IntegerField(choices=PROBLEM_TYPE2, blank=True, null=True)
     difficulty = models.IntegerField(choices=PROBLEM_DIFFICULTY, blank=True, null=True)
     unit = models.ManyToManyField(ProblemUnit, blank=True, null=True)
+    middleUnit = models.ManyToManyField(ProblemMiddleUnit, blank=True, null=True)
+    smallUnit = models.ManyToManyField(ProblemSmallUnit, blank=True, null=True)
 
     answerType = models.IntegerField(choices=ANSWER_TYPE, blank=True, null=True, default=1)
 
@@ -195,6 +305,19 @@ GRADE = {
 }
 
 
+class Recommend(models.Model):
+    recommendSrl = models.AutoField(primary_key=True)
+    aimGrade = models.IntegerField(blank=True, null=True)
+    unit = models.ForeignKey(ProblemUnit, blank=True, null=True)
+
+    def __str__(self):
+        return self.id
+
+    def store(self):
+        self.save()
+        return self
+
+
 class User(models.Model):
     userSrl = models.AutoField(primary_key=True)
     id = models.CharField(max_length=200, blank=True, null=True)
@@ -207,6 +330,7 @@ class User(models.Model):
     grade = models.IntegerField(choices=GRADE, blank=True, null=True)
 
     answers = models.ManyToManyField(Answer, blank=True, null=True)
+    recommend = models.ManyToManyField(Recommend, blank=True, null=True)
 
     createdAt = models.DateTimeField(auto_now_add=True)
     updatedAt = models.DateTimeField(auto_now=True)

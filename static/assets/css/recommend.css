@@ -182,3 +182,20 @@
 .orange-color {
     color: #FBA838;
 }
+
+#self-study {
+    width: 60%;
+    background-color: #807DC3;
+    border: outset;
+    margin-top: 3%;
+}
+
+.graph-box {
+    height: 0;
+    -webkit-transition: height 2s; /* Safari */
+    transition: height 2s;
+    -webkit-transition-timing-function: ease;
+    transition-timing-function: ease;
+    overflow: hidden;
+}
+
