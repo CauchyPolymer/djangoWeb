@@ -11,3 +11,6 @@ admin.site.register(Test)
 admin.site.register(Answer)
 admin.site.register(AnswerNum)
 admin.site.register(Score)
+
+admin.site.register(ProblemMiddleUnit)
+admin.site.register(ProblemSmallUnit)

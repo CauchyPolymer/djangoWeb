@@ -104,12 +104,23 @@
             return false;
         }
 
+        if(!$('#middleUnit').val()){
+            alert('대단원을 선택해 주세요.')
+            return false;
+        }
+
+        if(!$('#smallUnit').val()){
+            alert('중단원을 선택해 주세요.')
+            return false;
+        }
+
         $(".se-pre-con").css('display', "block");
         $.ajax({
             url: "save_problem/",
             type: "POST",
             data: {problemText: $('#problem-text').val(), answer: $('#answer').val(), type1: $('#type1').val(), type2: $('#type2').val(),
-                    difficulty: $('#difficulty').val(), unit: $('#unit').val().toString(), explanation: $('#problem-explanation').val()},
+                    difficulty: $('#difficulty').val(), unit: $('#unit').val().toString(), explanation: $('#problem-explanation').val(),
+                    middleUnit: $('#middleUnit').val().toString(), smallUnit: $('#smallUnit').val().toString()},
             success: function (result) {
                 $('#problem-text').val('')
                 $('#answer').val('')
@@ -117,6 +128,8 @@
                 $('#type2').val(1)
                 $('#difficulty').val(1)
                 $('#unit').val('')
+                $('#middleUnit').val('')
+                $('#smallUnit').val('')
                 $(".se-pre-con").fadeOut("slow");
                 alert('문제가 등록 되었습니다.')
                 $('#image_list').empty();

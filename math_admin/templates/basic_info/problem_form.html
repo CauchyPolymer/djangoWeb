@@ -45,12 +45,32 @@
     <div class="form-group">
         <div class="input-icon input-icon-sm">
             <select id="unit" multiple class="form-control input-sm">
-                <option value="1" {% if problem.type == 1 %}selected{% endif %}>수1</option>
-                <option value="2" {% if problem.type == 2 %}selected{% endif %}>수2</option>
-                <option value="3" {% if problem.type == 3 %}selected{% endif %}>미적1</option>
-                <option value="4" {% if problem.type == 4 %}selected{% endif %}>미적2</option>
-                <option value="5" {% if problem.type == 5 %}selected{% endif %}>확통</option>
-                <option value="6" {% if problem.type == 6 %}selected{% endif %}>기벡</option>
+                <option value="1">수1</option>
+                <option value="2">수2</option>
+                <option value="3">미적1</option>
+                <option value="4">미적2</option>
+                <option value="5">확통</option>
+                <option value="6">기벡</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="input-icon input-icon-sm">
+            <select id="middleUnit" multiple class="form-control input-sm" style="height: 400px;">
+                {% for unit in middleUnit %}
+                <option value="{{ unit.0 }}">{{ unit.1 }}</option>
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="input-icon input-icon-sm">
+            <select id="smallUnit" multiple class="form-control input-sm" style="height: 400px;">
+                {% for unit in smallUnit %}
+                <option value="{{ unit.0 }}">{{ unit.1 }}</option>
+                {% endfor %}
             </select>
         </div>
     </div>

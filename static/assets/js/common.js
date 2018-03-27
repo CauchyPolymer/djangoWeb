@@ -50,3 +50,62 @@ function goToTop() {
 
 var problemIdx = 0;
 var answers = {};
+
+function drawGraph(data, id) {
+    var chart = new CanvasJS.Chart(id,{
+        title:{
+            text: ""
+        },
+        animationEnabled: true,
+        axisY:{
+            reversed: true,
+            labelFontSize: 10,
+            interval: 2,
+            minimum: 0,
+            maximum: 9,
+            gridColor: "#cccccc",
+        },
+        axisX:{
+            labelFontSize:140,
+            labelFontColor: "#50519C",
+        },
+        backgroundColor: "white",
+        data: [{
+            type: "line",
+            dataPoints: data,
+            markerSize: 10,
+            lineThickness: 2,
+            color: "#FDA939",
+        }],
+    });
+    chart.render();
+}
+
+function drawDoughnutGraph(data, id) {
+    var chart = new CanvasJS.Chart(id,{
+        title:{
+            text: ""
+        },
+        animationEnabled: true,
+        axisY:{
+            reversed: true,
+            labelFontSize: 10,
+            interval: 2,
+            minimum: 0,
+            maximum: 9,
+        },
+        axisX:{
+            labelFontSize:140,
+            labelFontColor: "#50519C",
+        },
+        backgroundColor: "white",
+        data: [{
+            type: "doughnut",
+            dataPoints: data,
+            markerSize: 10,
+            lineThickness: 2,
+            color: "#FDA939",
+        }]
+    });
+    chart.render();
+}
