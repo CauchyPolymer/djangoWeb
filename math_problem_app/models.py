@@ -311,7 +311,7 @@ class Recommend(models.Model):
     unit = models.ForeignKey(ProblemUnit, blank=True, null=True, on_delete=models.CASCADE)
 
     def __str__(self):
-        return self.recommendSrl
+        return str(self.recommendSrl)
 
     def store(self):
         self.save()
