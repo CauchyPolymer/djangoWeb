@@ -43,6 +43,12 @@ urlpatterns = [
     url(r'^recommendTest/', recommendTest, name='recommendTest'),
     url(r'^recommendPage/', recommendPage, name='recommendPage'),
     url(r'^project/', project, name='project'),
+    url(r'^getSmallUnitCount/', getSmallUnitCount, name='getSmallUnitCount'),
+    url(r'^getSmallUnitTest/', getSmallUnitTest, name='getSmallUnitTest'),
+    url(r'^getMiddleUnitLecture/', getMiddleUnitLecture, name='getMiddleUnitLecture'),
+
+
+
 ]
 
 

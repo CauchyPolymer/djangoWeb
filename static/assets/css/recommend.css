@@ -50,6 +50,7 @@
     padding: 5% 5% 5% 5%;
     height: 100px;
     cursor: pointer;
+    margin-top: 3%;
 }
 
 .star-circle {
@@ -138,6 +139,7 @@
     height: 380px;
     border-radius: 25px;
     border: outset;
+    background-image: url("/static/assets/img/project-background.jpeg");
 }
 
 .project-unit-box-div {
@@ -156,18 +158,6 @@
     background-color: white;
     line-height: 18px;
     padding: 5% 12% 5% 12%;
-}
-
-#vector {
-    background-image: url("/static/assets/img/project-background.jpeg");
-}
-
-#tonggye {
-    background-image: url("/static/assets/img/project-background02.jpeg");
-}
-
-#mijuk {
-    background-image: url("/static/assets/img/project-background03.jpeg");
 }
 
 .project-left-box-div {
