@@ -9,7 +9,7 @@ from functools import reduce
 
 import mandrill
 from django.core.mail import send_mail
-from django.db.models import Q
+from django.db.models import Q, Max
 from django.http import HttpResponse
 from django.shortcuts import render
 
@@ -52,7 +52,7 @@ def signIn3(request):
 def mypage(request):
     user = getLoginUser(request)
     if user:
-        return render(request, 'mypage.html', {'user': user})
+        return render(request, 'mypage.html', {'user': user, 'rate': Rating.objects.filter(user=user).last()})
     else:
         return render(request, 'login.html')
 
@@ -111,14 +111,10 @@ def signUp(request):
 
 def getRateData(request):
     user = getLoginUser(request)
-    if not user or not user.rate:
-        return returnHttpResponse([{'label' : '1등급', 'y': 1}, {'label' : '3등급', 'y': 3}, {'label' : '2등급', 'y': 2}, {'label' : '1등급', 'y': 1},
-                {'label' : '2등급', 'y': 2}, {'label' : '1등급', 'y': 1}])
-
     if request.GET.get('ratingSrl'):
         rate = Rating.objects.get(ratingSrl=int(request.GET.get('ratingSrl')))
     else:
-        rate = user.rate.last()
+        rate = Rating.objects.filter(user=user).last()
 
     data = [{'label': str(rate.su1) + '등급', 'y': rate.su1}, {'label': str(rate.su2) + '등급', 'y': rate.su2},
             {'label': str(rate.mi1) + '등급', 'y': rate.mi1}, {'label': str(rate.mi2) + '등급', 'y': rate.mi2},
@@ -315,6 +311,9 @@ def createTest(request):
 
 
 def problemBox(request):
+    if request.GET.get('unit'):
+        problems = Problem.objects.filter(unit=int(request.GET.get('unit')))
+        return render(request, 'problemBox.html', {'problems': problems})
     idx = int(request.GET.get('idx'))
     size = int(request.GET.get('size'))
     type1 = int(request.GET.get('type1'))
@@ -334,12 +333,56 @@ def problemBox(request):
 
 
 def ranking(request):
-    return render(request, 'ranking.html')
+    user = getLoginUser(request)
+    if not user:
+        return render(request, 'login.html')
+    type1 = Rating.objects.values('user_id').annotate(userId=Max('user__id'), userSchool=Max('user__school'), userGrade=(Max('user__grade')), maxScore=Max('score')).order_by('-maxScore')
+    type1Top5 = type1[:5]
+    isType1Top5 = False
+    for top in type1Top5:
+        if top['userId'] == user.id:
+            isType1Top5 = True
+
+    userRateType1 = None
+    if not isType1Top5:
+        for i, rate in enumerate(type1):
+            if rate['userId'] == user.id:
+                userRateType1 = (i, rate)
+
+    type2 = Rating.objects.filter(user__grade=3).values('user_id').annotate(userId=Max('user__id'), userSchool=Max('user__school'), userGrade=(Max('user__grade')), maxScore=Max('score')).order_by('-maxScore')
+    type2Top5 = type2[:5]
+    isType2Top5 = False
+    for top in type2Top5:
+        if top['userId'] == user.id:
+            isType2Top5 = True
+
+    userRateType2 = None
+    if not isType2Top5:
+        for i, rate in enumerate(type2):
+            if rate['userId'] == user.id:
+                userRateType2 = (i, rate)
+
+    type3 = Rating.objects.values('user__school').annotate(maxScore=Max('score'))
+    type3Top5 = type3[:5]
+    isType3Top5 = False
+    for top in type3Top5:
+        if top['user__school'] == user.school:
+            isType3Top5 = True
+
+    userRateType3 = None
+    if not isType3Top5:
+        for i, rate in enumerate(type3):
+            if rate['user__school'] == user.school:
+                userRateType3 = (i, rate)
+
+    return render(request, 'ranking.html', {'isType1Top5': isType1Top5, 'type1Top5': type1Top5, 'userRateType1': userRateType1,
+                                            'isType2Top5': isType2Top5, 'type2Top5': type2Top5, 'userRateType2': userRateType2,
+                                            'isType3Top5': isType3Top5, 'type3Top5': type3Top5, 'userRateType3': userRateType3})
 
 
 def testBox(request):
     user = getLoginUser(request)
-    return render(request, 'testBox.html', {'tests': user.tests.all()})
+    return render(request, 'testBox.html', {'answers': user.answers.all()})
 
 
 @csrf_exempt
@@ -455,14 +498,11 @@ def answer(request):
         answer.save()
         user.answers.add(answer)
 
-        rate = calcRating(test, answer)
-        user.rate.add(rate)
-        user.save()
+        rate, testResult = calcRating(test, answer)
+        rate.user = user
+        rate.save()
 
-        if str(request.POST.get('from')) == 'estimation':
-            return render(request, 'estimationResult.html', {'rate': rate, 'test': test, 'answers': answer})
-        elif str(request.POST.get('from')) == 'test':
-            return render(request, 'testResult.html', {'rate': rate, 'test': test, 'answers': answer})
+        return render(request, 'estimationResult.html', {'rate': rate, 'test': test, 'answers': answer, 'testResult': testResult, 'from': str(request.POST.get('from'))})
 
 
 def calcRating(test, answer):
@@ -472,12 +512,13 @@ def calcRating(test, answer):
     scores = test.scores.all()
     totalScore = 0
     rightScore = 0
+    testResult = []
     for i, ans in enumerate(answer.answers.all()):
         problem = problems[i]
         problem.totalAnswered += 1
         score = scores[i].score
         totalScore += score
-        units = list(map(lambda x: x['unit'], problem.unit.values('unit')))
+        units = problem.get_units()
         if 1 in units:
             su1tot += score
         if 2 in units:
@@ -506,6 +547,9 @@ def calcRating(test, answer):
                 givec += score
             problem.rightAnswered += 1
             rightScore += score
+            testResult.append(1)
+        else:
+            testResult.append(0)
         problem.save()
 
     su1rate = (int((1 - su1 / su1tot) * 10) if su1 / su1tot != 1 else 1) if su1 != 0 else 9
@@ -515,7 +559,7 @@ def calcRating(test, answer):
     hwaktongrate = (int((1 - hwaktong / hwaktongtot) * 10) if hwaktong / hwaktongtot != 1 else 1) if hwaktong != 0 else 9
     givecrate = (int((1 - givec / givectot) * 10) if givec / givectot != 1 else 1) if givec != 0 else 9
 
-    return Rating(score=rightScore, totalScore=totalScore, su1=su1rate, su2=su2rate, mi1=mi1rate, mi2=mi2rate, hwaktong=hwaktongrate, givec=givecrate).store()
+    return (Rating(score=rightScore, totalScore=totalScore, su1=su1rate, su2=su2rate, mi1=mi1rate, mi2=mi2rate, hwaktong=hwaktongrate, givec=givecrate).store(), testResult)
 
 
 def testProblems(request):
@@ -523,3 +567,33 @@ def testProblems(request):
     test = Test.objects.get(testSrl=testSrl)
 
     return render(request, 'testProblems.html', {'test': test, 'problems': test.problems.all(), 'from':'testStart'})
+
+
+def recommend(request):
+    user = getLoginUser(request)
+    if user:
+        return render(request, 'recommend.html', {'user': user})
+    else:
+        return render(request, 'login.html')
+
+
+def recommendPage(request):
+    return render(request, 'recommendPage.html')
+
+
+def recommendTest(request):
+    unit = int(request.GET.get('unit'))
+    problems = Problem.objects.filter(unit__unit__exact=unit)[:20]
+    test = Test(type=3).store()         # 추천고사
+    for problem in problems:
+        test.problems.add(problem)
+        test.scores.add(Score(score=5).store())         # 문제당 5점
+    test.save()
+    request.session['testSrl'] = test.testSrl
+
+    return render(request, 'recommendTest.html', {'problems': problems, 'from': 'testStart'})
+
+
+def project(request):
+    user = getLoginUser(request)
+    return render(request, 'project.html', {'user': user})

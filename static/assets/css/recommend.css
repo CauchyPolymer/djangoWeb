@@ -1,0 +1,184 @@
+.arrow-back {
+    /*-webkit-transform: scaleX(-1);*/
+    /*transform: scaleX(-1);*/
+    width: 70px;
+    position: absolute;
+    left: 10px;
+    top: 5px;
+}
+
+.recommend-title {
+    border-radius: 10px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
+    border: solid 0.5px #979797;
+    height: 80px;
+    width: 100%;
+    padding-top: 10px;
+}
+
+.rocket-img {
+    width: 90%;
+}
+
+.test-rocket-img {
+    width: 75%;
+}
+
+.recommend-sub-title {
+    width: 100%;
+    height: 200px;
+    border: groove;
+    border-width: 1px;
+}
+
+.recommend-name-div {
+    padding-top: 20px;
+    padding-left: 30%;
+}
+
+.recommend-unit {
+    color: #13728B;
+}
+
+.star-circle {
+    width: 20px;
+}
+
+.recommend-test {
+    background-color: #F5F6F6;
+    width: 95%;
+    padding: 5% 5% 5% 5%;
+    height: 100px;
+    cursor: pointer;
+}
+
+.star-circle {
+    width: 20px;
+    opacity: 0.5;
+    margin-left: 3%;
+}
+
+.back-btn img {
+    opacity: 0.7;
+}
+
+.box-image {
+    border-radius: 20px;
+    height: 100%;
+}
+
+.recommend-test-top-div {
+    border: outset;
+    border-radius: 20px;
+    height: 250px;
+}
+
+.video-div {
+    cursor: pointer;
+}
+
+.back-btn {
+    cursor: pointer;
+}
+
+.recommend-start {
+    background-color: #484697;
+    width: 300px;
+    height: 80px;
+    border-radius: 25px;
+}
+
+.left-box-icon {
+    width: 10px;
+    margin-right: 5%;
+    margin-left: -10%;
+}
+
+.left-box-icon-2 {
+    width: 30px;
+    margin-left: -8%;
+}
+
+.recommend-left-box {
+    border-left: solid;
+    border-bottom: solid;
+    border-width: 1px;
+    border-color: #cccccc;
+    margin-left: 15%;
+    margin-right: 10%;
+    padding: 5% 5% 5% 0;
+    cursor: pointer;
+}
+
+.star-div {
+    padding-left: 20%;
+    padding-top: 10px;
+}
+
+.star-div img {
+    width: 26px;
+    opacity: 0.5;
+}
+
+.left-icon-div {
+    padding: 0;
+}
+
+.left-text-div {
+    padding: 0;
+}
+
+.project-title {
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-top: 5%;
+}
+
+.project-unit-box {
+    height: 380px;
+    border-radius: 25px;
+    border: outset;
+}
+
+.project-unit-box-div {
+    padding: 0;
+    margin-left: 6%;
+    cursor: pointer;
+}
+
+.project-text-box {
+    height: 200px;
+    width: 98%;
+    position: absolute;
+    top: 150px;
+    left: 1%;
+    z-index: 2;
+    background-color: white;
+    line-height: 18px;
+    padding: 5% 12% 5% 12%;
+}
+
+#vector {
+    background-image: url("/static/assets/img/project-background.jpeg");
+}
+
+#tonggye {
+    background-image: url("/static/assets/img/project-background02.jpeg");
+}
+
+#mijuk {
+    background-image: url("/static/assets/img/project-background03.jpeg");
+}
+
+.project-left-box-div {
+    background-color: white;
+    height: auto;
+    border: solid;
+    border-width: 1px;
+    padding-bottom: 15%;
+    margin-bottom: 0;
+}
+
+.orange-color {
+    color: #FBA838;
+}

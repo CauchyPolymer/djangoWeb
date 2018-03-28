@@ -13,19 +13,19 @@
         <div id="lecture" class="col-xs-1 medium-font main-color  header-menu">
             강의실
         </div>
-        <div class="col-xs-1 medium-font main-color  header-menu">
-            고유명사
-        </div>
         <div id="ranking" class="col-xs-1 medium-font main-color  header-menu" style="width: 8%">
             랭킹
+        </div>
+        <div id="project" class="col-xs-1 medium-font main-color header-menu">
+            문제추천
         </div>
         <div id="board" class="col-xs-1 medium-font main-color header-menu">
             입시정보
         </div>
-        <div id="login" class="col-xs-1 small-font main-color border-right header-menu login-menu" style="margin-left: 15%; width: 7%">
+        <div id="login" class="col-xs-1 small-font main-color {% if not user %}border-right{% endif %} header-menu login-menu" style="margin-left: 15%; width: 7%">
             로그인
         </div>
-        <div id="signup" class="col-xs-1 small-font main-color  header-menu login-menu" style="width: 7%">
+        <div id="signup" class="col-xs-1 small-font main-color  header-menu login-menu" style="width: 7%; {% if user %}display: none;{% endif %}">
             회원가입
         </div>
 {#        <div class="col-xs-1 small-font main-color header-menu login-menu" style="width: 10%">#}
@@ -121,6 +121,18 @@
     $('#ranking').click(function () {
         $.ajax({
             url: "ranking/",
+            type: 'GET',
+            contentType: "application/json; charset=utf-8",
+            success: function (result) {
+                $('.main-container').empty()
+                $('.main-container').append(result)
+            },
+        });
+    })
+
+    $('#project').click(function () {
+        $.ajax({
+            url: "project/",
             type: 'GET',
             contentType: "application/json; charset=utf-8",
             success: function (result) {

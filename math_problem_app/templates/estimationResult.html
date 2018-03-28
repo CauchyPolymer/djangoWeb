@@ -5,8 +5,10 @@
         <div class="col-xs-6 x-large-font" align="right" style="padding-right: 3%">
             {% if test.type == 1 %}
                 {{ test.name }}
-            {% else %}
+            {% elif test.type == 2 %}
                 진단고사
+            {% else %}
+                추천고사
             {% endif %}
             결과
         </div>
@@ -28,16 +30,92 @@
         <div id="chartContainer" style="height: 50%; width: 97%;"></div>
     </div>
 
+    {% if test.type == 2 %}
     <div class="row result-bottom">
         <div class="col-xs-12" align="center">
             <input class="result-bottom-btn bold" type="button" value="약점 강화 프로젝트">
         </div>
     </div>
+    {% endif %}
+    {% if test.type == 1 or test.type == 3 %}
+    <div class="row result-table-div" align="center">
+        <div class="col-xs-12">
+            <table class="w3-table w3-bordered">
+                <thead>
+                    <tr class="white-color" style="background-color: #3748AC">
+                        <td></td>
+                        {% for ans in answers.answers.all %}
+                        <td>{{ forloop.counter }}</td>
+                        {% endfor %}
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>답변</td>
+                        {% for ans in answers.answers.all %}
+                        <td>{{ ans.answer }}</td>
+                        {% endfor %}
+                    </tr>
+                    <tr>
+                        <td>정답</td>
+                        {% for problem in test.problems.all %}
+                        <td>{{ problem.answer }}</td>
+                        {% endfor %}
+                    </tr>
+                    <tr>
+                        <td>채점결과</td>
+                        {% for result in testResult %}
+                        <td>{{ result }}</td>
+                        {% endfor %}
+                    </tr>
+                    <tr>
+                        <td>정답율</td>
+                        {% for problem in test.problems.all %}
+                        <td>{{ problem.get_right_answer_percent }}%</td>
+                        {% endfor %}
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row result-bottom">
+        <div class="col-xs-12" align="center">
+            <input id="back" class="result-bottom-btn bold" type="button" value="돌아가기">
+        </div>
+    </div>
+
+    {% endif %}
 </div>
 
 <script>
+    $('#back').click(function () {
+        {% if from == 'test' %}
+        $.ajax({
+            url: "createTest/",
+            type: 'GET',
+            contentType: "application/json; charset=utf-8",
+            success: function (result) {
+                $('.main-container').empty()
+                $('.main-container').append(result)
+                goToTop()
+            },
+        });
+        {% else %}
+        $.ajax({
+            url: "recommend/",
+            type: 'GET',
+            contentType: "application/json; charset=utf-8",
+            success: function (result) {
+                $('.main-container').empty()
+                $('.main-container').append(result)
+                goToTop()
+            },
+        });
+        {% endif %}
+    })
+
     $.ajax({
-        url: "getRateData/ratingSrl={{ rate.ratingSrl }}",
+        url: "getRateData/?ratingSrl={{ rate.ratingSrl }}",
         type: 'GET',
         contentType: "application/json; charset=utf-8",
         success: function (result) {

@@ -31,6 +31,8 @@
             success: function (result) {
                 if(result.success) {
                     goToMain()
+                    $('#login').removeClass('border-right')
+                    $('#signup').css('display', 'none')
                     alert(result.msg)
                 } else {
                     alert(result.msg)

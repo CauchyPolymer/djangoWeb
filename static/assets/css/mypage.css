@@ -58,3 +58,15 @@
     left: 0;
     width: 100%;
 }
+
+.mypage-box {
+    border: groove;
+    border-width: 1px;
+    padding-top: 20px;
+    height: 100px;
+    width: 350px;
+}
+
+.estimate-box {
+    height: 80px;
+}
