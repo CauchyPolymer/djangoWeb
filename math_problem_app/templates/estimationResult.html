@@ -96,6 +96,7 @@
             success: function (result) {
                 $('.main-container').empty()
                 $('.main-container').append(result)
+                $('.header').css('display', 'inherit')
                 goToTop()
             },
         });
