@@ -39,6 +39,9 @@
         <div class="col-xs-4 sign-in-input-div">
             <input id="password-check" type="password" class="gray-background-color w3-input login-input">
         </div>
+        <div class="col-xs-2 col-xs-offset-1 confirm" style="padding-top: 20px; margin-left: 5%;">
+
+        </div>
     </div>
 
     <div class="row" align="center" style="margin: 1%">
@@ -149,6 +152,14 @@
     });
 
     exportUserInfo()
+
+    $('#password-check').change(function () {
+        if($('#password').val() == $('#password-check').val()){
+            $('.confirm').text('비밀번호가 일치 합니다.')
+        } else {
+            $('.confirm').text('')
+        }
+    })
 
     $('#to-prev').click(function () {
         saveUserInfo()

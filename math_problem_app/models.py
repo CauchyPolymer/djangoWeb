@@ -9,7 +9,7 @@ from django.db import models
 
 class Photo(models.Model):
     photoSrl = models.AutoField(primary_key=True)
-    photo = models.ImageField(max_length=200, null=True, upload_to='photos/')
+    photo = models.ImageField(max_length=300, null=True, upload_to='photos/')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -49,14 +49,14 @@ PROBLEM_DIFFICULTY = {
     (3, '어려움'),
 }
 
-UNIT = {
+UNIT = [
     (1, '수1'),
     (2, '수2'),
     (3, '미적1'),
     (4, '미적2'),
     (5, '확통'),
     (6, '기벡'),
-}
+]
 
 ANSWER_TYPE = {
     (1, '객관식'),
@@ -75,8 +75,25 @@ class ProblemUnit(models.Model):
         self.save()
         return self
 
+    def get_unit_display(self):
+        unit = ''
+        if self.unit == 1:
+            unit = '수학1'
+        elif self.unit == 2:
+            unit = '수학2'
+        elif self.unit == 3:
+            unit = '미적분1'
+        elif self.unit == 4:
+            unit = '미적분2'
+        elif self.unit == 5:
+            unit = '확률과 통계'
+        elif self.unit == 6:
+            unit = '기하와 벡터'
+        return unit
 
-MIDDLE_UNIT = {
+
+
+MIDDLE_UNIT = [
     (1, '다항식'),
     (2, '방정식과 부등식'),
     (3, '도형의 방정식'),
@@ -99,6 +116,15 @@ MIDDLE_UNIT = {
     (20, '평면벡터'),
     (21, '공간도형과 공간좌표'),
     (22, '공간벡터'),
+]
+
+GET_MIDDLE_UNIT = {
+    1: MIDDLE_UNIT[:3],
+    2: MIDDLE_UNIT[3:7],
+    3: MIDDLE_UNIT[7:11],
+    4: MIDDLE_UNIT[11:15],
+    5: MIDDLE_UNIT[15:18],
+    6: MIDDLE_UNIT[18:22]
 }
 
 
@@ -114,7 +140,7 @@ class ProblemMiddleUnit(models.Model):
         return self
 
 
-SMALL_UNIT = {
+SMALL_UNIT = [
     (1, '다항식의 연산'),
     (2, '항등식과 나머지 정리'),
     (3, '인수분해'),
@@ -169,6 +195,31 @@ SMALL_UNIT = {
     (52, '공간도형'),
     (53, '공간좌표'),
     (54, '공간벡터'),
+]
+
+GET_SMALL_UNIT = {
+    1: SMALL_UNIT[:3],
+    2: SMALL_UNIT[3:7],
+    3: SMALL_UNIT[7:12],
+    4: SMALL_UNIT[12:15],
+    5: SMALL_UNIT[15:18],
+    6: SMALL_UNIT[18:20],
+    7: SMALL_UNIT[20:22],
+    8: SMALL_UNIT[22:24],
+    9: SMALL_UNIT[24:26],
+    10: SMALL_UNIT[26:28],
+    11: SMALL_UNIT[28:31],
+    12: SMALL_UNIT[31:33],
+    13: SMALL_UNIT[33:36],
+    14: SMALL_UNIT[36:38],
+    15: SMALL_UNIT[38:40],
+    16: SMALL_UNIT[40:43],
+    17: SMALL_UNIT[43:45],
+    18: SMALL_UNIT[45:47],
+    19: SMALL_UNIT[47:49],
+    20: SMALL_UNIT[49:51],
+    21: SMALL_UNIT[51:53],
+    22: SMALL_UNIT[53:54],
 }
 
 
@@ -265,7 +316,6 @@ class Test(models.Model):
         return self.createdAt.strptime('%Y %m월 %d일')
 
 
-
 class AnswerNum(models.Model):
     answerNumSrl = models.AutoField(primary_key=True)
     answer = models.IntegerField(blank=True, null=True)
@@ -298,6 +348,28 @@ class Answer(models.Model):
         return self.createdAt.strftime("%Y년 %m월 %d일")
 
 
+class Lecture(models.Model):
+    lectureSrl = models.AutoField(primary_key=True)
+    video = models.FileField(max_length=300, null=True, upload_to='videos/')
+    unit = models.ManyToManyField(ProblemUnit, null=True, blank=True)
+    middleUnit = models.ManyToManyField(ProblemMiddleUnit, null=True, blank=True)
+    teacherName = models.CharField(max_length=50, blank=True, null=True)
+    name = models.CharField(max_length=100, blank=True, null=True)
+
+    def __str__(self):
+        return str(self.video)
+
+    def store(self):
+        self.save()
+        return self
+
+    def get_url(self):
+        return str(self.video.url).replace("https", "http")
+
+    def get_https_url(self):
+        return str(self.video.url)
+
+
 GRADE = {
     (1, '1학년'),
     (2, '2학년'),
@@ -316,6 +388,12 @@ class Recommend(models.Model):
     def store(self):
         self.save()
         return self
+
+    def get_problem_count(self):
+        return Problem.objects.filter(unit=self.unit).count()
+
+    def get_lecture_count(self):
+        return Lecture.objects.filter(unit=self.unit).count()
 
 
 class User(models.Model):
