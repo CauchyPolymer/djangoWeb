@@ -54,6 +54,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/main.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/main.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/signIn.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/signIn.html" />
 =======
@@ -449,6 +450,9 @@
 =======
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/css/recommend.css" afterPath="$PROJECT_DIR$/static/assets/css/recommend.css" />
 >>>>>>> e153e14161d8ee54c26db968d0851ef627f2e2ff
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/estimationResult.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/estimationResult.html" />
+>>>>>>> 9edd8f9fe6c531f2459ac8c600a593ec2004c84c
     </list>
 >>>>>>> d9ad5fe1690b3b8257226eab52cebb30c5deb0dd
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -729,6 +733,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
           <file leaf-file-name="boardContent.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/math_problem_app/templates/boardContent.html">
               <provider selected="true" editor-type-id="text-editor">
@@ -793,23 +798,32 @@
                     <element signature="n#style#0;n#p#1;n#div#2;n#div#1;n#!!top" expanded="true" />
                   </folding>
 >>>>>>> 22607e224ac97cc7b124baad9918bb86d5abd465
+=======
+          <file leaf-file-name="signIn.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/math_problem_app/templates/signIn.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="570">
+                  <caret line="38" column="14" lean-forward="true" selection-start-line="38" selection-start-column="14" selection-end-line="38" selection-end-column="14" />
+                  <folding />
+>>>>>>> 9edd8f9fe6c531f2459ac8c600a593ec2004c84c
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="ranking.css" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/static/assets/css/ranking.css">
+          <file leaf-file-name="testResult.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/math_problem_app/templates/testResult.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="465">
-                  <caret line="31" column="1" lean-forward="true" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="signIn.html" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/math_problem_app/templates/signIn.html">
+          <file leaf-file-name="estimationResult.html" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/math_problem_app/templates/estimationResult.html">
               <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
 <<<<<<< HEAD
                 <state relative-caret-position="2903">
                   <caret line="196" column="0" lean-forward="false" selection-start-line="196" selection-start-column="0" selection-end-line="196" selection-end-column="0" />
@@ -951,6 +965,10 @@
                 <state relative-caret-position="270">
                   <caret line="18" column="28" lean-forward="true" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
 >>>>>>> c7cb3f9774c8f7e8c6b8d1a480cbb336a82ca854
+=======
+                <state relative-caret-position="663">
+                  <caret line="97" column="20" lean-forward="false" selection-start-line="97" selection-start-column="20" selection-end-line="97" selection-end-column="20" />
+>>>>>>> 9edd8f9fe6c531f2459ac8c600a593ec2004c84c
                   <folding />
 >>>>>>> 555568a0717c763dd8d836446b87c1facb9d2341
                 </state>
@@ -961,7 +979,7 @@
             <entry file="file://$PROJECT_DIR$/math_problem_app/templates/signIn3.html">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="690">
-                  <caret line="46" column="9" lean-forward="true" selection-start-line="46" selection-start-column="9" selection-end-line="46" selection-end-column="9" />
+                  <caret line="46" column="9" lean-forward="false" selection-start-line="46" selection-start-column="9" selection-end-line="46" selection-end-column="9" />
                   <folding>
                     <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
                   </folding>
@@ -1030,7 +1048,7 @@
 >>>>>>> 80093f2fc1e1beef754eeb015475610cdf54b723
 =======
                 <state relative-caret-position="405">
-                  <caret line="27" column="20" lean-forward="true" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
+                  <caret line="27" column="20" lean-forward="false" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
                   <folding>
                     <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -1052,20 +1070,23 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="board.css" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/static/assets/css/board.css">
+          <file leaf-file-name="header.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/math_problem_app/templates/header.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="343">
-                  <caret line="45" column="14" lean-forward="false" selection-start-line="45" selection-start-column="14" selection-end-line="45" selection-end-column="14" />
+                <state relative-caret-position="729">
+                  <caret line="133" column="8" lean-forward="true" selection-start-line="133" selection-start-column="8" selection-end-line="141" selection-end-column="11" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="sign-in-complete.png" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/static/assets/img/sign-in-complete.png">
-              <provider selected="true" editor-type-id="images">
-                <state />
+          <file leaf-file-name="board.css" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/static/assets/css/board.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="583">
+                  <caret line="61" column="14" lean-forward="false" selection-start-line="61" selection-start-column="14" selection-end-line="61" selection-end-column="14" />
+                  <folding />
+                </state>
               </provider>
             </entry>
           </file>
@@ -1097,7 +1118,7 @@
             <entry file="file://$PROJECT_DIR$/math_problem_app/admin.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="240">
-                  <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+                  <caret line="16" column="5" lean-forward="false" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
                   <folding>
                     <element signature="e#0#32#0" expanded="true" />
                   </folding>
@@ -1109,7 +1130,7 @@
             <entry file="file://$PROJECT_DIR$/static/assets/css/recommend.css">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="598">
-                  <caret line="64" column="0" lean-forward="true" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+                  <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -1153,7 +1174,7 @@
             <entry file="file://$PROJECT_DIR$/math_problem_app/urls.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="675">
-                  <caret line="47" column="48" lean-forward="true" selection-start-line="47" selection-start-column="48" selection-end-line="47" selection-end-column="48" />
+                  <caret line="47" column="48" lean-forward="false" selection-start-line="47" selection-start-column="48" selection-end-line="47" selection-end-column="48" />
                   <folding />
                 </state>
               </provider>
@@ -1421,7 +1442,6 @@
         <option value="$PROJECT_DIR$/static/assets/pages/scripts/login-5.js" />
         <option value="$PROJECT_DIR$/math_admin/templates/login/page_user_login_5.html" />
         <option value="$PROJECT_DIR$/math_problem_app/templates/testBox.html" />
-        <option value="$PROJECT_DIR$/math_problem_app/templates/estimationResult.html" />
         <option value="$PROJECT_DIR$/math_problem_app/templates/recommendTest.html" />
         <option value="$PROJECT_DIR$/math_problem_app/templates/estimation.html" />
         <option value="$PROJECT_DIR$/math_problem_app/templates/header.html" />
@@ -1448,6 +1468,7 @@
         <option value="$PROJECT_DIR$/static/assets/css/main.css" />
         <option value="$PROJECT_DIR$/math_problem_app/templates/board.html" />
         <option value="$PROJECT_DIR$/static/assets/css/board.css" />
+        <option value="$PROJECT_DIR$/math_problem_app/templates/estimationResult.html" />
       </list>
     </option>
   </component>
@@ -2093,6 +2114,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/math_problem_app/templates/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -2105,6 +2127,9 @@
 =======
     <entry file="file://$PROJECT_DIR$/static/assets/css/board.css">
 >>>>>>> 2d6d8a6f84da254b887e7120800bf6344c96590c
+=======
+    <entry file="file://$PROJECT_DIR$/math_problem_app/templates/onlineEstimationStart.html">
+>>>>>>> 9edd8f9fe6c531f2459ac8c600a593ec2004c84c
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="652">
           <caret line="46" column="9" lean-forward="false" selection-start-line="46" selection-start-column="9" selection-end-line="46" selection-end-column="9" />
@@ -2112,6 +2137,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/math_problem_app/templates/main.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -2123,6 +2149,9 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/math_problem_app/models.py">
+=======
+    <entry file="file://$PROJECT_DIR$/static/assets/css/lecture.css">
+>>>>>>> 9edd8f9fe6c531f2459ac8c600a593ec2004c84c
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1890">
           <caret line="129" column="40" lean-forward="false" selection-start-line="129" selection-start-column="40" selection-end-line="129" selection-end-column="40" />
@@ -3169,14 +3198,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/math_problem_app/templates/header.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="48" column="23" lean-forward="false" selection-start-line="48" selection-start-column="23" selection-end-line="48" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/math_admin/templates/board/board_form.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -3340,7 +3361,7 @@
     <entry file="file://$PROJECT_DIR$/static/assets/css/recommend.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="598">
-          <caret line="64" column="0" lean-forward="true" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+          <caret line="64" column="0" lean-forward="false" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -3356,7 +3377,7 @@
     <entry file="file://$PROJECT_DIR$/math_problem_app/admin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
-          <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+          <caret line="16" column="5" lean-forward="false" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
@@ -3366,7 +3387,7 @@
     <entry file="file://$PROJECT_DIR$/math_problem_app/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="675">
-          <caret line="47" column="48" lean-forward="true" selection-start-line="47" selection-start-column="48" selection-end-line="47" selection-end-column="48" />
+          <caret line="47" column="48" lean-forward="false" selection-start-line="47" selection-start-column="48" selection-end-line="47" selection-end-column="48" />
           <folding />
         </state>
       </provider>
@@ -3396,32 +3417,14 @@
         <state relative-caret-position="90">
           <caret line="6" column="12" lean-forward="true" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
           <folding>
-            <element signature="e#75#98#0#HTML" expanded="true" />
+            <element signature="e#75#98#0#HTML" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/math_problem_app/templates/signIn2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="581">
-          <caret line="41" column="94" lean-forward="false" selection-start-line="41" selection-start-column="94" selection-end-line="41" selection-end-column="94" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/assets/img/sign-in-complete.png">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/math_problem_app/templates/signIn3.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="46" column="9" lean-forward="true" selection-start-line="46" selection-start-column="9" selection-end-line="46" selection-end-column="9" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-          </folding>
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/math_problem_app/views.py">
@@ -3450,15 +3453,7 @@
     <entry file="file://$PROJECT_DIR$/static/assets/css/ranking.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="465">
-          <caret line="31" column="1" lean-forward="true" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/math_problem_app/templates/signIn.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="28" lean-forward="true" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+          <caret line="31" column="1" lean-forward="false" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
           <folding />
         </state>
       </provider>
@@ -3474,7 +3469,7 @@
     <entry file="file://$PROJECT_DIR$/math_problem_app/templates/board.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
-          <caret line="27" column="20" lean-forward="true" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
+          <caret line="27" column="20" lean-forward="false" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -3494,8 +3489,58 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/static/assets/css/board.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="45" column="14" lean-forward="false" selection-start-line="45" selection-start-column="14" selection-end-line="45" selection-end-column="14" />
+        <state relative-caret-position="583">
+          <caret line="61" column="14" lean-forward="false" selection-start-line="61" selection-start-column="14" selection-end-line="61" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/math_problem_app/templates/signIn2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="581">
+          <caret line="41" column="94" lean-forward="false" selection-start-line="41" selection-start-column="94" selection-end-line="41" selection-end-column="94" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/math_problem_app/templates/signIn3.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="46" column="9" lean-forward="false" selection-start-line="46" selection-start-column="9" selection-end-line="46" selection-end-column="9" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/math_problem_app/templates/signIn.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="38" column="14" lean-forward="true" selection-start-line="38" selection-start-column="14" selection-end-line="38" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/math_problem_app/templates/testResult.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/math_problem_app/templates/header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="729">
+          <caret line="133" column="8" lean-forward="true" selection-start-line="133" selection-start-column="8" selection-end-line="141" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/math_problem_app/templates/estimationResult.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="97" column="20" lean-forward="false" selection-start-line="97" selection-start-column="20" selection-end-line="97" selection-end-column="20" />
           <folding />
         </state>
       </provider>
