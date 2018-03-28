@@ -597,3 +597,5 @@ def recommendTest(request):
 def project(request):
     user = getLoginUser(request)
     return render(request, 'project.html', {'user': user})
+
+
