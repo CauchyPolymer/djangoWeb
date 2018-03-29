@@ -4,10 +4,11 @@
         <div class="lecture-left-box x-large-font create-test-left-box">
             {{ user.name }}의 문제집
         </div>
+        {% for recommend in user.recommend.all %}
         <div class="list-group project-left-box-div">
             <div class="row graph-title" data-open="false" align="center">
-                <p class="large-font bold">기하와 벡터</p>
-                <p class="small-font">2등급 만들기</p>
+                <p class="large-font bold">{{ recommend.unit.get_unit_display }}</p>
+                <p class="small-font">{{ recommend.aimGrade }}등급 만들기</p>
             </div>
             <div class="list-group graph-box">
                 <div class="row">
@@ -26,28 +27,7 @@
                 </div>
             </div>
         </div>
-        <div class="list-group project-left-box-div">
-            <div class="row graph-title" data-open="false" align="center">
-                <p class="large-font bold">확률과 통계</p>
-                <p class="small-font">4등급 만들기</p>
-            </div>
-            <div class="list-group graph-box">
-                <div class="row">
-                    <div class="col-xs-8">
-                        <div class="doughnut-chart" id="doughnutChartContainer2" style="padding: 5% 5% 5% 0; width: 100%; height: 200px;"></div>
-                    </div>
-                    <div class="col-xs-4" style="margin: 15% 0 0 -10%;">
-                        <p class="large-font orange-color">0</p>
-                        <p class="x-small-font gray-color">day streak</p>
-                        <p class="large-font orange-color">6</p>
-                        <p class="x-small-font gray-color">hours left</p>
-                    </div>
-                </div>
-                <div class="row project-left-box">
-                    <div class="chart" id="chartContainer2" style="padding: 10% 0% 10% 5%; height: 200px; width: 80%;"></div>
-                </div>
-            </div>
-        </div>
+        {% endfor %}
         <div class="row">
             <div class="col-xs-12" align="center">
                 <input id="self-study" type="button" class="w3-btn white-color medium-font" value="스스로 학습하기">
@@ -63,45 +43,21 @@
             </div>
         </div>
         <div class="row" style="margin-top: 8%;">
+            {% for recommend in user.recommend.all %}
             <div class="col-xs-3 col-xs-offset-1 project-unit-box-div">
-                <div id="vector" class="project-unit-box">
+                <div class="project-unit-box" data-recommendsrl="{{ recommend.recommendSrl }}">
                     <div class="project-text-box">
-                        <p class="large-font bold">기하와 벡터</p>
-                        <p class="medium-font">벡터가 부족한 {{ user.name }}에게 주는 선물</p>
+                        <p class="large-font bold">{{ recommend.unit.get_unit_display }}</p>
+                        <p class="medium-font">{{ recommend.unit.get_unit_display }}가 부족한 {{ user.name }}에게 주는 선물</p>
                         <br>
-                        <p class="medium-font">영상 8 문제 300</p>
+                        <p class="medium-font">영상 {{ recommend.get_lecture_count }} 문제 {{ recommend.get_problem_count }}</p>
                         <br>
                         <p class="medium-font">선 이수 과목</p>
                         <p class="medium-font bold">없음</p>
                     </div>
                 </div>
             </div>
-            <div class="col-xs-3 project-unit-box-div">
-                <div id="tonggye" class="project-unit-box">
-                    <div class="project-text-box">
-                        <p class="large-font bold">확률과 통계</p>
-                        <p class="medium-font">{{ user.name }}를 위한 통계 2등급 만들기</p>
-                        <br>
-                        <p class="medium-font">영상 8 문제 300</p>
-                        <br>
-                        <p class="medium-font">선 이수 과목</p>
-                        <p class="medium-font bold">없음</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-3 project-unit-box-div">
-                <div id="mijuk" class="project-unit-box">
-                    <div class="project-text-box">
-                        <p class="large-font bold">미적분</p>
-                        <p class="medium-font">정적분이 약한 {{ user.name }}을 위한 완전 맞춤 솔루션</p>
-                        <br>
-                        <p class="medium-font">영상 8 문제 300</p>
-                        <br>
-                        <p class="medium-font">선 이수 과목</p>
-                        <p class="medium-font bold">없음</p>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 </div>
@@ -164,9 +120,9 @@
         });
     })
 
-    $('#vector').click(function () {
+    $('.project-unit-box').click(function () {
         $.ajax({
-            url: "recommend/",
+            url: "recommend/?recommendSrl="+$(this).data('recommendsrl'),
             type: 'GET',
             contentType: "application/json; charset=utf-8",
             success: function (result) {

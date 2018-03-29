@@ -9,7 +9,7 @@
                 <img class="arrow-back" src="{% static 'assets/img/arrow.png' %}">
                 <div class="row">
                     <div class="col-xs-12 x-large-font bold" align="left">
-                          기하와 벡터
+                          {{ recommend.unit.get_unit_display }}
                     </div>
                 </div>
                 <div class="row">
@@ -24,44 +24,14 @@
                 <img src="{% static 'assets/img/blue-circle.png' %}" class="left-box-icon">
                 진도
             </div>
+            {% for middleUnit in middleUnits %}
             <div class="row recommend-left-box medium-font" align="left">
                 <div class="col-xs-2 left-icon-div"><img src="{% static 'assets/img/group@3x.png' %}" class="left-box-icon left-box-icon-2"></div>
-                <div class="col-xs-10 left-text-div">벡터</div>
-                <div class="row star-div">
-                    <img src="{% static 'assets/img/star-circle.png' %}" class="star-circle">
-                    <img src="{% static 'assets/img/star-circle.png' %}" class="star-circle">
-                    <img src="{% static 'assets/img/star-circle.png' %}" class="star-circle">
-                    <img src="{% static 'assets/img/star-circle.png' %}" class="star-circle">
+                <div class="col-xs-10 left-text-div">{{ middleUnit.1 }}</div>
+                <div class="row star-div" data-middleunit="{{ middleUnit.0 }}">
                 </div>
             </div>
-            <div class="row recommend-left-box medium-font" align="left">
-                <div class="col-xs-2 left-icon-div"><img src="{% static 'assets/img/group@3x.png' %}" class="left-box-icon left-box-icon-2"></div>
-                <div class="col-xs-10 left-text-div">선형결합과 생성</div>
-            </div>
-            <div class="row recommend-left-box medium-font" align="left">
-                <div class="col-xs-2 left-icon-div"><img src="{% static 'assets/img/group@3x.png' %}" class="left-box-icon left-box-icon-2"></div>
-                <div class="col-xs-10 left-text-div">선형종속과 독립</div>
-            </div>
-            <div class="row recommend-left-box medium-font" align="left">
-                <div class="col-xs-2 left-icon-div"><img src="{% static 'assets/img/group@3x.png' %}" class="left-box-icon left-box-icon-2"></div>
-                <div class="col-xs-10 left-text-div">부분공간과 부분공간의 기저</div>
-            </div>
-            <div class="row recommend-left-box medium-font" align="left">
-                <div class="col-xs-2 left-icon-div"><img src="{% static 'assets/img/group@3x.png' %}" class="left-box-icon left-box-icon-2"></div>
-                <div class="col-xs-10 left-text-div">벡터의 내적과 외적</div>
-            </div>
-            <div class="row recommend-left-box medium-font" align="left">
-                <div class="col-xs-2 left-icon-div"><img src="{% static 'assets/img/group@3x.png' %}" class="left-box-icon left-box-icon-2"></div>
-                <div class="col-xs-10 left-text-div">가감법으로 연립방정식을 풀기 위한 행렬</div>
-            </div>
-            <div class="row recommend-left-box medium-font" align="left">
-                <div class="col-xs-2 left-icon-div"><img src="{% static 'assets/img/group@3x.png' %}" class="left-box-icon left-box-icon-2"></div>
-                <div class="col-xs-10 left-text-div">영공간과 열공간</div>
-            </div>
-            <div class="row recommend-left-box medium-font" align="left">
-                <div class="col-xs-2 left-icon-div"><img src="{% static 'assets/img/group@3x.png' %}" class="left-box-icon left-box-icon-2"></div>
-                <div class="col-xs-10 left-text-div">단원 테스트</div>
-            </div>
+            {% endfor %}
         </div>
     </div>
     <div id="recommend-test-div" class="col-xs-9" style="display: none; padding: 5% 2% 2% 2%"></div>
@@ -83,4 +53,21 @@
             },
         });
     })
+
+
+    $('.star-div').each(function () {
+        var starDiv = this;
+        $.ajax({
+            url: "getSmallUnitCount/?middleUnit="+$(this).data('middleunit'),
+            type: 'GET',
+            contentType: "application/json; charset=utf-8",
+            success: function (result) {
+                for(var i = 0; i < parseInt(result.count); i++) {
+                    $(starDiv).append('<img src="{% static 'assets/img/star-circle.png' %}" class="star-circle">')
+                }
+            },
+        });
+    })
+
+
 </script>

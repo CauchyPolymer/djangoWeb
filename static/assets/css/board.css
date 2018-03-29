@@ -43,7 +43,7 @@
 }
 
 .board-text {
-    height: 300px;
+    height: 250px;
     overflow-y: scroll;
     border: groove;
     border-width: 1px;

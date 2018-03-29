@@ -2,7 +2,7 @@
 <div class="row">
     <div class="col-xs-12" style="padding-left: 0; padding-right: 3%;">
         <div class="recommend-title main-color x-large-font bold" align="center">
-            기하와 벡터 - 문제와 영상
+            {{ recommend.unit.get_unit_display }} - 문제와 영상
         </div>
     </div>
 </div>
@@ -19,66 +19,28 @@
         <img class="rocket-img" src="{% static 'assets/img/rocket.png' %}">
     </div>
 </div>
-<div class="row" style="margin-top: 3%;">
+{% for middleUnit in middleUnits %}
+<div class="row" style="margin-top: 10%;">
     <div class="recommend-unit col-xs-12 large-font bold" align="left">
-        벡터
+        {{ middleUnit.1 }}
     </div>
 </div>
 <div class="row" style="margin-top: 3%;">
-    <div class="col-xs-6" style="padding-left: 3%;">
+    <div class="col-xs-6 lecture-div" style="padding-left: 3%;" data-middleunit="{{ middleUnit.0 }}">
         <div class="row medium-font gray-color bold" align="left">
             학습하기
-        </div>
-        <div class="row video-div" style="margin-top: 3%;">
-            <img class="star-circle" src="{% static 'assets/img/play-circle.png' %}">
-            &nbsp;선형대수학을 위한 벡터란?
-        </div>
-        <div class="row video-div" style="margin-top: 3%;">
-            <img class="star-circle" src="{% static 'assets/img/play-circle.png' %}">
-            &nbsp;실좌표공간
-        </div>
-        <div class="row video-div" style="margin-top: 3%;">
-            <img class="star-circle" src="{% static 'assets/img/play-circle.png' %}">
-            &nbsp;대수와 그래프를 이용한 벡터의 덧셈
-        </div>
-        <div class="row video-div" style="margin-top: 3%;">
-            <img class="star-circle" src="{% static 'assets/img/play-circle.png' %}">
-            &nbsp;벡터와 스칼라의 곱셈
-        </div>
-        <div class="row video-div" style="margin-top: 3%;">
-            <img class="star-circle" src="{% static 'assets/img/play-circle.png' %}">
-            &nbsp;벡터 예제
-        </div>
-        <div class="row video-div" style="margin-top: 3%;">
-            <img class="star-circle" src="{% static 'assets/img/play-circle.png' %}">
-            &nbsp;단위벡터란?
-        </div>
-        <div class="row video-div" style="margin-top: 3%;">
-            <img class="star-circle" src="{% static 'assets/img/play-circle.png' %}">
-            &nbsp;직선의 매개변수 표현
         </div>
     </div>
     <div class="col-xs-6" align="left">
         <div class="row medium-font gray-color bold" align="left">
             연습문제
         </div>
-        <div class="row recommend-test">
-            <div class="row">
-                <img class="star-circle" src="{% static 'assets/img/star-circle.png' %}">
-                기하와 벡터
-            </div>
-            <div class="row" style="margin-top: 5%; margin-left: 2%;">
-                <div class="col-xs-6">
-                    4 문제
-                </div>
-                <div class="col-xs-6" align="right" style="color: #77AC29;">
-                    연습문제
-                </div>
-            </div>
+        <div class="recommend-test-div" data-middleunit="{{ middleUnit.0 }}">
+
         </div>
     </div>
 </div>
-
+{% endfor %}
 <script>
     var unit = 6;  // change to unit number
     $('.recommend-test').click(function () {
@@ -94,4 +56,29 @@
             },
         });
     })
+
+    $('.recommend-test-div').each(function () {
+        var testDiv = this;
+        $.ajax({
+            url: "getSmallUnitTest/?middleUnit="+$(this).data('middleunit'),
+            type: 'GET',
+            contentType: "application/json; charset=utf-8",
+            success: function (result) {
+                $(testDiv).append(result)
+            },
+        });
+    })
+
+    $('.lecture-div').each(function () {
+        var lectureDiv = this;
+        $.ajax({
+            url: "getMiddleUnitLecture/?middleUnit="+$(this).data('middleunit'),
+            type: 'GET',
+            contentType: "application/json; charset=utf-8",
+            success: function (result) {
+                $(lectureDiv).append(result)
+            },
+        });
+    })
+
 </script>

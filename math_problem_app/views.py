@@ -19,7 +19,7 @@ from django.views.decorators.csrf import csrf_exempt
 from math_problem import settings
 from math_problem_app.sendSms import sendSms
 from math_problem_app.models import User, Problem, ProblemUnit, Photo, Board, Test, Comment, Answer, AnswerNum, Rating, \
-    Score
+    Score, Recommend, GET_MIDDLE_UNIT, GET_SMALL_UNIT, Lecture
 
 
 def head(request):
@@ -502,6 +502,15 @@ def answer(request):
         rate.user = user
         rate.save()
 
+        if test.type == 2:
+            user.recommend.clear()
+            min3 = sorted([(1, rate.su1), (2, rate.su2), (3, rate.mi1), (4, rate.mi2), (5, rate.hwaktong), (6, rate.givec)], key=lambda x: x[1])[-3:]
+            for min in min3:
+                if min[1]-1 != 0:
+                    recommend = Recommend(aimGrade=min[1]-1, unit=ProblemUnit.objects.get(unit=min[0])).store()
+                    user.recommend.add(recommend)
+            user.save()
+
         return render(request, 'estimationResult.html', {'rate': rate, 'test': test, 'answers': answer, 'testResult': testResult, 'from': str(request.POST.get('from'))})
 
 
@@ -572,7 +581,8 @@ def testProblems(request):
 def recommend(request):
     user = getLoginUser(request)
     if user:
-        return render(request, 'recommend.html', {'user': user})
+        recommend = Recommend.objects.get(recommendSrl=int(request.GET.get('recommendSrl')))
+        return render(request, 'recommend.html', {'user': user, 'recommend': recommend, 'middleUnits': GET_MIDDLE_UNIT[recommend.unit.unit]})
     else:
         return render(request, 'login.html')
 
@@ -599,3 +609,16 @@ def project(request):
     return render(request, 'project.html', {'user': user})
 
 
+def getSmallUnitCount(request):
+    middleUnit = int(request.GET.get('middleUnit'))
+    return returnHttpResponse({'count': len(GET_SMALL_UNIT[middleUnit])})
+
+
+def getSmallUnitTest(request):
+    middleUnit = int(request.GET.get('middleUnit'))
+    return render(request, 'smallUnitTest.html', {'smallUnits': GET_SMALL_UNIT[middleUnit]})
+
+
+def getMiddleUnitLecture(request):
+    middleUnit = int(request.GET.get('middleUnit'))
+    return render(request, 'middleUnitLecture.html', {'lectures': Lecture.objects.filter(middleUnit__middleUnit=middleUnit)})

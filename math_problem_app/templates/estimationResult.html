@@ -33,7 +33,7 @@
     {% if test.type == 2 %}
     <div class="row result-bottom">
         <div class="col-xs-12" align="center">
-            <input class="result-bottom-btn bold" type="button" value="약점 강화 프로젝트">
+            <input id="go-project" class="result-bottom-btn bold" type="button" value="약점 강화 프로젝트">
         </div>
     </div>
     {% endif %}
@@ -88,6 +88,20 @@
 </div>
 
 <script>
+    $('#go-project').click(function () {
+        $.ajax({
+            url: "project/",
+            type: 'GET',
+            contentType: "application/json; charset=utf-8",
+            success: function (result) {
+                $('.main-container').empty()
+                $('.main-container').append(result)
+                $('.header').css('display', 'inherit')
+                goToTop()
+            },
+        });
+    })
+
     $('#back').click(function () {
         {% if from == 'test' %}
         $.ajax({

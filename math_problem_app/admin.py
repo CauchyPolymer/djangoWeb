@@ -14,3 +14,4 @@ admin.site.register(Score)
 
 admin.site.register(ProblemMiddleUnit)
 admin.site.register(ProblemSmallUnit)
+admin.site.register(Lecture)
