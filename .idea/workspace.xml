@@ -825,6 +825,7 @@
               <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <state relative-caret-position="2903">
                   <caret line="196" column="0" lean-forward="false" selection-start-line="196" selection-start-column="0" selection-end-line="196" selection-end-column="0" />
                   <folding>
@@ -969,6 +970,10 @@
                 <state relative-caret-position="663">
                   <caret line="97" column="20" lean-forward="false" selection-start-line="97" selection-start-column="20" selection-end-line="97" selection-end-column="20" />
 >>>>>>> 9edd8f9fe6c531f2459ac8c600a593ec2004c84c
+=======
+                <state relative-caret-position="678">
+                  <caret line="98" column="52" lean-forward="false" selection-start-line="98" selection-start-column="52" selection-end-line="98" selection-end-column="52" />
+>>>>>>> 00eab6637fb76debb32aedeff43ed56b6b7a5ef8
                   <folding />
 >>>>>>> 555568a0717c763dd8d836446b87c1facb9d2341
                 </state>
@@ -3539,8 +3544,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/math_problem_app/templates/estimationResult.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="97" column="20" lean-forward="false" selection-start-line="97" selection-start-column="20" selection-end-line="97" selection-end-column="20" />
+        <state relative-caret-position="678">
+          <caret line="98" column="52" lean-forward="false" selection-start-line="98" selection-start-column="52" selection-end-line="98" selection-end-column="52" />
           <folding />
         </state>
       </provider>
