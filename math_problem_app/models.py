@@ -69,13 +69,13 @@ class ProblemUnit(models.Model):
     unit = models.IntegerField(choices=UNIT, blank=True, null=True)
 
     def __str__(self):
-        return str(self.get_unit_display())
+        return str(self.get_unit_name())
 
     def store(self):
         self.save()
         return self
 
-    def get_unit_display(self):
+    def get_unit_name(self):
         unit = ''
         if self.unit == 1:
             unit = '수학1'
