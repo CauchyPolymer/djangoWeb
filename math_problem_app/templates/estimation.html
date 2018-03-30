@@ -155,18 +155,20 @@
         {% endif %}
         problemIdx -= 1;
         $.ajax({
-            url: "estimation/?testSrl={{ test.testSrl }}&problemIdx="+problemIdx,
+            url: "estimation/?testSrl={{ test.testSrl }}&from={{ from }}&problemIdx="+problemIdx,
             type: 'GET',
             contentType: "application/json; charset=utf-8",
             success: function (result) {
                 $('.main-container').empty()
                 $('.main-container').append(result)
+                $(".se-pre-con").css('display', "block");
                 window.MathJax = {
                     tex2jax: {
                       inlineMath: [ ['$','$'], ["\\(","\\)"] ],
                       processEscapes: true
                     }
                   };
+                $(".se-pre-con").fadeOut("slow");
             },
         });
     })
@@ -181,18 +183,20 @@
         {% endif %}
         problemIdx += 1;
         $.ajax({
-            url: "estimation/?testSrl={{ test.testSrl }}&problemIdx="+problemIdx,
+            url: "estimation/?testSrl={{ test.testSrl }}&from={{ from }}&problemIdx="+problemIdx,
             type: 'GET',
             contentType: "application/json; charset=utf-8",
             success: function (result) {
                 $('.main-container').empty()
                 $('.main-container').append(result)
+                $(".se-pre-con").css('display', "block");
                 window.MathJax = {
                     tex2jax: {
                       inlineMath: [ ['$','$'], ["\\(","\\)"] ],
                       processEscapes: true
                     }
                 };
+                $(".se-pre-con").fadeOut("slow");
             },
         });
     })

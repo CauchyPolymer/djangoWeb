@@ -6,7 +6,7 @@
     </div>
     <div class="col-xs-3"style="padding-top: 50px; padding-left: 30px;">
         <div class="row x-large-font bold">
-            기하와 벡터
+            {{ smallUnitName }}
         </div>
         <div class="row medium-font">
             {{ problems | length }} 문제
@@ -28,7 +28,7 @@
 <script>
     $('.back-btn').click(function () {
         $.ajax({
-            url: "recommendPage/",
+            url: "recommendPage/?recommendSrl="+recommendSrl,
             type: 'GET',
             contentType: "application/json; charset=utf-8",
             success: function (result) {
@@ -52,12 +52,14 @@
             success: function (result) {
                 $('.main-container').empty()
                 $('.main-container').append(result)
+                $(".se-pre-con").css('display', "block");
                 window.MathJax = {
                     tex2jax: {
                       inlineMath: [ ['$','$'], ["\\(","\\)"] ],
                       processEscapes: true
                     }
-              };
+                };
+                $(".se-pre-con").fadeOut("slow");
             },
         });
     })

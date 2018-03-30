@@ -56,7 +56,7 @@
 }
 
 .board-row {
-    margin-top: 3%;
+    margin-top: 2%;
 }
 
 .board-title {
@@ -74,7 +74,7 @@
 }
 
 #comment, #write-comment {
-    height: 120px;
+    height: 80px;
     border-radius: 20px;
     width: 100%;
 }

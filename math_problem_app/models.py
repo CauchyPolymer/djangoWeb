@@ -410,6 +410,8 @@ class User(models.Model):
     answers = models.ManyToManyField(Answer, blank=True, null=True)
     recommend = models.ManyToManyField(Recommend, blank=True, null=True)
 
+    isPaid = models.BooleanField(default=False)
+
     createdAt = models.DateTimeField(auto_now_add=True)
     updatedAt = models.DateTimeField(auto_now=True)
 

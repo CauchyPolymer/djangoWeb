@@ -42,21 +42,6 @@
 </div>
 {% endfor %}
 <script>
-    var unit = 6;  // change to unit number
-    $('.recommend-test').click(function () {
-        $.ajax({
-            url: "recommendTest/?unit="+unit,
-            type: 'GET',
-            contentType: "application/json; charset=utf-8",
-            success: function (result) {
-                $('#recommend-test-div').empty()
-                $('#recommend-test-div').append(result)
-                $('#recommend-test-div').css('display', 'inherit')
-                $('#recommend-right-div').css('display', 'none')
-            },
-        });
-    })
-
     $('.recommend-test-div').each(function () {
         var testDiv = this;
         $.ajax({

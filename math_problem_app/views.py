@@ -19,7 +19,7 @@ from django.views.decorators.csrf import csrf_exempt
 from math_problem import settings
 from math_problem_app.sendSms import sendSms
 from math_problem_app.models import User, Problem, ProblemUnit, Photo, Board, Test, Comment, Answer, AnswerNum, Rating, \
-    Score, Recommend, GET_MIDDLE_UNIT, GET_SMALL_UNIT, Lecture
+    Score, Recommend, GET_MIDDLE_UNIT, GET_SMALL_UNIT, Lecture, SMALL_UNIT
 
 
 def head(request):
@@ -588,12 +588,13 @@ def recommend(request):
 
 
 def recommendPage(request):
-    return render(request, 'recommendPage.html')
+    recommend = Recommend.objects.get(recommendSrl=int(request.GET.get('recommendSrl')))
+    return render(request, 'recommendPage.html', {'recommend': recommend, 'middleUnits': GET_MIDDLE_UNIT[recommend.unit.unit]})
 
 
 def recommendTest(request):
-    unit = int(request.GET.get('unit'))
-    problems = Problem.objects.filter(unit__unit__exact=unit)[:20]
+    smallUnit = int(request.GET.get('smallUnit'))
+    problems = Problem.objects.filter(smallUnit__smallUnit=smallUnit)[:20]
     test = Test(type=3).store()         # 추천고사
     for problem in problems:
         test.problems.add(problem)
@@ -601,7 +602,7 @@ def recommendTest(request):
     test.save()
     request.session['testSrl'] = test.testSrl
 
-    return render(request, 'recommendTest.html', {'problems': problems, 'from': 'testStart'})
+    return render(request, 'recommendTest.html', {'problems': problems, 'from': 'testStart', 'smallUnitName': SMALL_UNIT[smallUnit-1][1]})
 
 
 def project(request):
@@ -622,3 +623,11 @@ def getSmallUnitTest(request):
 def getMiddleUnitLecture(request):
     middleUnit = int(request.GET.get('middleUnit'))
     return render(request, 'middleUnitLecture.html', {'lectures': Lecture.objects.filter(middleUnit__middleUnit=middleUnit)})
+
+
+def paymentStart(request):
+    user = getLoginUser(request)
+    if user:
+        return render(request, 'paymentStart.html', {'user': user})
+    else:
+        return render(request, 'login.html')
