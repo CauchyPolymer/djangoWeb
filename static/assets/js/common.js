@@ -109,3 +109,5 @@ function drawDoughnutGraph(data, id) {
     });
     chart.render();
 }
+
+var recommendSrl;
