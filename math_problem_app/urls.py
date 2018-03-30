@@ -46,9 +46,7 @@ urlpatterns = [
     url(r'^getSmallUnitCount/', getSmallUnitCount, name='getSmallUnitCount'),
     url(r'^getSmallUnitTest/', getSmallUnitTest, name='getSmallUnitTest'),
     url(r'^getMiddleUnitLecture/', getMiddleUnitLecture, name='getMiddleUnitLecture'),
-
-
-
+    url(r'^paymentStart/', paymentStart, name='paymentStart'),
 ]
 
 

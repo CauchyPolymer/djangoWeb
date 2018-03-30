@@ -1,6 +1,6 @@
 {% load static %}
 {% for smallUnit in smallUnits %}
-<div class="row recommend-test">
+<div class="row recommend-test" data-smallunit="{{ smallUnit.0 }}">
     <div class="row">
         <img class="star-circle" src="{% static 'assets/img/star-circle.png' %}">
         {{ smallUnit.1 }}
@@ -15,3 +15,19 @@
     </div>
 </div>
 {% endfor %}
+
+<script>
+    $('.recommend-test').click(function () {
+        $.ajax({
+            url: "recommendTest/?smallUnit="+$(this).data('smallunit'),
+            type: 'GET',
+            contentType: "application/json; charset=utf-8",
+            success: function (result) {
+                $('#recommend-test-div').empty()
+                $('#recommend-test-div').append(result)
+                $('#recommend-test-div').css('display', 'inherit')
+                $('#recommend-right-div').css('display', 'none')
+            },
+        });
+    })
+</script>

@@ -22,6 +22,9 @@
         <div id="board" class="col-xs-1 medium-font main-color header-menu">
             입시정보
         </div>
+        <div id="payment" class="col-xs-1 medium-font main-color header-menu">
+            결제
+        </div>
         <div id="login" class="col-xs-1 small-font main-color {% if not user %}border-right{% endif %} header-menu login-menu" style="margin-left: 15%; width: 7%">
             로그인
         </div>
@@ -133,6 +136,18 @@
     $('#project').click(function () {
         $.ajax({
             url: "project/",
+            type: 'GET',
+            contentType: "application/json; charset=utf-8",
+            success: function (result) {
+                $('.main-container').empty()
+                $('.main-container').append(result)
+            },
+        });
+    })
+
+    $('#payment').click(function () {
+        $.ajax({
+            url: "paymentStart/",
             type: 'GET',
             contentType: "application/json; charset=utf-8",
             success: function (result) {
