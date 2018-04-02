@@ -113,6 +113,8 @@ def getRateData(request):
     user = getLoginUser(request)
     if request.GET.get('ratingSrl'):
         rate = Rating.objects.get(ratingSrl=int(request.GET.get('ratingSrl')))
+    elif request.GET.get('answerSrl'):
+        rate = Rating.objects.get(answer_id=int(request.GET.get('answerSrl')))
     else:
         rate = Rating.objects.filter(user=user).last()
 
@@ -500,6 +502,7 @@ def answer(request):
 
         rate, testResult = calcRating(test, answer)
         rate.user = user
+        rate.answer = answer
         rate.save()
 
         if test.type == 2:

@@ -347,6 +347,9 @@ class Answer(models.Model):
     def get_created_at(self):
         return self.createdAt.strftime("%Y년 %m월 %d일")
 
+    def get_created_at_dot(self):
+        return self.createdAt.strftime("%Y. %m. %d")
+
 
 class Lecture(models.Model):
     lectureSrl = models.AutoField(primary_key=True)
@@ -517,6 +520,7 @@ class Rating(models.Model):
     totalScore = models.IntegerField(default=0)
 
     user = models.ForeignKey(User, blank=True, null=True, on_delete=models.CASCADE)
+    answer = models.ForeignKey(Answer, blank=True, null=True, on_delete=models.CASCADE)
 
     createdAt = models.DateTimeField(auto_now_add=True)
     updatedAt = models.DateTimeField(auto_now=True)
