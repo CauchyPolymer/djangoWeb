@@ -429,3 +429,8 @@ body {
 .estimate-box {
     cursor: pointer;
 }
+
+.mypage-graph-title {
+    padding-left: 10%;
+    padding-bottom: 1% !important;
+}
