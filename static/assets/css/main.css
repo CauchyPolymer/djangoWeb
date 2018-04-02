@@ -401,3 +401,31 @@ body {
     height: 60px;
 }
 
+.footer {
+    height: 220px;
+    background-color: #9EA6D7;
+}
+
+.footer-left {
+    padding-top: 60px;
+    padding-left: 50px;
+    line-height: 10px;
+}
+
+.footer-right {
+    padding-top: 15px;
+}
+
+#usage {
+    margin-right: 10%;
+    cursor: pointer;
+}
+
+#privacy {
+    cursor: pointer;
+    margin-right: 10%;
+}
+
+.estimate-box {
+    cursor: pointer;
+}

@@ -70,6 +70,7 @@
 {#        $(this).css('background-color', '#BDC3E6')#}
 {#    })#}
     $('.header').css('display', 'none')
+    $('.footer').css('display', 'none')
 
     history.pushState(null, null, "#estimation");
     $(window).unbind("hashchange")
@@ -93,6 +94,7 @@
                 $('.main-container').empty()
                 $('.main-container').append(result)
                 $('.header').css('display', 'inherit')
+                $('.footer').css('display', 'inherit')
             },
         });
         {% elif from == "recommend" %}
@@ -104,6 +106,7 @@
                 $('.main-container').empty()
                 $('.main-container').append(result)
                 $('.header').css('display', 'inherit')
+                $('.footer').css('display', 'inherit')
             },
         });
         {% endif %}
@@ -221,6 +224,7 @@
                 $('.main-container').empty()
                 $('.main-container').append(result)
                 $('.header').css('display', 'inherit')
+                $('.footer').css('display', 'inherit')
             },
         });
         {% elif from == "recommend" %}
@@ -232,6 +236,7 @@
                 $('.main-container').empty()
                 $('.main-container').append(result)
                 $('.header').css('display', 'inherit')
+                $('.footer').css('display', 'inherit')
             },
         });
         {% endif %}

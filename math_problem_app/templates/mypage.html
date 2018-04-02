@@ -23,7 +23,7 @@
             <div id="chartContainer" style="height: 50%; width: 97%;"></div>
         </div>
         <div class="row" align="right" style="padding-right: 5%">
-            <div class="col-xs3 bold large-font">updated: {{ rate.get_updated_at }}</div>
+            <div class="col-xs3 bold large-font">updated: <span id="created-at">{{ rate.get_updated_at }}</span></div>
         </div>
         <div id="test" class="row main-bottom main-background-color mypage-bottom" align="center">
             <p class="main-bottom-msg white-color mypage-bottom-msg"><span class="x-large-font bold">진단고사 보기</span></p>
@@ -47,7 +47,7 @@
                     진단고사 히스토리
                 </div>
                 {% for answer in user.get_answers %}
-                <div class="mypage-box large-font bold estimate-box" align="center">
+                <div class="mypage-box large-font bold estimate-box" data-createdat="{{ answer.get_created_at_dot }}" data-answersrl="{{ answer.answerSrl }}" align="center">
                     {{ answer.get_created_at }} 진단고사
                 </div>
                 {% endfor %}
@@ -180,6 +180,19 @@
             success: function (result) {
                 $('.main-container').empty()
                 $('.main-container').append(result)
+            },
+        });
+    })
+
+    $('.estimate-box').click(function () {
+        var box = $(this)
+        $.ajax({
+            url: "getRateData/?answerSrl="+$(this).data('answersrl'),
+            type: 'GET',
+            contentType: "application/json; charset=utf-8",
+            success: function (result) {
+                drawGraph(result)
+                $('#created-at').text(box.data('createdat'))
             },
         });
     })
