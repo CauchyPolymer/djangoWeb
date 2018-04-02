@@ -41,6 +41,30 @@
                 <div class="mypage-box x-large-font bold" align="center">
                     문제은행 히스토리
                 </div>
+                {% for recommend in user.recommend.all %}
+                <div class="mypage-box list-group project-left-box-div">
+                    <div class="row graph-title mypage-graph-title" data-open="false" align="left">
+                        <p class="x-large-font bold">{{ recommend.unit.get_unit_display }}</p>
+                        <p class="large-font">{{ recommend.aimGrade }}등급 만들기</p>
+                    </div>
+                    <div class="list-group graph-box">
+                        <div class="row">
+                            <div class="col-xs-8">
+                                <div class="doughnut-chart" id="doughnutChartContainer{{ forloop.counter }}" style="padding: 5% 5% 5% 5%; width: 100%; height: 200px;"></div>
+                            </div>
+                            <div class="col-xs-4" style="margin: 15% 0 0 -5%;" align="center">
+                                <p class="large-font orange-color">0</p>
+                                <p class="x-small-font gray-color">day streak</p>
+                                <p class="large-font orange-color">6</p>
+                                <p class="x-small-font gray-color">hours left</p>
+                            </div>
+                        </div>
+                        <div class="row project-left-box" style="padding-left: 0; margin-left: -30%;">
+                            <div class="chart" id="chartContainer{{ forloop.counter }}" style="padding: 10% 0% 10% 0; height: 200px; width: 350px;"></div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
             </div>
             <div class="col-xs-6" align="left" style="padding-left: 4%">
                 <div class="mypage-box x-large-font bold" align="center">
@@ -52,114 +76,6 @@
                 </div>
                 {% endfor %}
             </div>
-
-{#            <div class="col-xs-6" align="center">#}
-{#                <div class="row">#}
-{#                    <div class="col-xs-12 main-blur-background-color x-large-font white-color">#}
-{#                        성적표#}
-{#                    </div>#}
-{#                </div>#}
-{#                <div class="row main-x-blur-background-color" style="padding: 5% 3% 5% 3%" align="center">#}
-{#                    <div class="col-xs-3 white-color">#}
-{#                        <p class="medium-font">원점수</p>#}
-{#                        <p class="medium-font">96/100</p>#}
-{#                    </div>#}
-{#                    <div class="col-xs-3 white-color">#}
-{#                        <p class="medium-font">표준점수</p>#}
-{#                        <p class="medium-font">133/100</p>#}
-{#                    </div>#}
-{#                    <div class="col-xs-3 white-color">#}
-{#                        <p class="medium-font">백분위</p>#}
-{#                        <p class="medium-font">1.72%</p>#}
-{#                    </div>#}
-{#                    <div class="col-xs-3 white-color">#}
-{#                        <p class="medium-font">등급</p>#}
-{#                        <p class="medium-font">1</p>#}
-{#                    </div>#}
-{#                </div>#}
-{#                <div class="row main-2x-blur-background-color test-result-table-div">#}
-{#                    <div class="col-xs-12">#}
-{#                        <table class="w3-table w3-bordered test-result-table">#}
-{#                            <tr class="white-color blue-background-color">#}
-{#                                <th></th>#}
-{#                                <th>1</th>#}
-{#                                <th>2</th>#}
-{#                                <th>3</th>#}
-{#                                <th>4</th>#}
-{#                                <th>5</th>#}
-{#                                <th>6</th>#}
-{#                                <th>7</th>#}
-{#                            </tr>#}
-{#                            <tr>#}
-{#                                <td class="small-font">답변</td>#}
-{#                                <td>4</td>#}
-{#                                <td>2</td>#}
-{#                                <td>1</td>#}
-{#                                <td>4</td>#}
-{#                                <td>5</td>#}
-{#                                <td>2</td>#}
-{#                                <td>2</td>#}
-{#                            </tr>#}
-{#                            <tr>#}
-{#                                <td class="small-font">정답</td>#}
-{#                                <td>4</td>#}
-{#                                <td>2</td>#}
-{#                                <td>1</td>#}
-{#                                <td>4</td>#}
-{#                                <td>5</td>#}
-{#                                <td>4</td>#}
-{#                                <td>4</td>#}
-{#                            </tr>#}
-{#                            <tr>#}
-{#                                <td class="small-font">채점결과</td>#}
-{#                                <td>정답</td>#}
-{#                                <td>정답</td>#}
-{#                                <td>정답</td>#}
-{#                                <td>정답</td>#}
-{#                                <td>정답</td>#}
-{#                                <td>오답</td>#}
-{#                                <td>오답</td>#}
-{#                            </tr>#}
-{#                            <tr>#}
-{#                                <td class="small-font">정답율</td>#}
-{#                                <td>15%</td>#}
-{#                                <td>5%</td>#}
-{#                                <td>10%</td>#}
-{#                                <td>25%</td>#}
-{#                                <td>33%</td>#}
-{#                                <td>56%</td>#}
-{#                                <td>56%</td>#}
-{#                            </tr>#}
-{#                        </table>#}
-{#                    </div>#}
-{#                </div>#}
-{#            </div>#}
-{#            <div class="col-xs-6">#}
-{#                <div class="row">#}
-{#                    <div class="col-xs-12 blue-background-color x-large-font white-color" align="center">#}
-{#                        단원별 출제 비율#}
-{#                    </div>#}
-{#                </div>#}
-{#                <div class="row blue-blur-background-color test-chart-div">#}
-{#                    <div class="col-xs-12 pie-chart-div">#}
-{#                        <div id="container" class="blue-blur-background-color" style="min-width: 270px; height: 330px; max-width: 520px; margin: 0 auto"></div>#}
-{#                    </div>#}
-{#                </div>#}
-{#                <div class="row chart-desc-div" align="center">#}
-{#                    <div class="col-xs-offset-2 col-xs-3">#}
-{#                        <p class="medium-font white-color">2등급</p>#}
-{#                        <p class="x-large-font white-color">95</p>#}
-{#                    </div>#}
-{#                    <div class="col-xs-3">#}
-{#                        <p class="medium-font white-color">현재점수</p>#}
-{#                        <p class="x-large-font white-color">96</p>#}
-{#                    </div>#}
-{#                    <div class="col-xs-3">#}
-{#                        <p class="medium-font white-color">1등급</p>#}
-{#                        <p class="x-large-font white-color">98</p>#}
-{#                    </div>#}
-{#                </div>#}
-{#            </div>#}
         </div>
     </div>
 </div>
@@ -171,6 +87,71 @@
     $(window).bind("hashchange", function(){
         goToMain()
     });
+
+    {% for recommend in user.recommend.all %}
+        $.ajax({
+            url: "getRateData/",
+            type: 'GET',
+            contentType: "application/json; charset=utf-8",
+            success: function (result) {
+                drawGraph(result, 'chartContainer{{ forloop.counter }}')
+            },
+        });
+
+        $.ajax({
+            url: "getRateData/",
+            type: 'GET',
+            contentType: "application/json; charset=utf-8",
+            success: function (result) {
+                drawDoughnutGraph(result, 'doughnutChartContainer{{ forloop.counter }}')
+            },
+        });
+    {% endfor %}
+
+    $('.graph-title').click(function () {
+        if($(this).data('open') == false) {
+            $(this).next('.graph-box ').css('height', '450px')
+            $(this).data('open', true)
+            $.ajax({
+                url: "getRateData/",
+                type: 'GET',
+                contentType: "application/json; charset=utf-8",
+                success: function (result) {
+                    drawGraph(result, 'chartContainer1')
+                },
+            });
+
+            $.ajax({
+                url: "getRateData/",
+                type: 'GET',
+                contentType: "application/json; charset=utf-8",
+                success: function (result) {
+                    drawDoughnutGraph(result, 'doughnutChartContainer1')
+                },
+            });
+             $.ajax({
+                url: "getRateData/",
+                type: 'GET',
+                contentType: "application/json; charset=utf-8",
+                success: function (result) {
+                    drawGraph(result, 'chartContainer2')
+                },
+            });
+
+            $.ajax({
+                url: "getRateData/",
+                type: 'GET',
+                contentType: "application/json; charset=utf-8",
+                success: function (result) {
+                    drawDoughnutGraph(result, 'doughnutChartContainer2')
+                },
+            });
+        } else if($(this).data('open') == true){
+            $(this).next('.graph-box ').css('height', '0')
+            $(this).data('open', false)
+        }
+    })
+
 
     $('#test').click(function () {
         $.ajax({
@@ -202,11 +183,11 @@
         type: 'GET',
         contentType: "application/json; charset=utf-8",
         success: function (result) {
-            drawGraph(result)
+            drawMypageGraph(result)
         },
     });
 
-    function drawGraph(data) {
+    function drawMypageGraph(data) {
 		var chart = new CanvasJS.Chart("chartContainer",{
 			title:{
 				text: ""
@@ -241,66 +222,5 @@
     $(".mypage-bottom-msg").mouseleave(function(){
         $(this).css("color", "white");
     });
-
-// Make monochrome colors
-var pieColors = (function () {
-    var colors = [],
-        base = Highcharts.getOptions().colors[0],
-        i;
-
-    for (i = 0; i < 10; i += 1) {
-        // Start out with a darkened base color (negative brighten), and end
-        // up with a much brighter color
-        colors.push(Highcharts.Color(base).brighten((i - 3) / 7).get());
-    }
-    return colors;
-}());
-
-// Build the chart
-Highcharts.chart('container', {
-    chart: {
-        plotBackgroundColor: '#5160B8',
-        plotBorderWidth: null,
-        plotShadow: false,
-        type: 'pie',
-        style: {
-        }
-    },
-    title: {
-        text: ''
-    },
-    tooltip: {
-        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-    },
-    plotOptions: {
-        pie: {
-            allowPointSelect: true,
-            cursor: 'pointer',
-            colors: pieColors,
-            dataLabels: {
-                enabled: true,
-                format: '<b>{point.name}</b>',
-                distance: -50,
-                filter: {
-                    property: 'percentage',
-                    operator: '>',
-                    value: 4
-                },
-                style: {
-                    fontSize: '15'
-                }
-            }
-        }
-    },
-    series: [{
-        name: 'Brands',
-        data: [
-            { name: '확률분포와\n통계', y: 36.33 },
-            { name: '확률', y: 24.03 },
-            { name: '순열과\n조합', y: 30.38 },
-        ]
-    }]
-});
-
 
 </script>
