@@ -13,5 +13,8 @@ urlpatterns = [
     url(r'^problem_photo/', problem_photo, name='problem_photo'),
     url(r'^problem/', problem, name='problem'),
     url(r'^create_board/', create_board, name='create_board'),
+    url(r'^new_users/', new_users, name='new_users'),
+    url(r'^users/', users, name='users'),
+    url(r'^id_certificate/', id_certificate, name='id_certificate'),
 ]
 

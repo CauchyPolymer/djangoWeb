@@ -107,7 +107,13 @@
             <input id="school" type="text" class="gray-background-color w3-input login-input">
         </div>
         <div class="col-xs-2" align="left">
-            <input id="" class="w3-btn white-color small-font main-background-color sign-in-btn" style="" type="button" value="학생증인증">
+            <input id="school-id" class="w3-btn white-color small-font main-background-color sign-in-btn" style="" type="button" value="학생증인증">
+            <form id="picture-form">
+                <input id="id-picture" name="photo" type="file" style="display: none">
+            </form>
+        </div>
+        <div class="col-xs-2 col-xs-offset-1" style="margin-left: 7%;">
+            <span id="upload-file"></span>
         </div>
     </div>
 
@@ -151,6 +157,16 @@
         });
     });
 
+    $('#school-id').click(function () {
+        $('#id-picture').click()
+    })
+    
+    $('#id-picture').change(function () {
+        userInfo.certificationSchoolCard = true;
+        userInfo.idPicture = $('#picture-form')[0]
+        $('#upload-file').text('올바르게 업로드 되었습니다.')
+    })
+
     exportUserInfo()
 
     $('#password-check').change(function () {
@@ -180,7 +196,6 @@
         if(!checkUserInfo()){
             return false;
         }
-
         signUp()
 
     })
@@ -266,8 +281,13 @@
             return false;
         }
 
-        if(!userInfo.certificationPhone) {
-            alert('핸드폰 인증을 완료해 주세요.')
+{#        if(!userInfo.certificationPhone) {#}
+{#            alert('핸드폰 인증을 완료해 주세요.')#}
+{#            return false;#}
+{#        }#}
+
+        if(!userInfo.certificationSchoolCard){
+            alert('학생증을 업로드 해주세요.')
             return false;
         }
         return true;
@@ -309,15 +329,30 @@
                     phone: userInfo.phone, email: userInfo.email, school: userInfo.school, grade: userInfo.grade},
             success: function (result) {
                 if(result.success) {
-                    $.ajax({
-                        url: "signIn3/",
-                        type: 'GET',
-                        contentType: "application/json; charset=utf-8",
-                        success: function (result) {
-                            $('.main-container').empty()
-                            $('.main-container').append(result)
+                    $(".se-pre-con").css('display', "block");
 
+                    var formData = new FormData(userInfo.idPicture);
+
+                    $.ajax({
+                        url: "photo/",
+                        type: "POST",
+                        data: formData,
+                        success: function (result) {
+                            $.ajax({
+                                url: "signIn3/",
+                                type: 'GET',
+                                contentType: "application/json; charset=utf-8",
+                                success: function (result) {
+                                    $('.main-container').empty()
+                                    $('.main-container').append(result)
+
+                                },
+                            });
+                            $(".se-pre-con").fadeOut("slow");
                         },
+                        cache: false,
+                        contentType: false,
+                        processData: false
                     });
                 }
             },

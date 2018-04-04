@@ -1,0 +1,32 @@
+{% load static %}
+{% for user in users %}
+<tr class="gradeX odd" role="row">
+    <td class="" style="text-align:center;"> {{ user.id }} </td>
+    <td class="center" style="text-align:center;"> {{ user.name }} </td>
+    <td class="center" style="text-align:center;"> {{ user.phone }} </td>
+    <td class="center" style="text-align:center;"> {{ user.email }} </td>
+    <td class="center" style="text-align:center;"> {{ user.get_created_at }} </td>
+    <td class="center" style="text-align:center;"><img data-createat="{{ user.get_created_at }}" class="card-image" style="width: 198px; cursor: pointer;" src="{{ user.idCard.get_url }}"></td>
+    <td style="text-align:center;">
+        <button type="button" class="btn btn-circle blue uppercase certificate" data-usersrl="{{ user.userSrl }}">승낙하기</button>
+    </td>
+</tr>
+{% endfor %}
+
+<script>
+    $('.card-image').click(function () {
+        open_patient_modal($(this).attr('src'), $(this).data('createat'))
+    })
+    
+    $('.certificate').click(function () {
+        $.ajax({
+            url: "id_certificate/?userSrl="+$(this).data('usersrl'),
+            method: "GET",
+            contentType: "application/json; charset=utf-8",
+            success: function (result) {
+                alert(result.msg)
+            }
+        });
+    })
+
+</script>

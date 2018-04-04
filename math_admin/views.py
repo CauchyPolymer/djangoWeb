@@ -141,10 +141,18 @@ def create_board(request):
         return returnHttpResponse({'msg': '정상적으로 등록되었습니다.'})
 
 
+def new_users(request):
+    return render(request, 'consult_req/new_users.html')
 
 
+def users(request):
+    return render(request, 'consult_req/users.html',  {'users': User.objects.all().order_by('-createdAt')})
 
 
-
-
+def id_certificate(request):
+    userSrl = request.GET.get('userSrl')
+    user = User.objects.get(userSrl=int(userSrl))
+    user.isCardCertificate = True
+    user.save()
+    return returnHttpResponse({'msg': user.id + '님의 학생증 인증이 완료 되었습니다.'})
 

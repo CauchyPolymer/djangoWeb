@@ -11,7 +11,7 @@
         <img class="complete-img" src="{% static 'assets/img/sign-in-complete.png' %}">
     </div>
     <div class="col-xs-3 complete-msg-div" align="left">
-        <p class="medium-font main-color complete-msg">{{ user.school }} {{ user.grade }}<br>
+        <p class="medium-font main-color complete-msg">{{ user.school }} {{ user.get_grade_display }}<br>
         {{ user.name }}님의<br>
         가입을 환영합니다!</p>
         <input id="to-mypage" class="w3-btn white-color medium-font main-background-color to-mypage-btn medium-font" type="button" value="마이페이지로 가기">

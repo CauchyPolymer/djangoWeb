@@ -67,6 +67,8 @@
     {% if user %}
     $('#login').text('로그아웃')
     $('#login').unbind('click')
+    $('#signup').css('display', 'none')
+    $('#login').removeClass('border-right')
     $('#login').click(function () {
         $.ajax({
             url: "logout/",

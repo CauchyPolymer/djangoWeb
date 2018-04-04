@@ -47,6 +47,9 @@ urlpatterns = [
     url(r'^getSmallUnitTest/', getSmallUnitTest, name='getSmallUnitTest'),
     url(r'^getMiddleUnitLecture/', getMiddleUnitLecture, name='getMiddleUnitLecture'),
     url(r'^paymentStart/', paymentStart, name='paymentStart'),
+    url(r'^privacy/', privacy, name='privacy'),
+    url(r'^usage/', usage, name='usage'),
+    url(r'^photo/', photo, name='photo'),
 ]
 
 

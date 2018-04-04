@@ -409,10 +409,12 @@ class User(models.Model):
     email = models.CharField(max_length=200, blank=True, null=True)
     school = models.CharField(max_length=200, blank=True, null=True)
     grade = models.IntegerField(choices=GRADE, blank=True, null=True)
+    idCard = models.ForeignKey(Photo, blank=True, null=True, on_delete=models.CASCADE)
 
     answers = models.ManyToManyField(Answer, blank=True, null=True)
     recommend = models.ManyToManyField(Recommend, blank=True, null=True)
 
+    isCardCertificate = models.BooleanField(default=False)
     isPaid = models.BooleanField(default=False)
 
     createdAt = models.DateTimeField(auto_now_add=True)
@@ -447,6 +449,9 @@ class User(models.Model):
 
     def get_answers(self):
         return self.answers.filter(test__type=2)
+
+    def get_created_at(self):
+        return self.createdAt.strftime("%Y-%m-%d %H:%M")
 
 
 BOARD_TYPE = {
