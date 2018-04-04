@@ -22,22 +22,11 @@
                 </a>
                 <ul class="sub-menu always-open">
                     <li class="nav-item {% if sub == "new_requests" %} active {% endif %}">
-                        <a id="new_requests" class="nav-link ">
-                            <span class="title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;New Requests</span>
-                        </a>
-                    </li>
-                    <li class="nav-item {% if sub == "replied_requests" %} active {% endif %}">
-                        <a id="replied_requests" class="nav-link ">
-                            <span class="title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Replied Requests</span>
+                        <a id="new_users" class="nav-link ">
+                            <span class="title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;새로운 유저</span>
                         </a>
                     </li>
                 </ul>
-            </li>
-            <li class="nav-item {% if main == "appointment_req" %} active {% endif %}">
-                <a id="appointment_req" class="nav-link nav-toggle">
-                    <i class="icon-calendar"></i>
-                    <span class="title uppercase" style="font-size: 15px;">Appointments</span>
-                </a>
             </li>
             <li class="nav-item">
                 <a href="javascript:;" class="nav-link nav-toggle">
@@ -126,9 +115,9 @@
             });
         })
 
-        $('#new_requests').click(function () {
+        $('#new_users').click(function () {
             $.ajax({
-                url: "new_requests/",
+                url: "new_users/",
                 method: "GET",
                 contentType: "application/json; charset=utf-8",
                 success: function (result) {

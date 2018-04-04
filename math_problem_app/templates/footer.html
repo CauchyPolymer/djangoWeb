@@ -13,3 +13,29 @@
         <span id="privacy">개인정보처리방침</span>
     </div>
 </div>
+
+<script>
+    $('#usage').click(function () {
+        $.ajax({
+            url: "usage/",
+            type: 'GET',
+            contentType: "application/json; charset=utf-8",
+            success: function (result) {
+                $('.main-container').empty()
+                $('.main-container').append(result)
+            },
+        });
+    })
+
+    $('#privacy').click(function () {
+        $.ajax({
+            url: "privacy/",
+            type: 'GET',
+            contentType: "application/json; charset=utf-8",
+            success: function (result) {
+                $('.main-container').empty()
+                $('.main-container').append(result)
+            },
+        });
+    })
+</script>

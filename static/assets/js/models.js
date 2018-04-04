@@ -13,6 +13,7 @@ var userInfo = {
     'school': '',
     'grade': '',
     'idDuplicate': '',
-    'certificationPhone': '',
-    'certificationSchoolCard': '',
-}
+    'certificationPhone': false,
+    'certificationSchoolCard': false,
+    'idPicture': '',
+};

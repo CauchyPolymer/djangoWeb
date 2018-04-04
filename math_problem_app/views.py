@@ -118,9 +118,14 @@ def getRateData(request):
     else:
         rate = Rating.objects.filter(user=user).last()
 
-    data = [{'label': str(rate.su1) + '등급', 'y': rate.su1}, {'label': str(rate.su2) + '등급', 'y': rate.su2},
+    if rate:
+        data = [{'label': str(rate.su1) + '등급', 'y': rate.su1}, {'label': str(rate.su2) + '등급', 'y': rate.su2},
             {'label': str(rate.mi1) + '등급', 'y': rate.mi1}, {'label': str(rate.mi2) + '등급', 'y': rate.mi2},
             {'label': str(rate.givec) + '등급', 'y': rate.givec}, {'label': str(rate.hwaktong) + '등급', 'y': rate.hwaktong}]
+    else:
+        data = [{'label': str(3) + '등급', 'y': 3}, {'label': str(2) + '등급', 'y': 2},
+            {'label': str(4) + '등급', 'y': 4}, {'label': str(1) + '등급', 'y': 1},
+            {'label': str(3) + '등급', 'y': 3}, {'label': str(4) + '등급', 'y': 4}]
 
     return returnHttpResponse(data)
 
@@ -634,3 +639,27 @@ def paymentStart(request):
         return render(request, 'paymentStart.html', {'user': user})
     else:
         return render(request, 'login.html')
+
+
+def privacy(request):
+    return render(request, 'privacy.html')
+
+
+def usage(request):
+    return render(request, 'usage.html')
+
+
+@csrf_exempt
+def photo(request):
+    try:
+        image = request.FILES.get('photo')
+        photo = Photo(photo=image).store()
+        user = getLoginUser(request)
+        user.idCard = photo
+        user.save()
+        return returnHttpResponse({'msg': '올바르게 업로드 되었습니다.'})
+    except Exception as e:
+        print(str(e))
+        return returnHttpResponse({'msg': '업로드에 문제가 있습니다.'})
+
+
