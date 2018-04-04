@@ -44,8 +44,13 @@
                 {% for recommend in user.recommend.all %}
                 <div class="mypage-box list-group project-left-box-div">
                     <div class="row graph-title mypage-graph-title" data-open="false" align="left">
-                        <p class="x-large-font bold">{{ recommend.unit.get_unit_display }}</p>
-                        <p class="large-font">{{ recommend.aimGrade }}등급 만들기</p>
+                        <div class="col-xs-8">
+                            <p class="x-large-font bold">{{ recommend.unit.get_unit_display }}</p>
+                            <p class="large-font">{{ recommend.aimGrade }}등급 만들기</p>
+                        </div>
+                        <div class="col-xs-4" style="margin-top: 50px;">
+                            <img class="arrow-back mypage-arrow" src="{% static 'assets/img/arrow.png' %}">
+                        </div>
                     </div>
                     <div class="list-group graph-box">
                         <div class="row">
@@ -112,6 +117,7 @@
         if($(this).data('open') == false) {
             $(this).next('.graph-box ').css('height', '450px')
             $(this).data('open', true)
+            $(this).children().children('.mypage-arrow').css('transform', 'rotate(90deg)')
             $.ajax({
                 url: "getRateData/",
                 type: 'GET',
@@ -149,6 +155,7 @@
         } else if($(this).data('open') == true){
             $(this).next('.graph-box ').css('height', '0')
             $(this).data('open', false)
+            $(this).children().children('.mypage-arrow').css('transform', 'rotate(270deg)')
         }
     })
 

@@ -434,3 +434,7 @@ body {
     padding-left: 10%;
     padding-bottom: 1% !important;
 }
+
+.mypage-arrow {
+    transform: rotate(270deg);
+}
