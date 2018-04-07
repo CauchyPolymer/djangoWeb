@@ -1,0 +1,14 @@
+{% load static %}
+{% for lecture in lectures %}
+<div class="col-xs-4 lecture-container" align="center" style="margin-top: 5%">
+    <video class="lecture" src="{{ lecture.get_url }}" controls>
+    </video>
+    <div class="blue-background-color medium-font white-color lecture-desc">{{ lecture.middleUnit.all.0.get_middleUnit_display }} - {{ lecture.teacherName }}
+        <img class="star-img" src="{% static 'assets/img/star.png' %}">
+        <img class="star-img" src="{% static 'assets/img/star.png' %}">
+        <img class="star-img" src="{% static 'assets/img/star.png' %}">
+        <img class="star-img" src="{% static 'assets/img/star.png' %}">
+        <img class="star-img" src="{% static 'assets/img/star.png' %}">
+    </div>
+</div>
+{% endfor %}

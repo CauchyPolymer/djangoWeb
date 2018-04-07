@@ -1,10 +1,13 @@
 {% load static %}
-{% for answer in answers %}
+{% for test in tests %}
 <div class="row lecture-left-box large-font test-box">
-    <div class="col-xs-9 test-name-div" data-testsrl="{{ answer.test.testSrl }}" data-testname="{{ answer.test.name }}">
-        {{ answer.test.name }}
+    <div class="col-xs-8 test-name-div" data-testsrl="{{ test.testSrl }}" data-testname="{{ test.name }}">
+        {{ test.name }}
     </div>
-    <div class="col-xs-3 test-start-div" data-testsrl="{{ answer.test.testSrl }}" >
+    <div class="col-xs-2 test-delete-div" data-testsrl="{{ test.testSrl }}" >
+        <img class="test-delete" src="{% static 'assets/img/trash-icon.png'%}">
+    </div>
+    <div class="col-xs-2 test-start-div" data-testsrl="{{ test.testSrl }}" >
         <img class="test-start" src="{% static 'assets/img/triangle.png'%}">
     </div>
 </div>

@@ -50,6 +50,9 @@ urlpatterns = [
     url(r'^privacy/', privacy, name='privacy'),
     url(r'^usage/', usage, name='usage'),
     url(r'^photo/', photo, name='photo'),
+    url(r'^lectureBox/', lectureBox, name='lectureBox'),
+
+
 ]
 
 

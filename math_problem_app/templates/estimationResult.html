@@ -134,11 +134,11 @@
         type: 'GET',
         contentType: "application/json; charset=utf-8",
         success: function (result) {
-            drawGraph(result)
+            drawResultGraph(result)
         },
     });
 
-    function drawGraph(data) {
+    function drawResultGraph(data) {
 		var chart = new CanvasJS.Chart("chartContainer",{
 			title:{
 				text: ""

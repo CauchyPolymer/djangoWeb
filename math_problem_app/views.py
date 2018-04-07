@@ -147,7 +147,11 @@ def googled92c898637781d67(request):
 
 
 def lecture(request):
-    return render(request, 'lecture.html')
+    user = getLoginUser(request)
+    if user:
+        return render(request, 'lecture.html', {'lectures': Lecture.objects.all()})
+    else:
+        return render(request, 'login.html')
 
 
 @csrf_exempt
@@ -389,7 +393,7 @@ def ranking(request):
 
 def testBox(request):
     user = getLoginUser(request)
-    return render(request, 'testBox.html', {'answers': user.answers.all()})
+    return render(request, 'testBox.html', {'answers': user.tests.all()})
 
 
 @csrf_exempt
@@ -579,11 +583,19 @@ def calcRating(test, answer):
     return (Rating(score=rightScore, totalScore=totalScore, su1=su1rate, su2=su2rate, mi1=mi1rate, mi2=mi2rate, hwaktong=hwaktongrate, givec=givecrate).store(), testResult)
 
 
+@csrf_exempt
 def testProblems(request):
-    testSrl = int(request.GET.get('testSrl'))
-    test = Test.objects.get(testSrl=testSrl)
+    if request.method == 'GET':
+        testSrl = int(request.GET.get('testSrl'))
+        test = Test.objects.get(testSrl=testSrl)
 
-    return render(request, 'testProblems.html', {'test': test, 'problems': test.problems.all(), 'from':'testStart'})
+        return render(request, 'testProblems.html', {'test': test, 'problems': test.problems.all(), 'from':'testStart'})
+
+    elif request.method == 'DELETE':
+        testSrl = int(request.GET.get('testSrl'))
+        Test.objects.get(testSrl=testSrl).delete()
+
+        return returnHttpResponse({'msg': '테스트가 삭제 되었습니다.'})
 
 
 def recommend(request):
@@ -615,7 +627,10 @@ def recommendTest(request):
 
 def project(request):
     user = getLoginUser(request)
-    return render(request, 'project.html', {'user': user})
+    if user:
+        return render(request, 'project.html', {'user': user})
+    else:
+        return render(request, 'login.html')
 
 
 def getSmallUnitCount(request):
@@ -663,3 +678,11 @@ def photo(request):
         return returnHttpResponse({'msg': '업로드에 문제가 있습니다.'})
 
 
+def lectureBox(request):
+    if request.GET.get('middleUnit'):
+        middleUnit = int(request.GET.get('middleUnit'))
+        return render(request, 'lectureBox.html', {'lectures': Lecture.objects.filter(middleUnit__middleUnit=middleUnit)})
+
+    elif request.GET.get('keyword'):
+        keyword = str(request.GET.get('keyword'))
+        return render(request, 'lectureBox.html', {'lectures': Lecture.objects.filter(Q(name__contains=keyword) | Q(teacherName__contains=keyword))})
