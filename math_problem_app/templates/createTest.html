@@ -210,6 +210,27 @@
                 },
             });
         })
+        $('.test-delete-div').click(function () {
+            if(confirm('이 문제집을 삭제 하시겠습니까?')) {
+                $.ajax({
+                url: "testProblems/?testSrl="+$(this).data('testsrl'),
+                    type: 'DELETE',
+                    contentType: "application/json; charset=utf-8",
+                    success: function (result) {
+                        $.ajax({
+                            url: "testBox/",
+                            type: 'GET',
+                            contentType: "application/json; charset=utf-8",
+                            success: function (result) {
+                                $('#tests').empty()
+                                $('#tests').append(result)
+                                initTestBoxEvent()
+                            },
+                        });
+                    },
+                });
+            }
+        })
     }
 
     $('#new-test').click(function () {

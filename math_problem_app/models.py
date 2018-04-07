@@ -413,6 +413,7 @@ class User(models.Model):
 
     answers = models.ManyToManyField(Answer, blank=True, null=True)
     recommend = models.ManyToManyField(Recommend, blank=True, null=True)
+    tests = models.ManyToManyField(Test, blank=True, null=True)
 
     isCardCertificate = models.BooleanField(default=False)
     isPaid = models.BooleanField(default=False)

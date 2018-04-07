@@ -7,6 +7,7 @@
     <td class="center" style="text-align:center;"> {{ user.email }} </td>
     <td class="center" style="text-align:center;"> {{ user.get_created_at }} </td>
     <td class="center" style="text-align:center;"><img data-createat="{{ user.get_created_at }}" class="card-image" style="width: 198px; cursor: pointer;" src="{{ user.idCard.get_url }}"></td>
+    <td><input type="text" class="form-control input-sm school-name" placeholder="학교명"></td>
     <td style="text-align:center;">
         <button type="button" class="btn btn-circle blue uppercase certificate" data-usersrl="{{ user.userSrl }}">승낙하기</button>
     </td>
@@ -19,11 +20,13 @@
     })
     
     $('.certificate').click(function () {
+        var button = $(this)
         $.ajax({
-            url: "id_certificate/?userSrl="+$(this).data('usersrl'),
+            url: "id_certificate/?userSrl="+$(this).data('usersrl')+"&schoolName="+$(this).parent().parent().find('.school-name').val(),
             method: "GET",
             contentType: "application/json; charset=utf-8",
             success: function (result) {
+                button.parent().parent().find('.school-name').val('')
                 alert(result.msg)
             }
         });

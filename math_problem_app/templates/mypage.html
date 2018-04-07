@@ -152,12 +152,13 @@
             $(this).next('.graph-box ').css('height', '450px')
             $(this).data('open', true)
             $(this).children().children('.mypage-arrow').css('transform', 'rotate(90deg)')
+            {% for recommend in user.recommend.all %}
             $.ajax({
                 url: "getRateData/",
                 type: 'GET',
                 contentType: "application/json; charset=utf-8",
                 success: function (result) {
-                    drawGraph(result, 'chartContainer1')
+                    drawGraph(result, 'chartContainer{{ forloop.counter }}')
                 },
             });
 
@@ -166,26 +167,10 @@
                 type: 'GET',
                 contentType: "application/json; charset=utf-8",
                 success: function (result) {
-                    drawDoughnutGraph(result, 'doughnutChartContainer1')
+                    drawDoughnutGraph(result, 'doughnutChartContainer{{ forloop.counter }}')
                 },
             });
-             $.ajax({
-                url: "getRateData/",
-                type: 'GET',
-                contentType: "application/json; charset=utf-8",
-                success: function (result) {
-                    drawGraph(result, 'chartContainer2')
-                },
-            });
-
-            $.ajax({
-                url: "getRateData/",
-                type: 'GET',
-                contentType: "application/json; charset=utf-8",
-                success: function (result) {
-                    drawDoughnutGraph(result, 'doughnutChartContainer2')
-                },
-            });
+            {% endfor %}
         } else if($(this).data('open') == true){
             $(this).next('.graph-box ').css('height', '0')
             $(this).data('open', false)
@@ -213,7 +198,7 @@
             type: 'GET',
             contentType: "application/json; charset=utf-8",
             success: function (result) {
-                drawGraph(result)
+                drawMypageGraph(result)
                 $('#created-at').text(box.data('createdat'))
             },
         });
