@@ -149,7 +149,7 @@ def googled92c898637781d67(request):
 def lecture(request):
     user = getLoginUser(request)
     if user:
-        return render(request, 'lecture.html', {'lectures': Lecture.objects.all()})
+        return render(request, 'lecture.html', {'lectures': Lecture.objects.all(), 'unit': '모든 단원'})
     else:
         return render(request, 'login.html')
 
@@ -681,8 +681,9 @@ def photo(request):
 def lectureBox(request):
     if request.GET.get('middleUnit'):
         middleUnit = int(request.GET.get('middleUnit'))
-        return render(request, 'lectureBox.html', {'lectures': Lecture.objects.filter(middleUnit__middleUnit=middleUnit)})
+        unit = str(request.GET.get('unit'))
+        return render(request, 'lectureBox.html', {'lectures': Lecture.objects.filter(middleUnit__middleUnit=middleUnit), 'unit': unit})
 
     elif request.GET.get('keyword'):
         keyword = str(request.GET.get('keyword'))
-        return render(request, 'lectureBox.html', {'lectures': Lecture.objects.filter(Q(name__contains=keyword) | Q(teacherName__contains=keyword))})
+        return render(request, 'lectureBox.html', {'lectures': Lecture.objects.filter(Q(name__contains=keyword) | Q(teacherName__contains=keyword)), 'unit': '모든 단원'})
