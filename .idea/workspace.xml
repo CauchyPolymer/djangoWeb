@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d18057de-6140-4b45-8755-309202484dcf" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/lecture.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/lecture.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/lectureBox.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/lectureBox.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/views.py" afterPath="$PROJECT_DIR$/math_problem_app/views.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -139,8 +137,8 @@
           <file leaf-file-name="lecture.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/math_problem_app/templates/lecture.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="593">
-                  <caret line="89" column="93" lean-forward="true" selection-start-line="89" selection-start-column="93" selection-end-line="89" selection-end-column="93" />
+                <state relative-caret-position="476">
+                  <caret line="93" column="38" lean-forward="true" selection-start-line="93" selection-start-column="38" selection-end-line="93" selection-end-column="38" />
                   <folding />
                 </state>
               </provider>
@@ -150,7 +148,7 @@
             <entry file="file://$PROJECT_DIR$/math_problem_app/templates/lectureBox.html">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="390">
-                  <caret line="26" column="20" lean-forward="true" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
+                  <caret line="26" column="20" lean-forward="false" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
                   <folding>
                     <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
@@ -207,7 +205,7 @@
             <entry file="file://$PROJECT_DIR$/math_problem_app/views.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="-6858">
-                  <caret line="173" column="0" lean-forward="true" selection-start-line="173" selection-start-column="0" selection-end-line="173" selection-end-column="0" />
+                  <caret line="173" column="0" lean-forward="false" selection-start-line="173" selection-start-column="0" selection-end-line="173" selection-end-column="0" />
                   <folding>
                     <element signature="e#0#11#0" expanded="true" />
                   </folding>
@@ -219,7 +217,7 @@
             <entry file="file://$PROJECT_DIR$/math_admin/views.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="950">
-                  <caret line="147" column="19" lean-forward="true" selection-start-line="147" selection-start-column="19" selection-end-line="147" selection-end-column="19" />
+                  <caret line="147" column="19" lean-forward="false" selection-start-line="147" selection-start-column="19" selection-end-line="147" selection-end-column="19" />
                   <folding>
                     <element signature="e#0#11#0" expanded="true" />
                   </folding>
@@ -1523,7 +1521,7 @@
     <entry file="file://$PROJECT_DIR$/math_admin/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="950">
-          <caret line="147" column="19" lean-forward="true" selection-start-line="147" selection-start-column="19" selection-end-line="147" selection-end-column="19" />
+          <caret line="147" column="19" lean-forward="false" selection-start-line="147" selection-start-column="19" selection-end-line="147" selection-end-column="19" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
@@ -1533,7 +1531,7 @@
     <entry file="file://$PROJECT_DIR$/math_problem_app/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-6858">
-          <caret line="173" column="0" lean-forward="true" selection-start-line="173" selection-start-column="0" selection-end-line="173" selection-end-column="0" />
+          <caret line="173" column="0" lean-forward="false" selection-start-line="173" selection-start-column="0" selection-end-line="173" selection-end-column="0" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
@@ -1543,7 +1541,7 @@
     <entry file="file://$PROJECT_DIR$/math_problem_app/templates/lectureBox.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
-          <caret line="26" column="20" lean-forward="true" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
+          <caret line="26" column="20" lean-forward="false" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
@@ -1553,8 +1551,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/math_problem_app/templates/lecture.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="593">
-          <caret line="89" column="93" lean-forward="true" selection-start-line="89" selection-start-column="93" selection-end-line="89" selection-end-column="93" />
+        <state relative-caret-position="476">
+          <caret line="93" column="38" lean-forward="true" selection-start-line="93" selection-start-column="38" selection-end-line="93" selection-end-column="38" />
           <folding />
         </state>
       </provider>
