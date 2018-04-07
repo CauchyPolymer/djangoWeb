@@ -93,25 +93,30 @@
             success: function (result) {
                 $('#lectures').empty()
                 $('#lectures').append(result)
+                initSearch()
             },
         });
     })
 
-    $('#lecture-search-icon').click(function () {
-        if($('#lecture-search').val().length == 0){
-            alert('검색어를 입력해 주세요.')
-            return false;
-        }
-        $.ajax({
-            url: "lectureBox/?keyword="+$('#lecture-search').val(),
-            type: 'GET',
-            contentType: "application/json; charset=utf-8",
-            success: function (result) {
-                $('#lectures').empty()
-                $('#lectures').append(result)
-            },
-        });
-    })
+    initSearch()
+
+    function initSearch() {
+        $('#lecture-search-icon').click(function () {
+            if($('#lecture-search').val().length == 0){
+                alert('검색어를 입력해 주세요.')
+                return false;
+            }
+            $.ajax({
+                url: "lectureBox/?keyword="+$('#lecture-search').val(),
+                type: 'GET',
+                contentType: "application/json; charset=utf-8",
+                success: function (result) {
+                    $('#lectures').empty()
+                    $('#lectures').append(result)
+                },
+            });
+        })
+    }
 
     var subject = false;
     $('.subject').click(function () {
