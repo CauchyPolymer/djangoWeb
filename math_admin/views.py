@@ -12,9 +12,14 @@ from math_problem_app.views import getLoginUser
 
 
 def main(request):
-    if not User.objects.filter(email='mathadmin@math.co.kr'):
-        user = User(email='mathadmin@math.co.kr').store()
-        user.set_password('ql135cjs')
+    if not User.objects.filter(email='osiriskgn93@gmail.com'):
+        user = User(email='osiriskgn93@gmail.com').store()
+        user.set_password('ADMturingmath')
+        user.id = 'admin'
+        user.save()
+    if not User.objects.filter(email='yh04060@gmail.com'):
+        user = User(email='yh04060@gmail.com').store()
+        user.set_password('ADMturingmath')
         user.id = 'admin'
         user.save()
     return render(request, 'metronic_index.html', {'isLogged': True if request.session.get('userSrl') else False,
