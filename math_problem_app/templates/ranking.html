@@ -7,7 +7,7 @@
 </div>
 
 <div class="row">
-    <div class="col-xs-4 ranking-div" style="margin-left: 5%" align="center">
+    <div class="col-xs-3 col-xs-offset-1 ranking-div" style="margin-left: 15.5%" align="center">
         <img class="ranking-icon" src="{% static 'assets/img/ranking-icon.png' %}">
         <p class="medium-font main-color" style="margin-top: 3%;">총점 랭킹</p>
         <p class="medium-font gray-color" style="margin-bottom: 5%;">수능대왕 전체 순위 입니다.</p>
@@ -15,7 +15,7 @@
         <div class="row ranking-box">
             <div class="col-xs-2 medium-font {% if forloop.counter == 1 %}ranking-num-first{% elif forloop.counter == 2 %}ranking-num-second{% elif forloop.counter == 3 %}ranking-num-third{% endif %}">{{ forloop.counter }}</div>
             <div class="col-xs-8 medium-font" align="left">{{ type1Top.userId }} <span class="small-font">{{ type1Top.userSchool }} {{ type1Top.userGrade }}학년</span></div>
-            <div class="col-xs-2 medium-font bold">{{ type1Top.maxScore }}</div>
+            <div class="col-xs-2 medium-font bold" style="padding-left: 0;">{{ type1Top.maxScore }}</div>
         </div>
         {% endfor %}
         {% if not isType1Top5 %}
@@ -28,7 +28,7 @@
         <div align="left"><img class="ranking-blank" src="{% static 'assets/img/ranking-blank.png' %}"></div>
         {% endif %}
     </div>
-    <div class="col-xs-4 ranking-div" style="margin: 0 1% 0 1%" align="center">
+    <div class="col-xs-3 ranking-div" style="margin: 0 1% 0 1%" align="center">
         <img class="ranking-icon" src="{% static 'assets/img/ranking-icon.png' %}">
         <p class="medium-font main-color" style="margin-top: 3%;">학년 랭킹</p>
         <p class="medium-font gray-color" style="margin-bottom: 5%">전국 고등학교 3학년 순위 입니다.</p>
@@ -36,7 +36,7 @@
         <div class="row ranking-box">
             <div class="col-xs-2 medium-font {% if forloop.counter == 1 %}ranking-num-first{% elif forloop.counter == 2 %}ranking-num-second{% elif forloop.counter == 3 %}ranking-num-third{% endif %}">{{ forloop.counter }}</div>
             <div class="col-xs-8 medium-font" align="left">{{ type2Top.userId }} <span class="small-font">{{ type2Top.userSchool }} {{ type2Top.userGrade }}학년</span></div>
-            <div class="col-xs-2 medium-font bold">{{ type2Top.maxScore }}</div>
+            <div class="col-xs-2 medium-font bold" style="padding-left: 0;">{{ type2Top.maxScore }}</div>
         </div>
         {% endfor %}
         {% if not isType2Top5 %}
@@ -49,7 +49,7 @@
         <div align="left"><img class="ranking-blank" src="{% static 'assets/img/ranking-blank.png' %}"></div>
         {% endif %}
     </div>
-    <div class="col-xs-4 ranking-div" style="margin-right: 5%" align="center">
+    <div class="col-xs-3 ranking-div" style="margin-right: 5%" align="center">
         <img class="ranking-icon" src="{% static 'assets/img/ranking-icon.png' %}">
         <p class="medium-font main-color" style="margin-top: 3%;">학교 랭킹</p>
         <p class="medium-font gray-color" style="margin-bottom: 5%;">전국의 고등학교 순위 입니다.</p>
@@ -57,7 +57,7 @@
         <div class="row ranking-box">
             <div class="col-xs-2 medium-font {% if forloop.counter == 1 %}ranking-num-first{% elif forloop.counter == 2 %}ranking-num-second{% elif forloop.counter == 3 %}ranking-num-third{% endif %}">{{ forloop.counter }}</div>
             <div class="col-xs-8 medium-font" align="left">{{ type3top.user__school }}</div>
-            <div class="col-xs-2 medium-font bold">{{ type3top.maxScore }}</div>
+            <div class="col-xs-2 medium-font bold" style="padding-left: 0;">{{ type3top.maxScore }}</div>
         </div>
         {% endfor %}
         {% if not isType3Top5 %}
