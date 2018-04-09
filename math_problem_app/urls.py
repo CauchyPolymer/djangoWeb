@@ -11,9 +11,11 @@ urlpatterns = [
     url(r'^signIn3/', signIn3, name='signIn3'),
     url(r'^signUp/', signUp, name='signUp'),
     url(r'^mypage/', mypage, name='mypage'),
-    url(r'^mypage2/', mypage2, name='mypage2'),
     url(r'^idDuplicate/', idDuplicate, name='id_duplicate'),
     url(r'^getRateData/', getRateData, name='getRateData'),
+    url(r'^getTestData/', getTestData, name='getTestData'),
+    url(r'^getSmallUnitData/', getSmallUnitData, name='getSmallUnitData'),
+    url(r'^getStudyTotalCount/', getStudyTotalCount, name='getStudyTotalCount'),
     url(r'^estimationStart/', estimationStart, name='estimationStart'),
     url(r'^createLecture/', createLecture, name='createLecture'),
     url(r'^googled92c898637781d67.html/', googled92c898637781d67, name='googled92c898637781d67.html'),
@@ -51,6 +53,9 @@ urlpatterns = [
     url(r'^usage/', usage, name='usage'),
     url(r'^photo/', photo, name='photo'),
     url(r'^lectureBox/', lectureBox, name='lectureBox'),
+
+
+
 
 
 ]

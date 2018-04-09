@@ -17,9 +17,10 @@
 {% endfor %}
 
 <script>
+    $('.recommend-test').unbind()
     $('.recommend-test').click(function () {
         $.ajax({
-            url: "recommendTest/?smallUnit="+$(this).data('smallunit'),
+            url: "recommendTest/?unit={{ unit }}&smallUnit="+$(this).data('smallunit'),
             type: 'GET',
             contentType: "application/json; charset=utf-8",
             success: function (result) {

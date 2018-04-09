@@ -359,6 +359,9 @@ class Lecture(models.Model):
     teacherName = models.CharField(max_length=50, blank=True, null=True)
     name = models.CharField(max_length=100, blank=True, null=True)
 
+    createdAt = models.DateTimeField(auto_now_add=True)
+    updatedAt = models.DateTimeField(auto_now=True)
+
     def __str__(self):
         return str(self.video)
 
@@ -380,10 +383,27 @@ GRADE = {
 }
 
 
+class StudyDate(models.Model):
+    studyDateSrl = models.AutoField(primary_key=True)
+    date = models.DateField(auto_now_add=True)
+    smallUnit = models.ForeignKey(ProblemSmallUnit, blank=True, null=True, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return str(self.date)
+
+    def store(self):
+        self.save()
+        return self
+
+
 class Recommend(models.Model):
     recommendSrl = models.AutoField(primary_key=True)
     aimGrade = models.IntegerField(blank=True, null=True)
     unit = models.ForeignKey(ProblemUnit, blank=True, null=True, on_delete=models.CASCADE)
+    studyDate = models.ManyToManyField(StudyDate, blank=True, null=True)
+
+    createdAt = models.DateTimeField(auto_now_add=True)
+    updatedAt = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return str(self.recommendSrl)

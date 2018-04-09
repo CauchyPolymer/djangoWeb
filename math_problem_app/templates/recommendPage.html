@@ -45,7 +45,7 @@
     $('.recommend-test-div').each(function () {
         var testDiv = this;
         $.ajax({
-            url: "getSmallUnitTest/?middleUnit="+$(this).data('middleunit'),
+            url: "getSmallUnitTest/?unit={{ recommend.unit.unit }}&middleUnit="+$(this).data('middleunit'),
             type: 'GET',
             contentType: "application/json; charset=utf-8",
             success: function (result) {

@@ -58,10 +58,8 @@
                                 <div class="doughnut-chart" id="doughnutChartContainer{{ forloop.counter }}" style="padding: 5% 5% 5% 5%; width: 100%; height: 200px;"></div>
                             </div>
                             <div class="col-xs-4" style="margin: 15% 0 0 -5%;" align="center">
-                                <p class="large-font orange-color">0</p>
-                                <p class="x-small-font gray-color">day streak</p>
-                                <p class="large-font orange-color">6</p>
-                                <p class="x-small-font gray-color">hours left</p>
+                                <p id="testCount{{ forloop.counter }}" class="large-font orange-color">0</p>
+                                <p class="x-small-font gray-color">응시한 테스트 수</p>
                             </div>
                         </div>
                         <div class="row project-left-box" style="padding-left: 0; margin-left: -30%;">
@@ -127,26 +125,6 @@
     })
     {% endif %}
 
-    {% for recommend in user.recommend.all %}
-        $.ajax({
-            url: "getRateData/",
-            type: 'GET',
-            contentType: "application/json; charset=utf-8",
-            success: function (result) {
-                drawGraph(result, 'chartContainer{{ forloop.counter }}')
-            },
-        });
-
-        $.ajax({
-            url: "getRateData/",
-            type: 'GET',
-            contentType: "application/json; charset=utf-8",
-            success: function (result) {
-                drawDoughnutGraph(result, 'doughnutChartContainer{{ forloop.counter }}')
-            },
-        });
-    {% endfor %}
-
     $('.graph-title').click(function () {
         if($(this).data('open') == false) {
             $(this).next('.graph-box ').css('height', '450px')
@@ -154,7 +132,7 @@
             $(this).children().children('.mypage-arrow').css('transform', 'rotate(90deg)')
             {% for recommend in user.recommend.all %}
             $.ajax({
-                url: "getRateData/",
+                url: "getTestData/?unit={{ recommend.unit.unit }}",
                 type: 'GET',
                 contentType: "application/json; charset=utf-8",
                 success: function (result) {
@@ -163,11 +141,20 @@
             });
 
             $.ajax({
-                url: "getRateData/",
+                url: "getSmallUnitData/?unit={{ recommend.unit.unit }}",
                 type: 'GET',
                 contentType: "application/json; charset=utf-8",
                 success: function (result) {
                     drawDoughnutGraph(result, 'doughnutChartContainer{{ forloop.counter }}')
+                },
+            });
+
+            $.ajax({
+                url: "getStudyTotalCount/?unit={{ recommend.unit.unit }}",
+                type: 'GET',
+                contentType: "application/json; charset=utf-8",
+                success: function (result) {
+                    $('#testCount{{ forloop.counter }}').text(result.count)
                 },
             });
             {% endfor %}
