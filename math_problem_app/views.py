@@ -4,12 +4,12 @@ import random
 import re
 import uuid
 
-import datetime
+from datetime import datetime
 from functools import reduce
 
 import mandrill
 from django.core.mail import send_mail
-from django.db.models import Q, Max
+from django.db.models import Q, Max, Count
 from django.http import HttpResponse
 from django.shortcuts import render
 
@@ -18,8 +18,7 @@ from django.views.decorators.csrf import csrf_exempt
 
 from math_problem import settings
 from math_problem_app.sendSms import sendSms
-from math_problem_app.models import User, Problem, ProblemUnit, Photo, Board, Test, Comment, Answer, AnswerNum, Rating, \
-    Score, Recommend, GET_MIDDLE_UNIT, GET_SMALL_UNIT, Lecture, SMALL_UNIT
+from math_problem_app.models import *
 
 
 def head(request):
@@ -55,11 +54,6 @@ def mypage(request):
         return render(request, 'mypage.html', {'user': user, 'rate': Rating.objects.filter(user=user).last()})
     else:
         return render(request, 'login.html')
-
-
-def mypage2(request):
-    user = getLoginUser(request)
-    return render(request, 'mypage2.html', {'user': user})
 
 
 def returnHttpResponse(data):
@@ -128,6 +122,46 @@ def getRateData(request):
             {'label': str(3) + '등급', 'y': 3}, {'label': str(4) + '등급', 'y': 4}]
 
     return returnHttpResponse(data)
+
+
+def getTestData(request):
+    user = getLoginUser(request)
+    unit = int(request.GET.get('unit'))
+    recommend = user.recommend.get(unit__unit=unit)
+    data = []
+    bef5 = (datetime.today() - timedelta(days=5)).date()
+    data.append({'label': bef5.strftime("%m-%d"), 'y': recommend.studyDate.filter(date=bef5).count()})
+    bef4 = (datetime.today() - timedelta(days=4)).date()
+    data.append({'label': bef4.strftime("%m-%d"), 'y': recommend.studyDate.filter(date=bef4).count()})
+    bef3 = (datetime.today() - timedelta(days=3)).date()
+    data.append({'label': bef3.strftime("%m-%d"), 'y': recommend.studyDate.filter(date=bef3).count()})
+    bef2 = (datetime.today() - timedelta(days=2)).date()
+    data.append({'label': bef2.strftime("%m-%d"), 'y': recommend.studyDate.filter(date=bef2).count()})
+    bef1 = (datetime.today() - timedelta(days=1)).date()
+    data.append({'label': bef1.strftime("%m-%d"), 'y': recommend.studyDate.filter(date=bef1).count()})
+    bef0 = datetime.today().date()
+    data.append({'label': bef0.strftime("%m-%d"), 'y': recommend.studyDate.filter(date=bef0).count()})
+
+    return returnHttpResponse(data)
+
+
+def getSmallUnitData(request):
+    user = getLoginUser(request)
+    unit = int(request.GET.get('unit'))
+    recommend = user.recommend.get(unit__unit=unit)
+    data = []
+    for studyDate in recommend.studyDate.values('smallUnit__smallUnit').annotate(count=Count('studyDateSrl')):
+        data.append({'label': SMALL_UNIT[studyDate['smallUnit__smallUnit']-1][1], 'y': studyDate['count']})
+
+    return returnHttpResponse(data)
+
+
+def getStudyTotalCount(request):
+    user = getLoginUser(request)
+    unit = int(request.GET.get('unit'))
+    recommend = user.recommend.get(unit__unit=unit)
+
+    return returnHttpResponse({'count': recommend.studyDate.count()})
 
 
 def estimationStart(request):
@@ -251,7 +285,7 @@ def send_email(title, body, to_email, to_name):
                    'view_content_link': None}
 
         result = mandrill_client.messages.send(message=message, async=False, ip_pool='Main Pool',
-                                               send_at=datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
+                                               send_at=datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
         '''
         [{'_id': 'abc123abc123abc123abc123abc123',
           'email': 'recipient.email@example.com',
@@ -613,8 +647,18 @@ def recommendPage(request):
 
 
 def recommendTest(request):
+    user = getLoginUser(request)
+
     smallUnit = int(request.GET.get('smallUnit'))
     problems = Problem.objects.filter(smallUnit__smallUnit=smallUnit)[:20]
+
+    unit = int(request.GET.get('unit'))
+    recommend = user.recommend.get(unit__unit=unit)
+    if ProblemSmallUnit.objects.filter(smallUnit=smallUnit).exists():
+        recommend.studyDate.add(StudyDate(smallUnit=ProblemSmallUnit.objects.get(smallUnit=smallUnit)).store())
+    else:
+        recommend.studyDate.add(StudyDate(smallUnit=ProblemSmallUnit(smallUnit=smallUnit).store()).store())
+
     test = Test(type=3).store()         # 추천고사
     for problem in problems:
         test.problems.add(problem)
@@ -640,7 +684,8 @@ def getSmallUnitCount(request):
 
 def getSmallUnitTest(request):
     middleUnit = int(request.GET.get('middleUnit'))
-    return render(request, 'smallUnitTest.html', {'smallUnits': GET_SMALL_UNIT[middleUnit]})
+    unit = int(request.GET.get('unit'))
+    return render(request, 'smallUnitTest.html', {'smallUnits': GET_SMALL_UNIT[middleUnit], 'unit': unit})
 
 
 def getMiddleUnitLecture(request):
