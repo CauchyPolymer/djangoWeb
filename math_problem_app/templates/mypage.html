@@ -187,6 +187,7 @@
             success: function (result) {
                 drawMypageGraph(result)
                 $('#created-at').text(box.data('createdat'))
+                goToTop()
             },
         });
     })

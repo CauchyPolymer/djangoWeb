@@ -15,12 +15,12 @@ def main(request):
     if not User.objects.filter(email='osiriskgn93@gmail.com'):
         user = User(email='osiriskgn93@gmail.com').store()
         user.set_password('ADMturingmath')
-        user.id = 'admin'
+        user.id = 'admin1'
         user.save()
     if not User.objects.filter(email='yh04060@gmail.com'):
         user = User(email='yh04060@gmail.com').store()
         user.set_password('ADMturingmath')
-        user.id = 'admin'
+        user.id = 'admin2'
         user.save()
     return render(request, 'metronic_index.html', {'isLogged': True if request.session.get('userSrl') else False,
                                                    'middleUnit': MIDDLE_UNIT, 'smallUnit': SMALL_UNIT})
