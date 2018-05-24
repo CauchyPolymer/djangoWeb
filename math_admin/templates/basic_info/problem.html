@@ -58,122 +58,132 @@
 </div>
 
 <script>
-    document.getElementById("image").onchange = function () {
-        var reader = new FileReader();
+document.getElementById("image").onchange = function() {
+  var reader = new FileReader();
 
-        reader.onload = function (e) {
-            // get loaded data and render thumbnail.
-            document.getElementById("images").src = e.target.result;
-        };
+  reader.onload = function(e) {
+    // get loaded data and render thumbnail.
+    document.getElementById("images").src = e.target.result;
+  };
 
-    // read the image file as a data URL.
-        reader.readAsDataURL(this.files[0]);
-    };
+  // read the image file as a data URL.
+  reader.readAsDataURL(this.files[0]);
+};
 
-    $("#image_form").submit(function(e) {
-        $(".se-pre-con").css('display', "block");
+$("#image_form").submit(function(e) {
+  $(".se-pre-con").css("display", "block");
 
-        var formData = new FormData($(this)[0]);
+  var formData = new FormData($(this)[0]);
 
-        $.ajax({
-            url: "problem_photo/",
-            type: "POST",
-            data: formData,
-            success: function (result) {
-                $('#image_list').empty();
-                $('#image_list').append($(result));
-                $(".se-pre-con").fadeOut("slow");
-            },
-            cache: false,
-            contentType: false,
-            processData: false
-        });
+  $.ajax({
+    url: "problem_photo/",
+    type: "POST",
+    data: formData,
+    success: function(result) {
+      $("#image_list").empty();
+      $("#image_list").append($(result));
+      $(".se-pre-con").fadeOut("slow");
+    },
+    cache: false,
+    contentType: false,
+    processData: false
+  });
 
-        e.preventDefault();
-    });
+  e.preventDefault();
+});
 
-    $('#problem-submit').click(function (e) {
-        e.preventDefault();
-        if(!$('#answer').val()){
-            alert('정답을 입력해 주세요.')
-            return false;
-        }
+$("#problem-submit").click(function(e) {
+  e.preventDefault();
+  if (!$("#answer").val()) {
+    alert("정답을 입력해 주세요.");
+    return false;
+  }
 
-        if(!$('#unit').val()){
-            alert('해당 과목을 선택해 주세요.')
-            return false;
-        }
+  if (!$("#unit").val()) {
+    alert("해당 과목을 선택해 주세요.");
+    return false;
+  }
 
-        if(!$('#middleUnit').val()){
-            alert('대단원을 선택해 주세요.')
-            return false;
-        }
+  if (!$("#middleUnit").val()) {
+    alert("대단원을 선택해 주세요.");
+    return false;
+  }
 
-        if(!$('#smallUnit').val()){
-            alert('중단원을 선택해 주세요.')
-            return false;
-        }
+  if (!$("#smallUnit").val()) {
+    alert("중단원을 선택해 주세요.");
+    return false;
+  }
 
-        $(".se-pre-con").css('display', "block");
-        $.ajax({
-            url: "save_problem/",
-            type: "POST",
-            data: {problemText: $('#problem-text').val(), answer: $('#answer').val(), type1: $('#type1').val(), type2: $('#type2').val(),
-                    difficulty: $('#difficulty').val(), unit: $('#unit').val().toString(), explanation: $('#problem-explanation').val(),
-                    middleUnit: $('#middleUnit').val().toString(), smallUnit: $('#smallUnit').val().toString()},
-            success: function (result) {
-                $('#problem-text').val('')
-                $('#answer').val('')
-                $('#type1').val(1)
-                $('#type2').val(1)
-                $('#difficulty').val(1)
-                $('#unit').val('')
-                $('#middleUnit').val('')
-                $('#smallUnit').val('')
-                $(".se-pre-con").fadeOut("slow");
-                alert('문제가 등록 되었습니다.')
-                $('#image_list').empty();
-                $('#image_list').append($(result));
-            },
-        });
-    })
-
-    $('#doctor').change(function () {
-        $.ajax({
-            url: "change_doctorProfile/?doctorProfileSrl="+$('#doctor').val(),
-            method: "GET",
-            contentType: "application/json; charset=utf-8",
-            success: function (result) {
-                $('#current_doctor').text('Currently Selected Doctor: ' + $('#doctor option:selected').text())
-                $('.page-content').empty();
-                $('.page-content').append(result);
-            }
-        });
-    })
-
-    function rotate(img_elem){
-        img_elem.data('rotate', (parseInt(img_elem.data('rotate'))+90) % 360)
-        img_elem.css('transform', 'rotate('+img_elem.data('rotate')+'deg)')
-        if(img_elem.data('rotate') == 90 || img_elem.data('rotate') == 270) {
-            img_elem.css('width', '200px')
-            img_elem.css('height', '160px')
-            img_elem.css('margin-top', '25px')
-            img_elem.css('margin-left', '-20px')
-            img_elem.css('margin-right', '-15px')
-            img_elem.css('margin-bottom', '0px')
-        } else {
-            img_elem.css('width', '160px')
-            img_elem.css('height', '200px')
-            img_elem.css('margin-top', '5px')
-            img_elem.css('margin-left', '0px')
-            img_elem.css('margin-right', '5px')
-            img_elem.css('margin-bottom', '0px')
-        }
+  $(".se-pre-con").css("display", "block");
+  $.ajax({
+    url: "save_problem/",
+    type: "POST",
+    data: {
+      problemText: $("#problem-text").val(),
+      problemText: $("#problem-text2").val(),
+      answer: $("#answer").val(),
+      type1: $("#type1").val(),
+      difficulty: $("#difficulty").val(),
+      unit: $("#unit")
+        .val()
+        .toString(),
+      explanation: $("#problem-explanation").val(),
+      middleUnit: $("#middleUnit")
+        .val()
+        .toString(),
+      smallUnit: $("#smallUnit")
+        .val()
+        .toString()
+    },
+    success: function(result) {
+      $("#problem-text").val("");
+      $("#problem-text2").val("");
+      $("#answer").val("");
+      $("#type1").val(1);
+      $("#difficulty").val(1);
+      $("#unit").val("");
+      $("#middleUnit").val("");
+      $("#smallUnit").val("");
+      $(".se-pre-con").fadeOut("slow");
+      alert("문제가 등록 되었습니다.");
+      $("#image_list").empty();
+      $("#image_list").append($(result));
     }
+  });
+});
 
+$("#doctor").change(function() {
+  $.ajax({
+    url: "change_doctorProfile/?doctorProfileSrl=" + $("#doctor").val(),
+    method: "GET",
+    contentType: "application/json; charset=utf-8",
+    success: function(result) {
+      $("#current_doctor").text(
+        "Currently Selected Doctor: " + $("#doctor option:selected").text()
+      );
+      $(".page-content").empty();
+      $(".page-content").append(result);
+    }
+  });
+});
 
-
-
+function rotate(img_elem) {
+  img_elem.data("rotate", (parseInt(img_elem.data("rotate")) + 90) % 360);
+  img_elem.css("transform", "rotate(" + img_elem.data("rotate") + "deg)");
+  if (img_elem.data("rotate") == 90 || img_elem.data("rotate") == 270) {
+    img_elem.css("width", "200px");
+    img_elem.css("height", "160px");
+    img_elem.css("margin-top", "25px");
+    img_elem.css("margin-left", "-20px");
+    img_elem.css("margin-right", "-15px");
+    img_elem.css("margin-bottom", "0px");
+  } else {
+    img_elem.css("width", "160px");
+    img_elem.css("height", "200px");
+    img_elem.css("margin-top", "5px");
+    img_elem.css("margin-left", "0px");
+    img_elem.css("margin-right", "5px");
+    img_elem.css("margin-bottom", "0px");
+  }
+}
 </script>
-
-

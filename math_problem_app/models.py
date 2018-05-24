@@ -33,20 +33,15 @@ class Photo(models.Model):
         return True if self.get_extention().upper() in ['JPEG', 'JPG'] else False
 
 
-PROBLEM_TYPE1 = {
-    (1, '내신형'),
-    (2, '수능형'),
-}
-
-PROBLEM_TYPE2 = {
-    (1, '개념확인형'),
-    (2, '개념응용형'),
-}
+# PROBLEM_TYPE2 = {
+#     (1, '개념확인형'),
+#     (2, '개념응용형'),
+# }
 
 PROBLEM_DIFFICULTY = {
-    (1, '쉬움'),
-    (2, '중간'),
-    (3, '어려움'),
+    (1, '2점'),
+    (2, '3점'),
+    (3, '4점'),
 }
 
 UNIT = [
@@ -238,11 +233,11 @@ class ProblemSmallUnit(models.Model):
 class Problem(models.Model):
     problemSrl = models.AutoField(primary_key=True)
     text = models.CharField(max_length=2000, blank=True, null=True)
+    text2 = models.CharField(max_length=2000, blank=True, null=True)
     photos = models.ManyToManyField(Photo, blank=True, null=True)
     answer = models.IntegerField(blank=True, null=True)
 
-    type1 = models.IntegerField(choices=PROBLEM_TYPE1, blank=True, null=True)
-    type2 = models.IntegerField(choices=PROBLEM_TYPE2, blank=True, null=True)
+    type1 = models.IntegerField(max_length=10, blank=True, null=True)
     difficulty = models.IntegerField(choices=PROBLEM_DIFFICULTY, blank=True, null=True)
     unit = models.ManyToManyField(ProblemUnit, blank=True, null=True)
     middleUnit = models.ManyToManyField(ProblemMiddleUnit, blank=True, null=True)
