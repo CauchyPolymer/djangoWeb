@@ -1,29 +1,30 @@
 {% load static %}
+
+<!-- <header class="masthead text-white text-center">
+      <a href="landing_page.html">
+        <div class="container">
+        <img class="img-fluid mb-5 d-block mx-auto" src="img/header_sndwicon.png" alt="">
+      </div></a>
+      <div id="login_signin">
+        <ul>
+          <li><a href="login.html" accesskey="1" title="">로그인</a></li>
+          <li><a href="siginin.html" accesskey="2" title="">회원가입</a></li>
+        </ul>
+      </div>
+      <div id="menu">
+      <ul>
+        <li><a href="mypage.html" accesskey="1" title="">마이페이지</a></li>
+        <li><a href="problem_bank.html" accesskey="2" title="">문제은행</a></li>
+        <li><a href="ranking.html" accesskey="4" title="">랭킹</a></li>
+        <li><a href="board.html" accesskey="5" title="">입시정보</a></li>
+      </ul>
+    </div>
+    </header> -->
+
 <div class="header">
     <div class="row">
         <div class="col-xs-2">
-            <img class="logo-img" src="{% static 'assets/img/logo.png' %}">
-        </div>
-        <div id="mypage" class="col-xs-1 medium-font main-color header-menu" style="width: 10%">
-            마이페이지
-        </div>
-        <div id="project" class="col-xs-1 medium-font main-color header-menu">
-            문제추천
-        </div>
-{#        <div id="create-test" class="col-xs-1 medium-font main-color  header-menu">#}
-{#            문제은행#}
-{#        </div>#}
-        <div id="lecture" class="col-xs-1 medium-font main-color  header-menu">
-            강의실
-        </div>
-        <div id="ranking" class="col-xs-1 medium-font main-color  header-menu" style="width: 8%">
-            랭킹
-        </div>
-        <div id="board" class="col-xs-1 medium-font main-color header-menu">
-            입시정보
-        </div>
-        <div id="payment" class="col-xs-1 medium-font main-color header-menu">
-            결제
+            <img class="logo-img" src="{% static 'assets/img/header_sndwicon.png' %}">
         </div>
         <div id="login" class="col-xs-1 small-font main-color {% if not user %}border-right{% endif %} header-menu login-menu" style="margin-left: 15%; width: 7%">
             로그인
@@ -34,127 +35,148 @@
 {#        <div class="col-xs-1 small-font main-color header-menu login-menu" style="width: 10%">#}
 {#            ID/PW 찾기#}
 {#        </div>#}
+        <div id="mypage" class="col-xs-1 medium-font main-color header-menu" style="width: 10%">
+            마이페이지
+        </div>
+        <!-- <div id="project" class="col-xs-1 medium-font main-color header-menu">
+            문제추천
+        </div> -->
+{#        <div id="create-test" class="col-xs-1 medium-font main-color  header-menu">#}
+{#            문제은행#}
+{#        </div>#}
+        <!-- <div id="lecture" class="col-xs-1 medium-font main-color  header-menu">
+            강의실 -->
+        </div>
+        <div id="ranking" class="col-xs-1 medium-font main-color  header-menu" style="width: 8%">
+            랭킹
+        </div>
+        <div id="board" class="col-xs-1 medium-font main-color header-menu">
+            입시정보
+        </div>
+        <div id="payment" class="col-xs-1 medium-font main-color header-menu">
+            결제
+        </div>
+
     </div>
 </div>
 
 <script>
-    $(".header-menu").mouseover(function(){
-        $(this).css("color", "red");
-    });
-    $(".header-menu").mouseleave(function(){
-        $(this).css("color", "#50519C");
-    });
+$(".header-menu").mouseover(function() {
+  $(this).css("color", "red");
+});
+$(".header-menu").mouseleave(function() {
+  $(this).css("color", "#000000");
+});
 
-    $('.logo-img').click(function () {
-        goToMain()
-    })
+$(".logo-img").click(function() {
+  goToMain();
+});
 
-    $('#mypage').click(function () {
-        $.ajax({
-            url: "mypage/",
-            type: 'GET',
-            contentType: "application/json; charset=utf-8",
-            success: function (result) {
-                $('.main-container').empty()
-                $('.main-container').append(result)
-            },
-        });
-    })
-    
-    $('#signup').click(function () {
-         $.ajax({
-            url: "signIn/",
-            type: 'GET',
-            contentType: "application/json; charset=utf-8",
-            success: function (result) {
-                $('.main-container').empty()
-                $('.main-container').append(result)
-            },
-        });
-    })
+$("#mypage").click(function() {
+  $.ajax({
+    url: "mypage/",
+    type: "GET",
+    contentType: "application/json; charset=utf-8",
+    success: function(result) {
+      $(".main-container").empty();
+      $(".main-container").append(result);
+    }
+  });
+});
 
-    $('#lecture').click(function () {
-        $.ajax({
-            url: "lecture/",
-            type: 'GET',
-            contentType: "application/json; charset=utf-8",
-            success: function (result) {
-                $('.main-container').empty()
-                $('.main-container').append(result)
-            },
-        });
-    })
+$("#signup").click(function() {
+  $.ajax({
+    url: "signIn/",
+    type: "GET",
+    contentType: "application/json; charset=utf-8",
+    success: function(result) {
+      $(".main-container").empty();
+      $(".main-container").append(result);
+    }
+  });
+});
 
-    $('#login').click(function () {
-        $.ajax({
-            url: "login/",
-            type: 'GET',
-            contentType: "application/json; charset=utf-8",
-            success: function (result) {
-                $('.main-container').empty()
-                $('.main-container').append(result)
-            },
-        });
-    })
+$("#lecture").click(function() {
+  $.ajax({
+    url: "lecture/",
+    type: "GET",
+    contentType: "application/json; charset=utf-8",
+    success: function(result) {
+      $(".main-container").empty();
+      $(".main-container").append(result);
+    }
+  });
+});
 
-    $('#board').click(function () {
-        $.ajax({
-            url: "board/",
-            type: 'GET',
-            contentType: "application/json; charset=utf-8",
-            success: function (result) {
-                $('.main-container').empty()
-                $('.main-container').append(result)
-            },
-        });
-    })
+$("#login").click(function() {
+  $.ajax({
+    url: "login/",
+    type: "GET",
+    contentType: "application/json; charset=utf-8",
+    success: function(result) {
+      $(".main-container").empty();
+      $(".main-container").append(result);
+    }
+  });
+});
 
-    $('#create-test').click(function () {
-        $.ajax({
-            url: "createTest/",
-            type: 'GET',
-            contentType: "application/json; charset=utf-8",
-            success: function (result) {
-                $('.main-container').empty()
-                $('.main-container').append(result)
-            },
-        });
-    })
+$("#board").click(function() {
+  $.ajax({
+    url: "board/",
+    type: "GET",
+    contentType: "application/json; charset=utf-8",
+    success: function(result) {
+      $(".main-container").empty();
+      $(".main-container").append(result);
+    }
+  });
+});
 
-    $('#ranking').click(function () {
-        $.ajax({
-            url: "ranking/",
-            type: 'GET',
-            contentType: "application/json; charset=utf-8",
-            success: function (result) {
-                $('.main-container').empty()
-                $('.main-container').append(result)
-            },
-        });
-    })
+$("#create-test").click(function() {
+  $.ajax({
+    url: "createTest/",
+    type: "GET",
+    contentType: "application/json; charset=utf-8",
+    success: function(result) {
+      $(".main-container").empty();
+      $(".main-container").append(result);
+    }
+  });
+});
 
-    $('#project').click(function () {
-        $.ajax({
-            url: "project/",
-            type: 'GET',
-            contentType: "application/json; charset=utf-8",
-            success: function (result) {
-                $('.main-container').empty()
-                $('.main-container').append(result)
-            },
-        });
-    })
+$("#ranking").click(function() {
+  $.ajax({
+    url: "ranking/",
+    type: "GET",
+    contentType: "application/json; charset=utf-8",
+    success: function(result) {
+      $(".main-container").empty();
+      $(".main-container").append(result);
+    }
+  });
+});
 
-    $('#payment').click(function () {
-        $.ajax({
-            url: "paymentStart/",
-            type: 'GET',
-            contentType: "application/json; charset=utf-8",
-            success: function (result) {
-                $('.main-container').empty()
-                $('.main-container').append(result)
-            },
-        });
-    })
+$("#project").click(function() {
+  $.ajax({
+    url: "project/",
+    type: "GET",
+    contentType: "application/json; charset=utf-8",
+    success: function(result) {
+      $(".main-container").empty();
+      $(".main-container").append(result);
+    }
+  });
+});
 
+$("#payment").click(function() {
+  $.ajax({
+    url: "paymentStart/",
+    type: "GET",
+    contentType: "application/json; charset=utf-8",
+    success: function(result) {
+      $(".main-container").empty();
+      $(".main-container").append(result);
+    }
+  });
+});
 </script>
