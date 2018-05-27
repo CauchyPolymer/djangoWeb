@@ -3,6 +3,446 @@
   <component name="ChangeListManager">
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+    <list default="true" id="d18057de-6140-4b45-8755-309202484dcf" name="Default" comment="">
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/main.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/main.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/signIn.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/signIn.html" />
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/signIn.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/signIn.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/signIn2.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/signIn2.html" />
+>>>>>>> bcce85e25647d045f4ba16625eca8af14750540f
+=======
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/assets/img/lectrue-line02.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/assets/img/lecture-line01.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/assets/img/lecture-line03.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/assets/img/lecture-line04.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/math_problem_app/templates/createLecture.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/math_problem_app/templates/estimationStart.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/math_problem_app/templates/head.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/assets/css/estimation.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/assets/css/lecture.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/assets/js/common.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/header.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/header.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/main.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/main.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/mypage.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/mypage.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/mypage2.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/mypage2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/signIn.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/signIn.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/urls.py" afterPath="$PROJECT_DIR$/math_problem_app/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/views.py" afterPath="$PROJECT_DIR$/math_problem_app/views.py" />
+>>>>>>> 23c7bac459f3a5c3149d629319973367f446a56f
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/css/main.css" afterPath="$PROJECT_DIR$/static/assets/css/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/css/mypage.css" afterPath="$PROJECT_DIR$/static/assets/css/mypage.css" />
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/models.py" afterPath="$PROJECT_DIR$/math_problem_app/models.py" />
+>>>>>>> 5ada40acf65c947b206649e0c53d6d9518612f6d
+=======
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/math_problem_app/templates/googled92c898637781d67.html" />
+=======
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/math_problem_app/templates/lecture.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/img/logo.png" afterPath="$PROJECT_DIR$/static/assets/img/logo.png" />
+>>>>>>> fa5f6170e57a8c973f3ab117e9dfef8655f86992
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/header.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/header.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/mypage.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/mypage.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/mypage2.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/mypage2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/urls.py" afterPath="$PROJECT_DIR$/math_problem_app/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/views.py" afterPath="$PROJECT_DIR$/math_problem_app/views.py" />
+<<<<<<< HEAD
+>>>>>>> 15d9bb2a17468e78532a39e20ba2aebdf887fa59
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/css/lecture.css" afterPath="$PROJECT_DIR$/static/assets/css/lecture.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/css/main.css" afterPath="$PROJECT_DIR$/static/assets/css/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/css/mypage.css" afterPath="$PROJECT_DIR$/static/assets/css/mypage.css" />
+>>>>>>> fa5f6170e57a8c973f3ab117e9dfef8655f86992
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/main.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/main.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/css/main.css" afterPath="$PROJECT_DIR$/static/assets/css/main.css" />
+>>>>>>> 454eaa9ec1855bd39422c5a16ea0c174fd222106
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/mypage.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/mypage.html" />
+>>>>>>> d86971ca21a021089946358a7b7381b5fe4c23d6
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/css/mypage.css" afterPath="$PROJECT_DIR$/static/assets/css/mypage.css" />
+>>>>>>> a0853ec6502be5e4136dd982cb955e72c3228d0c
+=======
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/assets/img/crown.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/math_problem_app/templates/board.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/math_problem_app/templates/findPassword.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/math_problem_app/templates/findPassword2.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/math_problem_app/templates/findPassword3.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/math_problem_app/templates/login.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/assets/css/board.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/img/group-3.png" afterPath="$PROJECT_DIR$/static/assets/img/group-3.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/img/group-3@2x.png" afterPath="$PROJECT_DIR$/static/assets/img/group-3@2x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/img/group-3@3x.png" afterPath="$PROJECT_DIR$/static/assets/img/group-3@3x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/img/logo.png" afterPath="$PROJECT_DIR$/static/assets/img/logo.png" />
+=======
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/math_problem_app/templates/createTest.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/math_problem_app/templates/problemBox.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/assets/css/test.css" />
+>>>>>>> 02efcfac1851156db25e35474b36e6456a385c07
+=======
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/assets/img/ranking-blank.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/assets/img/ranking-icon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/math_problem_app/templates/ranking.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/assets/css/ranking.css" />
+>>>>>>> 1739a7d6df7cb6b2ee1ef18779958d6b0ad4a903
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/head.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/head.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/header.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/header.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/urls.py" afterPath="$PROJECT_DIR$/math_problem_app/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/views.py" afterPath="$PROJECT_DIR$/math_problem_app/views.py" />
+<<<<<<< HEAD
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/css/board.css" afterPath="$PROJECT_DIR$/static/assets/css/board.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/css/lecture.css" afterPath="$PROJECT_DIR$/static/assets/css/lecture.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/css/main.css" afterPath="$PROJECT_DIR$/static/assets/css/main.css" />
+<<<<<<< HEAD
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/js/common.js" afterPath="$PROJECT_DIR$/static/assets/js/common.js" />
+>>>>>>> 30eaead8b4855ac34dc4a8c7e0f5ca4506c56ac3
+=======
+>>>>>>> 02efcfac1851156db25e35474b36e6456a385c07
+=======
+>>>>>>> 1739a7d6df7cb6b2ee1ef18779958d6b0ad4a903
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/css/ranking.css" afterPath="$PROJECT_DIR$/static/assets/css/ranking.css" />
+>>>>>>> 509c8be6a976fb356cd58204990b45ca39f96486
+=======
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/math_problem_app/templates/test.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/assets/global/css/main.css" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/math_admin/templates/basic_info/billing_info.html" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_admin/templates/basic_info/basic_form.html" afterPath="$PROJECT_DIR$/math_admin/templates/basic_info/basic_form.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_admin/templates/basic_info/image_list.html" afterPath="$PROJECT_DIR$/math_admin/templates/basic_info/image_list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_admin/templates/basic_info/profile.html" afterPath="$PROJECT_DIR$/math_admin/templates/basic_info/profile.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_admin/templates/default/head.html" afterPath="$PROJECT_DIR$/math_admin/templates/default/head.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_admin/urls.py" afterPath="$PROJECT_DIR$/math_admin/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_admin/views.py" afterPath="$PROJECT_DIR$/math_admin/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem/settings.py" afterPath="$PROJECT_DIR$/math_problem/settings.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem/urls.py" afterPath="$PROJECT_DIR$/math_problem/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/admin.py" afterPath="$PROJECT_DIR$/math_problem_app/admin.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/models.py" afterPath="$PROJECT_DIR$/math_problem_app/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/createTest.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/createTest.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/problemBox.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/problemBox.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/urls.py" afterPath="$PROJECT_DIR$/math_problem_app/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/views.py" afterPath="$PROJECT_DIR$/math_problem_app/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/css/test.css" afterPath="$PROJECT_DIR$/static/assets/css/test.css" />
+>>>>>>> cf100072e33124de9ba9f5a5c1f5e603c1788e10
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_admin/views.py" afterPath="$PROJECT_DIR$/math_admin/views.py" />
+>>>>>>> 90e13eda9e6dcc1fd5c55efeaba41b1ce464b1f0
+=======
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/math_problem_app/sendSms.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/math_problem_app/templates/testBox.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/math.iml" afterPath="$PROJECT_DIR$/.idea/math.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_admin/templates/basic_info/problem_form.html" afterPath="$PROJECT_DIR$/math_admin/templates/basic_info/problem_form.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_admin/views.py" afterPath="$PROJECT_DIR$/math_admin/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/models.py" afterPath="$PROJECT_DIR$/math_problem_app/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/board_content.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/board_content.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/createTest.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/createTest.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/mypage.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/mypage.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/problemBox.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/problemBox.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/signIn.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/signIn.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/signIn2.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/signIn2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/urls.py" afterPath="$PROJECT_DIR$/math_problem_app/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/views.py" afterPath="$PROJECT_DIR$/math_problem_app/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/css/board.css" afterPath="$PROJECT_DIR$/static/assets/css/board.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/css/mypage.css" afterPath="$PROJECT_DIR$/static/assets/css/mypage.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/css/ranking.css" afterPath="$PROJECT_DIR$/static/assets/css/ranking.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/css/test.css" afterPath="$PROJECT_DIR$/static/assets/css/test.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/js/models.js" afterPath="$PROJECT_DIR$/static/assets/js/models.js" />
+>>>>>>> 854f94ec530f6847172b3b1cb29b324ec3874307
+    </list>
+=======
+    <list default="true" id="d18057de-6140-4b45-8755-309202484dcf" name="Default" comment="" />
+>>>>>>> af408744a589a2004e87cf9a6e953d7f0942db7c
+=======
+    <list default="true" id="d18057de-6140-4b45-8755-309202484dcf" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/models.py" afterPath="$PROJECT_DIR$/math_problem_app/models.py" />
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem/settings.py" afterPath="$PROJECT_DIR$/math_problem/settings.py" />
+>>>>>>> d1228c081cf93456ad4409b8387aa04d1a35d54f
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_admin/templates/default/sidebar.html" afterPath="$PROJECT_DIR$/math_admin/templates/default/sidebar.html" />
+>>>>>>> dca5aed4e6612978ab07db89c36970d78ebc9877
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_admin/templates/basic_info/problem.html" afterPath="$PROJECT_DIR$/math_admin/templates/basic_info/problem.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_admin/templates/basic_info/problem_form.html" afterPath="$PROJECT_DIR$/math_admin/templates/basic_info/problem_form.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_admin/views.py" afterPath="$PROJECT_DIR$/math_admin/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/models.py" afterPath="$PROJECT_DIR$/math_problem_app/models.py" />
+=======
+>>>>>>> 9f62a7be5f0d4bfa070f6799e75eee7e6c6987fb
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/global/css/main.css" afterPath="$PROJECT_DIR$/static/assets/global/css/main.css" />
+>>>>>>> 64e5e3a510c5e75076aa6eeef05505d015d45b41
+    </list>
+>>>>>>> 77a9fc4cac722a08528a74b21e1279b291b3f92f
+=======
+    <list default="true" id="d18057de-6140-4b45-8755-309202484dcf" name="Default" comment="" />
+>>>>>>> 898ba69ef16606497bb34f4b55989442daa6d263
+=======
+    <list default="true" id="d18057de-6140-4b45-8755-309202484dcf" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_admin/templates/basic_info/problem.html" afterPath="$PROJECT_DIR$/math_admin/templates/basic_info/problem.html" />
+<<<<<<< HEAD
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_admin/templates/basic_info/problem_form.html" afterPath="$PROJECT_DIR$/math_admin/templates/basic_info/problem_form.html" />
+>>>>>>> 49f810a9ab147b7441a4cb1813b8a9792beaa87f
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/global/css/main.css" afterPath="$PROJECT_DIR$/static/assets/global/css/main.css" />
+=======
+=======
+>>>>>>> 88cbb4ba69b9c83627ab4263533c04e718503f2d
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/views.py" afterPath="$PROJECT_DIR$/math_problem_app/views.py" />
+>>>>>>> 30b886a871f80093a3ffc66726aa03424155438d
+=======
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/math_problem_app/templates/boardDetail.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/math_problem_app/templates/board_content.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/boardContent.html" />
+=======
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/math_problem_app/templates/comments.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/math_problem_app/templates/createBoard.html" />
+>>>>>>> ae771e2144b915ab3fbdb9ef2f6e7fe03d972e34
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/models.py" afterPath="$PROJECT_DIR$/math_problem_app/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/board.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/board.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/boardDetail.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/boardDetail.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/urls.py" afterPath="$PROJECT_DIR$/math_problem_app/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/views.py" afterPath="$PROJECT_DIR$/math_problem_app/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/css/board.css" afterPath="$PROJECT_DIR$/static/assets/css/board.css" />
+>>>>>>> cc7e69a7a38905e8ed0d97a6f0a8c5fbb1aff37f
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/models.py" afterPath="$PROJECT_DIR$/math_problem_app/models.py" />
+>>>>>>> e927395939a12808bb0305c6362950e71ea99c2b
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/comments.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/comments.html" />
+>>>>>>> cab69f614f7b4d8ce2cbd16a655124a1bb7c67b0
+=======
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/math_problem_app/templates/estimation.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/math_problem_app/templates/estimationResult.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/math_problem_app/templates/onlineEstimationStart.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/math_problem_app/templates/problem.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/admin.py" afterPath="$PROJECT_DIR$/math_problem_app/admin.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/models.py" afterPath="$PROJECT_DIR$/math_problem_app/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/estimationStart.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/estimationStart.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/head.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/head.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/mypage.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/mypage.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/problemBox.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/problemBox.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/test.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/test.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/urls.py" afterPath="$PROJECT_DIR$/math_problem_app/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/views.py" afterPath="$PROJECT_DIR$/math_problem_app/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/css/estimation.css" afterPath="$PROJECT_DIR$/static/assets/css/estimation.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/js/common.js" afterPath="$PROJECT_DIR$/static/assets/js/common.js" />
+>>>>>>> eff2eb6b11f96b64893ce9e371a0f43aacc75d82
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/main.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/main.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/views.py" afterPath="$PROJECT_DIR$/math_problem_app/views.py" />
+>>>>>>> 1090b43b3a1d280c6f05455b0e6706c06cfbed41
+=======
+=======
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/assets/img/triangle.jpeg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/assets/img/triangle.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/math_problem_app/templates/testProblems.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/math_problem_app/templates/testResult.html" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/math_problem_app/templates/test.html" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/admin.py" afterPath="$PROJECT_DIR$/math_problem_app/admin.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/models.py" afterPath="$PROJECT_DIR$/math_problem_app/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/createTest.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/createTest.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/estimation.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/estimation.html" />
+>>>>>>> 555568a0717c763dd8d836446b87c1facb9d2341
+=======
+>>>>>>> 9045f316427346d1dd512d81d86fbc336bad4479
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/estimationResult.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/estimationResult.html" />
+<<<<<<< HEAD
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/views.py" afterPath="$PROJECT_DIR$/math_problem_app/views.py" />
+<<<<<<< HEAD
+<<<<<<< HEAD
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/css/estimation.css" afterPath="$PROJECT_DIR$/static/assets/css/estimation.css" />
+>>>>>>> 13b9944c0097cd82bb3bed0b6d70ce76e30d17fd
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/css/test.css" afterPath="$PROJECT_DIR$/static/assets/css/test.css" />
+>>>>>>> 555568a0717c763dd8d836446b87c1facb9d2341
+=======
+>>>>>>> 9045f316427346d1dd512d81d86fbc336bad4479
+=======
+>>>>>>> 7c57c20c5011c0b534e9ce05fdff16b788109e0e
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/createTest.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/createTest.html" />
+>>>>>>> c55b14292502e5831bb69c4ca150d1c653548690
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/css/test.css" afterPath="$PROJECT_DIR$/static/assets/css/test.css" />
+>>>>>>> 7f8acc0f9ba67ac4485b3d5c5f2955c3d9726c3f
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/testBox.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/testBox.html" />
+>>>>>>> 845e77423328299cb0f3d57c0e218c3fb477f71c
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/models.py" afterPath="$PROJECT_DIR$/math_problem_app/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/createTest.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/createTest.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/estimationResult.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/estimationResult.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/header.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/header.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/login.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/login.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/main.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/main.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/mypage.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/mypage.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/ranking.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/ranking.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/signIn2.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/signIn2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/testResult.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/testResult.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/views.py" afterPath="$PROJECT_DIR$/math_problem_app/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/css/main.css" afterPath="$PROJECT_DIR$/static/assets/css/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/css/test.css" afterPath="$PROJECT_DIR$/static/assets/css/test.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/js/common.js" afterPath="$PROJECT_DIR$/static/assets/js/common.js" />
+>>>>>>> 22607e224ac97cc7b124baad9918bb86d5abd465
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/models.py" afterPath="$PROJECT_DIR$/math_problem_app/models.py" />
+>>>>>>> e1ef5a2d3d7b1f72ada48641032acc8651f9e375
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/ranking.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/ranking.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/views.py" afterPath="$PROJECT_DIR$/math_problem_app/views.py" />
+>>>>>>> b3f14519389556d4c22ec82ecb0d95436d78cefc
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/models.py" afterPath="$PROJECT_DIR$/math_problem_app/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/mypage.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/mypage.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/css/mypage.css" afterPath="$PROJECT_DIR$/static/assets/css/mypage.css" />
+>>>>>>> 701ef114b992dedb7d5dcb3043b2dc88119964a2
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/boardDetail.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/boardDetail.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/css/board.css" afterPath="$PROJECT_DIR$/static/assets/css/board.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/css/main.css" afterPath="$PROJECT_DIR$/static/assets/css/main.css" />
+>>>>>>> 6dba7bd5404261d6a8ca2a5de23a3fc8ece5afd6
+=======
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/math_problem_app/templates/recommend.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/createTest.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/createTest.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/header.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/header.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/urls.py" afterPath="$PROJECT_DIR$/math_problem_app/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/views.py" afterPath="$PROJECT_DIR$/math_problem_app/views.py" />
+>>>>>>> 2155fe5485ddaa537882c238aee744f02084a557
+=======
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/assets/img/arrow.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/assets/img/play-circle.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/assets/img/rocket.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/assets/img/star-circle.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/assets/css/recommend.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/head.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/head.html" />
+=======
+>>>>>>> d6bdd07223ebd3cd388942a987ac7fefa5642154
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/recommend.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/recommend.html" />
+>>>>>>> 561c82f81cfcfdbfcdd5c22d16e74c9f5f4c7d65
+=======
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/assets/global/img/login.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/assets/img/box-img.jpeg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/assets/img/star-circle.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/math_problem_app/templates/recommendPage.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/math_problem_app/templates/recommendTest.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/img/star-circle.png" afterPath="$PROJECT_DIR$/static/assets/img/star-circle.png" />
+=======
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/assets/img/blue-circle.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/assets/img/project-background.jpeg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/assets/img/project-background02.jpeg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/assets/img/project-background03.jpeg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/math_problem_app/templates/project.html" />
+>>>>>>> 4d1d64a456f1296cb72b43e9a8285c7caf75ee8e
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/header.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/header.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/recommend.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/recommend.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/urls.py" afterPath="$PROJECT_DIR$/math_problem_app/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/views.py" afterPath="$PROJECT_DIR$/math_problem_app/views.py" />
+=======
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/math_problem_app/templates/middleUnitLecture.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/math_problem_app/templates/smallUnitTest.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/admin.py" afterPath="$PROJECT_DIR$/math_problem_app/admin.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/models.py" afterPath="$PROJECT_DIR$/math_problem_app/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/board.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/board.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/project.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/project.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/ranking.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/ranking.html" />
+<<<<<<< HEAD
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/recommend.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/recommend.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/recommendPage.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/recommendPage.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/signIn2.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/signIn2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/urls.py" afterPath="$PROJECT_DIR$/math_problem_app/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/views.py" afterPath="$PROJECT_DIR$/math_problem_app/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/css/board.css" afterPath="$PROJECT_DIR$/static/assets/css/board.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/css/main.css" afterPath="$PROJECT_DIR$/static/assets/css/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/css/ranking.css" afterPath="$PROJECT_DIR$/static/assets/css/ranking.css" />
+>>>>>>> c7cb3f9774c8f7e8c6b8d1a480cbb336a82ca854
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/css/recommend.css" afterPath="$PROJECT_DIR$/static/assets/css/recommend.css" />
+<<<<<<< HEAD
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/pages/scripts/login-5.js" afterPath="$PROJECT_DIR$/static/assets/pages/scripts/login-5.js" />
+>>>>>>> 80093f2fc1e1beef754eeb015475610cdf54b723
+=======
+>>>>>>> 4d1d64a456f1296cb72b43e9a8285c7caf75ee8e
+=======
     <list default="true" id="d18057de-6140-4b45-8755-309202484dcf" name="Default" comment="c">
       <change afterPath="$PROJECT_DIR$/.idea/libraries/R_User_Library.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/math.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/math.iml" afterDir="false" />
@@ -16,22 +456,178 @@
 <<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.idea/math.iml" afterPath="$PROJECT_DIR$/.idea/math.iml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+>>>>>>> 5c05c60abfd9659c9bb9b491f77d97f5c94e6042
 =======
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/estimation.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/estimation.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/recommend.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/recommend.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/recommendTest.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/recommendTest.html" />
 >>>>>>> 1e7e7731868b02af890f9ad245b3a4ce1d6bd413
 =======
+<<<<<<< HEAD
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_admin/admin.py" afterPath="$PROJECT_DIR$/math_admin/admin.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_admin/templates/basic_info/problem.html" afterPath="$PROJECT_DIR$/math_admin/templates/basic_info/problem.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_admin/templates/basic_info/problem_form.html" afterPath="$PROJECT_DIR$/math_admin/templates/basic_info/problem_form.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_admin/views.py" afterPath="$PROJECT_DIR$/math_admin/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/admin.py" afterPath="$PROJECT_DIR$/math_problem_app/admin.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/models.py" afterPath="$PROJECT_DIR$/math_problem_app/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/header.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/header.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/project.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/project.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/views.py" afterPath="$PROJECT_DIR$/math_problem_app/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/css/recommend.css" afterPath="$PROJECT_DIR$/static/assets/css/recommend.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/js/common.js" afterPath="$PROJECT_DIR$/static/assets/js/common.js" />
+>>>>>>> 9345b940855b879c46110d891e3a35dfc19dd407
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/models.py" afterPath="$PROJECT_DIR$/math_problem_app/models.py" />
+>>>>>>> e28a0a4ef9c2f0908100c57e69235d12df16dcc6
+=======
+=======
+>>>>>>> 5c05c60abfd9659c9bb9b491f77d97f5c94e6042
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/css/recommend.css" afterPath="$PROJECT_DIR$/static/assets/css/recommend.css" />
 >>>>>>> e153e14161d8ee54c26db968d0851ef627f2e2ff
 =======
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/estimationResult.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/estimationResult.html" />
+<<<<<<< HEAD
+>>>>>>> 9edd8f9fe6c531f2459ac8c600a593ec2004c84c
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/ranking.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/ranking.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/css/ranking.css" afterPath="$PROJECT_DIR$/static/assets/css/ranking.css" />
+>>>>>>> 520bd32607856e76ffbbff7e01a41378f4e5eedf
+=======
+>>>>>>> 055650e0a90e366a7491027238222118c01a9aa7
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/ranking.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/ranking.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/css/ranking.css" afterPath="$PROJECT_DIR$/static/assets/css/ranking.css" />
+>>>>>>> a46c898a323eb5be6151112df9252b5e64c3b3eb
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/ranking.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/ranking.html" />
+>>>>>>> ec38a10854c7b392714ea40c8dc3f2cb664d5f57
+=======
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/math_problem_app/templates/paymentStart.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/assets/css/payment.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/img/group-7.png" afterPath="$PROJECT_DIR$/static/assets/img/group-7.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/img/group-7@2x.png" afterPath="$PROJECT_DIR$/static/assets/img/group-7@2x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/img/group-7@3x.png" afterPath="$PROJECT_DIR$/static/assets/img/group-7@3x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/img/group-8.png" afterPath="$PROJECT_DIR$/static/assets/img/group-8.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/img/group-8@2x.png" afterPath="$PROJECT_DIR$/static/assets/img/group-8@2x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/img/group-8@3x.png" afterPath="$PROJECT_DIR$/static/assets/img/group-8@3x.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/models.py" afterPath="$PROJECT_DIR$/math_problem_app/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/boardDetail.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/boardDetail.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/comments.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/comments.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/estimation.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/estimation.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/head.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/head.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/header.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/header.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/onlineEstimationStart.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/onlineEstimationStart.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/problemBox.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/problemBox.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/recommend.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/recommend.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/recommendPage.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/recommendPage.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/recommendTest.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/recommendTest.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/smallUnitTest.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/smallUnitTest.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/testProblems.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/testProblems.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/urls.py" afterPath="$PROJECT_DIR$/math_problem_app/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/views.py" afterPath="$PROJECT_DIR$/math_problem_app/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/css/board.css" afterPath="$PROJECT_DIR$/static/assets/css/board.css" />
+>>>>>>> bae71e7745caa9b6edd9ef499d2d82aa55934dad
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/recommend.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/recommend.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/js/common.js" afterPath="$PROJECT_DIR$/static/assets/js/common.js" />
+>>>>>>> 784d3054eac681c4e9d4027390a11cfbd53b40e7
+=======
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/math_admin/templates/consult_req/new_users.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/math_problem_app/templates/privacy.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/math_problem_app/templates/usage.html" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/math_admin/templates/consult_req/new_requests.html" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/math_admin/templates/consult_req/requests.html" afterPath="$PROJECT_DIR$/math_admin/templates/consult_req/users.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_admin/templates/default/sidebar.html" afterPath="$PROJECT_DIR$/math_admin/templates/default/sidebar.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_admin/urls.py" afterPath="$PROJECT_DIR$/math_admin/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_admin/views.py" afterPath="$PROJECT_DIR$/math_admin/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/models.py" afterPath="$PROJECT_DIR$/math_problem_app/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/footer.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/footer.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/main.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/main.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/mypage.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/mypage.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/signIn2.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/signIn2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/signIn3.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/signIn3.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/urls.py" afterPath="$PROJECT_DIR$/math_problem_app/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/views.py" afterPath="$PROJECT_DIR$/math_problem_app/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/css/main.css" afterPath="$PROJECT_DIR$/static/assets/css/main.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/js/models.js" afterPath="$PROJECT_DIR$/static/assets/js/models.js" />
+>>>>>>> 8d7a28592bd4de33b7695aaaa78ae34d027b3952
+    </list>
+>>>>>>> d9ad5fe1690b3b8257226eab52cebb30c5deb0dd
+=======
+    <list default="true" id="d18057de-6140-4b45-8755-309202484dcf" name="Default" comment="" />
+>>>>>>> 8561765384201a04bf2940ac9e9725db0994a281
+=======
+    <list default="true" id="d18057de-6140-4b45-8755-309202484dcf" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/mypage.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/mypage.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/css/main.css" afterPath="$PROJECT_DIR$/static/assets/css/main.css" />
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_admin/templates/default/sidebar.html" afterPath="$PROJECT_DIR$/math_admin/templates/default/sidebar.html" />
+>>>>>>> 2a44b1145cd4e52d273bdc1f5dd0691e975b5604
+=======
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/assets/img/trash-icon.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/math_problem_app/templates/lectureBox.html" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/math_problem_app/templates/mypage2.html" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_admin/templates/consult_req/new_users.html" afterPath="$PROJECT_DIR$/math_admin/templates/consult_req/new_users.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_admin/templates/consult_req/users.html" afterPath="$PROJECT_DIR$/math_admin/templates/consult_req/users.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_admin/templates/default/html_begin.html" afterPath="$PROJECT_DIR$/math_admin/templates/default/html_begin.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_admin/views.py" afterPath="$PROJECT_DIR$/math_admin/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/models.py" afterPath="$PROJECT_DIR$/math_problem_app/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/createTest.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/createTest.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/estimationResult.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/estimationResult.html" />
+=======
+>>>>>>> bb04dbbaa768b89f492d4e5eb7db9b57caf49ef6
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/lecture.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/lecture.html" />
+<<<<<<< HEAD
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/lectureBox.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/lectureBox.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/views.py" afterPath="$PROJECT_DIR$/math_problem_app/views.py" />
+<<<<<<< HEAD
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/css/lecture.css" afterPath="$PROJECT_DIR$/static/assets/css/lecture.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/css/test.css" afterPath="$PROJECT_DIR$/static/assets/css/test.css" />
+>>>>>>> 1c8d383176e0bb4e6254be081250248a874d0225
+=======
+>>>>>>> bb04dbbaa768b89f492d4e5eb7db9b57caf49ef6
+=======
+>>>>>>> d794244eebd657b26e8060572a267aab92759a29
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_admin/views.py" afterPath="$PROJECT_DIR$/math_admin/views.py" />
+>>>>>>> 20f36e3a9d4fe033c4bb118cdc8ef6cb4b3fbe22
+=======
+      <change type="DELETED" beforePath="$PROJECT_DIR$/math_admin/templates/board/after_image_list.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/math_admin/templates/board/before_image_list.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/math_admin/templates/consult_req/replied_requests.html" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_admin/templates/default/header.html" afterPath="$PROJECT_DIR$/math_admin/templates/default/header.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/footer.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/footer.html" />
+>>>>>>> 1fcbde4762e352e506d374b3b4d2336ca46ef83d
+=======
+    <list default="true" id="d18057de-6140-4b45-8755-309202484dcf" name="Default" comment="c">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_admin/views.py" afterPath="$PROJECT_DIR$/math_admin/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/mypage.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/mypage.html" />
+<<<<<<< HEAD
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/project.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/project.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/recommendPage.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/recommendPage.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/smallUnitTest.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/smallUnitTest.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/urls.py" afterPath="$PROJECT_DIR$/math_problem_app/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/views.py" afterPath="$PROJECT_DIR$/math_problem_app/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/assets/js/common.js" afterPath="$PROJECT_DIR$/static/assets/js/common.js" />
+>>>>>>> f7fbaab7e1081af67b9402b9242277a82cf14049
+=======
+>>>>>>> 45f967665647a8f3b873d6425270a15f5677e911
+    </list>
+>>>>>>> 2b602066c668a83efd2788e984431cf6b16c1943
+=======
 >>>>>>> 00eab6637fb76debb32aedeff43ed56b6b7a5ef8
 =======
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/math_problem_app/templates/ranking.html" afterPath="$PROJECT_DIR$/math_problem_app/templates/ranking.html" />
 >>>>>>> c487c20432b2a03ae2e16543167cdfcc396bf3cc
 >>>>>>> aa44b461099851d9eea2db7f3b7d5d925b0b3707
     </list>
+>>>>>>> 5c05c60abfd9659c9bb9b491f77d97f5c94e6042
 =======
     <list default="true" id="d18057de-6140-4b45-8755-309202484dcf" name="Default" comment="c" />
 >>>>>>> fd457a8be476f85f79115d33ffac0de1a94da79d
@@ -89,7 +685,258 @@
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
 <<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+          <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/math_admin/urls.py">
+              <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+                <state relative-caret-position="369">
+                  <caret line="92" column="30" lean-forward="false" selection-start-line="92" selection-start-column="30" selection-end-line="92" selection-end-column="30" />
+=======
+                <state relative-caret-position="384">
+                  <caret line="50" column="53" lean-forward="false" selection-start-line="50" selection-start-column="53" selection-end-line="50" selection-end-column="53" />
+>>>>>>> cd863948f01adfc14b30f98ee73f31a8806cae50
+=======
+                <state relative-caret-position="354">
+                  <caret line="48" column="59" lean-forward="true" selection-start-line="48" selection-start-column="59" selection-end-line="48" selection-end-column="59" />
+>>>>>>> bcce85e25647d045f4ba16625eca8af14750540f
+                  <folding />
+=======
+                <state relative-caret-position="339">
+                  <caret line="72" column="18" lean-forward="false" selection-start-line="72" selection-start-column="18" selection-end-line="72" selection-end-column="18" />
+                  <folding>
+                    <element signature="n#style#0;n#label#0;n#div#1;n#div#1;n#div#1;n#!!top" expanded="true" />
+                  </folding>
+>>>>>>> 23c7bac459f3a5c3149d629319973367f446a56f
+=======
+                <state relative-caret-position="225">
+                  <caret line="17" column="35" lean-forward="false" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
+=======
+                <state relative-caret-position="255">
+                  <caret line="19" column="44" lean-forward="false" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="44" />
+>>>>>>> fa5f6170e57a8c973f3ab117e9dfef8655f86992
+                  <folding />
+>>>>>>> 15d9bb2a17468e78532a39e20ba2aebdf887fa59
+=======
+                <state relative-caret-position="159">
+                  <caret line="52" column="59" lean-forward="true" selection-start-line="52" selection-start-column="59" selection-end-line="52" selection-end-column="59" />
+=======
+                <state relative-caret-position="849">
+                  <caret line="110" column="28" lean-forward="false" selection-start-line="110" selection-start-column="28" selection-end-line="110" selection-end-column="28" />
+>>>>>>> 02efcfac1851156db25e35474b36e6456a385c07
+=======
+                <state relative-caret-position="1500">
+<<<<<<< HEAD
+                  <caret line="100" column="54" lean-forward="true" selection-start-line="100" selection-start-column="54" selection-end-line="100" selection-end-column="54" />
+>>>>>>> 1739a7d6df7cb6b2ee1ef18779958d6b0ad4a903
+=======
+                  <caret line="100" column="54" lean-forward="false" selection-start-line="100" selection-start-column="54" selection-end-line="100" selection-end-column="54" />
+>>>>>>> 509c8be6a976fb356cd58204990b45ca39f96486
+=======
+                <state relative-caret-position="354">
+<<<<<<< HEAD
+                  <caret line="138" column="24" lean-forward="true" selection-start-line="138" selection-start-column="24" selection-end-line="138" selection-end-column="24" />
+>>>>>>> cf100072e33124de9ba9f5a5c1f5e603c1788e10
+=======
+                  <caret line="138" column="24" lean-forward="false" selection-start-line="138" selection-start-column="24" selection-end-line="138" selection-end-column="24" />
+>>>>>>> af408744a589a2004e87cf9a6e953d7f0942db7c
+                  <folding>
+                    <element signature="n#style#0;n#label#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                  </folding>
+>>>>>>> 30eaead8b4855ac34dc4a8c7e0f5ca4506c56ac3
+=======
+                <state relative-caret-position="150">
+                  <caret line="14" column="59" lean-forward="false" selection-start-line="14" selection-start-column="59" selection-end-line="14" selection-end-column="59" />
+                  <folding />
+>>>>>>> 77a9fc4cac722a08528a74b21e1279b291b3f92f
+                </state>
+              </provider>
+            </entry>
+          </file>
+=======
+>>>>>>> d1228c081cf93456ad4409b8387aa04d1a35d54f
+          <file leaf-file-name="sidebar.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/math_admin/templates/default/sidebar.html">
+              <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+                <state relative-caret-position="918">
+                  <caret line="65" column="10" lean-forward="true" selection-start-line="65" selection-start-column="10" selection-end-line="65" selection-end-column="10" />
+=======
+                <state relative-caret-position="498">
+                  <caret line="37" column="19" lean-forward="false" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="19" />
+>>>>>>> cd863948f01adfc14b30f98ee73f31a8806cae50
+=======
+                <state relative-caret-position="478">
+                  <caret line="64" column="126" lean-forward="false" selection-start-line="64" selection-start-column="126" selection-end-line="64" selection-end-column="126" />
+>>>>>>> bcce85e25647d045f4ba16625eca8af14750540f
+=======
+                <state relative-caret-position="540">
+<<<<<<< HEAD
+                  <caret line="36" column="11" lean-forward="true" selection-start-line="36" selection-start-column="11" selection-end-line="36" selection-end-column="11" />
+>>>>>>> 23c7bac459f3a5c3149d629319973367f446a56f
+=======
+                  <caret line="36" column="11" lean-forward="false" selection-start-line="36" selection-start-column="11" selection-end-line="36" selection-end-column="11" />
+>>>>>>> 5ada40acf65c947b206649e0c53d6d9518612f6d
+                  <folding>
+                    <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#p#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#p#1;n#div#1;n#div#1;n#!!top" expanded="true" />
+                  </folding>
+=======
+                <state relative-caret-position="345">
+                  <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+=======
+                <state relative-caret-position="360">
+                  <caret line="26" column="40" lean-forward="false" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
+>>>>>>> 30eaead8b4855ac34dc4a8c7e0f5ca4506c56ac3
+=======
+                <state relative-caret-position="270">
+<<<<<<< HEAD
+                  <caret line="18" column="19" lean-forward="true" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+>>>>>>> 02efcfac1851156db25e35474b36e6456a385c07
+=======
+                  <caret line="18" column="19" lean-forward="false" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+>>>>>>> 1739a7d6df7cb6b2ee1ef18779958d6b0ad4a903
+=======
+                <state relative-caret-position="300">
+                  <caret line="20" column="20" lean-forward="false" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
+>>>>>>> cf100072e33124de9ba9f5a5c1f5e603c1788e10
+=======
+                <state relative-caret-position="510">
+                  <caret line="36" column="10" lean-forward="true" selection-start-line="36" selection-start-column="10" selection-end-line="36" selection-end-column="10" />
+>>>>>>> af408744a589a2004e87cf9a6e953d7f0942db7c
+=======
+                <state relative-caret-position="680">
+<<<<<<< HEAD
+                  <caret line="106" column="32" lean-forward="true" selection-start-line="106" selection-start-column="32" selection-end-line="106" selection-end-column="32" />
+>>>>>>> 77a9fc4cac722a08528a74b21e1279b291b3f92f
+=======
+                  <caret line="106" column="32" lean-forward="false" selection-start-line="106" selection-start-column="32" selection-end-line="106" selection-end-column="32" />
+>>>>>>> 397490df99dfac142699e9ddf4853c92f4442625
+                  <folding />
+>>>>>>> 15d9bb2a17468e78532a39e20ba2aebdf887fa59
+=======
+          <file leaf-file-name="createTest.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/math_problem_app/templates/createTest.html">
+              <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+                <state relative-caret-position="2595">
+                  <caret line="184" column="33" lean-forward="false" selection-start-line="184" selection-start-column="33" selection-end-line="184" selection-end-column="33" />
+                  <folding>
+                    <element signature="n#style#0;n#label#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                  </folding>
+>>>>>>> 854f94ec530f6847172b3b1cb29b324ec3874307
+=======
+                <state relative-caret-position="789">
+                  <caret line="223" column="71" lean-forward="false" selection-start-line="223" selection-start-column="71" selection-end-line="223" selection-end-column="71" />
+                  <folding />
+=======
+                <state relative-caret-position="1808">
+                  <caret line="202" column="57" lean-forward="false" selection-start-line="202" selection-start-column="57" selection-end-line="202" selection-end-column="57" />
+=======
+                <state relative-caret-position="320">
+                  <caret line="107" column="17" lean-forward="true" selection-start-line="107" selection-start-column="17" selection-end-line="107" selection-end-column="17" />
+>>>>>>> 9045f316427346d1dd512d81d86fbc336bad4479
+=======
+          <file leaf-file-name="createTest.html" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/math_problem_app/templates/createTest.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="451">
+                  <caret line="186" column="33" lean-forward="true" selection-start-line="186" selection-start-column="33" selection-end-line="186" selection-end-column="33" />
+>>>>>>> c55b14292502e5831bb69c4ca150d1c653548690
+=======
+          <file leaf-file-name="createTest.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/math_problem_app/templates/createTest.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="511">
+                  <caret line="190" column="14" lean-forward="true" selection-start-line="190" selection-start-column="14" selection-end-line="190" selection-end-column="14" />
+>>>>>>> 845e77423328299cb0f3d57c0e218c3fb477f71c
+                  <folding>
+                    <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                  </folding>
+>>>>>>> 555568a0717c763dd8d836446b87c1facb9d2341
+=======
+          <file leaf-file-name="testResult.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/math_problem_app/templates/testResult.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding />
+>>>>>>> 22607e224ac97cc7b124baad9918bb86d5abd465
+=======
+          <file leaf-file-name="createTest.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/math_problem_app/templates/createTest.html">
+=======
+          <file leaf-file-name="signIn2.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/math_problem_app/templates/signIn2.html">
+>>>>>>> c7cb3f9774c8f7e8c6b8d1a480cbb336a82ca854
+=======
+          <file leaf-file-name="problemBox.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/math_problem_app/templates/problemBox.html">
+>>>>>>> bae71e7745caa9b6edd9ef499d2d82aa55934dad
+=======
+          <file leaf-file-name="estimation.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/math_problem_app/templates/estimation.html">
+>>>>>>> 5a0698a2857f02b9fff3987f32a1724d17a72aed
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="494">
+                  <caret line="238" column="54" lean-forward="false" selection-start-line="238" selection-start-column="54" selection-end-line="238" selection-end-column="54" />
+                  <folding />
+>>>>>>> 1e7e7731868b02af890f9ad245b3a4ce1d6bd413
+=======
+          <file leaf-file-name="signIn2.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/math_problem_app/templates/signIn2.html">
+=======
+          <file leaf-file-name="project.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/math_problem_app/templates/project.html">
+>>>>>>> 1c8d383176e0bb4e6254be081250248a874d0225
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="855">
+                  <caret line="57" column="22" lean-forward="false" selection-start-line="57" selection-start-column="22" selection-end-line="57" selection-end-column="22" />
+                  <folding>
+                    <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                  </folding>
+>>>>>>> 8d7a28592bd4de33b7695aaaa78ae34d027b3952
+=======
+          <file leaf-file-name="mypage.html" pinned="false" current-in-tab="true">
+=======
           <file leaf-file-name="mypage.html" pinned="false" current-in-tab="false">
+>>>>>>> 5c05c60abfd9659c9bb9b491f77d97f5c94e6042
             <entry file="file://$PROJECT_DIR$/math_problem_app/templates/mypage.html">
 =======
           <file leaf-file-name="signIn2.html" pinned="false" current-in-tab="false">
@@ -134,16 +981,129 @@
                 <state relative-caret-position="619">
                   <caret line="122" column="14" lean-forward="true" selection-start-line="122" selection-start-column="14" selection-end-line="122" selection-end-column="14" />
                   <folding />
+<<<<<<< HEAD
+>>>>>>> f7fbaab7e1081af67b9402b9242277a82cf14049
+=======
 >>>>>>> fd457a8be476f85f79115d33ffac0de1a94da79d
+>>>>>>> 5c05c60abfd9659c9bb9b491f77d97f5c94e6042
                 </state>
               </provider>
             </entry>
           </file>
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+          <file leaf-file-name="boardContent.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/math_problem_app/templates/boardContent.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="135">
+                  <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+=======
+                <state relative-caret-position="384">
+<<<<<<< HEAD
+                  <caret line="162" column="14" lean-forward="true" selection-start-line="162" selection-start-column="14" selection-end-line="162" selection-end-column="14" />
+>>>>>>> eff2eb6b11f96b64893ce9e371a0f43aacc75d82
+=======
+                  <caret line="162" column="14" lean-forward="false" selection-start-line="162" selection-start-column="14" selection-end-line="162" selection-end-column="14" />
+>>>>>>> 1090b43b3a1d280c6f05455b0e6706c06cfbed41
+=======
+          <file leaf-file-name="testProblems.html" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/math_problem_app/templates/testProblems.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="555">
+                  <caret line="37" column="9" lean-forward="true" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="9" />
+>>>>>>> 555568a0717c763dd8d836446b87c1facb9d2341
+=======
+          <file leaf-file-name="testProblems.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/math_problem_app/templates/testProblems.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="555">
+                  <caret line="37" column="9" lean-forward="false" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="9" />
+>>>>>>> 9045f316427346d1dd512d81d86fbc336bad4479
+                  <folding />
+>>>>>>> cc7e69a7a38905e8ed0d97a6f0a8c5fbb1aff37f
+=======
+          <file leaf-file-name="mypage.html" pinned="false" current-in-tab="false">
+=======
+          <file leaf-file-name="mypage.html" pinned="false" current-in-tab="true">
+>>>>>>> 701ef114b992dedb7d5dcb3043b2dc88119964a2
+=======
+=======
+>>>>>>> 2155fe5485ddaa537882c238aee744f02084a557
+          <file leaf-file-name="mypage.html" pinned="false" current-in-tab="false">
+>>>>>>> 6dba7bd5404261d6a8ca2a5de23a3fc8ece5afd6
+            <entry file="file://$PROJECT_DIR$/math_problem_app/templates/mypage.html">
+=======
+          <file leaf-file-name="createTest.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/math_problem_app/templates/createTest.html">
+>>>>>>> 80093f2fc1e1beef754eeb015475610cdf54b723
+=======
+=======
+>>>>>>> 1e7e7731868b02af890f9ad245b3a4ce1d6bd413
+          <file leaf-file-name="recommend.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/math_problem_app/templates/recommend.html">
+>>>>>>> 4d1d64a456f1296cb72b43e9a8285c7caf75ee8e
+=======
+          <file leaf-file-name="ranking.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/math_problem_app/templates/ranking.html">
+>>>>>>> c7cb3f9774c8f7e8c6b8d1a480cbb336a82ca854
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="150">
+                  <caret line="10" column="28" lean-forward="false" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
+                  <folding>
+                    <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#p#0;n#div#2;n#div#1;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#p#1;n#div#2;n#div#1;n#!!top" expanded="true" />
+                  </folding>
+>>>>>>> 22607e224ac97cc7b124baad9918bb86d5abd465
+=======
+          <file leaf-file-name="signIn.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/math_problem_app/templates/signIn.html">
+=======
+          <file leaf-file-name="estimation.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/math_problem_app/templates/estimation.html">
+>>>>>>> bae71e7745caa9b6edd9ef499d2d82aa55934dad
+=======
+          <file leaf-file-name="estimationResult.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/math_problem_app/templates/estimationResult.html">
+>>>>>>> 5a0698a2857f02b9fff3987f32a1724d17a72aed
+=======
+          <file leaf-file-name="signIn3.html" pinned="false" current-in-tab="true">
+=======
+          <file leaf-file-name="signIn3.html" pinned="false" current-in-tab="false">
+>>>>>>> 2a44b1145cd4e52d273bdc1f5dd0691e975b5604
+            <entry file="file://$PROJECT_DIR$/math_problem_app/templates/signIn3.html">
+>>>>>>> 8d7a28592bd4de33b7695aaaa78ae34d027b3952
+=======
+          <file leaf-file-name="mypage.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/math_problem_app/templates/mypage.html">
+>>>>>>> 1c8d383176e0bb4e6254be081250248a874d0225
+=======
           <file leaf-file-name="recommendTest.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/math_problem_app/templates/recommendTest.html">
+>>>>>>> f7fbaab7e1081af67b9402b9242277a82cf14049
               <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+                <state relative-caret-position="548">
+                  <caret line="41" column="11" lean-forward="false" selection-start-line="41" selection-start-column="11" selection-end-line="41" selection-end-column="11" />
+                  <folding />
+>>>>>>> 9edd8f9fe6c531f2459ac8c600a593ec2004c84c
+=======
                 <state relative-caret-position="861">
                   <caret line="41" column="11" selection-start-line="41" selection-start-column="11" selection-end-line="41" selection-end-column="11" />
+>>>>>>> 5c05c60abfd9659c9bb9b491f77d97f5c94e6042
                 </state>
               </provider>
             </entry>
@@ -182,8 +1142,210 @@
           <file leaf-file-name="new_users.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/math_admin/templates/consult_req/new_users.html">
               <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+                <state relative-caret-position="2903">
+                  <caret line="196" column="0" lean-forward="false" selection-start-line="196" selection-start-column="0" selection-end-line="196" selection-end-column="0" />
+                  <folding>
+                    <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="common.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/static/assets/js/common.js">
+              <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+                <state relative-caret-position="0">
+<<<<<<< HEAD
+                  <caret line="0" column="35" lean-forward="true" selection-start-line="0" selection-start-column="35" selection-end-line="0" selection-end-column="35" />
+=======
+                  <caret line="0" column="35" lean-forward="false" selection-start-line="0" selection-start-column="35" selection-end-line="0" selection-end-column="35" />
+>>>>>>> cd863948f01adfc14b30f98ee73f31a8806cae50
+=======
+                <state relative-caret-position="360">
+                  <caret line="24" column="16" lean-forward="false" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
+>>>>>>> 23c7bac459f3a5c3149d629319973367f446a56f
+=======
+                <state relative-caret-position="480">
+<<<<<<< HEAD
+                  <caret line="32" column="10" lean-forward="true" selection-start-line="32" selection-start-column="10" selection-end-line="32" selection-end-column="10" />
+>>>>>>> 15d9bb2a17468e78532a39e20ba2aebdf887fa59
+=======
+                  <caret line="32" column="10" lean-forward="false" selection-start-line="32" selection-start-column="10" selection-end-line="32" selection-end-column="10" />
+>>>>>>> fa5f6170e57a8c973f3ab117e9dfef8655f86992
+=======
+                <state relative-caret-position="30">
+                  <caret line="2" column="28" lean-forward="false" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
+>>>>>>> 30eaead8b4855ac34dc4a8c7e0f5ca4506c56ac3
+=======
+                <state relative-caret-position="954">
+                  <caret line="87" column="16" lean-forward="false" selection-start-line="87" selection-start-column="16" selection-end-line="87" selection-end-column="16" />
+>>>>>>> 02efcfac1851156db25e35474b36e6456a385c07
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/math_problem_app/templates/login.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="60">
+                  <caret line="4" column="50" lean-forward="true" selection-start-line="4" selection-start-column="50" selection-end-line="4" selection-end-column="50" />
+                  <folding />
+=======
+                <state relative-caret-position="420">
+                  <caret line="28" column="37" lean-forward="false" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="37" />
+=======
+                <state relative-caret-position="645">
+                  <caret line="43" column="47" lean-forward="false" selection-start-line="43" selection-start-column="47" selection-end-line="43" selection-end-column="47" />
+>>>>>>> cf100072e33124de9ba9f5a5c1f5e603c1788e10
+                  <folding>
+                    <element signature="n#style#0;n#div#0;n#html#0;n#!!top" expanded="true" />
+                  </folding>
+>>>>>>> 1739a7d6df7cb6b2ee1ef18779958d6b0ad4a903
+=======
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
+                <state relative-caret-position="120">
+                  <caret line="8" column="12" lean-forward="false" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
+>>>>>>> 77a9fc4cac722a08528a74b21e1279b291b3f92f
+                  <folding />
+>>>>>>> af408744a589a2004e87cf9a6e953d7f0942db7c
+=======
+                <state relative-caret-position="747">
+=======
+                <state relative-caret-position="5025">
+>>>>>>> cc7e69a7a38905e8ed0d97a6f0a8c5fbb1aff37f
+                  <caret line="335" column="25" lean-forward="false" selection-start-line="335" selection-start-column="25" selection-end-line="335" selection-end-column="25" />
+=======
+                <state relative-caret-position="2115">
+                  <caret line="141" column="4" lean-forward="false" selection-start-line="141" selection-start-column="4" selection-end-line="141" selection-end-column="4" />
+>>>>>>> ae771e2144b915ab3fbdb9ef2f6e7fe03d972e34
+=======
+                <state relative-caret-position="459">
+                  <caret line="38" column="101" lean-forward="true" selection-start-line="38" selection-start-column="101" selection-end-line="38" selection-end-column="101" />
+>>>>>>> eff2eb6b11f96b64893ce9e371a0f43aacc75d82
+=======
+                <state relative-caret-position="444">
+                  <caret line="37" column="20" lean-forward="false" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="20" />
+>>>>>>> 1090b43b3a1d280c6f05455b0e6706c06cfbed41
+                  <folding>
+                    <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#2;n#div#0;n#!!top" expanded="true" />
+                  </folding>
+>>>>>>> 854f94ec530f6847172b3b1cb29b324ec3874307
+=======
+                <state relative-caret-position="418">
+                  <caret line="150" column="31" lean-forward="false" selection-start-line="150" selection-start-column="31" selection-end-line="150" selection-end-column="31" />
+=======
+                <state relative-caret-position="559">
+=======
+                <state relative-caret-position="1785">
+>>>>>>> 701ef114b992dedb7d5dcb3043b2dc88119964a2
+                  <caret line="119" column="32" lean-forward="false" selection-start-line="119" selection-start-column="32" selection-end-line="119" selection-end-column="32" />
+>>>>>>> 22607e224ac97cc7b124baad9918bb86d5abd465
+=======
+                <state relative-caret-position="180">
+                  <caret line="12" column="19" lean-forward="true" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+>>>>>>> 80093f2fc1e1beef754eeb015475610cdf54b723
+=======
+                <state relative-caret-position="195">
+                  <caret line="13" column="16" lean-forward="false" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
+>>>>>>> 4d1d64a456f1296cb72b43e9a8285c7caf75ee8e
+=======
+                <state relative-caret-position="975">
+                  <caret line="65" column="13" lean-forward="false" selection-start-line="65" selection-start-column="13" selection-end-line="65" selection-end-column="13" />
+>>>>>>> 9345b940855b879c46110d891e3a35dfc19dd407
+=======
+                <state relative-caret-position="270">
+                  <caret line="18" column="28" lean-forward="true" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+>>>>>>> c7cb3f9774c8f7e8c6b8d1a480cbb336a82ca854
+=======
+                <state relative-caret-position="663">
+                  <caret line="97" column="20" lean-forward="false" selection-start-line="97" selection-start-column="20" selection-end-line="97" selection-end-column="20" />
+>>>>>>> 9edd8f9fe6c531f2459ac8c600a593ec2004c84c
+=======
+                <state relative-caret-position="678">
+                  <caret line="98" column="52" lean-forward="false" selection-start-line="98" selection-start-column="52" selection-end-line="98" selection-end-column="52" />
+>>>>>>> 00eab6637fb76debb32aedeff43ed56b6b7a5ef8
+=======
+                <state relative-caret-position="408">
+<<<<<<< HEAD
+                  <caret line="80" column="33" lean-forward="true" selection-start-line="80" selection-start-column="33" selection-end-line="80" selection-end-column="33" />
+>>>>>>> 520bd32607856e76ffbbff7e01a41378f4e5eedf
+=======
+                  <caret line="80" column="33" lean-forward="false" selection-start-line="80" selection-start-column="33" selection-end-line="80" selection-end-column="33" />
+>>>>>>> 055650e0a90e366a7491027238222118c01a9aa7
+=======
+                <state relative-caret-position="-51">
+                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> bae71e7745caa9b6edd9ef499d2d82aa55934dad
+=======
+                <state relative-caret-position="564">
+<<<<<<< HEAD
+                  <caret line="53" column="54" lean-forward="true" selection-start-line="53" selection-start-column="54" selection-end-line="53" selection-end-column="54" />
+>>>>>>> 5a0698a2857f02b9fff3987f32a1724d17a72aed
+=======
+                  <caret line="53" column="54" lean-forward="false" selection-start-line="53" selection-start-column="54" selection-end-line="53" selection-end-column="54" />
+>>>>>>> a51e455d412ecd331aac2214ee690c799c4128bd
+=======
+                <state relative-caret-position="315">
+                  <caret line="21" column="67" lean-forward="true" selection-start-line="21" selection-start-column="67" selection-end-line="21" selection-end-column="67" />
+>>>>>>> eaff5279f17f64b26fb28a434615a2cca135e536
+=======
+                <state relative-caret-position="474">
+                  <caret line="70" column="4" lean-forward="false" selection-start-line="70" selection-start-column="4" selection-end-line="70" selection-end-column="43" />
+>>>>>>> 8d7a28592bd4de33b7695aaaa78ae34d027b3952
+                  <folding />
+>>>>>>> 555568a0717c763dd8d836446b87c1facb9d2341
+=======
+                <state relative-caret-position="507">
+                  <caret line="62" column="53" lean-forward="false" selection-start-line="62" selection-start-column="53" selection-end-line="62" selection-end-column="53" />
+=======
+                <state relative-caret-position="552">
+=======
+                <state relative-caret-position="975">
+>>>>>>> f7fbaab7e1081af67b9402b9242277a82cf14049
+                  <caret line="65" column="52" lean-forward="false" selection-start-line="65" selection-start-column="52" selection-end-line="65" selection-end-column="52" />
+>>>>>>> bb04dbbaa768b89f492d4e5eb7db9b57caf49ef6
+=======
                 <state relative-caret-position="1365">
                   <caret line="65" column="52" selection-start-line="65" selection-start-column="52" selection-end-line="65" selection-end-column="52" />
+>>>>>>> 5c05c60abfd9659c9bb9b491f77d97f5c94e6042
                   <folding>
                     <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -194,6 +1356,7 @@
                     <element signature="n#style#0;n#th#6;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#th#7;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                   </folding>
+>>>>>>> 1c8d383176e0bb4e6254be081250248a874d0225
                 </state>
               </provider>
             </entry>
@@ -213,8 +1376,144 @@
           <file leaf-file-name="html_begin.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/math_admin/templates/default/html_begin.html">
               <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+                <state relative-caret-position="720">
+                  <caret line="48" column="7" lean-forward="false" selection-start-line="48" selection-start-column="7" selection-end-line="48" selection-end-column="7" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="problem_form.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/math_admin/templates/basic_info/problem_form.html">
+              <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+                <state relative-caret-position="778">
+                  <caret line="79" column="37" lean-forward="true" selection-start-line="79" selection-start-column="37" selection-end-line="79" selection-end-column="37" />
+                  <folding>
+                    <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#1;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#2;n#div#1;n#div#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#3;n#div#1;n#div#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#0;n#div#3;n#div#1;n#div#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#1;n#div#0;n#div#3;n#div#1;n#div#0;n#!!top" expanded="true" />
+                    <element signature="e#2422#2428#0#HTML" expanded="true" />
+                    <element signature="n#style#0;n#div#2;n#div#0;n#div#3;n#div#1;n#div#0;n#!!top" expanded="true" />
+                    <element signature="e#2638#2644#0#HTML" expanded="true" />
+                    <element signature="n#style#0;n#div#3;n#div#0;n#div#3;n#div#1;n#div#0;n#!!top" expanded="true" />
+                    <element signature="e#2845#2851#0#HTML" expanded="true" />
+                    <element signature="n#style#0;n#div#4;n#div#0;n#div#3;n#div#1;n#div#0;n#!!top" expanded="true" />
+                    <element signature="e#3066#3072#0#HTML" expanded="true" />
+                    <element signature="n#style#0;n#div#5;n#div#0;n#div#3;n#div#1;n#div#0;n#!!top" expanded="true" />
+                    <element signature="e#3279#3285#0#HTML" expanded="true" />
+                    <element signature="n#style#0;n#div#6;n#div#0;n#div#3;n#div#1;n#div#0;n#!!top" expanded="true" />
+                    <element signature="e#3486#3492#0#HTML" expanded="true" />
+                    <element signature="n#style#0;n#div#7;n#div#0;n#div#3;n#div#1;n#div#0;n#!!top" expanded="true" />
+                    <element signature="e#3694#3700#0#HTML" expanded="true" />
+                    <element signature="n#style#0;n#div#1;n#div#1;n#div#1;n#div#3;n#div#1;n#div#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#1;n#div#1;n#div#1;n#div#1;n#div#3;n#div#1;n#div#0;n#!!top" expanded="true" />
+                  </folding>
+=======
+                <state relative-caret-position="735">
+                  <caret line="49" column="6" lean-forward="false" selection-start-line="49" selection-start-column="6" selection-end-line="49" selection-end-column="6" />
+=======
+                <state relative-caret-position="465">
+                  <caret line="31" column="24" lean-forward="true" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="24" />
+>>>>>>> 1e7e7731868b02af890f9ad245b3a4ce1d6bd413
+=======
+                <state relative-caret-position="525">
+                  <caret line="35" column="11" lean-forward="false" selection-start-line="35" selection-start-column="11" selection-end-line="35" selection-end-column="11" />
+>>>>>>> 9345b940855b879c46110d891e3a35dfc19dd407
+                  <folding />
+>>>>>>> 80093f2fc1e1beef754eeb015475610cdf54b723
+=======
+                <state relative-caret-position="405">
+                  <caret line="27" column="20" lean-forward="false" selection-start-line="27" selection-start-column="20" selection-end-line="27" selection-end-column="20" />
+=======
+                <state relative-caret-position="582">
+                  <caret line="50" column="10" lean-forward="true" selection-start-line="50" selection-start-column="10" selection-end-line="50" selection-end-column="10" />
+>>>>>>> 520bd32607856e76ffbbff7e01a41378f4e5eedf
+=======
+                <state relative-caret-position="195">
+                  <caret line="13" column="39" lean-forward="true" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
+>>>>>>> 055650e0a90e366a7491027238222118c01a9aa7
+=======
+                <state relative-caret-position="120">
+<<<<<<< HEAD
+                  <caret line="9" column="78" lean-forward="false" selection-start-line="9" selection-start-column="78" selection-end-line="9" selection-end-column="78" />
+>>>>>>> a46c898a323eb5be6151112df9252b5e64c3b3eb
+=======
+                  <caret line="9" column="76" lean-forward="false" selection-start-line="9" selection-start-column="76" selection-end-line="9" selection-end-column="76" />
+>>>>>>> ec38a10854c7b392714ea40c8dc3f2cb664d5f57
+                  <folding>
+                    <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#p#0;n#div#1;n#div#1;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#div#1;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#div#2;n#div#0;n#div#2;n#div#1;n#!!top" expanded="true" />
+                  </folding>
+>>>>>>> c7cb3f9774c8f7e8c6b8d1a480cbb336a82ca854
+=======
+                <state relative-caret-position="587">
+                  <caret line="46" column="16" lean-forward="false" selection-start-line="46" selection-start-column="16" selection-end-line="46" selection-end-column="16" />
+=======
+                <state relative-caret-position="180">
+                  <caret line="12" column="14" lean-forward="true" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
+>>>>>>> 2b602066c668a83efd2788e984431cf6b16c1943
+                  <folding />
+>>>>>>> bae71e7745caa9b6edd9ef499d2d82aa55934dad
+=======
+                <state relative-caret-position="512">
+                  <caret line="193" column="33" lean-forward="true" selection-start-line="193" selection-start-column="33" selection-end-line="193" selection-end-column="33" />
+=======
+                <state relative-caret-position="519">
+                  <caret line="187" column="7" lean-forward="true" selection-start-line="187" selection-start-column="7" selection-end-line="187" selection-end-column="7" />
+>>>>>>> a51e455d412ecd331aac2214ee690c799c4128bd
+=======
+                <state relative-caret-position="748">
+                  <caret line="153" column="15" lean-forward="true" selection-start-line="153" selection-start-column="15" selection-end-line="153" selection-end-column="15" />
+>>>>>>> eaff5279f17f64b26fb28a434615a2cca135e536
+=======
+                <state relative-caret-position="567">
+                  <caret line="66" column="53" lean-forward="false" selection-start-line="66" selection-start-column="53" selection-end-line="66" selection-end-column="53" />
+>>>>>>> 8d7a28592bd4de33b7695aaaa78ae34d027b3952
+                  <folding>
+                    <element signature="n#style#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#th#2;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#th#3;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                    <element signature="n#style#0;n#th#4;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                  </folding>
+>>>>>>> 5a0698a2857f02b9fff3987f32a1724d17a72aed
+=======
+                <state relative-caret-position="175">
+=======
+                <state relative-caret-position="180">
+>>>>>>> f7fbaab7e1081af67b9402b9242277a82cf14049
+                  <caret line="12" column="75" lean-forward="false" selection-start-line="12" selection-start-column="75" selection-end-line="12" selection-end-column="75" />
+                  <folding />
+>>>>>>> 1c8d383176e0bb4e6254be081250248a874d0225
+=======
                 <state relative-caret-position="1008">
                   <caret line="48" column="7" selection-start-line="48" selection-start-column="7" selection-end-line="48" selection-end-column="7" />
+>>>>>>> 5c05c60abfd9659c9bb9b491f77d97f5c94e6042
                 </state>
               </provider>
             </entry>
@@ -614,6 +1913,158 @@
 >>>>>>> fd457a8be476f85f79115d33ffac0de1a94da79d
             </entry>
           </file>
+<<<<<<< HEAD
+          <file leaf-file-name="ranking.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/math_problem_app/templates/ranking.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="135">
+                  <caret line="9" column="31" lean-forward="false" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+                  <folding>
+                    <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/math_admin/views.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="469">
+                  <caret line="79" column="27" lean-forward="false" selection-start-line="79" selection-start-column="27" selection-end-line="79" selection-end-column="27" />
+                  <folding>
+                    <element signature="e#0#11#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+<<<<<<< HEAD
+          <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/math_admin/models.py">
+              <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+                <state relative-caret-position="594">
+                  <caret line="66" column="18" lean-forward="false" selection-start-line="66" selection-start-column="18" selection-end-line="66" selection-end-column="18" />
+                  <folding>
+                    <element signature="e#0#11#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="module_loading.py" pinned="false" current-in-tab="false">
+            <entry file="file:///usr/local/Cellar/python3/3.6.1/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/utils/module_loading.py">
+              <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+                <state relative-caret-position="325">
+<<<<<<< HEAD
+                  <caret line="100" column="20" lean-forward="true" selection-start-line="100" selection-start-column="20" selection-end-line="100" selection-end-column="20" />
+=======
+                  <caret line="100" column="20" lean-forward="false" selection-start-line="100" selection-start-column="20" selection-end-line="100" selection-end-column="20" />
+>>>>>>> cd863948f01adfc14b30f98ee73f31a8806cae50
+=======
+                <state relative-caret-position="430">
+                  <caret line="242" column="1" lean-forward="true" selection-start-line="242" selection-start-column="1" selection-end-line="242" selection-end-column="1" />
+>>>>>>> bcce85e25647d045f4ba16625eca8af14750540f
+=======
+                <state relative-caret-position="211">
+<<<<<<< HEAD
+                  <caret line="196" column="20" lean-forward="true" selection-start-line="196" selection-start-column="20" selection-end-line="196" selection-end-column="20" />
+>>>>>>> 23c7bac459f3a5c3149d629319973367f446a56f
+=======
+                  <caret line="196" column="20" lean-forward="false" selection-start-line="196" selection-start-column="20" selection-end-line="196" selection-end-column="20" />
+>>>>>>> 5ada40acf65c947b206649e0c53d6d9518612f6d
+=======
+                <state relative-caret-position="552">
+                  <caret line="110" column="1" lean-forward="true" selection-start-line="110" selection-start-column="1" selection-end-line="110" selection-end-column="1" />
+>>>>>>> 15d9bb2a17468e78532a39e20ba2aebdf887fa59
+=======
+                <state relative-caret-position="120">
+                  <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+>>>>>>> fa5f6170e57a8c973f3ab117e9dfef8655f86992
+=======
+                <state relative-caret-position="409">
+<<<<<<< HEAD
+                  <caret line="111" column="1" lean-forward="true" selection-start-line="111" selection-start-column="1" selection-end-line="111" selection-end-column="1" />
+>>>>>>> 454eaa9ec1855bd39422c5a16ea0c174fd222106
+=======
+                  <caret line="111" column="1" lean-forward="false" selection-start-line="111" selection-start-column="1" selection-end-line="111" selection-end-column="1" />
+>>>>>>> a0853ec6502be5e4136dd982cb955e72c3228d0c
+=======
+                <state relative-caret-position="855">
+                  <caret line="57" column="9" lean-forward="false" selection-start-line="57" selection-start-column="9" selection-end-line="57" selection-end-column="9" />
+>>>>>>> 30eaead8b4855ac34dc4a8c7e0f5ca4506c56ac3
+=======
+                <state relative-caret-position="507">
+=======
+                <state relative-caret-position="558">
+>>>>>>> 1739a7d6df7cb6b2ee1ef18779958d6b0ad4a903
+                  <caret line="379" column="13" lean-forward="false" selection-start-line="379" selection-start-column="13" selection-end-line="379" selection-end-column="13" />
+                  <folding />
+=======
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
+                <state relative-caret-position="699">
+                  <caret line="106" column="26" lean-forward="false" selection-start-line="106" selection-start-column="26" selection-end-line="106" selection-end-column="26" />
+>>>>>>> 77a9fc4cac722a08528a74b21e1279b291b3f92f
+=======
+                <state relative-caret-position="570">
+                  <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+>>>>>>> 90e13eda9e6dcc1fd5c55efeaba41b1ce464b1f0
+                  <folding>
+                    <element signature="e#0#11#0" expanded="true" />
+                  </folding>
+>>>>>>> cf100072e33124de9ba9f5a5c1f5e603c1788e10
+                </state>
+              </provider>
+            </entry>
+          </file>
+<<<<<<< HEAD
+          <file leaf-file-name="image_list.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/math_admin/templates/basic_info/image_list.html">
+              <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+                <state relative-caret-position="652">
+<<<<<<< HEAD
+                  <caret line="46" column="9" lean-forward="true" selection-start-line="46" selection-start-column="9" selection-end-line="46" selection-end-column="9" />
+>>>>>>> 02efcfac1851156db25e35474b36e6456a385c07
+=======
+                  <caret line="46" column="9" lean-forward="false" selection-start-line="46" selection-start-column="9" selection-end-line="46" selection-end-column="9" />
+>>>>>>> 1739a7d6df7cb6b2ee1ef18779958d6b0ad4a903
+=======
+                <state relative-caret-position="210">
+<<<<<<< HEAD
+                  <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+>>>>>>> cf100072e33124de9ba9f5a5c1f5e603c1788e10
+=======
+                  <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+>>>>>>> af408744a589a2004e87cf9a6e953d7f0942db7c
+=======
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> 26d4fdc46eea2e35d695458a50859014e8d0c966
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+=======
+>>>>>>> 90e13eda9e6dcc1fd5c55efeaba41b1ce464b1f0
+=======
+>>>>>>> 854f94ec530f6847172b3b1cb29b324ec3874307
+=======
+>>>>>>> 64e5e3a510c5e75076aa6eeef05505d015d45b41
         </leaf>
       </split-second>
     </splitter>
@@ -1609,6 +3060,839 @@
   </component>
   <component name="editorHistoryManager">
 <<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/math_problem_app/templates/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="50" lean-forward="false" selection-start-line="4" selection-start-column="50" selection-end-line="4" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/math_problem_app/templates/findPassword2.html">
+=======
+    <entry file="file://$PROJECT_DIR$/static/assets/css/board.css">
+>>>>>>> 2d6d8a6f84da254b887e7120800bf6344c96590c
+=======
+    <entry file="file://$PROJECT_DIR$/math_problem_app/templates/onlineEstimationStart.html">
+>>>>>>> 9edd8f9fe6c531f2459ac8c600a593ec2004c84c
+=======
+    <entry file="file://$PROJECT_DIR$/update_db.sh">
+>>>>>>> a51e455d412ecd331aac2214ee690c799c4128bd
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="652">
+          <caret line="46" column="9" lean-forward="false" selection-start-line="46" selection-start-column="9" selection-end-line="46" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/math_problem_app/templates/main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="26" lean-forward="false" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/math_problem_app/models.py">
+=======
+    <entry file="file://$PROJECT_DIR$/static/assets/css/lecture.css">
+>>>>>>> 9edd8f9fe6c531f2459ac8c600a593ec2004c84c
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1890">
+          <caret line="129" column="40" lean-forward="false" selection-start-line="129" selection-start-column="40" selection-end-line="129" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/math_problem_app/templates/mypage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="35" lean-forward="true" selection-start-line="0" selection-start-column="35" selection-end-line="0" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+=======
+>>>>>>> cd863948f01adfc14b30f98ee73f31a8806cae50
+    <entry file="file://$PROJECT_DIR$/math_problem_app/templates/signIn2.html">
+=======
+    <entry file="file://$PROJECT_DIR$/math_problem_app/templates/mypage.html">
+>>>>>>> bcce85e25647d045f4ba16625eca8af14750540f
+=======
+    <entry file="file://$PROJECT_DIR$/update_db.sh">
+>>>>>>> 784d3054eac681c4e9d4027390a11cfbd53b40e7
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="35" lean-forward="false" selection-start-line="0" selection-start-column="35" selection-end-line="0" selection-end-column="35" />
+=======
+    <entry file="file://$PROJECT_DIR$/math_problem_app/templates/signIn3.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="16" lean-forward="false" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
+>>>>>>> 23c7bac459f3a5c3149d629319973367f446a56f
+=======
+    <entry file="file://$PROJECT_DIR$/math_problem_app/templates/main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="44" lean-forward="true" selection-start-line="28" selection-start-column="44" selection-end-line="28" selection-end-column="44" />
+<<<<<<< HEAD
+>>>>>>> 15d9bb2a17468e78532a39e20ba2aebdf887fa59
+          <folding />
+=======
+>>>>>>> fa5f6170e57a8c973f3ab117e9dfef8655f86992
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/math_problem_app/templates/signIn.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="918">
+          <caret line="65" column="10" lean-forward="true" selection-start-line="65" selection-start-column="10" selection-end-line="65" selection-end-column="10" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#1;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#1;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#label#0;n#div#1;n#div#1;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#1;n#div#2;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/assets/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="100" column="20" lean-forward="true" selection-start-line="100" selection-start-column="20" selection-end-line="100" selection-end-column="20" />
+=======
+    <entry file="file://$PROJECT_DIR$/static/assets/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="325">
+          <caret line="100" column="20" lean-forward="false" selection-start-line="100" selection-start-column="20" selection-end-line="100" selection-end-column="20" />
+>>>>>>> cd863948f01adfc14b30f98ee73f31a8806cae50
+=======
+        <state relative-caret-position="430">
+          <caret line="242" column="1" lean-forward="true" selection-start-line="242" selection-start-column="1" selection-end-line="242" selection-end-column="1" />
+>>>>>>> bcce85e25647d045f4ba16625eca8af14750540f
+=======
+    <entry file="file://$PROJECT_DIR$/math_problem_app/templates/signIn2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="127" column="4" lean-forward="false" selection-start-line="127" selection-start-column="4" selection-end-line="127" selection-end-column="46" />
+>>>>>>> 23c7bac459f3a5c3149d629319973367f446a56f
+=======
+=======
+>>>>>>> 454eaa9ec1855bd39422c5a16ea0c174fd222106
+    <entry file="file://$PROJECT_DIR$/math_problem_app/templates/head.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="27" lean-forward="false" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="27" />
+<<<<<<< HEAD
+>>>>>>> 15d9bb2a17468e78532a39e20ba2aebdf887fa59
+=======
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.5/lib/python3.5/site-packages/django/db/models/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#53#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/math_admin/templates/basic_info/problem.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="51" column="48" lean-forward="false" selection-start-line="51" selection-start-column="48" selection-end-line="51" selection-end-column="48" />
+>>>>>>> bae71e7745caa9b6edd9ef499d2d82aa55934dad
+          <folding />
+=======
+>>>>>>> fa5f6170e57a8c973f3ab117e9dfef8655f86992
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/static/assets/js/common.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="3" column="9" lean-forward="false" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+=======
+>>>>>>> 30eaead8b4855ac34dc4a8c7e0f5ca4506c56ac3
+=======
+>>>>>>> 02efcfac1851156db25e35474b36e6456a385c07
+    <entry file="file://$PROJECT_DIR$/static/assets/js/models.js">
+=======
+    <entry file="file://$PROJECT_DIR$/static/assets/css/lecture.css">
+>>>>>>> cf100072e33124de9ba9f5a5c1f5e603c1788e10
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+        <state relative-caret-position="270">
+          <caret line="18" column="19" lean-forward="false" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+=======
+        <state relative-caret-position="615">
+          <caret line="41" column="3" lean-forward="false" selection-start-line="41" selection-start-column="3" selection-end-line="41" selection-end-column="3" />
+>>>>>>> 1e7e7731868b02af890f9ad245b3a4ce1d6bd413
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/math_problem_app/templates/signIn.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="954">
+          <caret line="87" column="16" lean-forward="false" selection-start-line="87" selection-start-column="16" selection-end-line="87" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/math_problem_app/templates/board.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="549">
+          <caret line="82" column="18" lean-forward="false" selection-start-line="82" selection-start-column="18" selection-end-line="82" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/assets/css/board.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+=======
+    <entry file="file://$PROJECT_DIR$/math_admin/templates/default/html_begin.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+>>>>>>> 8d7a28592bd4de33b7695aaaa78ae34d027b3952
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/math_problem_app/tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+=======
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/pycharm.jar!/resources/html5-schema/html5/block.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="57" column="16" lean-forward="false" selection-start-line="57" selection-start-column="16" selection-end-line="57" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+=======
+>>>>>>> 5a0698a2857f02b9fff3987f32a1724d17a72aed
+    <entry file="file://$PROJECT_DIR$/math_admin/templates/default/sidebar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="9" column="27" lean-forward="false" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/assets/js/common.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="975">
+          <caret line="65" column="13" lean-forward="false" selection-start-line="65" selection-start-column="13" selection-end-line="65" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/update_db.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+<<<<<<< HEAD
+          <folding />
+>>>>>>> bae71e7745caa9b6edd9ef499d2d82aa55934dad
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/math_problem_app/templates/mypage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding>
+            <marker date="1522152563959" expanded="false" signature="3397:3417" ph="..." />
+            <marker date="1522152563959" expanded="false" signature="7554:7619" ph="..." />
+          </folding>
+=======
+>>>>>>> 5a0698a2857f02b9fff3987f32a1724d17a72aed
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/static/assets/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="558">
+          <caret line="379" column="13" lean-forward="false" selection-start-line="379" selection-start-column="13" selection-end-line="379" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+=======
+>>>>>>> 77a9fc4cac722a08528a74b21e1279b291b3f92f
+    <entry file="file://$PROJECT_DIR$/math_problem_app/templates/header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1500">
+          <caret line="100" column="54" lean-forward="false" selection-start-line="100" selection-start-column="54" selection-end-line="100" selection-end-column="54" />
+          <folding>
+            <marker date="1520513627000" expanded="false" signature="1266:1276" ph="..." />
+          </folding>
+=======
+    <entry file="file://$PROJECT_DIR$/math_problem_app/templates/estimationStart.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="735">
+          <caret line="49" column="6" lean-forward="false" selection-start-line="49" selection-start-column="6" selection-end-line="49" selection-end-column="6" />
+          <folding />
+>>>>>>> c7cb3f9774c8f7e8c6b8d1a480cbb336a82ca854
+        </state>
+      </provider>
+    </entry>
+=======
+>>>>>>> 26d4fdc46eea2e35d695458a50859014e8d0c966
+    <entry file="file://$PROJECT_DIR$/math_problem_app/templates/ranking.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="42" column="54" lean-forward="true" selection-start-line="42" selection-start-column="54" selection-end-line="42" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+=======
+>>>>>>> d1228c081cf93456ad4409b8387aa04d1a35d54f
+    <entry file="file://$PROJECT_DIR$/math_problem_app/templates/lecture.html">
+=======
+    <entry file="file://$PROJECT_DIR$/math_admin/templates/basic_info/image_list.html">
+>>>>>>> 854f94ec530f6847172b3b1cb29b324ec3874307
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/math_admin/templates/default/head.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="34" column="53" lean-forward="false" selection-start-line="34" selection-start-column="53" selection-end-line="34" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/math_problem_app/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="28" lean-forward="false" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#32#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+=======
+>>>>>>> 64e5e3a510c5e75076aa6eeef05505d015d45b41
+    <entry file="file://$PROJECT_DIR$/math_problem_app/migrations/0003_auto_20180302_1417.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+=======
+>>>>>>> 49f810a9ab147b7441a4cb1813b8a9792beaa87f
+    <entry file="file://$PROJECT_DIR$/math_problem_app/migrations/0002_auto_20180301_1027.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+=======
+>>>>>>> 30b886a871f80093a3ffc66726aa03424155438d
+    <entry file="file://$PROJECT_DIR$/math_problem_app/migrations/0004_auto_20180302_1538.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="44" column="22" lean-forward="true" selection-start-line="44" selection-start-column="22" selection-end-line="44" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/math_problem_app/migrations/0005_auto_20180303_1338.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+=======
+>>>>>>> cc7e69a7a38905e8ed0d97a6f0a8c5fbb1aff37f
+    <entry file="file://$PROJECT_DIR$/math_problem_app/migrations/0007_auto_20180309_1203.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="36" column="10" lean-forward="true" selection-start-line="36" selection-start-column="10" selection-end-line="36" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/math_problem_app/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/static/assets/css/mypage.css">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+        <state relative-caret-position="369">
+          <caret line="92" column="30" lean-forward="false" selection-start-line="92" selection-start-column="30" selection-end-line="92" selection-end-column="30" />
+=======
+        <state relative-caret-position="384">
+          <caret line="50" column="53" lean-forward="false" selection-start-line="50" selection-start-column="53" selection-end-line="50" selection-end-column="53" />
+>>>>>>> cd863948f01adfc14b30f98ee73f31a8806cae50
+          <folding />
+=======
+        <state relative-caret-position="469">
+          <caret line="118" column="55" lean-forward="true" selection-start-line="118" selection-start-column="55" selection-end-line="118" selection-end-column="55" />
+=======
+        <state relative-caret-position="645">
+<<<<<<< HEAD
+          <caret line="254" column="18" lean-forward="true" selection-start-line="254" selection-start-column="18" selection-end-line="254" selection-end-column="18" />
+>>>>>>> 23c7bac459f3a5c3149d629319973367f446a56f
+=======
+          <caret line="254" column="18" lean-forward="false" selection-start-line="254" selection-start-column="18" selection-end-line="254" selection-end-column="18" />
+>>>>>>> 5ada40acf65c947b206649e0c53d6d9518612f6d
+          <folding>
+            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#2;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#3;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#3;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#3;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#1;n#div#3;n#!!top" expanded="true" />
+          </folding>
+>>>>>>> bcce85e25647d045f4ba16625eca8af14750540f
+=======
+        <state relative-caret-position="345">
+          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+=======
+        <state relative-caret-position="375">
+<<<<<<< HEAD
+          <caret line="25" column="1" lean-forward="true" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
+>>>>>>> fa5f6170e57a8c973f3ab117e9dfef8655f86992
+=======
+          <caret line="25" column="1" lean-forward="false" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
+>>>>>>> 454eaa9ec1855bd39422c5a16ea0c174fd222106
+          <folding />
+>>>>>>> 15d9bb2a17468e78532a39e20ba2aebdf887fa59
+        </state>
+      </provider>
+    </entry>
+=======
+>>>>>>> a0853ec6502be5e4136dd982cb955e72c3228d0c
+    <entry file="file://$PROJECT_DIR$/math_problem_app/templates/createLecture.html">
+=======
+    <entry file="file://$PROJECT_DIR$/math_problem_app/templates/findPassword2.html">
+>>>>>>> 30eaead8b4855ac34dc4a8c7e0f5ca4506c56ac3
+=======
+    <entry file="file://$PROJECT_DIR$/math_problem_app/admin.py">
+>>>>>>> 02efcfac1851156db25e35474b36e6456a385c07
+=======
+=======
+>>>>>>> 77a9fc4cac722a08528a74b21e1279b291b3f92f
+    <entry file="file:///usr/local/Cellar/python3/3.6.1/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/django/utils/module_loading.py">
+>>>>>>> cf100072e33124de9ba9f5a5c1f5e603c1788e10
+=======
+    <entry file="file://$PROJECT_DIR$/math_problem_app/migrations/0006_auto_20180307_1451.py">
+>>>>>>> 854f94ec530f6847172b3b1cb29b324ec3874307
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="35" column="22" lean-forward="true" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/math_admin/templates/board/gallery_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/math_admin/templates/board/board_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="40" lean-forward="false" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/math_admin/templates/board/create_board.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="759">
+          <caret line="63" column="35" lean-forward="false" selection-start-line="63" selection-start-column="35" selection-end-line="63" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+=======
+>>>>>>> ae771e2144b915ab3fbdb9ef2f6e7fe03d972e34
+    <entry file="file:///usr/local/lib/python3.6/site-packages/django/conf/urls/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="95" column="0" lean-forward="false" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+=======
+>>>>>>> cab69f614f7b4d8ce2cbd16a655124a1bb7c67b0
+    <entry file="file:///usr/local/lib/python3.6/site-packages/django/db/models/query_utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="54" column="8" lean-forward="false" selection-start-line="54" selection-start-column="8" selection-end-line="54" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/math_problem_app/migrations/0001_initial.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/math_problem_app/templates/signIn.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/math_problem/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="744">
+          <caret line="128" column="23" lean-forward="false" selection-start-line="128" selection-start-column="23" selection-end-line="128" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ssh.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="0" lean-forward="true" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/math_admin/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/assets/img/group-3@3x.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/math_problem_app/templates/mypage2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/assets/css/mypage.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="750">
+          <caret line="50" column="17" lean-forward="true" selection-start-line="50" selection-start-column="17" selection-end-line="50" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/math_problem_app/templates/mypage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="14" lean-forward="false" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/pycharm.jar!/resources/html5-schema/html5/common.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="123" column="24" lean-forward="false" selection-start-line="123" selection-start-column="24" selection-end-line="124" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/math_problem_app/templates/estimationStart.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/assets/css/lecture.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="1" lean-forward="false" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+=======
+>>>>>>> eff2eb6b11f96b64893ce9e371a0f43aacc75d82
+    <entry file="file://$PROJECT_DIR$/static/assets/css/test.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="51" column="10" lean-forward="false" selection-start-line="51" selection-start-column="10" selection-end-line="51" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/math_problem_app/templates/testBox.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="9" lean-forward="false" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/math_problem_app/templates/createLecture.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5190">
+          <caret line="346" column="8" lean-forward="false" selection-start-line="346" selection-start-column="8" selection-end-line="354" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+=======
+>>>>>>> 555568a0717c763dd8d836446b87c1facb9d2341
+    <entry file="file://$PROJECT_DIR$/math_problem_app/send_sms.py" />
+=======
+>>>>>>> 9045f316427346d1dd512d81d86fbc336bad4479
+    <entry file="file://$PROJECT_DIR$/math_problem_app/cool_sms.py" />
+=======
+>>>>>>> 22607e224ac97cc7b124baad9918bb86d5abd465
+    <entry file="file://$PROJECT_DIR$/math_problem_app/sendSms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#10#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/assets/css/ranking.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="15" lean-forward="false" selection-start-line="3" selection-start-column="15" selection-end-line="3" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+=======
+>>>>>>> 701ef114b992dedb7d5dcb3043b2dc88119964a2
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/EcmaScript.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+=======
+>>>>>>> 2155fe5485ddaa537882c238aee744f02084a557
+    <entry file="file://$PROJECT_DIR$/math_admin/templates/default/head.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="34" column="49" lean-forward="false" selection-start-line="34" selection-start-column="49" selection-end-line="34" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/assets/js/models.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="4" lean-forward="false" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+=======
+>>>>>>> 561c82f81cfcfdbfcdd5c22d16e74c9f5f4c7d65
+    <entry file="file://$PROJECT_DIR$/static/assets/web/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/assets/global/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/math_admin/templates/metronic_index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/math_admin/templates/basic_info/image_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/math_admin/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="8" column="15" lean-forward="false" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+=======
+>>>>>>> 80093f2fc1e1beef754eeb015475610cdf54b723
+    <entry file="file://$PROJECT_DIR$/math_admin/templates/default/sidebar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1695">
+          <caret line="113" column="15" lean-forward="false" selection-start-line="113" selection-start-column="15" selection-end-line="113" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/math_admin/templates/basic_info/problem_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="15" lean-forward="false" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/pycharm.jar!/resources/html5-schema/html5/phrase.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="328" column="16" lean-forward="false" selection-start-line="328" selection-start-column="16" selection-end-line="328" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/math_admin/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="789">
+          <caret line="122" column="0" lean-forward="false" selection-start-line="122" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#11#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/pycharm.jar!/resources/html5-schema/html5/web-forms2.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="71" column="18" lean-forward="false" selection-start-line="71" selection-start-column="18" selection-end-line="71" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/math_problem_app/templates/board.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2115">
+          <caret line="141" column="4" lean-forward="false" selection-start-line="141" selection-start-column="4" selection-end-line="141" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/math_problem_app/templates/boardContent.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/math_problem_app/templates/comments.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="28" lean-forward="true" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+=======
+>>>>>>> 4d1d64a456f1296cb72b43e9a8285c7caf75ee8e
+=======
     <entry file="file://$PROJECT_DIR$/math_problem/settings.py">
 =======
 <<<<<<< HEAD
@@ -1619,6 +3903,7 @@
         <state relative-caret-position="75">
           <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
 =======
+>>>>>>> 5c05c60abfd9659c9bb9b491f77d97f5c94e6042
     <entry file="file://$PROJECT_DIR$/static/assets/img/desktop@3x.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1632,6 +3917,403 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/assets/css/estimation.css">
+<<<<<<< HEAD
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="975">
+          <caret line="65" column="18" lean-forward="false" selection-start-line="65" selection-start-column="18" selection-end-line="65" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/math_problem_app/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="12" column="26" lean-forward="false" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/update_db.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/math_problem_app/templates/createLecture.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="645">
+          <caret line="43" column="51" lean-forward="false" selection-start-line="43" selection-start-column="51" selection-end-line="43" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/math_problem_app/templates/createBoard.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="36" column="17" lean-forward="false" selection-start-line="36" selection-start-column="17" selection-end-line="36" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/math_problem_app/templates/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="39" column="14" lean-forward="false" selection-start-line="39" selection-start-column="14" selection-end-line="39" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/math_problem_app/templates/testResult.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/assets/js/common.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="41" column="3" lean-forward="false" selection-start-line="41" selection-start-column="3" selection-end-line="41" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/math_problem_app/templates/signIn2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1785">
+          <caret line="119" column="32" lean-forward="false" selection-start-line="119" selection-start-column="32" selection-end-line="119" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+=======
+>>>>>>> 9345b940855b879c46110d891e3a35dfc19dd407
+    <entry file="file://$PROJECT_DIR$/static/assets/css/mypage.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="826">
+          <caret line="66" column="13" lean-forward="false" selection-start-line="66" selection-start-column="13" selection-end-line="66" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/assets/css/board.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="68" column="67" lean-forward="false" selection-start-line="68" selection-start-column="67" selection-end-line="68" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/math_problem_app/templates/boardDetail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="39" column="30" lean-forward="false" selection-start-line="39" selection-start-column="30" selection-end-line="39" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/assets/img/arrow.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/math_problem_app/templates/head.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="51" lean-forward="false" selection-start-line="26" selection-start-column="51" selection-end-line="26" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/assets/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1875">
+          <caret line="125" column="23" lean-forward="false" selection-start-line="125" selection-start-column="23" selection-end-line="125" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/assets/css/test.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="780">
+          <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/assets/pages/css/login-5.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="519">
+          <caret line="122" column="19" lean-forward="false" selection-start-line="122" selection-start-column="19" selection-end-line="122" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/assets/pages/css/login-5.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="3427" lean-forward="false" selection-start-line="0" selection-start-column="3427" selection-end-line="0" selection-end-column="3427" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/assets/pages/scripts/login-5.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="741">
+          <caret line="99" column="17" lean-forward="false" selection-start-line="99" selection-start-column="17" selection-end-line="99" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/math_admin/templates/login/page_user_login_5.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="549">
+          <caret line="67" column="47" lean-forward="true" selection-start-line="67" selection-start-column="47" selection-end-line="67" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/math_problem_app/templates/main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="954">
+          <caret line="88" column="24" lean-forward="false" selection-start-line="88" selection-start-column="24" selection-end-line="88" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/math_problem_app/templates/ranking.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="780">
+          <caret line="52" column="61" lean-forward="false" selection-start-line="52" selection-start-column="61" selection-end-line="52" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/math_problem_app/templates/problem.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="15" lean-forward="false" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/math_problem_app/templates/estimationStart.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="735">
+          <caret line="49" column="6" lean-forward="false" selection-start-line="49" selection-start-column="6" selection-end-line="49" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/math_problem_app/templates/onlineEstimationStart.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/math_problem_app/templates/estimationResult.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="369">
+          <caret line="119" column="52" lean-forward="false" selection-start-line="119" selection-start-column="52" selection-end-line="119" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/assets/css/lecture.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" column="1" lean-forward="false" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/assets/img/group@3x.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/pycharm.jar!/resources/html5-schema/html5/embed.rnc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="16" lean-forward="false" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/math_problem_app/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+<<<<<<< HEAD
+        <state relative-caret-position="778">
+          <caret line="79" column="37" lean-forward="true" selection-start-line="79" selection-start-column="37" selection-end-line="79" selection-end-column="37" />
+=======
+        <state relative-caret-position="495">
+          <caret line="33" column="0" lean-forward="true" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+=======
+        <state relative-caret-position="729">
+          <caret line="583" column="8" lean-forward="false" selection-start-line="583" selection-start-column="8" selection-end-line="583" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+=======
+>>>>>>> 9345b940855b879c46110d891e3a35dfc19dd407
+    <entry file="file://$PROJECT_DIR$/math_problem_app/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="41" column="12" lean-forward="false" selection-start-line="41" selection-start-column="12" selection-end-line="41" selection-end-column="12" />
+>>>>>>> 4d1d64a456f1296cb72b43e9a8285c7caf75ee8e
+          <folding />
+        </state>
+      </provider>
+    </entry>
+=======
+>>>>>>> c7cb3f9774c8f7e8c6b8d1a480cbb336a82ca854
+    <entry file="file://$PROJECT_DIR$/static/assets/img/lecture-line03.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/assets/img/main-slide01.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/assets/img/ranking-icon.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/static/assets/img/sign-in-complete.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/math_problem_app/templates/recommendPage.html">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
+<<<<<<< HEAD
+        <state relative-caret-position="471">
+          <caret line="64" column="34" lean-forward="true" selection-start-line="64" selection-start-column="34" selection-end-line="64" selection-end-column="34" />
+>>>>>>> 80093f2fc1e1beef754eeb015475610cdf54b723
+=======
+        <state relative-caret-position="414">
+=======
+        <state relative-caret-position="960">
+>>>>>>> 9345b940855b879c46110d891e3a35dfc19dd407
+          <caret line="64" column="34" lean-forward="false" selection-start-line="64" selection-start-column="34" selection-end-line="64" selection-end-column="34" />
+>>>>>>> 4d1d64a456f1296cb72b43e9a8285c7caf75ee8e
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#1;n#div#3;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/math_problem_app/templates/recommend.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1110">
+          <caret line="74" column="16" lean-forward="false" selection-start-line="74" selection-start-column="16" selection-end-line="74" selection-end-column="16" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+=======
+>>>>>>> c7cb3f9774c8f7e8c6b8d1a480cbb336a82ca854
+    <entry file="file://$PROJECT_DIR$/math_problem_app/templates/recommendTest.html">
+=======
+    <entry file="file://$PROJECT_DIR$/math_problem/settings.py">
+>>>>>>> bae71e7745caa9b6edd9ef499d2d82aa55934dad
+=======
+    <entry file="file://$PROJECT_DIR$/math_admin/templates/default/html_end.html">
+>>>>>>> 8d7a28592bd4de33b7695aaaa78ae34d027b3952
+=======
+    <entry file="file://$PROJECT_DIR$/math_problem_app/templates/smallUnitTest.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="8" lean-forward="false" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/math_problem_app/templates/recommendPage.html">
+>>>>>>> 1c8d383176e0bb4e6254be081250248a874d0225
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="14" lean-forward="false" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/math_problem_app/templates/estimation.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="238" column="54" lean-forward="false" selection-start-line="238" selection-start-column="54" selection-end-line="238" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/math_problem_app/templates/onlineEstimationStart.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="27" column="54" lean-forward="false" selection-start-line="27" selection-start-column="54" selection-end-line="27" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+=======
+>>>>>>> 1fcbde4762e352e506d374b3b4d2336ca46ef83d
+    <entry file="file://$PROJECT_DIR$/math_problem_app/templates/recommendTest.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="429">
+          <caret line="35" column="12" lean-forward="false" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/math_admin/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/math_problem_app/templates/head.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="819">
+          <caret line="72" column="6" lean-forward="false" selection-start-line="72" selection-start-column="6" selection-end-line="72" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/assets/css/mypage.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="768">
+          <caret line="61" column="1" lean-forward="false" selection-start-line="61" selection-start-column="1" selection-end-line="61" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/assets/css/recommend.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="474">
+          <caret line="167" column="21" lean-forward="false" selection-start-line="167" selection-start-column="21" selection-end-line="167" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/math_problem_app/templates/paymentStart.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="6" lean-forward="false" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/math_admin/templates/basic_info/image_list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+=======
+>>>>>>> f7fbaab7e1081af67b9402b9242277a82cf14049
+    <entry file="file://$PROJECT_DIR$/math_problem_app/templates/recommend.html">
+=======
+>>>>>>> 5c05c60abfd9659c9bb9b491f77d97f5c94e6042
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="975">
           <caret line="65" column="18" lean-forward="false" selection-start-line="65" selection-start-column="18" selection-end-line="65" selection-end-column="18" />
