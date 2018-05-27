@@ -10,7 +10,7 @@ from math_problem_app.models import Problem, ProblemUnit, Photo, Board, User, MI
     ProblemMiddleUnit, ProblemSmallUnit
 from math_problem_app.views import getLoginUser
 
-
+@csrf_exempt
 def main(request):
     if not User.objects.filter(email='osiriskgn93@gmail.com'):
         user = User(email='osiriskgn93@gmail.com').store()
@@ -161,4 +161,3 @@ def id_certificate(request):
     user.school = str(request.GET.get('schoolName'))
     user.save()
     return returnHttpResponse({'msg': user.id + '님의 학생증 인증이 완료 되었습니다.'})
-
