@@ -3,6 +3,18 @@ body {
   background-image: linear-gradient(to bottom, #f9f4e7, #c0d0da 51%, #adc4be);
 }
 
+.header {
+  text-align: center;
+  display: inline-block;
+  margin-left: 0.5em;
+  padding: 0.5em 1.5em;
+  letter-spacing: 0.2em;
+  text-decoration: none;
+  font-size: 0.9em;
+  font-weight: 600;
+  outline: 0;
+}
+
 .x-large-font {
   font-size: 36px;
 }
