@@ -22,31 +22,53 @@
     </header> -->
 
 <div class="header">
+    <div id="head_position"class="row">
         <div id="logo-img">
-            <img class="center" src="{% static 'admin/img/header_sndwicon.png' %}">
+            <img class="center mb5 d-block mx-auto" src="{% static 'admin/img/header_sndwicon.png' %}">
         </div>
-
-        <div id="login_signin" class="center">
+        <div id="login_signin">
         <ul>
           <li id="login" class="col-xs-2 small-font main-color {% if not user %}border-right{% endif %} header-menu login-menu">로그인</li>
           <li id="signup" class="col-xs-2 small-font main-color header-menu login-menu" style="width: 7%;{% if user %}display: none;{% endif %}">회원가입</li>
-        </ul><div class="col-xs-2 small-font main-color header-menu login-menu">#}
+        </ul>
+        {#        <div class="col-xs-2 small-font main-color header-menu login-menu">#}
         {#            ID/PW 찾기#}
         {#        </div>#}
       </div>
     </div>
   </div>
 
-    <div id="menu" class="center">
-      <ul>
-        <li id="mypage" class="col-xs-1 medium-font main-color header-menu">마이페이지</li>
-        <li id="create-test" class="col-xs-1 medium-font main-color header-menu">문제은행</li>
-        <li id="ranking" class="col-xs-1 medium-font main-color header-menu">랭킹</li>
-        <li id="board" class="col-xs-1 medium-font main-color header-menu">입시정보</li>
-        <li id="payment" class="col-xs-1 medium-font main-color header-menu">결제</li>
-      </ul>
+  <div id="menu">
+<ul>
+  <li id="mypage" class="col-xs-1 medium-font main-color header-menu">마이페이지</li>
+  <li id="create-test" class="col-xs-1 medium-font main-color header-menu">문제은행</li>
+  <li id="ranking" class="col-xs-1 medium-font main-color header-menu">랭킹</li>
+  <li id="board" class="col-xs-1 medium-font main-color header-menu">입시정보</li>
+</ul>
+</div>
+
+    <div class="menu_position">
+        <div id="mypage" class="col-xs-1 medium-font main-color header-menu">
+            마이페이지
+        </div>
+
+       <div id="create-test" class="col-xs-1 medium-font main-color header-menu">
+            문제은행
+       </div>
+
+        <div id="ranking" class="col-xs-1 medium-font main-color header-menu">
+            랭킹
+        </div>
+
+        <div id="board" class="col-xs-1 medium-font main-color header-menu">
+            입시정보
+        </div>
+
+        <div id="payment" class="col-xs-1 medium-font main-color header-menu">
+            결제
+        </div>
+      </div>
     </div>
-  </div>
 
 <script>
 $(".header-menu").mouseover(function() {

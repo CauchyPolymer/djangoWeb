@@ -3,15 +3,6 @@ body {
   background-image: linear-gradient(to bottom, #f9f4e7, #c0d0da 51%, #adc4be);
 }
 
-#menu ul,
-#login_signin ul {
-  text-align: center;
-}
-#menu li,
-#login_signin li {
-  display: inline-block;
-}
-
 .center {
   display: block;
   margin-left: auto;
