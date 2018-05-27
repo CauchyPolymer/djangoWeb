@@ -26,28 +26,19 @@
         <div id="logo-img">
             <img class="center mb5 d-block mx-auto" src="{% static 'admin/img/header_sndwicon.png' %}">
         </div>
-        <div id="login_signin">
-        <ul>
-          <li id="login" class="col-xs-2 small-font main-color {% if not user %}border-right{% endif %} header-menu login-menu">로그인</li>
-          <li id="signup" class="col-xs-2 small-font main-color header-menu login-menu" style="width: 7%;{% if user %}display: none;{% endif %}">회원가입</li>
-        </ul>
-        {#        <div class="col-xs-2 small-font main-color header-menu login-menu">#}
-        {#            ID/PW 찾기#}
-        {#        </div>#}
-      </div>
+        <div id="login" class="col-xs-2 small-font main-color {% if not user %}border-right{% endif %} header-menu login-menu">
+            로그인
+        </div>
+        <div id="signup" class="col-xs-2 small-font main-color  header-menu login-menu" style="width: 7%; {% if user %}display: none;{% endif %}">
+            회원가입
+        </div>
+
+{#        <div class="col-xs-2 small-font main-color header-menu login-menu">#}
+{#            ID/PW 찾기#}
+{#        </div>#}
     </div>
-  </div>
 
-  <div id="menu">
-<ul>
-  <li id="mypage" class="col-xs-1 medium-font main-color header-menu">마이페이지</li>
-  <li id="create-test" class="col-xs-1 medium-font main-color header-menu">문제은행</li>
-  <li id="ranking" class="col-xs-1 medium-font main-color header-menu">랭킹</li>
-  <li id="board" class="col-xs-1 medium-font main-color header-menu">입시정보</li>
-</ul>
-</div>
 
-    <div class="menu_position">
         <div id="mypage" class="col-xs-1 medium-font main-color header-menu">
             마이페이지
         </div>
