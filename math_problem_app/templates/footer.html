@@ -1,12 +1,18 @@
 {% load static %}
 <div class="row footer">
     <div class="col-xs-8 footer-left medium-font white-color">
-        <p class="bold">수능대왕</p>
-        <p>사업자번호: 588-70-00110 | 통신판매업: 2018-서울관악-1081</p>
-        <p>서울특별시 관악구 봉천동 867-1 210 주식회사 튜링컴퍼니</p>
-        <p>이메일: contact@sndw.co.kr | 대표 최민규</p>
-        <p>Copyright © 2018 sndw. All rights reserved.</p>
+        <p class="bold">수능대왕</h4>
+          <p>사업자번호:588-70-00110 | 통신판매업:2018-서울관악-1081</p>
+					<p>성남시 분당구 대왕판교 289번길 20 튜링컴퍼니</p>
+					<p>이메일:contact@sndw.co.kr | 대표 최민규</p>
+          <p>Copyright © 2018 sndw. All rights reserved.</p>
     </div>
+
+  <div class="copyright py-4 text-center text-white">
+    <div class="container">
+      <small>Copyright &copy; TuringCompany 2018</small>
+    </div>
+  </div>
 
     <div class="col-xs-4 footer-right medium-font white-color" align="right">
         <span id="usage">이용약관</span>
@@ -15,27 +21,27 @@
 </div>
 
 <script>
-    $('#usage').click(function () {
-        $.ajax({
-            url: "usage/",
-            type: 'GET',
-            contentType: "application/json; charset=utf-8",
-            success: function (result) {
-                $('.main-container').empty()
-                $('.main-container').append(result)
-            },
-        });
-    })
+$("#usage").click(function() {
+  $.ajax({
+    url: "usage/",
+    type: "GET",
+    contentType: "application/json; charset=utf-8",
+    success: function(result) {
+      $(".main-container").empty();
+      $(".main-container").append(result);
+    }
+  });
+});
 
-    $('#privacy').click(function () {
-        $.ajax({
-            url: "privacy/",
-            type: 'GET',
-            contentType: "application/json; charset=utf-8",
-            success: function (result) {
-                $('.main-container').empty()
-                $('.main-container').append(result)
-            },
-        });
-    })
+$("#privacy").click(function() {
+  $.ajax({
+    url: "privacy/",
+    type: "GET",
+    contentType: "application/json; charset=utf-8",
+    success: function(result) {
+      $(".main-container").empty();
+      $(".main-container").append(result);
+    }
+  });
+});
 </script>

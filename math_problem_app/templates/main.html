@@ -20,7 +20,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-6 col-lg-4">
-              <img class="img-fluid" src="admin/img/slide2.png" alt="">
+              <img class="img-fluid" src="{% static 'admin/img/slide2.png'%} " alt="">
           </div>
         </div>
       </div>
@@ -30,34 +30,10 @@
       <div class="container">
         <div class="row">
           <div class="col-md-6 col-lg-4">
-              <img class="img-fluid" src="img/ingang.png" alt="">
+              <img class="img-fluid" src="{%static 'admin/img/ingang.png'%}" alt="">
           </div>
           <div class="col-md-6 col-lg-4">
-              <img class="img-fluid" src="img/slide3_text.png" alt="">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="portfolio" id="portfolio">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 col-lg-4">
-              <img class="img-fluid" src="img/text4.png" alt="">
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <section class="portfolio" id="portfolio">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 col-lg-4">
-              <img class="img-fluid" src="img/text5.png" alt="">
-          </div>
-          <div class="col-md-6 col-lg-4">
-              <img class="img-fluid" src="img/slide4.png" alt="">
+              <img class="img-fluid" src="{%static 'admin/img/slide3_text.png'%}" alt="">
           </div>
         </div>
       </div>
@@ -67,7 +43,21 @@
       <div class="container">
         <div class="row">
           <div class="col-md-6 col-lg-4">
-              <img class="img-fluid" src="img/text6.png" alt="">
+              <img class="img-fluid" src="{%static 'admin/img/text4.png'%}" alt="">
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="portfolio" id="portfolio">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-lg-4">
+              <img class="img-fluid" src="{%static 'admin/img/text5.png' %}" alt="">
+          </div>
+          <div class="col-md-6 col-lg-4">
+              <img class="img-fluid" src="{%static 'admin/img/slide4.png' %}" alt="">
           </div>
         </div>
       </div>
@@ -77,10 +67,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-6 col-lg-4">
-              <img class="img-fluid" src="img/text7.png" alt="">
-          </div>
-          <div class="col-md-6 col-lg-4">
-              <img class="img-fluid" src="img/rullet.png" alt="">
+              <img class="img-fluid" src="{%static 'admin/img/text6.png'%}" alt="">
           </div>
         </div>
       </div>
@@ -90,7 +77,10 @@
       <div class="container">
         <div class="row">
           <div class="col-md-6 col-lg-4">
-              <img class="img-fluid" src="img/text8.png" alt="">
+              <img class="img-fluid" src="{%static 'admin/img/text7.png'%}" alt="">
+          </div>
+          <div class="col-md-6 col-lg-4">
+              <img class="img-fluid" src="{%static 'admin/img/rullet.png'%}" alt="">
           </div>
         </div>
       </div>
@@ -100,10 +90,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-6 col-lg-4">
-              <img class="img-fluid" src="img/book_whole.png" alt="">
-          </div>
-          <div class="col-md-6 col-lg-4">
-              <img class="img-fluid" src="img/text9.png" alt="">
+              <img class="img-fluid" src="{%static 'admin/img/text8.png'%}" alt="">
           </div>
         </div>
       </div>
@@ -113,7 +100,20 @@
       <div class="container">
         <div class="row">
           <div class="col-md-6 col-lg-4">
-              <img class="img-fluid" src="img/unclesndw.png" alt="">
+              <img class="img-fluid" src="{%static 'admin/img/book_whole.png'%}" alt="">
+          </div>
+          <div class="col-md-6 col-lg-4">
+              <img class="img-fluid" src="{%static 'admin/img/text9.png'%}" alt="">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="portfolio" id="portfolio">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-lg-4">
+              <img class="img-fluid" src="{%static 'admin/img/unclesndw.png'%}" alt="">
           </div>
         </div>
       </div>
@@ -122,7 +122,7 @@
         <div class="container">
           <div class="row">
             <div class="col-md-6 col-lg-4">
-                <img class="img-fluid" src="img/text10.png" alt="">
+                <img class="img-fluid" src="{%static 'admin/img/text10.png'%}" alt="">
             </div>
           </div>
         </div>
@@ -157,21 +157,6 @@
     $(window).bind("hashchange", function(){
         history.pushState(null, null, "#main");
     });
-
-    var myIndex = 0;
-    carousel();
-
-    function carousel() {
-        var i;
-        var x = document.getElementsByClassName("mySlides");
-        for (i = 0; i < x.length; i++) {
-          x[i].style.display = "none";
-        }
-        myIndex++;
-        if (myIndex > x.length) {myIndex = 1}
-        x[myIndex-1].style.display = "block";
-        setTimeout(carousel, 5500);
-    }
 
     $(".main-bottom-msg").mouseover(function(){
         $(this).css("color", "#20216C");
