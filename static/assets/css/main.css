@@ -1,440 +1,443 @@
+body {
+  font-family: "Poor Story", cursive;
+  background-image: linear-gradient(to bottom, #f9f4e7, #c0d0da 51%, #adc4be);
+}
+
 .x-large-font {
-    font-size: 36px;
+  font-size: 36px;
 }
 
 .large-font {
-    font-size: 23px;
+  font-size: 23px;
 }
 
 .medium-font {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 .small-font {
-    font-size: 12px;
+  font-size: 12px;
 }
 
 .x-small-font {
-    font-size: 9px;
+  font-size: 9px;
 }
 
 .main-color {
-    color: #50519C;
+  color: #50519c;
 }
 
 .main-background-color {
-    background-color: #50519C;
+  background-color: #50519c;
 }
 
 .main-blur-background-color {
-     background-color: #959ED5;
+  background-color: #959ed5;
 }
 
 .main-x-blur-background-color {
-     background-color: #BDC3E6;
+  background-color: #bdc3e6;
 }
 
 .main-2x-blur-background-color {
-     background-color: #E5E7F5;
+  background-color: #e5e7f5;
 }
 
 .blue-background-color {
-    background-color: #3748AC;
+  background-color: #3748ac;
 }
 
 .blue-blur-background-color {
-    background-color: #5160B8;
+  background-color: #5160b8;
 }
 
 .white-color {
-    color: white;
+  color: white;
 }
 
-
 .border-right {
-    border-right: solid 0.5px #979797;
+  border-right: solid 0.5px #979797;
 }
 
 .logo-img {
-    width: 80%;
-    margin-left: 20%;
-    margin-top: 12px;
-    align-self: center;
-    cursor: pointer;
-    max-height: 65px;
+  width: 80%;
+  margin-left: 20%;
+  margin-top: 12px;
+  align-self: center;
+  cursor: pointer;
+  max-height: 65px;
 }
 
 .header-menu {
-    font-weight: 400;
-    margin-top: 25px;
-    text-align: center;
-    cursor: pointer;
+  font-weight: 400;
+  margin-top: 25px;
+  text-align: center;
+  cursor: pointer;
 }
 
 .login-menu {
-    width: 6%;
-    margin-top: 34px;
+  width: 6%;
+  margin-top: 34px;
 }
 
 .header-menu-line {
-    margin-top: -15px;
-    color: black;
+  margin-top: -15px;
+  color: black;
 }
 
 body {
-    width: 100%;
-    background-color: white;
+  width: 100%;
+  background-color: white;
 }
 
 @media screen and (max-width: 1280px) {
-    body {
-        width: 1280px;
-        overflow-x: scroll;
-        overflow-y: scroll;
-    }
+  body {
+    width: 1280px;
+    overflow-x: scroll;
+    overflow-y: scroll;
+  }
 }
 
 @media screen and (min-width: 1280px) {
-    .header-menu {
-        margin-top: 2.2%;
-    }
+  .header-menu {
+    margin-top: 2.2%;
+  }
 
-    .login-menu {
-        margin-top: 2.7%;
-    }
+  .login-menu {
+    margin-top: 2.7%;
+  }
 }
 
 .main-text {
-    position: absolute;
-    left: 20%;
-    top: 40px;
-    /*background-image: linear-gradient(to right, #e491ff, #abd9ff);*/
+  position: absolute;
+  left: 20%;
+  top: 40px;
+  /*background-image: linear-gradient(to right, #e491ff, #abd9ff);*/
 }
 
 .main-bottom {
-    width: 101%;
-    height: 100px;
+  width: 101%;
+  height: 100px;
 }
 
 .main-bottom-msg {
-    margin-top: 15px;
-    font-weight: 600;
-    cursor: pointer;
+  margin-top: 15px;
+  font-weight: 600;
+  cursor: pointer;
 }
 
 .header {
-    box-shadow: 0 5px #BBBBBB;
-    height: 65px;
-    z-index: 3;
+  box-shadow: 0 5px #bbbbbb;
+  height: 65px;
+  z-index: 3;
 }
 
 .line-bar-circle {
-    width: 20px;
-    height: 20px;
-    border-radius: 100%;
-    position: absolute;
-    top: 70px;
-    left: 200px;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  position: absolute;
+  top: 70px;
+  left: 200px;
 }
 
 .line-bar {
-    width: 123%;
-    height: 6px;
-    position: absolute;
-    top: 77px;
-    left: 100px;
+  width: 123%;
+  height: 6px;
+  position: absolute;
+  top: 77px;
+  left: 100px;
 }
 
 .line-text {
-    position: absolute;
-    top: 90px;
-    left: 70px;
+  position: absolute;
+  top: 90px;
+  left: 70px;
 }
 
 .line-bar-img {
-    width: 90%;
-    margin-top: 2%;
+  width: 90%;
+  margin-top: 2%;
 }
 
 .text-box {
-    background-color: #F2F2F2;
-    overflow-x: scroll;
-    width: 80%;
-    height: 35%;
-    border-style: outset;
-    padding: 0 15px 15px 15px
+  background-color: #f2f2f2;
+  overflow-x: scroll;
+  width: 80%;
+  height: 35%;
+  border-style: outset;
+  padding: 0 15px 15px 15px;
 }
 
 .pre-line {
-    white-space: pre-line;
+  white-space: pre-line;
 }
 
 .text-box::-webkit-scrollbar {
-    width: 10px;
+  width: 10px;
 }
 
 /* Track */
 .text-box::-webkit-scrollbar-track {
-    background: #f1f1f1;
+  background: #f1f1f1;
 }
 
 /* Handle */
 .text-box::-webkit-scrollbar-thumb {
-    background: #50519C;
+  background: #50519c;
 }
 
 /* Handle on hover */
 .text-box::-webkit-scrollbar-thumb:hover {
-    background: #555;
+  background: #555;
 }
 
 .agree-text {
-    margin-top: 3%;
+  margin-top: 3%;
 }
 
 .container {
-    display: block;
-    position: relative;
-    padding-left: 35px;
-    margin-bottom: 12px;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 /* Hide the browser's default checkbox */
 .container input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
 }
 
 /* Create a custom checkbox */
 .checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 25px;
-    width: 25px;
-    background-color: #eee;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
 }
 
 /* On mouse-over, add a grey background color */
 .container:hover input ~ .checkmark {
-    background-color: #ccc;
+  background-color: #ccc;
 }
 
 /* When the checkbox is checked, add a blue background */
 .container input:checked ~ .checkmark {
-    background-color: #50519C;
+  background-color: #50519c;
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
 .checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
+  content: "";
+  position: absolute;
+  display: none;
 }
 
 /* Show the checkmark when checked */
 .container input:checked ~ .checkmark:after {
-    display: block;
+  display: block;
 }
 
 /* Style the checkmark/indicator */
 .container .checkmark:after {
-    left: 9px;
-    top: 5px;
-    width: 5px;
-    height: 10px;
-    border: solid white;
-    border-width: 0 3px 3px 0;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 .step-button {
-    width: 120%;
-    height: 60px;
+  width: 120%;
+  height: 60px;
 }
 
 .gray-background-color {
-    background-color: #F2F2F2;
+  background-color: #f2f2f2;
 }
 
 .gray-color {
-    color: gray;
+  color: gray;
 }
 
 .login-input {
-    border: none;
-    height: 50px !important;
-    margin-left: 10%;
-    width: 115%;
+  border: none;
+  height: 50px !important;
+  margin-left: 10%;
+  width: 115%;
 }
 
 .login-input-text {
-    padding-top: 1%;
+  padding-top: 1%;
 }
 
 .sign-in-btn {
-    width: 100px;
-    position: absolute;
-    top: 8px;
-    left: -10%;
-
+  width: 100px;
+  position: absolute;
+  top: 8px;
+  left: -10%;
 }
 
 .sign-in-input-div {
-    margin-left: -8%;
+  margin-left: -8%;
 }
 
 .bottom-btn {
-    margin-top: 4%;
-    margin-bottom: 4%;
+  margin-top: 4%;
+  margin-bottom: 4%;
 }
 
 .complete-img {
-    width: 250px;
+  width: 250px;
 }
 
 .to-mypage-btn {
-    font-weight: 300;
-    width: 90%;
-    height: 60px;
-    margin-top: 6%;
+  font-weight: 300;
+  width: 90%;
+  height: 60px;
+  margin-top: 6%;
 }
 
 .complete-msg-div {
-    margin: 6% 0 0 8%;
+  margin: 6% 0 0 8%;
 }
 
 .complete-msg {
-    line-height: 42px;
+  line-height: 42px;
 }
 
 .underline {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .bold {
-    font-weight: 700;
+  font-weight: 700;
 }
 
 .login-input {
-    padding-left: 10%;
-    width: 117%;
+  padding-left: 10%;
+  width: 117%;
 }
 
 .login-page-input {
-    width: 100%;
-    margin-left: 0;
-    height: 65px !important;
+  width: 100%;
+  margin-left: 0;
+  height: 65px !important;
 }
 
 .login-box {
-    margin-top: 10%;
-    background-color: white;
-    width: 50%;
-    height: 55%;
-    padding: 5% 8% 5% 8%;
+  margin-top: 10%;
+  background-color: white;
+  width: 50%;
+  height: 55%;
+  padding: 5% 8% 5% 8%;
 }
 
 .login-div {
-    background-image: linear-gradient(to right, #e491ff, #abd9ff);
-    height: 130%;
+  background-image: linear-gradient(to right, #e491ff, #abd9ff);
+  height: 130%;
 }
 
 .blue-color {
-    color: #374BA6;
+  color: #374ba6;
 }
 
 .login-btn {
-    width: 100%;
-    margin-top: 0;
-    height: 65px;
-    padding-top: 4px;
+  width: 100%;
+  margin-top: 0;
+  height: 65px;
+  padding-top: 4px;
 }
 
 .login-stay-label {
 }
 
 .find-password {
-    padding-top: 5%;
-    cursor: pointer;
+  padding-top: 5%;
+  cursor: pointer;
 }
 
 .find-password-box {
-    padding: 3% 8% 3% 8%;
+  padding: 3% 8% 3% 8%;
 }
 
 .find-password-btn {
-    opacity: 0.5;
+  opacity: 0.5;
 }
 
 .find-password-box-02 {
-    margin-top: 7%;
-    height: 90%;
+  margin-top: 7%;
+  height: 90%;
 }
 
 .change-password-logo {
-    width: 50%;
+  width: 50%;
 }
 
 .find-password-03-box {
-    height: 50%;
+  height: 50%;
 }
 
 .main-left {
-    background-image: linear-gradient(to right, #e491ff, #abd9ff);
-    height: 42%;
+  background-image: linear-gradient(to right, #e491ff, #abd9ff);
+  height: 42%;
 }
 
 .estimate {
-    position: absolute;
-    top: 60%;
-    left: 30%;
-    width: 40%;
-    height: 60px;
+  position: absolute;
+  top: 60%;
+  left: 30%;
+  width: 40%;
+  height: 60px;
 }
 
 .footer {
-    height: 220px;
-    background-color: #9EA6D7;
+  height: 220px;
+  background-color: #9ea6d7;
 }
 
 .footer-left {
-    padding-top: 60px;
-    padding-left: 50px;
-    line-height: 10px;
+  padding-top: 60px;
+  padding-left: 50px;
+  line-height: 10px;
 }
 
 .footer-right {
-    padding-top: 20px;
+  padding-top: 20px;
 }
 
 #usage {
-    margin-right: 10%;
-    cursor: pointer;
+  margin-right: 10%;
+  cursor: pointer;
 }
 
 #privacy {
-    cursor: pointer;
-    margin-right: 10%;
+  cursor: pointer;
+  margin-right: 10%;
 }
 
 .estimate-box {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .mypage-graph-title {
-    padding-left: 10%;
-    padding-bottom: 1% !important;
+  padding-left: 10%;
+  padding-bottom: 1% !important;
 }
 
 .mypage-arrow {
-    transform: rotate(270deg);
+  transform: rotate(270deg);
 }
