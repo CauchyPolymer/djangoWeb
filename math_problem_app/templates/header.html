@@ -22,7 +22,7 @@
     </header> -->
 
 <div class="header">
-    <div class="row">
+    <div id="head_position"class="row">
         <div class="col-xs-2">
             <img id="logo-img" class="logo-img-fluid mb-5 d-block mx-auto" src="{% static 'admin/img/header_sndwicon.png' %}">
         </div>
@@ -58,6 +58,7 @@
             결제
         </div>
       </div>
+    </div>
 
 <script>
 $(".header-menu").mouseover(function() {
@@ -68,7 +69,15 @@ $(".header-menu").mouseleave(function() {
 });
 
 $("#logo-img").click(function() {
-  goToMain();
+  $.ajax({
+    url: "main/",
+    type: "GET",
+    contentType: "application/json; charset=utf-8",
+    success: function(result) {
+      $(".main-container").empty();
+      $(".main-container").append(result);
+    }
+  });
 });
 
 $("#mypage").click(function() {
