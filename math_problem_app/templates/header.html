@@ -23,16 +23,17 @@
 
 <div class="header">
     <div id="head_position"class="row">
-        <div class="col-xs-2">
-            <img id="logo-img" class="logo-img-fluid mb-5 d-block mx-auto" src="{% static 'admin/img/header_sndwicon.png' %}">
+        <div id="logo-img">
+            <img class="logo-img-fluid mb-5 d-block mx-auto" src="{% static 'admin/img/header_sndwicon.png' %}">
         </div>
-        <div id="login" class="col-xs-1 small-font main-color {% if not user %}border-right{% endif %} header-menu login-menu" style="margin-left: 15%; width: 7%">
+        <div id="login" class="col-xs-2 small-font main-color {% if not user %}border-right{% endif %} header-menu login-menu">
             로그인
         </div>
-        <div id="signup" class="col-xs-1 small-font main-color  header-menu login-menu" style="width: 7%; {% if user %}display: none;{% endif %}">
+        <div id="signup" class="col-xs-2 small-font main-color  header-menu login-menu" style="width: 7%; {% if user %}display: none;{% endif %}">
             회원가입
         </div>
-{#        <div class="col-xs-1 small-font main-color header-menu login-menu" style="width: 10%">#}
+
+{#        <div class="col-xs-2 small-font main-color header-menu login-menu">#}
 {#            ID/PW 찾기#}
 {#        </div>#}
     </div>

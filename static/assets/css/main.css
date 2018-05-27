@@ -3,11 +3,6 @@ body {
   background-image: linear-gradient(to bottom, #f9f4e7, #c0d0da 51%, #adc4be);
 }
 
-#head_position {
-  padding-top: calc(6rem + 10px);
-  padding-bottom: 6rem;
-}
-
 .x-large-font {
   font-size: 36px;
 }
