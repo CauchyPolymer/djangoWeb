@@ -3,39 +3,8 @@ body {
   background-image: linear-gradient(to bottom, #f9f4e7, #c0d0da 51%, #adc4be);
 }
 
-#menu ul,
-#login_signin ul {
-  text-align: center;
-}
-#menu li,
-#login_signin li {
-  display: inline-block;
-}
-
-#menu li {
-  display: inline-block;
-  margin-left: 0.5em;
-  padding: 0.5em 1.5em;
-  letter-spacing: 0.2em;
-  text-decoration: none;
-  font-size: 0.9em;
-  font-weight: 600;
-  text-transform: uppercase;
-  outline: 0;
-  color: black;
-}
-
-#login_signin {
-  display: inline-block;
-  margin-left: 0.5em;
-  padding: 0.5em 1.5em;
-  letter-spacing: 0.2em;
-  text-decoration: none;
-  font-size: 0.9em;
-  font-weight: 600;
-  text-transform: uppercase;
-  outline: 0;
-  color: rgb(15, 187, 42);
+.x-large-font {
+  font-size: 36px;
 }
 
 .center {
@@ -43,10 +12,6 @@ body {
   margin-left: auto;
   margin-right: auto;
   width: 50%;
-}
-
-.x-large-font {
-  font-size: 36px;
 }
 
 .large-font {

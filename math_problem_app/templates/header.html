@@ -22,23 +22,21 @@
     </header> -->
 
 <div class="header">
-    <div id="head_position"class="row">
         <div id="logo-img">
             <img class="center" src="{% static 'admin/img/header_sndwicon.png' %}">
         </div>
-        <div id="login_signin">
+
+        <div id="login_signin" class="center">
         <ul>
           <li id="login" class="col-xs-2 small-font main-color {% if not user %}border-right{% endif %} header-menu login-menu">로그인</li>
           <li id="signup" class="col-xs-2 small-font main-color header-menu login-menu" style="width: 7%;{% if user %}display: none;{% endif %}">회원가입</li>
         </ul>
-        {#        <div class="col-xs-2 small-font main-color header-menu login-menu">#}
-        {#            ID/PW 찾기#}
-        {#        </div>#}
+        <div class="col-xs-2 small-font main-color header-menu login-menu">ID/PW 찾기
+        </div>
       </div>
     </div>
-  </div>
 
-    <div id="menu">
+    <div id="menu" class="center">
       <ul>
         <li id="mypage" class="col-xs-1 medium-font main-color header-menu">마이페이지</li>
         <li id="create-test" class="col-xs-1 medium-font main-color header-menu">문제은행</li>
@@ -47,7 +45,6 @@
         <li id="payment" class="col-xs-1 medium-font main-color header-menu">결제</li>
       </ul>
     </div>
-  </div>
 
 <script>
 $(".header-menu").mouseover(function() {
