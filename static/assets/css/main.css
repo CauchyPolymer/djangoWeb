@@ -4,15 +4,10 @@ body {
 }
 
 .header {
-  text-align: center;
-  display: inline-block;
-  margin-left: 0.5em;
-  padding: 0.5em 1.5em;
-  letter-spacing: 0.2em;
-  text-decoration: none;
-  font-size: 0.9em;
-  font-weight: 600;
-  outline: 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
 
 .x-large-font {
