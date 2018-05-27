@@ -24,9 +24,8 @@
 <div class="header">
     <div class="row">
         <div class="col-xs-2">
-          <a href="main.html">
-            <img class="logo-img-fluid mb-5 d-block mx-auto" src="{% static 'admin/img/header_sndwicon.png' %}">
-        </div></a>
+            <img id="logo-img" class="logo-img-fluid mb-5 d-block mx-auto" src="{% static 'admin/img/header_sndwicon.png' %}">
+        </div>
         <div id="login" class="col-xs-1 small-font main-color {% if not user %}border-right{% endif %} header-menu login-menu" style="margin-left: 15%; width: 7%">
             로그인
         </div>
@@ -68,7 +67,7 @@ $(".header-menu").mouseleave(function() {
   $(this).css("color", "#000000");
 });
 
-$(".logo-img").click(function() {
+$("#logo-img").click(function() {
   goToMain();
 });
 
