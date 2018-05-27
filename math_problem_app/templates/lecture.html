@@ -69,144 +69,146 @@
 </div>
 
 <script>
-    $('.lecture-left-sub-box ').mouseover(function () {
-        $(this).css('color', '#50519C')
-    })
+$(".lecture-left-sub-box ").mouseover(function() {
+  $(this).css("color", "#50519C");
+});
 
-    $('.lecture-left-sub-box ').mouseleave(function () {
-        $(this).css('color', 'black')
-    })
+$(".lecture-left-sub-box ").mouseleave(function() {
+  $(this).css("color", "black");
+});
 
-    $('.lecture-left-sub-sub-box ').mouseover(function () {
-        $(this).css('color', '#50519C')
-    })
+$(".lecture-left-sub-sub-box ").mouseover(function() {
+  $(this).css("color", "#50519C");
+});
 
-    $('.lecture-left-sub-sub-box ').mouseleave(function () {
-        $(this).css('color', 'black')
-    })
+$(".lecture-left-sub-sub-box ").mouseleave(function() {
+  $(this).css("color", "black");
+});
 
-    $('.lecture-left-sub-sub-box').click(function () {
-        $.ajax({
-            url: "lectureBox/?middleUnit="+$(this).data('key')+'&unit='+$(this).data('value'),
-            type: 'GET',
-            contentType: "application/json; charset=utf-8",
-            success: function (result) {
-                $('#lectures').empty()
-                $('#lectures').append(result)
-                initSearch()
-            },
-        });
-    })
-
-    initSearch()
-
-    function initSearch() {
-        $('#lecture-search-icon').click(function () {
-            if($('#lecture-search').val().length == 0){
-                alert('검색어를 입력해 주세요.')
-                return false;
-            }
-            $.ajax({
-                url: "lectureBox/?keyword="+$('#lecture-search').val(),
-                type: 'GET',
-                contentType: "application/json; charset=utf-8",
-                success: function (result) {
-                    $('#lectures').empty()
-                    $('#lectures').append(result)
-                    initSearch()
-                },
-            });
-        })
+$(".lecture-left-sub-sub-box").click(function() {
+  $.ajax({
+    url:
+      "lectureBox/?middleUnit=" +
+      $(this).data("key") +
+      "&unit=" +
+      $(this).data("value"),
+    type: "GET",
+    contentType: "application/json; charset=utf-8",
+    success: function(result) {
+      $("#lectures").empty();
+      $("#lectures").append(result);
+      initSearch();
     }
+  });
+});
 
-    var subject = false;
-    $('.subject').click(function () {
-        if(subject) {
-            $('.subject-sub').css('display', 'none')
-            $('.subject-sub-sub-1').css('display', 'none')
-            $('.subject-sub-sub-2').css('display', 'none')
-            $('.subject-sub-sub-3').css('display', 'none')
-            $('.subject-sub-sub-4').css('display', 'none')
-            $('.subject-sub-sub-5').css('display', 'none')
-            $('.subject-sub-sub-6').css('display', 'none')
-            subject_sub_1 = false;
-            subject_sub_2 = false;
-            subject_sub_3 = false;
-            subject_sub_4 = false;
-            subject_sub_5 = false;
-            subject_sub_6 = false;
-            subject = false;
-        } else {
-            $('.subject-sub').css('display', 'inherit')
-            subject = true;
-        }
-    })
+initSearch();
 
-    var subject_sub_1 = false;
-    $('.subject-sub-1').click(function () {
-        if(subject_sub_1) {
-            $('.subject-sub-sub-1').css('display', 'none')
-            subject_sub_1 = false;
-        } else {
-            $('.subject-sub-sub-1').css('display', 'inherit')
-            subject_sub_1 = true;
-        }
-    })
+function initSearch() {
+  $("#lecture-search-icon").click(function() {
+    if ($("#lecture-search").val().length == 0) {
+      alert("검색어를 입력해 주세요.");
+      return false;
+    }
+    $.ajax({
+      url: "lectureBox/?keyword=" + $("#lecture-search").val(),
+      type: "GET",
+      contentType: "application/json; charset=utf-8",
+      success: function(result) {
+        $("#lectures").empty();
+        $("#lectures").append(result);
+        initSearch();
+      }
+    });
+  });
+}
 
-    var subject_sub_2 = false;
-    $('.subject-sub-2').click(function () {
-        if(subject_sub_2) {
-            $('.subject-sub-sub-2').css('display', 'none')
-            subject_sub_2 = false;
-        } else {
-            $('.subject-sub-sub-2').css('display', 'inherit')
-            subject_sub_2 = true;
-        }
-    })
+var subject = false;
+$(".subject").click(function() {
+  if (subject) {
+    $(".subject-sub").css("display", "none");
+    $(".subject-sub-sub-1").css("display", "none");
+    $(".subject-sub-sub-2").css("display", "none");
+    $(".subject-sub-sub-3").css("display", "none");
+    $(".subject-sub-sub-4").css("display", "none");
+    $(".subject-sub-sub-5").css("display", "none");
+    $(".subject-sub-sub-6").css("display", "none");
+    subject_sub_1 = false;
+    subject_sub_2 = false;
+    subject_sub_3 = false;
+    subject_sub_4 = false;
+    subject_sub_5 = false;
+    subject_sub_6 = false;
+    subject = false;
+  } else {
+    $(".subject-sub").css("display", "inherit");
+    subject = true;
+  }
+});
 
-    var subject_sub_3 = false;
-    $('.subject-sub-3').click(function () {
-        if(subject_sub_3) {
-            $('.subject-sub-sub-3').css('display', 'none')
-            subject_sub_3 = false;
-        } else {
-            $('.subject-sub-sub-3').css('display', 'inherit')
-            subject_sub_3 = true;
-        }
-    })
+var subject_sub_1 = false;
+$(".subject-sub-1").click(function() {
+  if (subject_sub_1) {
+    $(".subject-sub-sub-1").css("display", "none");
+    subject_sub_1 = false;
+  } else {
+    $(".subject-sub-sub-1").css("display", "inherit");
+    subject_sub_1 = true;
+  }
+});
 
-    var subject_sub_4 = false;
-    $('.subject-sub-4').click(function () {
-        if(subject_sub_4) {
-            $('.subject-sub-sub-4').css('display', 'none')
-            subject_sub_4 = false;
-        } else {
-            $('.subject-sub-sub-4').css('display', 'inherit')
-            subject_sub_4 = true;
-        }
-    })
+var subject_sub_2 = false;
+$(".subject-sub-2").click(function() {
+  if (subject_sub_2) {
+    $(".subject-sub-sub-2").css("display", "none");
+    subject_sub_2 = false;
+  } else {
+    $(".subject-sub-sub-2").css("display", "inherit");
+    subject_sub_2 = true;
+  }
+});
 
-    var subject_sub_5 = false;
-    $('.subject-sub-5').click(function () {
-        if(subject_sub_5) {
-            $('.subject-sub-sub-5').css('display', 'none')
-            subject_sub_5 = false;
-        } else {
-            $('.subject-sub-sub-5').css('display', 'inherit')
-            subject_sub_5 = true;
-        }
-    })
+var subject_sub_3 = false;
+$(".subject-sub-3").click(function() {
+  if (subject_sub_3) {
+    $(".subject-sub-sub-3").css("display", "none");
+    subject_sub_3 = false;
+  } else {
+    $(".subject-sub-sub-3").css("display", "inherit");
+    subject_sub_3 = true;
+  }
+});
 
-    var subject_sub_6 = false;
-    $('.subject-sub-6').click(function () {
-        if(subject_sub_6) {
-            $('.subject-sub-sub-6').css('display', 'none')
-            subject_sub_6 = false;
-        } else {
-            $('.subject-sub-sub-6').css('display', 'inherit')
-            subject_sub_6 = true;
-        }
-    })
+var subject_sub_4 = false;
+$(".subject-sub-4").click(function() {
+  if (subject_sub_4) {
+    $(".subject-sub-sub-4").css("display", "none");
+    subject_sub_4 = false;
+  } else {
+    $(".subject-sub-sub-4").css("display", "inherit");
+    subject_sub_4 = true;
+  }
+});
 
+var subject_sub_5 = false;
+$(".subject-sub-5").click(function() {
+  if (subject_sub_5) {
+    $(".subject-sub-sub-5").css("display", "none");
+    subject_sub_5 = false;
+  } else {
+    $(".subject-sub-sub-5").css("display", "inherit");
+    subject_sub_5 = true;
+  }
+});
 
+var subject_sub_6 = false;
+$(".subject-sub-6").click(function() {
+  if (subject_sub_6) {
+    $(".subject-sub-sub-6").css("display", "none");
+    subject_sub_6 = false;
+  } else {
+    $(".subject-sub-sub-6").css("display", "inherit");
+    subject_sub_6 = true;
+  }
+});
 </script>
