@@ -120,12 +120,6 @@ body {
   cursor: pointer;
 }
 
-.header {
-  box-shadow: 0 5px #bbbbbb;
-  height: 65px;
-  z-index: 3;
-}
-
 .line-bar-circle {
   width: 20px;
   height: 20px;
