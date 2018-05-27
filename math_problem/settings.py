@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'math_problem.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'sndw',
+        'NAME': 'math',
         'USER': 'root',
         'PASSWORD': 'ql135cjs',
         'HOST': 'localhost',
