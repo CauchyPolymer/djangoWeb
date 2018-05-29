@@ -3,7 +3,8 @@ body {
   background-image: linear-gradient(to bottom, #f9f4e7, #c0d0da 51%, #adc4be);
 }
 
-.center {
+.center,
+#img123 {
   display: block;
   margin-left: auto;
   margin-right: auto;
