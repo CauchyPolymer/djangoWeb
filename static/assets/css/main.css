@@ -10,6 +10,13 @@ body {
 
 .article_grid_1 #gird_1_background {
   width: 600px;
+  background-image: url(admin/img/landing_img1.png);
+}
+
+.article_grid_1 #grid_1_text {
+  width: 300px;
+  left: 300px;
+  top: 260;
 }
 
 .current_page_item {
