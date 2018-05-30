@@ -178,7 +178,7 @@ body {
 }
 
 .article_grid_1 #gird_1_background {
-  position: absolute;
+  position: fixed;
   align-self: center;
   width: 800px;
   z-index: 1;
