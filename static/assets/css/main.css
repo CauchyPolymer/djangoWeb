@@ -178,11 +178,13 @@ body {
 }
 
 .article_grid_1 #gird_1_background {
+  align-self: center;
   width: 800px;
   z-index: 1;
 }
 
 .article_grid_1 #grid_1_text {
+  left: 370px;
   width: 300px;
   z-index: 2;
 }
@@ -190,6 +192,18 @@ body {
 .article_grid_1 #grid_1_mascot {
   width: 100px;
   z-index: 3;
+  -webkit-animation: movemascot 15s linear infinite;
+}
+@-webkit-keyframes movemascot {
+  0% {
+    margin-left: 600px;
+  }
+  50% {
+    margin-left: 300px;
+  }
+  100% {
+    margin-left: 600px;
+  }
 }
 
 .article_grid_2 #grid_2_background {
