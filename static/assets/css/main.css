@@ -4,31 +4,18 @@ body {
   text-align: center;
 }
 
-.article_grid_1 {
-  padding-top: 30px;
-}
-
 .article_grid_1 #gird_1_background {
-  position: absolute;
-  left: 300px;
-  top: 260px;
   width: 800px;
   z-index: 1;
 }
 
 .article_grid_1 #grid_1_text {
-  position: absolute;
   width: 300px;
-  left: 230px;
-  top: 350px;
   z-index: 2;
 }
 
 .article_grid_1 #grid_1_mascot {
-  position: absolute;
   width: 100px;
-  top: 500px;
-  left: 350px;
   z-index: 3;
 }
 
@@ -38,7 +25,6 @@ body {
 
 .article_grid_3 #grid_3_background {
   width: 300px;
-
   z-index: 1;
 }
 
@@ -56,7 +42,6 @@ body {
 }
 .article_grid_5 #grid_5_text {
   width: 300px;
-
   z-index: 2;
 }
 
@@ -66,12 +51,10 @@ body {
 
 .article_grid_7 #grid_7_background {
   width: 300px;
-
   z-index: 1;
 }
 .article_grid_7 #grid_7_text {
   width: 300px;
-
   z-index: 2;
 }
 
