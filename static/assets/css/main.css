@@ -400,16 +400,6 @@ body {
   height: 220px;
 }
 
-.footer-left {
-  padding-top: 60px;
-  padding-left: 50px;
-  line-height: 10px;
-}
-
-.footer-right {
-  padding-top: 20px;
-}
-
 #usage {
   margin-right: 10%;
   cursor: pointer;
