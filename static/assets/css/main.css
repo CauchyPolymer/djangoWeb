@@ -3,6 +3,21 @@ body {
   background-image: linear-gradient(to bottom, #f9f4e7, #c0d0da 51%, #adc4be);
 }
 
+.current_page_item {
+  border: 3px dashed #ff4f4f;
+  border-radius: 4px;
+  color: #ff4f4f;
+}
+
+li {
+  display: inline;
+  padding: 5px;
+}
+
+.nav {
+  margin-top: 20px;
+  padding: 10px 8px 5px 8px;
+}
 .x-large-font {
   font-size: 36px;
 }
@@ -60,18 +75,6 @@ body {
 }
 
 .logo-img {
-}
-
-.header-menu {
-  font-weight: 400;
-  margin-top: 25px;
-  text-align: center;
-  cursor: pointer;
-}
-
-.login-menu {
-  width: 6%;
-  margin-top: 34px;
 }
 
 .header-menu-line {
