@@ -91,6 +91,7 @@ body {
   -webkit-animation: moveclouds 15s linear infinite;
   -moz-animation: moveclouds 15s linear infinite;
   -o-animation: moveclouds 15s linear infinite;
+  opacity: 0.6;
 }
 
 /*variable speed, opacity, and position of clouds for realistic effect*/
