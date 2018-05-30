@@ -176,9 +176,6 @@ body {
     margin-left: -1000px;
   }
 }
-.article_grid_1 {
-  top: 600px;
-}
 
 .article_grid_1 #gird_1_background {
   position: absolute;
@@ -198,6 +195,7 @@ body {
   z-index: 3;
   -webkit-animation: movemascot 2s linear infinite;
 }
+
 @-webkit-keyframes movemascot {
   0% {
     margin-left: 600px;
@@ -209,9 +207,7 @@ body {
     margin-left: 600px;
   }
 }
-.article_grid_2 {
-  top: 920px;
-}
+
 .article_grid_2 #grid_2_background {
   width: 800px;
 }
