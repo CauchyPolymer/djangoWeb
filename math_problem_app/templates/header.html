@@ -2,12 +2,13 @@
   <div class="menu_bar">
   <div class="nav">
     <ul>
+      <li id="logo-img">
+        <img src="{% static 'admin/img/sndw_mascot.png' %}" style="width: 100px; height:100px">
+        <img src="{% static 'admin/img/sndw_title.png' %}" style="height:100px">
+      </li>
       <li id="mypage">마이페이지</li>
       <li id="create-test">문제은행</li>
       <li id="ranking">랭킹</li>
-      <li id="logo-img">
-        <img src="{% static 'admin/img/header_sndwicon.png' %}">
-      </li>
       <li id="board">입시정보</li>
       <li id="payment">결제</li>
       <li id="login" class="{% if not user %}border-right{% endif %} header-menu login-menu">로그인</li>
