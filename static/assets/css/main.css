@@ -36,6 +36,14 @@ body {
   width: 800px;
   position: absolute;
   top: 650px;
+  left: 300px;
+}
+
+.article_grid_3 #grid_3_background {
+  position: absolute;
+  width: 800px;
+  top: 1040px;
+  z-index: 1;
 }
 
 .current_page_item {
