@@ -8,9 +8,10 @@ body {
   padding-top: 30px;
 }
 
-.grid_1gird_1_background {
+.article_grid_1 #gird_1_background {
   width: 600px;
 }
+
 .current_page_item {
   border: 3px dashed #ff4f4f;
   border-radius: 4px;
