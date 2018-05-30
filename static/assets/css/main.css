@@ -9,14 +9,17 @@ body {
 }
 
 .article_grid_1 #gird_1_background {
+  position: absolute;
+  top: 260px;
   width: 600px;
-  background-image: url(admin/img/landing_img1.png);
+  z-index: 1;
 }
 
 .article_grid_1 #grid_1_text {
   width: 300px;
   left: 300px;
-  top: 260;
+  top: 260px;
+  z-index: 2;
 }
 
 .current_page_item {
