@@ -192,17 +192,17 @@ body {
 .article_grid_1 #grid_1_mascot {
   width: 100px;
   z-index: 3;
-  -webkit-animation: movemascot 1s linear infinite;
+  -webkit-animation: movemascot 3s linear infinite;
 }
 @-webkit-keyframes movemascot {
   0% {
-    margin-left: 600px;
+    margin-left: 800px;
   }
   50% {
-    margin-left: 100px;
+    margin-left: 200px;
   }
   100% {
-    margin-left: 600px;
+    margin-left: 800px;
   }
 }
 
