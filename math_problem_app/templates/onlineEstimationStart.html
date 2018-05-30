@@ -37,8 +37,7 @@ $(".header").css("display", "none");
 
 $("#start-estimation").click(function() {
   $.ajax({
-    // url: "estimation/?from=estimation&problemIdx="+problemIdx,
-    url: "estimation/",
+    url: "estimation/?from=estimation&problemIdx=" + problemIdx,
     type: "GET",
     contentType: "application/json; charset=utf-8",
     success: function(result) {
