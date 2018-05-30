@@ -32,6 +32,12 @@ body {
   z-index: 3;
 }
 
+.article_grid_2 #grid_2_background {
+  width: 800px;
+  position: absolute;
+  top: 650px;
+}
+
 .current_page_item {
   border: 3px dashed #ff4f4f;
   border-radius: 4px;
