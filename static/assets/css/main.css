@@ -3,16 +3,6 @@ body {
   background-image: linear-gradient(to bottom, #f9f4e7, #c0d0da 51%, #adc4be);
 }
 
-#logoimg {
-  width: 100px;
-}
-
-.center {
-  display: block;
-  margin: auto;
-  width: 50%;
-}
-
 .x-large-font {
   font-size: 36px;
 }
