@@ -1,6 +1,7 @@
 body {
   font-family: "Poor Story", cursive;
   background-image: linear-gradient(to bottom, #f9f4e7, #c0d0da 51%, #adc4be);
+  text-align: center;
 }
 
 .current_page_item {
