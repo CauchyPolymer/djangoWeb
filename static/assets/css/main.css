@@ -46,6 +46,19 @@ body {
   z-index: 1;
 }
 
+.article_grid_3 #grid_3_text {
+  position: absolute;
+  width: 300px;
+  top: 1040px;
+  z-index: 2;
+}
+
+.article_grid_4 #grid_4_background {
+  position: absolute;
+  width: 700px;
+  top: 1990px;
+}
+
 .current_page_item {
   border: 3px dashed #ff4f4f;
   border-radius: 4px;
