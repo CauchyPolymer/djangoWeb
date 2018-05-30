@@ -2,7 +2,7 @@ body {
   font-family: "Poor Story", cursive;
   text-align: center;
   width: 100wh;
-  height: 90vh;
+  height: auto;
   background: linear-gradient(-45deg, #c0d0da, #f9f4e7, #adc4be, #ee7752);
   background-size: 400% 400%;
   -webkit-animation: Gradient 20s ease infinite;
