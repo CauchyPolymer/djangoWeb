@@ -6,12 +6,12 @@ body {
 .article_grid_1 {
   padding: 10px;
 }
+
 #grid_1_background {
   width: 500px;
 }
 
 #grid_1_text {
-  position: absolute;
   top: 150px;
   left: 100px;
 }
