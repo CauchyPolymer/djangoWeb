@@ -296,8 +296,10 @@ li {
 }
 
 #logo-img {
-  height: 60px;
-  top: 30px;
+  height: 38px;
+  position: absolute;
+  top: 19px;
+  left: 350px;
 }
 
 .header-menu-line {
