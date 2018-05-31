@@ -4,6 +4,18 @@
     <ul>
       <li id="logo-img">
         <img src="{% static 'admin/img/sndw_mascot.png' %}" style="width: 60px;">
+        <svg>
+          <!-- Symbol-->
+          <symbol id="s-text">
+            <text>수능대왕</text>
+          </symbol>
+          <!-- Duplicate symbols-->
+          <use class="text" xlink:href="#s-text"></use>
+          <use class="text" xlink:href="#s-text"></use>
+          <use class="text" xlink:href="#s-text"></use>
+          <use class="text" xlink:href="#s-text"></use>
+          <use class="text" xlink:href="#s-text"></use>
+        </svg>
       </li>
       <li id="mypage">마이페이지</li>
       <li id="create-test">문제은행</li>
@@ -18,8 +30,7 @@
     </div>
   </div>
 </div>
-
-{#        <div class="col-xs-2 small-font main-color header-menu login-menu">#}
+{#        <div class="header-menu login-menu">#}
 {#            ID/PW 찾기#}
 {#        </div>#}
     </div>
