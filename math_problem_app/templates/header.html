@@ -4,18 +4,19 @@
     <ul>
       <li id="logo-img">
         <img src="{% static 'admin/img/sndw_mascot.png' %}" style="width: 60px;">
-        <svg>
-          <!-- Symbol-->
-          <symbol id="s-text">
-            <text>수능대왕</text>
-          </symbol>
-          <!-- Duplicate symbols-->
-          <use class="text" xlink:href="#s-text"></use>
-          <use class="text" xlink:href="#s-text"></use>
-          <use class="text" xlink:href="#s-text"></use>
-          <use class="text" xlink:href="#s-text"></use>
-          <use class="text" xlink:href="#s-text"></use>
-        </svg>
+        <svg viewBox="0 0 900 300">
+          	<symbol id="s-text">
+          		<text text-anchor="right" x="144px" y="100px">수능대왕</text>
+          	</symbol>
+
+          	<g class = "g-ants">
+          		<use xlink:href="#s-text" class="text-copy"></use>
+          		<use xlink:href="#s-text" class="text-copy"></use>
+          		<use xlink:href="#s-text" class="text-copy"></use>
+          		<use xlink:href="#s-text" class="text-copy"></use>
+          		<use xlink:href="#s-text" class="text-copy"></use>
+          	</g>
+          </svg>
       </li>
       <li id="mypage">마이페이지</li>
       <li id="create-test">문제은행</li>

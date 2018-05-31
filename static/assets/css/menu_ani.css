@@ -1,47 +1,57 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:800);
-.text {
-  fill: none;
-  stroke-width: 1;
-  stroke-linejoin: round;
-  stroke-dasharray: 70 330;
-  stroke-dashoffset: 0;
-  -webkit-animation: stroke 6s infinite linear;
-  animation: stroke 6s infinite linear;
-  font: 24px Open Sans, Impact;
-}
-.text:nth-child(5n + 1) {
-  stroke: #f2385a;
-  -webkit-animation-delay: -1.2s;
-  animation-delay: -1.2s;
-}
-.text:nth-child(5n + 2) {
-  stroke: #f5a503;
-  -webkit-animation-delay: -2.4s;
-  animation-delay: -2.4s;
-}
-.text:nth-child(5n + 3) {
-  stroke: #e9f1df;
-  -webkit-animation-delay: -3.6s;
-  animation-delay: -3.6s;
-}
-.text:nth-child(5n + 4) {
-  stroke: #56d9cd;
-  -webkit-animation-delay: -4.8s;
-  animation-delay: -4.8s;
-}
-.text:nth-child(5n + 5) {
-  stroke: #3aa1bf;
-  -webkit-animation-delay: -6s;
-  animation-delay: -6s;
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+html,
+body {
+  height: 100%;
+  font-weight: 800;
 }
 
-@-webkit-keyframes stroke {
-  100% {
-    stroke-dashoffset: -400;
-  }
+body {
+  font-family: Arial;
 }
-@keyframes stroke {
+
+svg {
+  display: block;
+  font: 24px;
+  margin: 0 auto;
+}
+
+.text-copy {
+  fill: none;
+  stroke: white;
+  stroke-dasharray: 6% 29%;
+  stroke-width: 1px;
+  stroke-dashoffset: 0%;
+  animation: stroke-offset 5.5s infinite linear;
+}
+
+.text-copy:nth-child(1) {
+  stroke: #4d163d;
+  animation-delay: -1;
+}
+
+.text-copy:nth-child(2) {
+  stroke: #840037;
+  animation-delay: -2s;
+}
+
+.text-copy:nth-child(3) {
+  stroke: #bd0034;
+  animation-delay: -3s;
+}
+
+.text-copy:nth-child(4) {
+  stroke: #bd0034;
+  animation-delay: -4s;
+}
+
+.text-copy:nth-child(5) {
+  stroke: #fdb731;
+  animation-delay: -5s;
+}
+
+@keyframes stroke-offset {
   100% {
-    stroke-dashoffset: -400;
+    stroke-dashoffset: -35%;
   }
 }
