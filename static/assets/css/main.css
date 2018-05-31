@@ -607,7 +607,6 @@ body {
 }
 
 .login-div {
-  background-image: linear-gradient(to right, #e491ff, #abd9ff);
   height: 130%;
 }
 
@@ -652,7 +651,6 @@ body {
 }
 
 .main-left {
-  background-image: linear-gradient(to right, #e491ff, #abd9ff);
   height: 42%;
 }
 
