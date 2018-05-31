@@ -4,13 +4,13 @@
     <ul>
       <li id="logo-listitem"><img id="logo-img" src="{% static 'admin/img/sndw_mascot.png' %}"></li>
       <li class="sndw_title"></li>
-      <li id="mypage">마이페이지</li>
-      <li id="create-test">문제은행</li>
-      <li id="ranking">랭킹</li>
-      <li id="board">입시정보</li>
-      <li id="payment">결제</li>
-      <li id="login" class="{% if not user %}border-right{% endif %}">로그인</li>
-      <li id="signup" style="{% if user %}display:inherit;{% endif %}">회원가입</li>
+      <li id="mypage" class="header_menu">마이페이지</li>
+      <li id="create-test" class="header_menu">문제은행</li>
+      <li id="ranking" class="header_menu">랭킹</li>
+      <li id="board" class="header_menu">입시정보</li>
+      <li id="payment"class="header_menu">결제</li>
+      <li id="login" class="header_menu {% if not user %}border-right{% endif %}">로그인</li>
+      <li id="signup" class="header_menu" style="{% if user %}display:inherit;{% endif %}">회원가입</li>
     </ul>
     </div>
   </div>
