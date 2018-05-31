@@ -1,96 +1,10 @@
+@import "https://fonts.googleapis.com/css?family=Roboto+Mono:100";
 .sndw_title {
-  cursor: pointer;
-  font-family: "Poor Story";
-  font-weight: 900;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  color: white;
-  font-size: 0;
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
-  -webkit-filter: blur(0);
-  filter: blur(0);
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
+  font-family: "Roboto Mono", monospace;
+  font-weight: 100;
+  font-size: 28px;
+  color: #fafafa;
 }
-.sndw_title span {
-  font-size: 30px;
-  margin: 0;
-  padding: 0;
-  display: inline;
-  position: relative;
-  transition: -webkit-transform cubic-bezier(0.77, 0, 0.175, 1) 250ms;
-  transition: transform cubic-bezier(0.77, 0, 0.175, 1) 250ms;
-  transition: transform cubic-bezier(0.77, 0, 0.175, 1) 250ms,
-    -webkit-transform cubic-bezier(0.77, 0, 0.175, 1) 250ms;
-  padding: 0 0.1em;
-}
-.sndw_title span:nth-child(0n) {
-  transition-delay: 0ms;
-}
-.sndw_title span:nth-child(0n):after {
-  transition-delay: 0ms;
-}
-.sndw_title span:nth-child(1n) {
-  transition-delay: 83.3333333333ms;
-}
-.sndw_title span:nth-child(1n):after {
-  transition-delay: 83.3333333333ms;
-}
-.sndw_title span:nth-child(2n) {
-  transition-delay: 166.6666666667ms;
-}
-.sndw_title span:nth-child(2n):after {
-  transition-delay: 166.6666666667ms;
-}
-.sndw_title span:nth-child(3n) {
-  transition-delay: 250ms;
-}
-.sndw_title span:nth-child(3n):after {
-  transition-delay: 250ms;
-}
-.sndw_title span:after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: -1%;
-  width: 102%;
-  height: 2em;
-  background: white;
-  -webkit-transform-origin: top center;
-  transform-origin: top center;
-  -webkit-transform: scaley(0.1);
-  transform: scaley(0.1);
-  transition: -webkit-transform cubic-bezier(0.77, 0, 0.175, 1) 250ms;
-  transition: transform cubic-bezier(0.77, 0, 0.175, 1) 250ms;
-  transition: transform cubic-bezier(0.77, 0, 0.175, 1) 250ms,
-    -webkit-transform cubic-bezier(0.77, 0, 0.175, 1) 250ms;
-}
-.sndw_title:hover span {
-  -webkit-transform: translateY(-1em);
-  transform: translateY(-1em);
-}
-.sndw_title:hover span:after {
-  -webkit-transform: scaleY(1);
-  transform: scaleY(1);
-}
-.sndw_title:active span {
-  -webkit-transform: translateY(0);
-  transform: translateY(0);
-  transition: -webkit-transform cubic-bezier(0.77, 0, 0.175, 1) 125ms;
-  transition: transform cubic-bezier(0.77, 0, 0.175, 1) 125ms;
-  transition: transform cubic-bezier(0.77, 0, 0.175, 1) 125ms,
-    -webkit-transform cubic-bezier(0.77, 0, 0.175, 1) 125ms;
-  transition-delay: 0 !important;
-}
-.sndw_title:active span:after {
-  -webkit-transform: scaleY(0.5);
-  transform: scaleY(0.5);
-  transition: -webkit-transform cubic-bezier(0.77, 0, 0.175, 1) 125ms;
-  transition: transform cubic-bezier(0.77, 0, 0.175, 1) 125ms;
-  transition: transform cubic-bezier(0.77, 0, 0.175, 1) 125ms,
-    -webkit-transform cubic-bezier(0.77, 0, 0.175, 1) 125ms;
-  transition-delay: 0 !important;
+.dud {
+  color: #757575;
 }
