@@ -15,7 +15,7 @@
 .landscape {
   position: relative;
   height: 500px;
-  background: #222;
+  background: linear-gradient(-45deg, #c0d0da, #f9f4e7, #ee7752);
   overflow: hidden;
 }
 
