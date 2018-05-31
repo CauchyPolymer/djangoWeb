@@ -1,10 +1,10 @@
 @import "https://fonts.googleapis.com/css?family=Roboto+Mono:100";
 .sndw_title {
   font-family: "Roboto Mono", monospace;
-  font-weight: 100;
+  font-weight: bolder;
   font-size: 28px;
   color: #fafafa;
 }
 .dud {
-  color: #46dde2;
+  color: #68ff0b;
 }
