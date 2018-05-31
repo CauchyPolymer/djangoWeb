@@ -295,7 +295,9 @@ li {
   border-right: solid 0.5px #979797;
 }
 
-.logo-img {
+#logo-img {
+  height: 40px;
+  top: auto;
 }
 
 .header-menu-line {
