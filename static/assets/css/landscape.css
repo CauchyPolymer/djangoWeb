@@ -12,13 +12,6 @@
   box-sizing: border-box;
 }
 
-html,
-body {
-  height: 100vh;
-  overflow: hidden;
-  background: #182b3d;
-}
-
 .landscape {
   position: relative;
   height: 500px;
