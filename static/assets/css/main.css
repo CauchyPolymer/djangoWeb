@@ -104,7 +104,7 @@ body {
   opacity: 0.6; /*opacity proportional to the size*/
 
   /*Speed will also be proportional to the size and opacity*/
-  /*More the speed. Less the time in 's' = seconds*/
+  /*More the speed. Less the tfime in 's' = seconds*/
   -webkit-animation: moveclouds 25s linear infinite;
   -moz-animation: moveclouds 25s linear infinite;
   -o-animation: moveclouds 25s linear infinite;
