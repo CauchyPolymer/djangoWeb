@@ -264,7 +264,8 @@ li {
 }
 
 .main-background-color {
-  background-color: #50519c;
+  background-color: #ffd08a;
+  opacity: 0.5;
 }
 
 .main-blur-background-color {

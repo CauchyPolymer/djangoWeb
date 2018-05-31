@@ -1,97 +1,96 @@
 .right-border {
-    border-right: groove;
-    border-width: 1px;
-    border-color: #50519C;
+  border-right: groove;
+  border-width: 1px;
+  border-color: #50519c;
 }
 
 .estimation-start-div {
-    cursor: pointer;
-    margin-top: 3%;
+  cursor: pointer;
+  margin-top: 3%;
 }
 
 .estimation-start-img {
-    width: 60%;
-    margin-top: 3%;
+  width: 60%;
+  margin-top: 3%;
 }
 
 .sea-color {
-    color: #29B8C2;
+  color: #29b8c2;
 }
 
 .line {
-    height: 140px;
-    padding-top: 22px;
-    box-shadow: 0 5px #BBBBBB;
-    cursor: pointer;
+  height: 140px;
+  padding-top: 22px;
+  box-shadow: 0 5px #bbbbbb;
+  cursor: pointer;
 }
 
 .estimation-start {
-    background-color: #E5E7F5;
-    height: 100%;
+  height: 100%;
 }
 
 .problem-div {
-    height: 50%;
-    padding: 5% 3% 3% 3%;
-    overflow-y: scroll;
-    border: groove;
-    border-width: 1px;
-    background-color: white;
+  height: 50%;
+  padding: 5% 3% 3% 3%;
+  overflow-y: scroll;
+  border: groove;
+  border-width: 1px;
+  background-color: white;
 }
 
 .problem-number {
-    font-weight: 900;
-    border-bottom: groove;
-    border-width: 1px;
+  font-weight: 900;
+  border-bottom: groove;
+  border-width: 1px;
 }
 
 .answer-box {
-    height: 80px;
-    padding: 10px 0 0 20%;
-    background-color: #BDC3E6;
+  height: 80px;
+  padding: 10px 0 0 20%;
+  background-color: #bdc3e6;
 }
 
 .problem-line {
-    padding-top: 40px !important;
+  padding-top: 40px !important;
 }
 
 #problem-box {
-    zoom: 2.4;
+  zoom: 2.4;
 }
 
 .problem-btn {
-    border-radius: 20px;
-    background-color: #B6C1FF;
-    width: 220px;
-    height: 100px;
+  border-radius: 20px;
+  background-color: #b6c1ff;
+  width: 220px;
+  height: 100px;
 }
 
 .answer-type2 {
-    width: 220px;
-    height: 100px;
-    border-radius: 20px;
+  width: 220px;
+  height: 100px;
+  border-radius: 20px;
 }
 
 .answer-type2-div {
-    padding-top: 70px;
-    height: 250px;
-    background-color: #BDC3E6;
+  padding-top: 70px;
+  height: 250px;
+  background-color: #bdc3e6;
 }
 
 .result-bottom {
-    background-color: #E5E7F5;
-    height: 140px;
-    border: groove;
-    border-width: 1px;
-    padding-top: 10px;
-    margin-bottom: 5%;
+  background-color: #e5e7f5;
+  height: 140px;
+  border: groove;
+  border-width: 1px;
+  padding-top: 10px;
+  margin-bottom: 5%;
 }
 
 .result-bottom-btn {
-    height: 120px;
-    width: 60%;
-    background-color: #BDC3E6;
-    color: #484697;
-    font-size: 50px;
-    border: outset;
+  height: 120px;
+  width: 60%;
+  background-color: #bdc3e6;
+  color: #484697;
+  font-size: 50px;
+  border: outset;
 }
