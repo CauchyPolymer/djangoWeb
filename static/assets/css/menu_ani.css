@@ -6,7 +6,7 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  color: black;
+  color: white;
   font-size: 0;
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
@@ -19,7 +19,7 @@
   font-size: 30px;
   margin: 0;
   padding: 0;
-  display: inline-block;
+  display: inline;
   position: relative;
   transition: -webkit-transform cubic-bezier(0.77, 0, 0.175, 1) 250ms;
   transition: transform cubic-bezier(0.77, 0, 0.175, 1) 250ms;
@@ -58,7 +58,7 @@
   left: -1%;
   width: 102%;
   height: 2em;
-  background: black;
+  background: white;
   -webkit-transform-origin: top center;
   transform-origin: top center;
   -webkit-transform: scaley(0.1);
