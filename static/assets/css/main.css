@@ -296,6 +296,10 @@ li {
 }
 
 #logo-img {
+  top: -11px;
+  left: 10px;
+  height: 38px;
+  position: relative;
   height: 38px;
 }
 
