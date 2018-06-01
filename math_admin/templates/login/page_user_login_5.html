@@ -66,8 +66,8 @@ License: You must have a valid license purchased only from themeforest(the above
                 </div>
                 <div class="col-md-6 login-container bs-reset mt-login-5-bsfix">
                     <div class="login-content">
-                        <h1>Math Admin Login</h1>
-                        <p> Cosmetic Consultations On Demand </p>
+                        <h1>수능대왕 관리자 로그인</h1>
+                        <p> 수능대왕 관리자 페이지</p>
                         <form id="login-form" action="javascript:;" class="login-form" method="post">
                             {% csrf_token %}
                             <div class="alert alert-danger display-hide">
@@ -173,23 +173,22 @@ License: You must have a valid license purchased only from themeforest(the above
     </body>
 
     <script>
-        $('#login-form').submit(function (e) {
-            $.ajax({
-                url: "login/",
-                type: 'POST',
-                data:{userEmail: $('#email').val(), password: $('#password').val()},
-                success: function (result) {
-                    if (result.success) {
-                        alert(result.msg)
-                        window.location = "/custom_admin";
-                    } else {
-                        alert(result.msg);
-                    }
+    $("#login-form").submit(function(e) {
+  $.ajax({
+    url: "login/",
+    type: "POST",
+    data: { userEmail: $("#email").val(), password: $("#password").val() },
+    success: function(result) {
+      if (result.success) {
+        alert(result.msg);
+        window.location = "/custom_admin";
+      } else {
+        alert(result.msg);
+      }
+    }
+  });
 
-                },
-            });
-
-            e.preventDefault();
-        });
-    </script>
+  e.preventDefault();
+});
+</script>
 </html>
