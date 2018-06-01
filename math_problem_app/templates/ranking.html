@@ -8,7 +8,7 @@
 
 <div class="row">
     <div class="col-xs-3 col-xs-offset-1 ranking-div" style="margin-left: 15.5%" align="center">
-        <img class="ranking-icon" src="{% static 'assets/img/ranking-icon.png' %}">
+        <img class="ranking-icon" src="{% static 'assets/img/ranking_whole.png' %}">
         <p class="medium-font main-color" style="margin-top: 3%;">총점 랭킹</p>
         <p class="medium-font gray-color" style="margin-bottom: 5%;">수능대왕 전체 순위 입니다.</p>
         {% for type1Top in type1Top5 %}
@@ -29,7 +29,7 @@
         {% endif %}
     </div>
     <div class="col-xs-3 ranking-div" style="margin: 0 1% 0 1%" align="center">
-        <img class="ranking-icon" src="{% static 'assets/img/ranking-icon.png' %}">
+        <img class="ranking-icon" src="{% static 'assets/img/ranking_grade.png' %}">
         <p class="medium-font main-color" style="margin-top: 3%;">학년 랭킹</p>
         <p class="medium-font gray-color" style="margin-bottom: 5%">전국 고등학교 3학년 순위 입니다.</p>
         {% for type2Top in type2Top5 %}
@@ -50,7 +50,7 @@
         {% endif %}
     </div>
     <div class="col-xs-3 ranking-div" style="margin-right: 5%" align="center">
-        <img class="ranking-icon" src="{% static 'assets/img/ranking-icon.png' %}">
+        <img class="ranking-icon" src="{% static 'assets/img/ranking_school.png' %}">
         <p class="medium-font main-color" style="margin-top: 3%;">학교 랭킹</p>
         <p class="medium-font gray-color" style="margin-bottom: 5%;">전국의 고등학교 순위 입니다.</p>
         {% for type3top in type3Top5 %}
