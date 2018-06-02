@@ -6,12 +6,6 @@ body {
   background: linear-gradient(-45deg, #c0d0da, #f9f4e7, #adc4be, #ee7752);
 }
 
-.top-left {
-  position: absolute;
-  top: 8px;
-  left: 16px;
-}
-
 .cloud {
   width: 200px;
   height: 60px;
@@ -147,6 +141,13 @@ body {
   align-self: center;
   position: relative;
   color: white;
+  width: 700px;
+}
+
+.top-left {
+  position: absolute;
+  top: 300px;
+  left: 300px;
 }
 
 .article_grid_1 #grid_1_mascot {
