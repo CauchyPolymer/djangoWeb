@@ -207,8 +207,8 @@ body {
   z-index: 2;
 }
 
-.article_grid_8 #grid_7_text {
-  width: 300px;
+.article_grid_8 #grid_8_text {
+  width: 500px;
 }
 
 .article_grid_9 #grid_9_background {
@@ -223,7 +223,7 @@ body {
 }
 
 .article_grid_11 #grid_11_background {
-  width: 300px;
+  width: 600px;
 }
 
 li h1 {
