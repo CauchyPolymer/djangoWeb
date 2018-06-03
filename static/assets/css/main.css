@@ -3,7 +3,7 @@ body {
   text-align: center;
   width: auto;
   height: auto;
-  background-color: #000000;
+  background: linear-gradient(-135deg, #e4a972, #9941d8) fixed;
 }
 
 .cloud {
