@@ -1,8 +1,9 @@
-html,
 body {
-  font-family: "Poor Story";
+  font-family: "Poor Story", cursive;
   text-align: center;
-  overflow: hidden;
+  width: auto;
+  height: auto;
+  background: linear-gradient(-45deg, #c0d0da, #f9f4e7);
 }
 
 .cloud {
