@@ -63,20 +63,6 @@ var c = document.getElementById('c');
 var ctx = c.getContext('2d');
 //context and id of canvas
 
-var w = window.innerWidth;
-var h = window.innerHeight;
-//width and height of canvas
-
-c.width = w;
-c.height = h;
-//setting the width and height for canvas
-
-var mouse = {
-  x: w / 2,
-  y: h / 2
-};
-//mouse position
-
 document.addEventListener('mousemove', function(e){
     mouse.x = e.clientX || e.pageX;
     mouse.y = e.clientY || e.pageY
