@@ -137,9 +137,8 @@ body {
   }
 }
 
-#grid_1_mascot {
+.grid_mascot {
   width: 100px;
-  z-index: 3;
   -webkit-animation: movemascot 3s linear infinite;
 }
 @-webkit-keyframes movemascot {
