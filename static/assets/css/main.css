@@ -7,20 +7,6 @@ body {
   overflow: hidden;
 }
 
-.grad:after {
-  content: "";
-  height: 100%;
-  left: 0;
-  opacity: 0.7;
-  position: absolute;
-  top: 0;
-  width: 100%;
-}
-
-.grad::after {
-  background: radial-gradient(circle at top, #513057, #191f2c);
-}
-
 .cloud {
   width: 200px;
   height: 60px;
