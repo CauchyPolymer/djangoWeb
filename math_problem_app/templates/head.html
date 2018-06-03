@@ -63,8 +63,22 @@
     </style>
 </head>
 <body>
-<div class="background"></div>
 {% include 'header.html' %}
+
+<svg id="demo" viewBox="0 0 1600 600" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="grad1" x1="0" y1="0" x2="1" y2="0" color-interpolation="sRGB">
+      <stop id="stop1a" offset="0%" stop-color="#12a3b4"></stop>
+      <stop id="stop1b" offset="100%" stop-color="#ff509e"></stop>
+    </linearGradient>
+    <linearGradient id="grad2" x1="0" y1="0" x2="1" y2="0" color-interpolation="sRGB">
+      <stop id="stop2a" offset="0%" stop-color="#e3bc13"></stop>
+      <stop id="stop2b" offset="100%" stop-color="#00a78f"></stop>
+    </linearGradient>
+  </defs>
+  <rect id="rect1" x="0" y="0" width="1600" height="600" stroke="none" fill="url(#grad1)"></rect>
+  <rect id="rect2" x="0" y="0" width="1600" height="600" stroke="none" fill="url(#grad2)"></rect>
+</svg>
 
 <div style="display: none" class="se-pre-con">
 
@@ -79,121 +93,410 @@
 <script>
 goToMain();
 
-class Particle {
-  constructor(svg, coordinates, friction) {
-    this.svg = svg;
-    this.steps = $(window).height() / 2;
-    this.item = null;
-    this.friction = friction;
-    this.coordinates = coordinates;
-    this.position = this.coordinates.y;
-    this.dimensions = this.render();
-    this.rotation = Math.random() > 0.5 ? "-" : "+";
-    this.scale = 0.5 + Math.random();
-    this.siner = 200 * Math.random();
-  }
-
-  destroy() {
-    this.item.remove();
-  }
-
-  move() {
-    this.position = this.position - this.friction;
-    let top = this.position;
-    let left =
-      this.coordinates.x +
-      Math.sin(this.position * Math.PI / this.steps) * this.siner;
-    this.item.css({
-      transform:
-        "translateX(" +
-        left +
-        "px) translateY(" +
-        top +
-        "px) scale(" +
-        this.scale +
-        ") rotate(" +
-        this.rotation +
-        (this.position + this.dimensions.height) +
-        "deg)"
+function init(showStats) {
+  // stats
+  if (showStats) {
+    var stats = new Stats();
+    stats.domElement.style.position = "absolute";
+    stats.domElement.style.left = "0";
+    stats.domElement.style.top = "0";
+    document.body.appendChild(stats.domElement);
+    requestAnimationFrame(function updateStats() {
+      stats.update();
+      requestAnimationFrame(updateStats);
     });
+  }
 
-    if (this.position < -this.dimensions.height) {
-      this.destroy();
-      return false;
-    } else {
-      return true;
+  // init
+  var svg = document.getElementById("demo");
+  tesselation.setup(svg);
+  gradients.setup();
+
+  var lastTransitionAt,
+    transitionDelay = 5500,
+    transitionDuration = 3000;
+
+  function playNextTransition() {
+    tesselation.next(transitionDuration);
+    gradients.next(transitionDuration);
+  }
+
+  function tick(time) {
+    if (!lastTransitionAt || time - lastTransitionAt > transitionDelay) {
+      lastTransitionAt = time;
+      playNextTransition();
     }
+    window.requestAnimationFrame(tick);
   }
+  window.requestAnimationFrame(tick);
+}
 
-  render() {
-    this.item = $(this.svg, {
-      css: {
-        transform:
-          "translateX(" +
-          this.coordinates.x +
-          "px) translateY(" +
-          this.coordinates.y +
-          "px)"
-      }
-    });
-    $("body").append(this.item);
+//////////////////////////////
+// Delaunay Triangulation
+//////////////////////////////
+
+var calcDelaunayTriangulation = (function() {
+  var EPSILON = 1.0 / 1048576.0;
+  function getSuperT(vertices) {
+    var xMin = Number.POSITIVE_INFINITY,
+      yMin = Number.POSITIVE_INFINITY,
+      xMax = Number.NEGATIVE_INFINITY,
+      yMax = Number.NEGATIVE_INFINITY,
+      i,
+      xDiff,
+      yDiff,
+      maxDiff,
+      xCenter,
+      yCenter;
+    for (i = vertices.length; i--; ) {
+      if (vertices[i][0] < xMin) xMin = vertices[i][0];
+      if (vertices[i][0] > xMax) xMax = vertices[i][0];
+      if (vertices[i][1] < yMin) yMin = vertices[i][1];
+      if (vertices[i][1] > yMax) yMax = vertices[i][1];
+    }
+    xDiff = xMax - xMin;
+    yDiff = yMax - yMin;
+    maxDiff = Math.max(xDiff, yDiff);
+    xCenter = xMin + xDiff * 0.5;
+    yCenter = yMin + yDiff * 0.5;
+    return [
+      [xCenter - 20 * maxDiff, yCenter - maxDiff],
+      [xCenter, yCenter + 20 * maxDiff],
+      [xCenter + 20 * maxDiff, yCenter - maxDiff]
+    ];
+  }
+  function circumcircle(vertices, i, j, k) {
+    var xI = vertices[i][0],
+      yI = vertices[i][1],
+      xJ = vertices[j][0],
+      yJ = vertices[j][1],
+      xK = vertices[k][0],
+      yK = vertices[k][1],
+      yDiffIJ = Math.abs(yI - yJ),
+      yDiffJK = Math.abs(yJ - yK),
+      xCenter,
+      yCenter,
+      m1,
+      m2,
+      xMidIJ,
+      xMidJK,
+      yMidIJ,
+      yMidJK,
+      xDiff,
+      yDiff;
+    // bail condition
+    if (yDiffIJ < EPSILON && yDiffJK < EPSILON)
+      throw new Error(
+        "Can't get circumcircle since all 3 points are y-aligned"
+      );
+    // calc circumcircle center x/y, radius
+    m1 = -((xJ - xI) / (yJ - yI));
+    m2 = -((xK - xJ) / (yK - yJ));
+    xMidIJ = (xI + xJ) / 2.0;
+    xMidJK = (xJ + xK) / 2.0;
+    yMidIJ = (yI + yJ) / 2.0;
+    yMidJK = (yJ + yK) / 2.0;
+    xCenter =
+      yDiffIJ < EPSILON
+        ? xMidIJ
+        : yDiffJK < EPSILON
+          ? xMidJK
+          : (m1 * xMidIJ - m2 * xMidJK + yMidJK - yMidIJ) / (m1 - m2);
+    yCenter =
+      yDiffIJ > yDiffJK
+        ? m1 * (xCenter - xMidIJ) + yMidIJ
+        : m2 * (xCenter - xMidJK) + yMidJK;
+    xDiff = xJ - xCenter;
+    yDiff = yJ - yCenter;
+    // return
     return {
-      width: this.item.width(),
-      height: this.item.height()
+      i: i,
+      j: j,
+      k: k,
+      x: xCenter,
+      y: yCenter,
+      r: xDiff * xDiff + yDiff * yDiff
     };
   }
-}
-
-const rhombus =
-  '<svg viewBox="0 0 13 14"><path class="rhombus" d="M5.9,1.2L0.7,6.5C0.5,6.7,0.5,7,0.7,7.2l5.2,5.4c0.2,0.2,0.5,0.2,0.7,0l5.2-5.4 C12,7,12,6.7,11.8,6.5L6.6,1.2C6.4,0.9,6.1,0.9,5.9,1.2L5.9,1.2z M3.4,6.5L6,3.9c0.2-0.2,0.5-0.2,0.7,0l2.6,2.6 c0.2,0.2,0.2,0.5,0,0.7L6.6,9.9c-0.2,0.2-0.5,0.2-0.7,0L3.4,7.3C3.2,7.1,3.2,6.8,3.4,6.5L3.4,6.5z" /></svg>';
-
-const pentahedron =
-  '<svg viewBox="0 0 561.8 559.4"><path class="pentahedron" d="M383.4,559.4h-204l-2.6-0.2c-51.3-4.4-94-37-108.8-83l-0.2-0.6L6,276.7l-0.2-0.5c-14.5-50,3.1-102.7,43.7-131.4 L212.1,23C252.4-7.9,310.7-7.9,351,23l163.5,122.5l0.4,0.3c39,30.3,56,82.6,42.2,130.3l-0.3,1.1l-61.5,198 C480.4,525.6,435.5,559.4,383.4,559.4z M185.5,439.4h195.2l61.1-196.8c0-0.5-0.3-1.6-0.7-2.1L281.5,120.9L120.9,241.2 c0,0.3,0.1,0.7,0.2,1.2l60.8,195.8C182.5,438.5,183.7,439.1,185.5,439.4z M441,240.3L441,240.3L441,240.3z"/></svg>';
-const x =
-  '<svg viewBox="0 0 12 12"> <path class="x" d="M10.3,4.3H7.7V1.7C7.7,0.8,7,0,6,0S4.3,0.8,4.3,1.7v2.5H1.7C0.8,4.3,0,5,0,6s0.8,1.7,1.7,1.7h2.5v2.5 C4.3,11.2,5,12,6,12s1.7-0.8,1.7-1.7V7.7h2.5C11.2,7.7,12,7,12,6S11.2,4.3,10.3,4.3z"/></svg>';
-
-const circle =
-  '<svg x="0px" y="0px" viewBox="0 0 13 12"> <path class="circle" d="M6.5,0.1C3.4,0.1,0.8,2.8,0.8,6s2.6,5.9,5.7,5.9s5.7-2.7,5.7-5.9S9.7,0.1,6.5,0.1L6.5,0.1z M6.5,8.8 C5,8.8,3.8,7.6,3.8,6S5,3.2,6.5,3.2S9.2,4.4,9.2,6S8,8.8,6.5,8.8L6.5,8.8z"/> </svg>';
-
-const point =
-  '<svg viewBox="0 0 12 12"> <path class="point" d="M6,7.5L6,7.5C5.1,7.5,4.5,6.9,4.5,6v0c0-0.9,0.7-1.5,1.5-1.5h0c0.9,0,1.5,0.7,1.5,1.5v0C7.5,6.9,6.9,7.5,6,7.5z "/> </svg>';
-
-function randomInt(min, max) {
-  return Math.floor(Math.random() * (max - min + 1) + min);
-}
-
-const data = [point, rhombus, pentahedron, circle, x];
-
-let isPaused = false;
-window.onblur = function() {
-  isPaused = true;
-}.bind(this);
-window.onfocus = function() {
-  isPaused = false;
-}.bind(this);
-
-let particles = [];
-
-setInterval(function() {
-  if (!isPaused) {
-    particles.push(
-      new Particle(
-        data[randomInt(0, data.length - 1)],
-        {
-          x: Math.random() * $(window).width(),
-          y: $(window).height()
-        },
-        1 + Math.random() * 3
-      )
-    );
+  function dedupeEdges(edges) {
+    var i, j, a, b, m, n;
+    for (j = edges.length; j; ) {
+      b = edges[--j];
+      a = edges[--j];
+      for (i = j; i; ) {
+        n = edges[--i];
+        m = edges[--i];
+        if ((a === m && b === n) || (a === n && b === m)) {
+          edges.splice(j, 2);
+          edges.splice(i, 2);
+          break;
+        }
+      }
+    }
   }
-}, 200);
+  return function(vertices) {
+    var n = vertices.length,
+      i,
+      j,
+      indices,
+      st,
+      candidates,
+      locked,
+      edges,
+      dx,
+      dy,
+      a,
+      b,
+      c;
+    // bail if too few / too many verts
+    if (n < 3 || n > 2000) return [];
+    // copy verts and sort indices by x-position
+    vertices = vertices.slice(0);
+    indices = new Array(n);
+    for (i = n; i--; ) indices[i] = i;
+    indices.sort(function(i, j) {
+      return vertices[j][0] - vertices[i][0];
+    });
+    // supertriangle
+    st = getSuperT(vertices);
+    vertices.push(st[0], st[1], st[2]);
+    // init candidates/locked tris list
+    candidates = [circumcircle(vertices, n + 0, n + 1, n + 2)];
+    locked = [];
+    edges = [];
+    // scan left to right
+    for (i = indices.length; i--; edges.length = 0) {
+      c = indices[i];
+      // check candidates tris against point
+      for (j = candidates.length; j--; ) {
+        // lock tri if point to right of circumcirc
+        dx = vertices[c][0] - candidates[j].x;
+        if (dx > 0.0 && dx * dx > candidates[j].r) {
+          locked.push(candidates[j]);
+          candidates.splice(j, 1);
+          continue;
+        }
+        // point outside circumcirc = leave candidates
+        dy = vertices[c][1] - candidates[j].y;
+        if (dx * dx + dy * dy - candidates[j].r > EPSILON) continue;
+        // point inside circumcirc = break apart, save edges
+        edges.push(
+          candidates[j].i,
+          candidates[j].j,
+          candidates[j].j,
+          candidates[j].k,
+          candidates[j].k,
+          candidates[j].i
+        );
+        candidates.splice(j, 1);
+      }
+      // new candidates from broken edges
+      dedupeEdges(edges);
+      for (j = edges.length; j; ) {
+        b = edges[--j];
+        a = edges[--j];
+        candidates.push(circumcircle(vertices, a, b, c));
+      }
+    }
+    // close candidates tris, remove tris touching supertri verts
+    for (i = candidates.length; i--; ) locked.push(candidates[i]);
+    candidates.length = 0;
+    for (i = locked.length; i--; )
+      if (locked[i].i < n && locked[i].j < n && locked[i].k < n)
+        candidates.push(locked[i].i, locked[i].j, locked[i].k);
+    // done
+    return candidates;
+  };
+})();
 
-function update() {
-  particles = particles.filter(function(p) {
-    return p.move();
-  });
-  requestAnimationFrame(update.bind(this));
-}
-update();
+var tesselation = (function() {
+  var svg, svgW, svgH, prevGroup;
+
+  function createRandomTesselation() {
+    var wW = window.innerWidth;
+    var wH = window.innerHeight;
+
+    var gridSpacing = 250,
+      scatterAmount = 0.75;
+    var gridSize, i, x, y;
+
+    if (wW / wH > svgW / svgH) {
+      // window wider than svg = use width for gridSize
+      gridSize = gridSpacing * svgW / wW;
+    } else {
+      // window taller than svg = use height for gridSize
+      gridSize = gridSpacing * svgH / wH;
+    }
+
+    var vertices = [];
+    var xOffset = (svgW % gridSize) / 2,
+      yOffset = (svgH % gridSize) / 2;
+    for (x = Math.floor(svgW / gridSize) + 1; x >= -1; x--) {
+      for (y = Math.floor(svgH / gridSize) + 1; y >= -1; y--) {
+        vertices.push([
+          xOffset + gridSize * (x + scatterAmount * (Math.random() - 0.5)),
+          yOffset + gridSize * (y + scatterAmount * (Math.random() - 0.5))
+        ]);
+      }
+    }
+
+    var triangles = calcDelaunayTriangulation(vertices);
+
+    var group = document.createElementNS("http://www.w3.org/2000/svg", "g");
+    var polygon;
+    for (i = triangles.length; i; ) {
+      polygon = document.createElementNS(
+        "http://www.w3.org/2000/svg",
+        "polygon"
+      );
+      polygon.setAttribute(
+        "points",
+        vertices[triangles[--i]][0] +
+          "," +
+          vertices[triangles[i]][1] +
+          " " +
+          vertices[triangles[--i]][0] +
+          "," +
+          vertices[triangles[i]][1] +
+          " " +
+          vertices[triangles[--i]][0] +
+          "," +
+          vertices[triangles[i]][1]
+      );
+      group.appendChild(polygon);
+    }
+
+    return group;
+  }
+
+  return {
+    setup: function(svgElement) {
+      svg = svgElement;
+      var vb = svg.getAttribute("viewBox").split(/\D/g);
+      svgW = vb[2];
+      svgH = vb[3];
+    },
+    next: function(t) {
+      var toRemove, i, n;
+      t /= 1000;
+
+      if (prevGroup && prevGroup.children && prevGroup.children.length) {
+        toRemove = prevGroup;
+        n = toRemove.children.length;
+        for (i = n; i--; ) {
+          TweenMax.to(toRemove.children[i], t * 0.4, {
+            opacity: 0,
+            delay: t * (0.3 * i / n)
+          });
+        }
+        TweenMax.delayedCall(
+          t * (0.7 + 0.05),
+          function(group) {
+            svg.removeChild(group);
+          },
+          [toRemove],
+          this
+        );
+      }
+      var g = createRandomTesselation();
+      n = g.children.length;
+      for (i = n; i--; ) {
+        TweenMax.fromTo(
+          g.children[i],
+          t * 0.4,
+          { opacity: 0 },
+          {
+            opacity: 0.3 + 0.25 * Math.random(),
+            delay: t * (0.3 * i / n + 0.3),
+            ease: Back.easeOut
+          }
+        );
+      }
+      svg.appendChild(g);
+      prevGroup = g;
+    }
+  };
+})();
+
+//////////////////////////////
+// Gradients
+//////////////////////////////
+
+var gradients = (function() {
+  var grad1, grad2, showingGrad1;
+
+  // using colors from IBM Design Colors this time
+  var colors = [
+    // 14 colors - use 3-5 span
+    "#3c6df0", // ultramarine50
+    "#12a3b4", // aqua40
+    "#00a78f", // teal40
+    "#00aa5e", // green40
+    "#81b532", // lime30
+    "#e3bc13", // yellow20
+    "#ffb000", // gold20
+    "#fe8500", // orange30
+    "#fe6100", // peach40
+    "#e62325", // red50
+    "#dc267f", // magenta50
+    "#c22dd5", // purple50
+    "#9753e1", // violet50
+    "#5a3ec8" // indigo60
+  ];
+
+  function assignRandomColors(gradObj) {
+    var rA = Math.floor(colors.length * Math.random());
+    var rB = Math.floor(Math.random() * 3) + 3; // [3 - 5]
+    rB =
+      (rA + rB * (Math.random() < 0.5 ? -1 : 1) + colors.length) %
+      colors.length;
+    gradObj.stopA.setAttribute("stop-color", colors[rA]);
+    gradObj.stopB.setAttribute("stop-color", colors[rB]);
+  }
+
+  return {
+    setup: function() {
+      showingGrad1 = false;
+      grad1 = {
+        stopA: document.getElementById("stop1a"),
+        stopB: document.getElementById("stop1b"),
+        rect: document.getElementById("rect1")
+      };
+      grad2 = {
+        stopA: document.getElementById("stop2a"),
+        stopB: document.getElementById("stop2b"),
+        rect: document.getElementById("rect2")
+      };
+      grad1.rect.style.opacity = 0;
+      grad2.rect.style.opacity = 0;
+    },
+    next: function(t) {
+      t /= 1000;
+
+      var show, hide;
+      if (showingGrad1) {
+        hide = grad1;
+        show = grad2;
+      } else {
+        hide = grad2;
+        show = grad1;
+      }
+      showingGrad1 = !showingGrad1;
+
+      TweenMax.to(hide.rect, 0.55 * t, {
+        opacity: 0,
+        delay: 0.2 * t,
+        ease: Sine.easeOut
+      });
+      assignRandomColors(show);
+      TweenMax.to(show.rect, 0.65 * t, { opacity: 1, ease: Sine.easeIn });
+    }
+  };
+})();
+
+//////////////////////////////
+// Start
+//////////////////////////////
+
+init();
 </script>
