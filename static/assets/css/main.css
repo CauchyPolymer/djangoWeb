@@ -138,8 +138,10 @@ body {
 }
 
 .grid_mascot {
-  width: 100px;
   -webkit-animation: movemascot 3s linear infinite;
+  position: absolute;
+  top: 240px;
+  left: 50px;
 }
 @-webkit-keyframes movemascot {
   0% {
