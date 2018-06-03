@@ -137,7 +137,7 @@ body {
   }
 }
 
-.article_grid_1 #grid_1_mascot {
+#grid_1_mascot {
   width: 100px;
   z-index: 3;
   -webkit-animation: movemascot 3s linear infinite;
