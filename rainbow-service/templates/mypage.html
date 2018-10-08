@@ -1,0 +1,175 @@
+{% load static %}
+<div class="row">
+    <div class="col-xs-3 left-menu" align="center">
+        <p class="large-font underline">{{ user.id }}</p>
+        <div class="profile-circle"><span class="profile-char white-color">{{ user.name.0 }}</span></div>
+        <p class="mypage-name x-large-font">{{ user.name }}</p>
+        <p class="mypage-email small-font">{{ user.email }}</p>
+        <p class="mypage-left-text medium-font">{{ user.school }} {{ user.get_grade_display }}</p>
+    </div>
+
+        <div class="payment-head bold large-font">
+          <br>아직 맴버쉽이 없네요!</br>
+          <br>맴버쉽을 구매하시고 매칭을 받으세요!</br>
+        </div>
+
+        <img id="test" src="{% static 'assets/img/estimation.png' %}" align="center">
+
+    </div>
+</div>
+
+
+<script>
+    history.pushState(null, null, "#mypage");
+    $(window).unbind("hashchange")
+    $(window).bind("hashchange", function(){
+        goToMain()
+    });
+
+    {% if user %}
+    $('#login').text('로그아웃')
+    $('#login').unbind('click')
+    $('#signup').css('display', 'none')
+    $('#login').removeClass('border-right')
+    $('#login').click(function () {
+        $.ajax({
+            url: "logout/",
+            type: 'GET',
+            contentType: "application/json; charset=utf-8",
+            success: function (result) {
+                goToMain()
+                alert(result.msg)
+                $('#login').addClass('border-right')
+                $('#signup').css('display', 'inherit')
+            },
+        });
+    })
+    {% else %}
+    $('#login').text('로그인')
+    $('#login').unbind('click')
+    $('#login').click(function () {
+        $.ajax({
+            url: "login/",
+            type: 'GET',
+            contentType: "application/json; charset=utf-8",
+            success: function (result) {
+                $('.main-container').empty()
+                $('.main-container').append(result)
+            },
+        });
+    })
+    {% endif %}
+
+    $('.graph-title').click(function () {
+        if($(this).data('open') == false) {
+            $(this).next('.graph-box ').css('height', '450px')
+            $(this).data('open', true)
+            $(this).children().children('.mypage-arrow').css('transform', 'rotate(90deg)')
+            {% for recommend in user.recommend.all %}
+            $.ajax({
+                url: "getTestData/?unit={{ recommend.unit.unit }}",
+                type: 'GET',
+                contentType: "application/json; charset=utf-8",
+                success: function (result) {
+                    drawGraph(result, 'chartContainer{{ forloop.counter }}')
+                },
+            });
+
+            $.ajax({
+                url: "getSmallUnitData/?unit={{ recommend.unit.unit }}",
+                type: 'GET',
+                contentType: "application/json; charset=utf-8",
+                success: function (result) {
+                    drawDoughnutGraph(result, 'doughnutChartContainer{{ forloop.counter }}')
+                },
+            });
+
+            $.ajax({
+                url: "getStudyTotalCount/?unit={{ recommend.unit.unit }}",
+                type: 'GET',
+                contentType: "application/json; charset=utf-8",
+                success: function (result) {
+                    $('#testCount{{ forloop.counter }}').text(result.count)
+                },
+            });
+            {% endfor %}
+        } else if($(this).data('open') == true){
+            $(this).next('.graph-box ').css('height', '0')
+            $(this).data('open', false)
+            $(this).children().children('.mypage-arrow').css('transform', 'rotate(270deg)')
+        }
+    })
+
+
+    $('#test').click(function () {
+        $.ajax({
+            url: "estimationStart/",
+            type: 'GET',
+            contentType: "application/json; charset=utf-8",
+            success: function (result) {
+                $('.main-container').empty()
+                $('.main-container').append(result)
+            },
+        });
+    })
+
+    $('.estimate-box').click(function () {
+        var box = $(this)
+        $.ajax({
+            url: "getRateData/?answerSrl="+$(this).data('answersrl'),
+            type: 'GET',
+            contentType: "application/json; charset=utf-8",
+            success: function (result) {
+                drawMypageGraph(result)
+                $('#created-at').text(box.data('createdat'))
+                goToTop()
+            },
+        });
+    })
+
+    $.ajax({
+        url: "getRateData/",
+        type: 'GET',
+        contentType: "application/json; charset=utf-8",
+        success: function (result) {
+            drawMypageGraph(result)
+        },
+    });
+
+    function drawMypageGraph(data) {
+		var chart = new CanvasJS.Chart("chartContainer",{
+			title:{
+				text: ""
+			},
+            animationEnabled: true,
+			axisY:{
+				reversed: true,
+                labelFontSize: 30,
+                interval: 1,
+                minimum: 0,
+                maximum: 9,
+			},
+            axisX:{
+			    labelFontSize: 40,
+                labelFontColor: "#50519C",
+            },
+            backgroundColor: "#E5E7F5",
+			data: [{
+				type: "line",
+				dataPoints: data,
+                markerSize: 35,
+                lineThickness: 6,
+                color: "#47DFBA",
+			}]
+		});
+	    chart.render();
+	}
+
+	$(".mypage-bottom-msg").mouseover(function(){
+        $(this).css("color", "#20216C");
+    });
+    $(".mypage-bottom-msg").mouseleave(function(){
+        $(this).css("color", "white");
+    });
+
+</script>

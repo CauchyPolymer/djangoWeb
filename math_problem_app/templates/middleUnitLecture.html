@@ -1,7 +1,0 @@
-{% load static %}
-{% for lecture in lectures %}
-<div class="row video-div" style="margin-top: 3%;" data-lecturesrl="{{ lecture.lectureSrl }}">
-    <img class="star-circle" src="{% static 'assets/img/play-circle.png' %}">
-    {{ lecture.name }}
-</div>
-{% endfor %}

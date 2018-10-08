@@ -1,0 +1,106 @@
+<style>
+    .checkbox_text {
+        color: #659BE0;
+    }
+
+    .one_checkbox {
+        margin-right: 20px;
+    }
+
+    .procedure_checkbox {
+        margin-bottom: 20px;
+    }
+
+    .filter {
+        margin-bottom: 30px;
+    }
+
+    .types {
+        margin-left: 20px;
+    }
+
+    .type_title {
+        margin-bottom: 10px;
+        margin-top: 40px;
+    }
+
+</style>
+
+<div class="row">
+    <div class="col-md-12">
+        <!-- BEGIN EXAMPLE TABLE PORTLET-->
+        <div class="portlet light bordered">
+            <div class="portlet-title">
+                <div class="caption font-dark">
+                    <i class="icon-settings font-dark"></i>
+                    <span class="caption-subject bold uppercase"> New Requests</span>
+                </div>
+            </div>
+            <div class="portlet-body">
+                <div id="sample_1_wrapper" class="dataTables_wrapper no-footer">
+                    <div class="portlet-title">
+                    </div>
+                    <div class="">
+                        <table style="margin-top: 30px;"
+                               class="table table-bordered no-footer">
+                            <thead>
+                            <tr role="row">
+                                <th class="" tabindex="0" aria-controls="sample_1" rowspan="1" colspan="1"
+                                    style="width: 130px; text-align:center; "> 아이디
+                                </th>
+                                <th class="" tabindex="0" aria-controls="sample_1" rowspan="1" colspan="1"
+                                    style="width: 71px; text-align:center; "> 닉네임
+                                </th>
+                                <th class="" tabindex="0" aria-controls="sample_1" rowspan="1" colspan="1"
+                                    style="width: 130px; text-align:center; ">
+                                    연락처
+                                </th>
+                                <th class="" tabindex="0" aria-controls="sample_1" rowspan="1" colspan="1"
+                                    style="width: 198px; text-align:center; ">
+                                    이메일
+                                </th>
+                                <th class="" tabindex="0" aria-controls="sample_1" rowspan="1" colspan="1"
+                                    style="width: 150px; text-align:center; ">
+                                    가입 시간
+                                </th>
+                                <th class="" tabindex="0" aria-controls="sample_1" rowspan="1" colspan="1"
+                                    style="width: 198px; text-align:center; ">
+                                    학생증
+                                </th>
+                                <th class="" tabindex="0" aria-controls="sample_1" rowspan="1" colspan="1"
+                                    style="width: 198px; text-align:center; ">
+                                    학교명
+                                </th>
+                                <th class="" tabindex="0" aria-controls="sample_1" rowspan="1" colspan="1"
+                                    style="width: 71px; text-align:center; ">
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody id="users">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- END EXAMPLE TABLE PORTLET-->
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    getUsers()
+
+    function getUsers() {
+        $.ajax({
+            url: "users/",
+            method: "GET",
+            contentType: "application/json; charset=utf-8",
+            success: function (result) {
+                $('#users').empty();
+                $('#users').append($(result));
+            },
+        });
+
+    }
+
+</script>

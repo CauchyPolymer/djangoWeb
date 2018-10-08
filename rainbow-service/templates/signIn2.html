@@ -1,0 +1,355 @@
+{% load static %}
+<div class="row">
+    <div class="cox-xs-12" align="center">
+        <img class="line-bar-img" src="{% static 'assets/img/line-bar02.png' %}">
+    </div>
+</div>
+
+<div class="row" align="center" style="margin-top: 3%">
+    <p class="medium-font main-color">레인보우브릿지 에서 사용하실 정보를 알려주세요!</p>
+    <p class="gray-color" style="font-size: 16px; margin-top: 1%">서비스 사용에 필수적인 정보이므로 정확히 입력하여 주세요.</p>
+</div>
+
+<div class="list-group">
+    <div class="row" align="center" style="margin: 1%">
+        <div class="medium-font col-xs-offset-3 col-xs-2 main-color login-input-text" align="left">
+            아이디
+        </div>
+        <div class="col-xs-4 sign-in-input-div">
+            <input id="id" type="text" class="gray-background-color w3-input login-input">
+        </div>
+        <div class="col-xs-2" align="left">
+            <input id="id-duplicate" class="w3-btn white-color small-font main-background-color sign-in-btn" style="" type="button" value="중복검사">
+        </div>
+    </div>
+
+    <div class="row" align="center" style="margin: 1%">
+        <div class="medium-font col-xs-offset-3 col-xs-2 main-color login-input-text" align="left">
+            비밀번호
+        </div>
+        <div class="col-xs-4 sign-in-input-div">
+            <input id="password" type="password" class="gray-background-color w3-input login-input">
+        </div>
+    </div>
+
+    <div class="row" align="center" style="margin: 1%">
+        <div class="medium-font col-xs-offset-3 col-xs-2 main-color login-input-text" align="left">
+            비밀번호 확인
+        </div>
+        <div class="col-xs-4 sign-in-input-div">
+            <input id="password-check" type="password" class="gray-background-color w3-input login-input">
+        </div>
+        <div class="col-xs-2 col-xs-offset-1 confirm" style="padding-top: 20px; margin-left: 5%;">
+
+        </div>
+    </div>
+
+    <div class="row" align="center" style="margin: 1%">
+        <div class="medium-font col-xs-offset-3 col-xs-2 main-color login-input-text" align="left">
+            닉네임
+        </div>
+        <div class="col-xs-4 sign-in-input-div">
+            <input id="name" type="text" class="gray-background-color w3-input login-input">
+        </div>
+    </div>
+
+    <div class="row" align="center" style="margin: 1%">
+        <div class="medium-font col-xs-offset-3 col-xs-2 main-color login-input-text" align="left">
+            성별(현재는 남성만 선택가능 합니다.)
+        </div>
+        <div class="col-xs-4 sign-in-input-div">
+            <select id="sex" class="gray-background-color w3-input login-input">
+                <option disabled selected>선택해 주세요</option>
+                <option value="man">남성</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="row" align="center" style="margin: 1%">
+        <div class="medium-font col-xs-offset-3 col-xs-2 main-color login-input-text" align="left">
+            이메일
+        </div>
+        <div class="col-xs-4 sign-in-input-div">
+            <input id="email" type="email" class="gray-background-color w3-input login-input">
+        </div>
+    </div>
+
+    <div class="row" align="center" style="margin: 1%">
+        <div class="medium-font col-xs-offset-3 col-xs-2 main-color login-input-text" align="left">
+            학교
+        </div>
+        <div class="col-xs-4 sign-in-input-div">
+            <input id="school" type="text" class="gray-background-color w3-input login-input">
+        </div>
+        <div class="col-xs-2" align="left">
+            <input id="school-id" class="w3-btn white-color small-font main-background-color sign-in-btn" style="" type="button" value="학생증인증">
+            <form id="picture-form">
+                <input id="id-picture" name="photo" type="file" style="display: none">
+            </form>
+        </div>
+        <div class="col-xs-2 col-xs-offset-1" style="margin-left: 7%;">
+            <span id="upload-file"></span>
+        </div>
+    </div>
+
+    <div class="row" align="center" style="margin: 1%">
+        <div class="medium-font col-xs-offset-3 col-xs-2 main-color login-input-text" align="left">
+            직종(직종은 매칭시 운영진에게 인증하게 됩니다)
+        </div>
+        <div class="col-xs-4 sign-in-input-div">
+            <select id="job" class="gray-background-color w3-input login-input">
+                <option disabled selected>선택해 주세요</option>
+                <option value="1">전문직(의사,변호사,약사,변리사)</option>
+                <option value="2">대기업</option>
+                <option value="3">자영업</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+
+<div class="row bottom-btn">
+    <div class="col-xs-offset-3 col-xs-2" align="left">
+        <input id="to-prev" class="w3-btn main-color step-button medium-font gray-background-color" style="margin-left: 38%; z-index: 2;" type="button" value="이전 단계로">
+    </div>
+    <div class="col-xs-offset-1 col-xs-2" align="left">
+        <input id="to-next" class="w3-btn white-color step-button medium-font main-background-color" style="margin-left: -10.5%;" type="button" value="가입완료">
+    </div>
+</div>
+
+<script>
+    history.pushState(null, null, "#signIn2");
+    $(window).unbind("hashchange")
+    $(window).bind("hashchange", function(){
+        $.ajax({
+            url: "signIn/",
+            type: 'GET',
+            contentType: "application/json; charset=utf-8",
+            success: function (result) {
+                $('.main-container').empty()
+                $('.main-container').append(result)
+            },
+        });
+    });
+
+    $('#school-id').click(function () {
+        $('#id-picture').click()
+    })
+    
+    $('#id-picture').change(function () {
+        userInfo.certificationSchoolCard = true;
+        userInfo.idPicture = $('#picture-form')[0]
+        $('#upload-file').text('올바르게 업로드 되었습니다.')
+    })
+
+    exportUserInfo()
+
+    $('#password-check').change(function () {
+        if($('#password').val() == $('#password-check').val()){
+            $('.confirm').text('비밀번호가 일치 합니다.')
+        } else {
+            $('.confirm').text('')
+        }
+    })
+
+    $('#to-prev').click(function () {
+        saveUserInfo()
+        $.ajax({
+            url: "signIn/",
+            type: 'GET',
+            contentType: "application/json; charset=utf-8",
+            success: function (result) {
+                $('.main-container').empty()
+                $('.main-container').append(result)
+
+            },
+        });
+    })
+
+    $('#to-next').click(function () {
+        saveUserInfo()
+        if(!checkUserInfo()){
+            return false;
+        }
+        signUp()
+
+    })
+
+    $('#id-duplicate').click(function () {
+        checkIdDuplcate()
+    })
+
+    function saveUserInfo() {
+        userInfo.id = $('#id').val()
+        userInfo.password = $('#password').val()
+        userInfo.passwordCheck = $('#password-check').val()
+        userInfo.name = $('#name').val()
+        userInfo.sex = $('#sex').val()
+        userInfo.phone = $('#phone').val()
+        userInfo.email = $('#email').val()
+        userInfo.school = $('#school').val()
+        userInfo.job = $('#job').val()
+    }
+
+    function checkUserInfo() {
+        if(!userInfo.id){
+            alert('아이디를 입력해 주세요.')
+            return false;
+        }
+
+        if(!userInfo.password){
+            alert('비밀번호를 입력해 주세요.')
+            return false;
+        }
+
+        if(!userInfo.passwordCheck){
+            alert('비밀번호를 확인해 주세요.')
+            return false;
+        }
+
+        if(userInfo.password != userInfo.passwordCheck){
+            alert('비밀번호가 다릅니다.')
+            return false;
+        }
+
+        if(!chkPwd(userInfo.password)){
+            return false;
+        }
+
+        if(!userInfo.name){
+            alert('이름을 입력해 주세요.')
+            return false;
+        }
+
+        if(!userInfo.sex){
+            alert('성별을 선택해 주세요.')
+            return false;
+        }
+
+        if(!userInfo.email){
+            alert('이메일을 입력해 주세요.')
+            return false;
+        }
+
+        if(!validateEmail(userInfo.email)) {
+            alert('올바른 이메일 형식을 입력해 주세요.')
+            return false;
+        }
+
+        if(!userInfo.school){
+            alert('학교를 입력해 주세요.')
+            return false;
+        }
+
+        if(!userInfo.job){
+            alert('직종을 선택해 주세요.')
+            return false;
+        }
+
+        if(!userInfo.idDuplicate) {
+            alert('아이디 중복 체크를 해주세요.')
+            return false;
+        }
+
+        if(!userInfo.certificationSchoolCard){
+            alert('학생증을 업로드 해주세요.')
+            return false;
+        }
+        return true;
+    }
+
+    function exportUserInfo(){
+        $('#id').val(userInfo.id)
+        $('#password').val(userInfo.password)
+        $('#password-check').val(userInfo.passwordCheck)
+        $('#name').val(userInfo.name)
+        $('#sex').val(userInfo.sex)
+        $('#phone').val(userInfo.phone)
+        $('#email').val(userInfo.email)
+        $('#school').val(userInfo.school)
+        $('#job').val(userInfo.job)
+    }
+
+    function checkIdDuplcate(){
+        $.ajax({
+            url: "idDuplicate/?id="+ $('#id').val(),
+            type: 'GET',
+            contentType: "application/json; charset=utf-8",
+            success: function (result) {
+                if(result.success){
+                   userInfo.idDuplicate = true;
+                } else {
+                     userInfo.idDuplicate = false;
+                }
+                alert(result.msg)
+            },
+        });
+    }
+
+    function signUp(){
+        $.ajax({
+            url: "signUp/",
+            type: 'POST',
+            data: {id: userInfo.id, password: userInfo.password, name: userInfo.name, sex: userInfo.sex,
+                    phone: userInfo.phone, email: userInfo.email, school: userInfo.school, job: userInfo.job},
+            success: function (result) {
+                if(result.success) {
+                    $(".se-pre-con").css('display', "block");
+
+                    var formData = new FormData(userInfo.idPicture);
+
+                    $.ajax({
+                        url: "photo/",
+                        type: "POST",
+                        data: formData,
+                        success: function (result) {
+                            $.ajax({
+                                url: "signIn3/",
+                                type: 'GET',
+                                contentType: "application/json; charset=utf-8",
+                                success: function (result) {
+                                    $('.main-container').empty()
+                                    $('.main-container').append(result)
+
+                                },
+                            });
+                            $(".se-pre-con").fadeOut("slow");
+                        },
+                        cache: false,
+                        contentType: false,
+                        processData: false
+                    });
+                }
+            },
+        });
+    }
+/*
+    $('#phone-cert').click(function () {
+        if (!$('#phone').val()) {
+            alert('핸드폰 번호를 입력해 주세요.')
+            return false;
+        }
+        $('#phone-cert-input').css('display', 'inherit')
+        $.ajax({
+            url: "phoneCert/?phone="+$('#phone').val(),
+            type: 'GET',
+            contentType: "application/json; charset=utf-8",
+            success: function (result) {
+                alert(result.msg)
+                $('#key-cert').click(function () {
+                    $.ajax({
+                        url: "phoneCert/",
+                        type: 'POST',
+                        data: {key: $('#key').val()},
+                        success: function (result) {
+                            userInfo.certificationPhone = true;
+                            alert(result.msg)
+                        }
+                    })
+                })
+            },
+        });
+    })
+*/
+
+</script>
